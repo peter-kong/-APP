@@ -2,4 +2,10 @@
     <string name="app_name">Thematic</string>
     <string name="Register">註冊</string>
     <string name="Login">登入</string>
+    <string name="客製化">客製化</string>
+    <string name="補助規則分類">補助規則分類</string>
+    <string name="定位">定位</string>
+    <string name="使用紀錄">使用紀錄</string>
+    <string name="媒合功能">媒合功能</string>
+    <string name="個人資料">個人資料</string>
 </resources>
