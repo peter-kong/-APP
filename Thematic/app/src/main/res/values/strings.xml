@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Thematic</string>
+    <string name="Register">註冊</string>
+    <string name="Login">登入</string>
+</resources>
