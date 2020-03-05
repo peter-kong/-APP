@@ -10,21 +10,19 @@
         android:id="@+id/客製化"
         android:layout_width="431dp"
         android:layout_height="240dp"
-        android:layout_marginBottom="184dp"
+        android:layout_marginTop="15dp"
         android:background="#45AA6A"
         android:text="@string/客製化"
-        app:layout_constraintBottom_toTopOf="@+id/定位"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/補助規則分類" />
 
     <Button
         android:id="@+id/補助規則分類"
         android:layout_width="431dp"
         android:layout_height="240dp"
-        android:layout_marginBottom="7dp"
         android:background="#B7D140"
         android:text="@string/補助規則分類"
-        app:layout_constraintBottom_toTopOf="@+id/客製化"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,6 +31,8 @@
         android:id="@+id/定位"
         android:layout_width="108.5dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
         android:layout_marginBottom="4dp"
         android:text="@string/定位"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,14 +45,11 @@
         android:layout_height="48dp"
         android:layout_marginStart="4dp"
         android:layout_marginLeft="4dp"
-        android:layout_marginTop="184dp"
         android:layout_marginBottom="4dp"
         android:text="@string/使用紀錄"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/媒合功能"
-        app:layout_constraintStart_toEndOf="@+id/定位"
-        app:layout_constraintTop_toBottomOf="@+id/客製化"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/定位" />
 
     <Button
         android:id="@+id/媒合功能"
@@ -60,13 +57,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
-        android:layout_marginTop="184dp"
         android:layout_marginBottom="4dp"
         android:text="@string/媒合功能"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/個人資料"
-        app:layout_constraintStart_toEndOf="@+id/使用紀錄"
-        app:layout_constraintTop_toBottomOf="@+id/客製化" />
+        app:layout_constraintStart_toEndOf="@+id/使用紀錄" />
 
     <Button
         android:id="@+id/個人資料"
@@ -74,12 +69,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="1dp"
         android:layout_marginLeft="1dp"
-        android:layout_marginTop="184dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
         android:layout_marginBottom="4dp"
         android:text="@string/個人資料"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/媒合功能"
-        app:layout_constraintTop_toBottomOf="@+id/客製化" />
+        app:layout_constraintStart_toEndOf="@+id/媒合功能" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
