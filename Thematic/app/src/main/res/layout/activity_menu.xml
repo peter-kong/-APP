@@ -10,12 +10,9 @@
         android:id="@+id/客製化"
         android:layout_width="431dp"
         android:layout_height="240dp"
-        android:layout_marginTop="15dp"
         android:background="#45AA6A"
         android:text="@string/客製化"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/補助規則分類" />
+        tools:layout_editor_absoluteY="240dp" />
 
     <Button
         android:id="@+id/補助規則分類"
