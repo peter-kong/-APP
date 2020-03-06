@@ -14,7 +14,7 @@ public class Menu extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-/*
+
         補助規則分類 = (Button)findViewById(R.id.補助規則分類);
         客製化 = (Button)findViewById(R.id.客製化);
         定位 = (Button)findViewById(R.id.定位);
@@ -28,7 +28,7 @@ public class Menu extends AppCompatActivity {
         Button nextPage4 = (Button)findViewById(R.id.使用紀錄);
         Button nextPage5 = (Button)findViewById(R.id.媒合功能);
         Button nextPage6 = (Button)findViewById(R.id.個人資料);
-
+/*
         nextPage1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,17 +73,14 @@ public class Menu extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+*/
         nextPage6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu.this,個人資料.class);
+                intent.setClass(Menu.this,PersonalData.class);
                 startActivity(intent);
             }
         });
-
-*/
-
     }
 }

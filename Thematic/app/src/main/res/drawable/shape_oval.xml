@@ -4,8 +4,8 @@
     android:shape="oval">
     <!--漸層顏色-->
     <gradient
-        android:startColor="#18506C"
-        android:endColor="#000000"
+        android:startColor="#D6E2A326"
+        android:endColor="#D6E2A326"
         android:gradientRadius="150dp"
         android:type="radial" />
     <!--<solid android:color="#18506C" />-->
@@ -25,5 +25,5 @@
         android:width="1dp"
         android:color="@android:color/black"
         android:dashGap="2dp"
-        android:dashWidth="5dp" />
+        android:dashWidth="0dp" />
 </shape>
