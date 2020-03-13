@@ -4,7 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     android:background="#FC5288CA"
+=======
+    android:background="#C2F8BD"
+>>>>>>> 1d493e60abe6e825fbba02da5f2ab692a2dd4285
     tools:context=".Menu">
 
     <Button
@@ -17,7 +21,11 @@
         android:background="@drawable/shape_rectangle"
         android:hapticFeedbackEnabled="false"
         android:text="照顧服務需求管理"
+<<<<<<< HEAD
         android:textSize="35sp"
+=======
+        android:textSize="30dp"
+>>>>>>> 1d493e60abe6e825fbba02da5f2ab692a2dd4285
         app:layout_constraintBottom_toTopOf="@+id/定位"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -31,7 +39,11 @@
         android:background="@drawable/shape_rectangle"
         android:hapticFeedbackEnabled="false"
         android:text="長照2.0法規查詢"
+<<<<<<< HEAD
+        android:textSize="30dp"
+=======
         android:textSize="20sp"
+>>>>>>> f8cf10210a84c98bdb75b586f7c05117e3fd6eb6
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -44,7 +56,7 @@
         android:layout_marginBottom="50dp"
         android:background="@drawable/shape_rectangle"
         android:text="@string/定位"
-        android:textSize="20sp"
+        android:textSize="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -57,7 +69,11 @@
         android:layout_marginBottom="50dp"
         android:background="@drawable/shape_rectangle"
         android:text="居家服務媒合"
+<<<<<<< HEAD
         android:textSize="40sp"
+=======
+        android:textSize="35dp"
+>>>>>>> 1d493e60abe6e825fbba02da5f2ab692a2dd4285
         app:layout_constraintBottom_toTopOf="@+id/補助規則分類"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -72,8 +88,12 @@
         android:layout_marginBottom="48dp"
         android:background="@drawable/shape_rectangle"
         android:text="@string/個人資料"
+<<<<<<< HEAD
         android:textColor="#BBB89D"
         android:textSize="40sp"
+=======
+        android:textSize="35dp"
+>>>>>>> 1d493e60abe6e825fbba02da5f2ab692a2dd4285
         app:layout_constraintBottom_toTopOf="@+id/客製化"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -81,16 +101,17 @@
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="142dp"
+        android:layout_height="67dp"
         android:layout_marginStart="176dp"
         android:layout_marginLeft="176dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="56dp"
         android:layout_marginEnd="176dp"
         android:layout_marginRight="176dp"
         android:text="Menu"
-        android:textSize="36sp"
+        android:textSize="50dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
