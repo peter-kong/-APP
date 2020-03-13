@@ -9,6 +9,7 @@
 
     <Button
         android:id="@+id/客製化"
+<<<<<<< HEAD
         android:layout_width="310dp"
         android:layout_height="140dp"
         android:layout_marginStart="48dp"
@@ -17,12 +18,18 @@
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
         android:layout_marginBottom="50dp"
+=======
+        android:layout_width="302dp"
+        android:layout_height="127dp"
+        android:layout_marginBottom="48dp"
+>>>>>>> 098c514986f435fee3c690f92c0b027bd28b9dac
         android:background="@drawable/shape_rectangle"
         android:hapticFeedbackEnabled="false"
         android:text="照顧服務需求管理"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/媒合功能"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/個人資料" />
 
@@ -35,15 +42,30 @@
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
         android:layout_marginBottom="50dp"
+=======
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/媒合功能"
+        android:layout_width="298dp"
+        android:layout_height="134dp"
+        android:layout_marginBottom="48dp"
+>>>>>>> 098c514986f435fee3c690f92c0b027bd28b9dac
         android:background="@drawable/shape_rectangle"
         android:text="居家服務媒合"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+<<<<<<< HEAD
+=======
+        app:layout_constraintHorizontal_bias="0.495"
+>>>>>>> 098c514986f435fee3c690f92c0b027bd28b9dac
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/個人資料"
+<<<<<<< HEAD
         android:layout_width="310dp"
         android:layout_height="140dp"
         android:layout_marginStart="48dp"
@@ -51,6 +73,16 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
+=======
+        android:layout_width="311dp"
+        android:layout_height="139dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="73dp"
+>>>>>>> 098c514986f435fee3c690f92c0b027bd28b9dac
         android:background="@drawable/shape_rectangle"
         android:text="@string/個人資料"
         android:textSize="20sp"
