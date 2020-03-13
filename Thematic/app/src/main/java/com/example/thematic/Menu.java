@@ -18,14 +18,12 @@ public class Menu extends AppCompatActivity {
         補助規則分類 = (Button)findViewById(R.id.補助規則分類);
         客製化 = (Button)findViewById(R.id.客製化);
         定位 = (Button)findViewById(R.id.定位);
-        使用紀錄 = (Button)findViewById(R.id.使用紀錄);
         媒合功能 = (Button)findViewById(R.id.媒合功能);
         個人資料 = (Button)findViewById(R.id.個人資料);
 
         Button nextPage1 = (Button)findViewById(R.id.補助規則分類);
         Button nextPage2 = (Button)findViewById(R.id.客製化);
         Button nextPage3 = (Button)findViewById(R.id.定位);
-        Button nextPage4 = (Button)findViewById(R.id.使用紀錄);
         Button nextPage5 = (Button)findViewById(R.id.媒合功能);
         Button nextPage6 = (Button)findViewById(R.id.個人資料);
 /*
