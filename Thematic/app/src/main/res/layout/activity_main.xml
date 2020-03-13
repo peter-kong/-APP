@@ -12,16 +12,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
-<<<<<<< HEAD
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="40dp"
-=======
         android:layout_marginStart="61dp"
         android:layout_marginLeft="61dp"
         android:layout_marginTop="39dp"
         android:background="#A6ECA1"
->>>>>>> 1d493e60abe6e825fbba02da5f2ab692a2dd4285
         android:text="@string/Login"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Passward" />
@@ -31,20 +25,12 @@
         android:layout_width="84dp"
         android:layout_height="46dp"
 
-<<<<<<< HEAD
-        android:layout_marginStart="80dp"
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="80dp"
-        android:layout_marginRight="80dp"
-=======
         android:layout_marginStart="120dp"
         android:layout_marginLeft="120dp"
         android:layout_marginTop="39dp"
         android:layout_marginEnd="54dp"
         android:layout_marginRight="54dp"
         android:background="#A6ECA1"
->>>>>>> 1d493e60abe6e825fbba02da5f2ab692a2dd4285
         android:text="註冊"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -98,16 +84,16 @@
         android:id="@+id/textView4"
         android:layout_width="57dp"
         android:layout_height="44dp"
-        android:layout_marginStart="177dp"
-        android:layout_marginLeft="177dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginEnd="177dp"
-        android:layout_marginRight="177dp"
+        android:layout_marginStart="175dp"
+        android:layout_marginLeft="175dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="179dp"
+        android:layout_marginRight="179dp"
         android:text="登入"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView5"
@@ -115,7 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
         android:layout_marginLeft="52dp"
-        android:layout_marginTop="320dp"
+        android:layout_marginTop="270dp"
         android:text="帳號"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -124,29 +110,15 @@
         android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="235dp"
-        android:layout_marginLeft="235dp"
+        android:layout_marginStart="269dp"
+        android:layout_marginLeft="269dp"
         android:layout_marginTop="25dp"
-        android:layout_marginEnd="65dp"
-        android:layout_marginRight="65dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginRight="54dp"
         android:background="#00FFFFFF"
         android:text="忘記密碼?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button10" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="144dp"
-        android:layout_height="135dp"
-        android:layout_marginStart="130dp"
-        android:layout_marginLeft="130dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="130dp"
-        android:layout_marginRight="130dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/elderly" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
