@@ -10,5 +10,6 @@ public class activity_register1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register1);
-    }
+        getSupportActionBar().hide(); //隱藏標題
+}
 }
