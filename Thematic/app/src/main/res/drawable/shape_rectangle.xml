@@ -3,7 +3,11 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <!-- 顏色 -->
+<<<<<<< HEAD
+    <solid android:color="#FC7DC1DA" />
+=======
     <solid android:color="#83EB8C" />
+>>>>>>> 1d493e60abe6e825fbba02da5f2ab692a2dd4285
     <!-- 文字與邊框的間距 -->
     <padding
         android:top="10dp"
@@ -16,7 +20,11 @@
     <!-- 邊框線 -->
     <stroke
         android:width="2dp"
+<<<<<<< HEAD
+        android:color="#FCADD4EB"
+=======
         android:color="#83EB8C"
+>>>>>>> 1d493e60abe6e825fbba02da5f2ab692a2dd4285
         android:dashGap="0dp"
         android:dashWidth="0dp" />
 </shape>
