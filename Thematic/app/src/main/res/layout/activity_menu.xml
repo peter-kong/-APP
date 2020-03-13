@@ -31,11 +31,7 @@
         android:background="@drawable/shape_rectangle"
         android:hapticFeedbackEnabled="false"
         android:text="長照2.0法規查詢"
-<<<<<<< HEAD
         android:textSize="30dp"
-=======
-        android:textSize="20sp"
->>>>>>> f8cf10210a84c98bdb75b586f7c05117e3fd6eb6
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
