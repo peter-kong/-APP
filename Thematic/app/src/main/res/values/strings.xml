@@ -8,4 +8,18 @@
     <string name="使用紀錄">使用紀錄</string>
     <string name="媒合功能">媒合功能</string>
     <string name="個人資料">個人資料</string>
+    <string name="week7" />
+    <string name="week1" />
+    <string name="week2" />
+    <string name="week3" />
+    <string name="week4" />
+    <string name="week5" />
+    <string name="week6" />
+    <string name="照服員">照服員:</string>
+    <string name="今日照服時間">今日照服時間</string>
+    <string name="照服員名字">Peter</string>
+    <string name="時間">時間:</string>
+    <string name="確切時間">下午 2 點 到 下午 4 點</string>
+    <string name="照護內容">照護內容:</string>
+    <string name="確切照護內容">量血壓|環境清潔</string>
 </resources>

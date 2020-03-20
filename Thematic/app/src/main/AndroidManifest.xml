@@ -10,9 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        <activity android:name=".Inform_Arrange"></activity>
+>>>>>>> ae6a58894560439f00263238404804896b5dd053
 =======
         <activity android:name=".activity_schedule"></activity>
         <activity android:name=".activity_register_choose" />
+>>>>>>> 90dfd2241a0db5ee2d88d9cbcc51f3ca52040d02
         <activity android:name=".activity_register1" />
 >>>>>>> 90dfd2241a0db5ee2d88d9cbcc51f3ca52040d02
         <activity android:name=".People_Selection" />
