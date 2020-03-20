@@ -39,11 +39,12 @@
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText12"
+                android:id="@+id/editText2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPersonName"
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -67,11 +68,12 @@
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText14"
+                android:id="@+id/editText3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPersonName"
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/textView29"
@@ -109,11 +111,11 @@
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText17"
+                android:id="@+id/editText4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/textView32"
