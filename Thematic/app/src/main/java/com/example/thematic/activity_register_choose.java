@@ -1,11 +1,11 @@
 package com.example.thematic;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class activity_register_choose extends AppCompatActivity {
 
@@ -16,7 +16,7 @@ public class activity_register_choose extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_choose);
-
+/*
         button11=(Button) findViewById(R.id.button11);
         Button managerBtn = (Button) findViewById(R.id.button11);
         managerBtn.setOnClickListener(new View.OnClickListener() {
@@ -27,7 +27,7 @@ public class activity_register_choose extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+*/
         button12 = (Button) findViewById(R.id.button12);
         Button userBtn = (Button) findViewById(R.id.button12);
         userBtn.setOnClickListener(new View.OnClickListener() {

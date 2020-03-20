@@ -21,13 +21,13 @@
         android:hapticFeedbackEnabled="false"
         android:text="服務管理維護"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/媒合功能"
+        app:layout_constraintBottom_toTopOf="@+id/排程通知"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/姓名" />
 
     <Button
-        android:id="@+id/媒合功能"
+        android:id="@+id/排程通知"
         android:layout_width="310dp"
         android:layout_height="140dp"
         android:layout_marginStart="48dp"

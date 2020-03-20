@@ -27,7 +27,7 @@
                 android:id="@+id/textView34"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FF9191"
+                android:background="#EEE8E8"
                 android:text="註冊"
                 android:textSize="40dp" />
 
