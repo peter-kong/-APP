@@ -39,11 +39,12 @@
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText12"
+                android:id="@+id/editText2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPersonName"
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -67,11 +68,12 @@
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText14"
+                android:id="@+id/editText3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPersonName"
+                android:textSize="18dp" />
 
             <TextView
                 android:id="@+id/textView29"
@@ -86,6 +88,20 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="number" />
+
+            <TextView
+                android:id="@+id/textView43"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="身分證字號:"
+                android:textSize="25dp" />
+
+            <EditText
+                android:id="@+id/editText10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/textView30"
@@ -109,11 +125,11 @@
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText17"
+                android:id="@+id/editText4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPassword" />
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/textView32"
