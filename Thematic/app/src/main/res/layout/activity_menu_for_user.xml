@@ -17,14 +17,14 @@
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
         android:layout_marginBottom="50dp"
-        android:background="@drawable/shape_rectangle"
+        android:background="@drawable/menu_for_user_shape_rectangle"
         android:hapticFeedbackEnabled="false"
         android:text="服務管理維護"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/媒合功能"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/個人資料" />
+        app:layout_constraintTop_toBottomOf="@+id/姓名" />
 
     <Button
         android:id="@+id/媒合功能"
@@ -35,7 +35,7 @@
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
         android:layout_marginBottom="50dp"
-        android:background="@drawable/shape_rectangle"
+        android:background="@drawable/menu_for_user_shape_rectangle"
         android:text="排程通知123"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -43,7 +43,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/個人資料"
+        android:id="@+id/姓名"
         android:layout_width="310dp"
         android:layout_height="140dp"
         android:layout_marginStart="48dp"
@@ -51,7 +51,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="48dp"
         android:layout_marginRight="48dp"
-        android:background="@drawable/shape_rectangle"
+        android:background="@drawable/menu_for_user_shape_rectangle"
         android:text="個人資料維護"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"

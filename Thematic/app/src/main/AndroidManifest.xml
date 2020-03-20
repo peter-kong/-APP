@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity_schedule"></activity>
+        <activity android:name=".menu_for_manager"></activity>
+        <activity android:name=".activity_schedule" />
         <activity android:name=".activity_register_choose" />
         <activity android:name=".activity_register1" />
         <activity android:name=".People_Selection" />
