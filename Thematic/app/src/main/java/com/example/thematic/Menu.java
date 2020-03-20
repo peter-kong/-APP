@@ -18,21 +18,18 @@ public class Menu extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN); //隱藏狀態
 
         客製化 = (Button)findViewById(R.id.客製化);
-<<<<<<< HEAD
-        媒合功能 = (Button)findViewById(R.id.媒合功能);
-        個人資料 = (Button)findViewById(R.id.姓名);
-
-        Button nextPage2 = (Button)findViewById(R.id.客製化);
-        Button nextPage5 = (Button)findViewById(R.id.媒合功能);
-        Button nextPage6 = (Button)findViewById(R.id.姓名);
-=======
         排程通知 = (Button)findViewById(R.id.排程通知);
         個人資料 = (Button)findViewById(R.id.個人資料);
 
         Button nextPage2 = (Button)findViewById(R.id.客製化);
         Button nextPage5 = (Button)findViewById(R.id.排程通知);
         Button nextPage6 = (Button)findViewById(R.id.個人資料);
->>>>>>> New_Master
+
+        排程通知 = (Button)findViewById(R.id.排程通知);
+        個人資料 = (Button)findViewById(R.id.個人資料);
+
+
+
 /*
         nextPage1.setOnClickListener(new View.OnClickListener() {
             @Override
