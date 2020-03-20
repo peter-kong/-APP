@@ -9,12 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
+
         <activity android:name=".menu_for_manager"></activity>
-=======
+
         <activity android:name=".Test"></activity>
         <activity android:name=".Inform_Arrange" />
->>>>>>> New_Master
+
         <activity android:name=".activity_schedule" />
         <activity android:name=".activity_register_choose" />
         <activity android:name=".activity_register1" />
