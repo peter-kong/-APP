@@ -40,14 +40,7 @@ public class Menu extends AppCompatActivity {
             }
         });
 
-        nextPage2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(Menu.this,客製化.class);
-                startActivity(intent);
-            }
-        });
+
 
         nextPage3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +62,14 @@ public class Menu extends AppCompatActivity {
 
 
 */
+        nextPage2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Menu.this,ServiceCheck.class);
+                startActivity(intent);
+            }
+        });
 
         nextPage5.setOnClickListener(new View.OnClickListener() {
             @Override
