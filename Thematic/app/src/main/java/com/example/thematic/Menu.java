@@ -13,17 +13,23 @@ public class Menu extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_menu_for_user);
+        getSupportActionBar().hide(); //隱藏標題
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN); //隱藏狀態
 
-        補助規則分類 = (Button)findViewById(R.id.補助規則分類);
         客製化 = (Button)findViewById(R.id.客製化);
+<<<<<<< HEAD
         定位 = (Button)findViewById(R.id.定位);
+=======
+>>>>>>> 90dfd2241a0db5ee2d88d9cbcc51f3ca52040d02
         媒合功能 = (Button)findViewById(R.id.媒合功能);
         個人資料 = (Button)findViewById(R.id.個人資料);
 
-        Button nextPage1 = (Button)findViewById(R.id.補助規則分類);
         Button nextPage2 = (Button)findViewById(R.id.客製化);
+<<<<<<< HEAD
         Button nextPage3 = (Button)findViewById(R.id.定位);
+=======
+>>>>>>> 90dfd2241a0db5ee2d88d9cbcc51f3ca52040d02
         Button nextPage5 = (Button)findViewById(R.id.媒合功能);
         Button nextPage6 = (Button)findViewById(R.id.個人資料);
 /*

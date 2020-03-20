@@ -4,10 +4,17 @@
     android:shape="rectangle">
     <!-- 顏色 -->
 <<<<<<< HEAD
+<<<<<<< HEAD
     <solid android:color="#FC7DC1DA" />
 =======
     <solid android:color="#83EB8C" />
 >>>>>>> 1d493e60abe6e825fbba02da5f2ab692a2dd4285
+=======
+    <solid android:color="#46E6AE" />
+
+    <solid android:color="#31F0C6" />
+
+>>>>>>> 90dfd2241a0db5ee2d88d9cbcc51f3ca52040d02
     <!-- 文字與邊框的間距 -->
     <padding
         android:top="10dp"
