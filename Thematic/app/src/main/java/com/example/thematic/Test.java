@@ -1,8 +1,8 @@
 package com.example.thematic;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class Test extends AppCompatActivity {
 

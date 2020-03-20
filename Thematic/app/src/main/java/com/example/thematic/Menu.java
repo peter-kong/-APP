@@ -1,15 +1,15 @@
 package com.example.thematic;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class Menu extends AppCompatActivity {
 
-    private Button 補助規則分類,客製化,定位,使用紀錄,媒合功能,個人資料;
+    private Button 補助規則分類,客製化,定位,使用紀錄,排程通知,個人資料;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,11 +18,11 @@ public class Menu extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN); //隱藏狀態
 
         客製化 = (Button)findViewById(R.id.客製化);
-        媒合功能 = (Button)findViewById(R.id.媒合功能);
+        排程通知 = (Button)findViewById(R.id.排程通知);
         個人資料 = (Button)findViewById(R.id.個人資料);
 
         Button nextPage2 = (Button)findViewById(R.id.客製化);
-        Button nextPage5 = (Button)findViewById(R.id.媒合功能);
+        Button nextPage5 = (Button)findViewById(R.id.排程通知);
         Button nextPage6 = (Button)findViewById(R.id.個人資料);
 /*
         nextPage1.setOnClickListener(new View.OnClickListener() {
@@ -61,15 +61,18 @@ public class Menu extends AppCompatActivity {
             }
         });
 
+
+*/
+
         nextPage5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu.this,媒合功能.class);
+                intent.setClass(Menu.this,Inform_Arrange.class);
                 startActivity(intent);
             }
         });
-*/
+
         nextPage6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
