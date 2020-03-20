@@ -7,41 +7,26 @@
     android:background="#7759FFF3"
     tools:context=".PersonalData">
 
-    <TextView
-        android:id="@+id/textView39"
-        android:layout_width="121dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="145dp"
-        android:layout_marginLeft="145dp"
-        android:layout_marginEnd="145dp"
-        android:layout_marginRight="145dp"
-        android:text="@string/個人資料"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <ScrollView
-        android:id="@+id/scrollView3"
-        android:layout_width="417dp"
-        android:layout_height="760dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:background="#7CBDF1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.523"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#4CB3E4">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView39"
+                android:layout_width="121dp"
+                android:layout_height="38dp"
+                android:layout_marginStart="145dp"
+                android:layout_marginLeft="145dp"
+                android:layout_marginEnd="145dp"
+                android:layout_marginRight="145dp"
+                android:text="@string/個人資料"
+                android:textSize="30dp" />
 
             <ImageButton
                 android:id="@+id/imageButton"
@@ -122,7 +107,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
