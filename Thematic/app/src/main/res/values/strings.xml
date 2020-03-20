@@ -8,6 +8,7 @@
     <string name="使用紀錄">使用紀錄</string>
     <string name="媒合功能">媒合功能</string>
     <string name="個人資料">個人資料</string>
+<<<<<<< HEAD
     <string name="week7" />
     <string name="week1" />
     <string name="week2" />
@@ -22,4 +23,7 @@
     <string name="確切時間">下午 2 點 到 下午 4 點</string>
     <string name="照護內容">照護內容:</string>
     <string name="確切照護內容">量血壓|環境清潔</string>
+=======
+    <string name="個人資料_帳號">帳號:</string>
+>>>>>>> 791a96f7f7ea2ab7d1d626ee1f6b0d5c8337d10c
 </resources>

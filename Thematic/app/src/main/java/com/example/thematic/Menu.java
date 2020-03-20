@@ -23,7 +23,7 @@ public class Menu extends AppCompatActivity {
 =======
 >>>>>>> 90dfd2241a0db5ee2d88d9cbcc51f3ca52040d02
         媒合功能 = (Button)findViewById(R.id.媒合功能);
-        個人資料 = (Button)findViewById(R.id.個人資料);
+        個人資料 = (Button)findViewById(R.id.姓名);
 
         Button nextPage2 = (Button)findViewById(R.id.客製化);
 <<<<<<< HEAD
@@ -31,7 +31,7 @@ public class Menu extends AppCompatActivity {
 =======
 >>>>>>> 90dfd2241a0db5ee2d88d9cbcc51f3ca52040d02
         Button nextPage5 = (Button)findViewById(R.id.媒合功能);
-        Button nextPage6 = (Button)findViewById(R.id.個人資料);
+        Button nextPage6 = (Button)findViewById(R.id.姓名);
 /*
         nextPage1.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7759FFF3"
+    tools:context=".menu_for_manager">
+
+    <Button
+        android:id="@+id/button21"
+        android:layout_width="320dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/menu_for_manager_shape_rectangle"
+        android:text="服務使用者資料維護"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView48" />
+
+    <Button
+        android:id="@+id/button22"
+        android:layout_width="320dp"
+        android:layout_height="110dp"
+        android:layout_marginBottom="37dp"
+        android:background="@drawable/menu_for_manager_shape_rectangle"
+        android:text="照顧需求查詢"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/button23"
+        android:layout_width="320dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="35dp"
+        android:background="@drawable/menu_for_manager_shape_rectangle"
+        android:text="照護服務時間排程"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button21" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Menu"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button20"
+        android:layout_width="320dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginBottom="35dp"
+        android:background="@drawable/menu_for_manager_shape_rectangle"
+        android:text="工作報表維護"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/button22"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button23" />
+</androidx.constraintlayout.widget.ConstraintLayout>
