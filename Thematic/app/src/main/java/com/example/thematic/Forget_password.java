@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class CaregiverSelect extends AppCompatActivity {
+public class Forget_password extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caregiver_select);
+        getSupportActionBar().hide(); //隱藏標題
+        setContentView(R.layout.activity_main_forget_password);
     }
 }

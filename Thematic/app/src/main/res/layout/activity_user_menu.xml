@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7759FFF3"
-    tools:context=".Menu">
+    tools:context=".Menu_for_user">
 
     <Button
-        android:id="@+id/客製化"
+        android:id="@+id/服務管理維護"
         android:layout_width="310dp"
         android:layout_height="140dp"
         android:layout_marginStart="48dp"
@@ -24,7 +24,7 @@
         app:layout_constraintBottom_toTopOf="@+id/排程通知"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/個人資料" />
+        app:layout_constraintTop_toBottomOf="@+id/姓名" />
 
     <Button
         android:id="@+id/排程通知"
@@ -43,7 +43,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/個人資料"
+        android:id="@+id/姓名"
         android:layout_width="310dp"
         android:layout_height="140dp"
         android:layout_marginStart="48dp"

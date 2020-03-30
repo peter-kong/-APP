@@ -1,14 +1,15 @@
 package com.example.thematic;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Test extends AppCompatActivity {
+import android.os.Bundle;
+
+public class Register extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
-    }
+        setContentView(R.layout.activity_main_register);
+        getSupportActionBar().hide(); //隱藏標題
+}
 }

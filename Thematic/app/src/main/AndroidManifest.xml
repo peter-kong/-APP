@@ -9,18 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CaregiverSelect"></activity>
-        <activity android:name=".menu_for_manager" />
-        <activity android:name=".Test" />
-        <activity android:name=".Inform_Arrange" />
-        <activity android:name=".activity_schedule" />
-        <activity android:name=".activity_register_choose" />
-        <activity android:name=".activity_register1" />
-        <activity android:name=".People_Selection" />
-        <activity android:name=".ServiceCheck" />
-        <activity android:name=".PersonalData" />
-        <activity android:name=".Menu" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Demand"></activity>
+        <activity android:name=".Forget_password" />
+        <activity android:name=".Caregiver_inquire" />
+        <activity android:name=".Service_user_data" />
+        <activity android:name=".Work_report" />
+        <activity android:name=".Caregiver_selection" />
+        <activity android:name=".Menu_for_manager" />
+        <activity android:name=".Inform_arrange" />
+        <activity android:name=".Schedule" />
+        <activity android:name=".Register" />
+        <activity android:name=".Service_check" />
+        <activity android:name=".Personal_data" />
+        <activity android:name=".Menu_for_user" />
+        <activity android:name=".Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

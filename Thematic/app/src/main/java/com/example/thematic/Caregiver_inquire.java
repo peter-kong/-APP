@@ -4,11 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class People_Selection extends AppCompatActivity {
+public class Caregiver_inquire extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_people__selection);
+        getSupportActionBar().hide(); //隱藏標題
+        setContentView(R.layout.activity_manager_caregiver_inquire);
     }
 }
