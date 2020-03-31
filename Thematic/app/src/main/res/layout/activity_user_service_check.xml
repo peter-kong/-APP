@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#7759FFF3"
+    tools:context=".Service_check">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="145dp"
+        android:layout_marginLeft="145dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginRight="145dp"
+        android:text="勾選所需服務"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="410dp"
+        android:layout_height="634dp"
+        android:layout_marginTop="14dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
+
+        <Button
+            android:id="@+id/照顧服務"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/照顧管理及政策鼓勵服務"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="照顧服務B"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/照顧管理及政策鼓勵服務"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-1000dp"
+            android:text="照顧管理及政策鼓勵服務A"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/專業服務"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/照顧服務"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="專業服務C"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/交通接送服務"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/專業服務"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="交通接送服務D"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/輔具服務"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/交通接送服務"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="輔具服務E"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/居家無障礙環境"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/輔具服務"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="居家無障礙環境F"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/喘息服務"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/居家無障礙環境"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:text="喘息服務G"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/relativeLayout"
+        app:srcCompat="@drawable/policy" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginLeft="117dp"
+        android:layout_marginTop="53dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15"
+        app:srcCompat="@drawable/caregiver" />
+
+    <ImageView
+        android:id="@+id/imageView15"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginLeft="117dp"
+        android:layout_marginTop="53dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView13"
+        app:srcCompat="@drawable/house" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="97dp"
+        android:layout_marginLeft="97dp"
+        android:layout_marginTop="53dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView14"
+        app:srcCompat="@drawable/van" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="89dp"
+        android:layout_marginLeft="89dp"
+        android:layout_marginTop="53dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView24"
+        app:srcCompat="@drawable/wheelchair2" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginLeft="117dp"
+        android:layout_marginTop="53dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView21"
+        app:srcCompat="@drawable/exhausted" />
+
+    <ImageView
+        android:id="@+id/imageView24"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="117dp"
+        android:layout_marginLeft="117dp"
+        android:layout_marginTop="53dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView16"
+        app:srcCompat="@drawable/walkingframe" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,26 +7,31 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class menu_for_manager extends AppCompatActivity {
+public class Caregiver_selection extends AppCompatActivity {
 
-    private Button button22;
+    private Button button2 ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu_for_manager);
+        getSupportActionBar().hide(); //隱藏標題
+        setContentView(R.layout.activity_manager_caregiver_selection);
 
+        button2 = (Button)findViewById(R.id.button2);
 
-        button22 = (Button) findViewById(R.id.button22);
+        Button NextpageBtn = (Button) findViewById(R.id.button2);
 
-        Button registerBtn = (Button) findViewById(R.id.button22);
-        registerBtn.setOnClickListener(new View.OnClickListener() {
+        NextpageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(menu_for_manager.this,CaregiverSelect.class);
+                intent.setClass(Caregiver_selection.this,Service_user_data .class);
                 startActivity(intent);
             }
         });
     }
+
+
+
 
 }

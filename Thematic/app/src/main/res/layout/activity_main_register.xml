@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_register1">
+    tools:context=".Register">
 
     <ScrollView
         android:id="@+id/scrollView2"
@@ -160,13 +160,13 @@
                 android:inputType="number" />
 
             <Button
-                android:id="@+id/button13"
+                android:id="@+id/register_confirm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="確定" />
 
             <Button
-                android:id="@+id/button16"
+                android:id="@+id/register_reset"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="重填" />

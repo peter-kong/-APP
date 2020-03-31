@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7759FFF3"
-    tools:context=".MainActivity">
+    tools:context=".Main">
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/main_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
 
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/Passward" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/main_register"
         android:layout_width="84dp"
         android:layout_height="46dp"
 
@@ -34,7 +34,7 @@
         android:text="註冊"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/main_login"
         app:layout_constraintTop_toBottomOf="@+id/Passward" />
 
     <EditText
@@ -114,7 +114,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/main_forget_password"
         android:layout_width="81dp"
         android:layout_height="47dp"
         android:layout_marginStart="240dp"
@@ -127,7 +127,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button10" />
+        app:layout_constraintTop_toBottomOf="@+id/main_register" />
 
     <ImageView
         android:id="@+id/imageView7"
@@ -157,5 +157,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button26"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="82dp"
+        android:layout_marginRight="82dp"
+        android:layout_marginBottom="16dp"
+        android:text="manager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

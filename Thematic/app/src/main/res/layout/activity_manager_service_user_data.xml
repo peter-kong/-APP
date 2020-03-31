@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7759FFF3"
-    tools:context=".PersonalData">
+    tools:context=".Service_user_data">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#4CB3E4">
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,30 +19,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView39"
-                android:layout_width="121dp"
-                android:layout_height="38dp"
-                android:layout_marginStart="145dp"
-                android:layout_marginLeft="145dp"
-                android:layout_marginEnd="145dp"
-                android:layout_marginRight="145dp"
-                android:text="@string/個人資料"
-                android:textSize="30sp" />
-
-            <ImageButton
-                android:id="@+id/imageButton"
+                android:id="@+id/textView23"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:srcCompat="@mipmap/user" />
-
-            <TextView
-                android:id="@+id/基本資料"
-                android:layout_width="match_parent"
-                android:layout_height="43dp"
-                android:background="#B9254BBE"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="基本資料"
-                android:textSize="30sp" />
+                android:text="個人資料"
+                android:textSize="40dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -49,28 +32,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/帳號"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="帳號:"
-                    android:textSize="30dp" />
-
-                <TextView
-                    android:id="@string/個人資料_帳號"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="XXXXXXX"
-                    android:textSize="30dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/個人資料"
+                    android:id="@+id/姓名"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="姓名:"
@@ -113,7 +75,7 @@
                 <TextView
                     android:id="@+id/生日"
                     android:layout_width="wrap_content"
-                    android:layout_height="48dp"
+                    android:layout_height="match_parent"
                     android:text="生日:"
                     android:textSize="30dp" />
 
@@ -123,6 +85,7 @@
                     android:layout_height="wrap_content"
                     android:text="XXXX/XX/XX"
                     android:textSize="30dp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -191,26 +154,6 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/個人資料_電子信箱"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="電子信箱:"
-                    android:textSize="30dp" />
-
-                <TextView
-                    android:id="@+id/textView63"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="XXX@XXXXX"
-                    android:textSize="30dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
                     android:id="@+id/住址"
                     android:layout_width="wrap_content"
                     android:layout_height="43dp"
@@ -230,31 +173,32 @@
                 android:id="@+id/備註"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="備註"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/健康狀況"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:background="#B9254BBE"
                 android:gravity="center"
-                android:text="健康狀況"
+                android:text="備註(特殊要求)"
                 android:textSize="30dp" />
 
             <TextView
-                android:id="@+id/吸菸"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="吸菸"
-                android:textSize="30dp" />
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="如打掃環境...."
+                android:textColor="#B4978484" />
 
             <TextView
-                android:id="@+id/飲酒"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="飲酒"
-                android:textSize="30dp" />
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="......." />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:gravity="center"
+                android:text="......." />
 
         </LinearLayout>
     </ScrollView>
