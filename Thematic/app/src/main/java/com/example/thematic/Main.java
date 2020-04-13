@@ -13,6 +13,7 @@ public class Main extends AppCompatActivity {
     private Button button10;
     private Button button26;
     private Button main_forget_password;
+    private Button test;
 
 
     @Override
@@ -63,6 +64,17 @@ public class Main extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(Main.this, Forget_password.class);
+                startActivity(intent);
+            }
+        });
+
+        test = (Button)findViewById(R.id.test);
+        Button testBtn = (Button)findViewById(R.id.test);
+        testBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Main.this, Test_activity.class);
                 startActivity(intent);
             }
         });
