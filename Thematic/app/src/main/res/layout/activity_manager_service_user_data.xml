@@ -19,11 +19,11 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/textView22"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="個人資料"
+                android:text="個案資料"
                 android:textSize="40dp" />
 
             <LinearLayout
@@ -123,7 +123,7 @@
                 <TextView
                     android:id="@+id/個人資料_手機"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:text="09XXXXXXXX"
                     android:textSize="30dp" />
             </LinearLayout>
@@ -199,6 +199,47 @@
                 android:layout_height="70dp"
                 android:gravity="center"
                 android:text="......." />
+
+            <TextView
+                android:id="@+id/備註2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#B9254BBE"
+                android:gravity="center"
+                android:text="照護員"
+                android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="09:00~10:00"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="XXX"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="13:00~14:00"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="XXX"
+                android:textSize="25sp" />
 
         </LinearLayout>
     </ScrollView>

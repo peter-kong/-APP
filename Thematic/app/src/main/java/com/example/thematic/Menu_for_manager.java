@@ -41,7 +41,7 @@ public class Menu_for_manager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this, Schedule.class);
+                intent.setClass(Menu_for_manager.this, Schedule_search.class);
                 startActivity(intent);
             }
         });
@@ -61,7 +61,7 @@ public class Menu_for_manager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this, Caregiver_selection.class);
+                intent.setClass(Menu_for_manager.this, User_data_date.class);
                 startActivity(intent);
             }
         });
