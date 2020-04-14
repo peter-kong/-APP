@@ -6,12 +6,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-public class Test_activity extends AppCompatActivity {
+public class test extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_activity);
+        setContentView(R.layout.activity_test);
         final TextView text_view = (TextView) findViewById(R.id.DBtest);
 
         new Thread(new Runnable(){
@@ -30,6 +30,4 @@ public class Test_activity extends AppCompatActivity {
             }
         }).start();
     }
-
 }
-

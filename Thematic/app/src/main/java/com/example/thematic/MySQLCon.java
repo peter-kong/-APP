@@ -11,7 +11,7 @@ import java.sql.Statement;
 public class MySQLCon {
 
     // 資料庫定義
-    String mysql_ip = "134.208.41.237/24";
+    String mysql_ip = "192.168.0.180";
     int mysql_port = 3306; // Port 預設為 3306
     String db_name = "longcare";
     String url = "jdbc:mysql://"+mysql_ip+":"+mysql_port+"/"+db_name;
@@ -47,8 +47,8 @@ public class MySQLCon {
 
             while (rs.next())
             {
-                String id = rs.getString("id");
-                String name = rs.getString("name");
+                String id = rs.getString("MID");
+                String name = rs.getString("Mname");
                 data += id + ", " + name + "\n";
             }
             st.close();
