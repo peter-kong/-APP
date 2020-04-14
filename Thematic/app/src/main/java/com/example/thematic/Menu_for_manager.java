@@ -13,6 +13,7 @@ public class Menu_for_manager extends AppCompatActivity {
     private Button 照護服務時間排程;
     private Button 工作報表維護;
     private Button 服務使用者資料維護;
+    private Button 輸入個案需求;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,23 +26,24 @@ public class Menu_for_manager extends AppCompatActivity {
         照護服務時間排程 = (Button) findViewById(R.id.照護服務時間排程);
         工作報表維護 = (Button)findViewById(R.id.工作報表維護);
         服務使用者資料維護 =(Button)findViewById(R.id.服務使用者資料維護);
+        輸入個案需求 =(Button)findViewById(R.id.輸入個案需求) ;
 
-        /*Button NextpageBtn1 = (Button) findViewById(R.id.照顧需求查詢);
+        Button NextpageBtn1 = (Button) findViewById(R.id.照顧需求查詢);
         NextpageBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this, Caregiver_select.class);
+                intent.setClass(Menu_for_manager.this,request.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
         Button NextpageBtn2 = (Button) findViewById(R.id.照護服務時間排程);
         NextpageBtn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this, Schedule_search.class);
+                intent.setClass(Menu_for_manager.this, Schedule.class);
                 startActivity(intent);
             }
         });
@@ -66,7 +68,22 @@ public class Menu_for_manager extends AppCompatActivity {
             }
         });
 
+        Button NextpageBtn5 = (Button) findViewById(R.id.輸入個案需求);
+        NextpageBtn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Menu_for_manager.this, Service_check.class);
+                startActivity(intent);
+            }
+        });
+
+
+
 
     }
 
+
 }
+
+

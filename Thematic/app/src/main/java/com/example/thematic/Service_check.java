@@ -10,6 +10,6 @@ public class Service_check extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide(); //隱藏標題
-        setContentView(R.layout.activity_user_service_check);
+        setContentView(R.layout.activity_manager_service_check);
     }
 }

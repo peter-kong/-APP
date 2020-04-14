@@ -7,22 +7,13 @@
     android:background="#7759FFF3"
     tools:context=".Inform_arrange">
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="107dp"
-        android:layout_height="92dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/wheelchair" />
-
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="600dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -39,7 +30,7 @@
             <TextView
                 android:id="@+id/textView35"
                 android:layout_width="194dp"
-                android:layout_height="63dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="40dp"
                 android:layout_marginEnd="80dp"
@@ -61,7 +52,7 @@
                 android:layout_height="51dp"
                 android:gravity="center"
                 android:text="@string/確切時間"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView51"
@@ -88,42 +79,44 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/textView62"
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:gravity="center"
-                android:text="@string/確切照護內容"
-                android:textSize="30sp" />
-
-            <TextView
                 android:id="@+id/textView63"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView47"
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
+                android:gravity="center"
+                android:text="環境打掃"
                 android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/textView48"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
+                android:gravity="center"
+                android:text="協助上下樓"
                 android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/textView49"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
+                android:gravity="center"
+                android:text="倒垃圾"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/textView47"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:gravity="center"
+                android:text="量血壓"
                 android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/textView53"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
-                android:gravity="center" />
+                android:gravity="center"
+                android:text="心理關懷"
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/textView54"
@@ -135,8 +128,7 @@
                 android:id="@+id/textView55"
                 android:layout_width="301dp"
                 android:layout_height="38dp"
-                android:gravity="center"
-                android:text="TextView" />
+                android:gravity="center" />
 
         </LinearLayout>
     </ScrollView>

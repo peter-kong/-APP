@@ -121,35 +121,30 @@
                 android:id="@+id/checkBox"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:text="CheckBox"
                 android:textSize="24sp" />
 
             <CheckBox
                 android:id="@+id/checkBox2"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:text="CheckBox"
                 android:textSize="24sp" />
 
             <CheckBox
                 android:id="@+id/checkBox3"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:text="CheckBox"
                 android:textSize="24sp" />
 
             <CheckBox
                 android:id="@+id/checkBox4"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:text="CheckBox"
                 android:textSize="24sp" />
 
             <CheckBox
                 android:id="@+id/checkBox5"
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
-                android:text="CheckBox"
                 android:textSize="24sp" />
 
             <TextView
@@ -164,7 +159,6 @@
                 android:id="@+id/textView38"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView"
                 android:textSize="25sp" />
 
             <TextView
@@ -203,7 +197,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
                 android:layout_weight="1"
-                android:text="CheckBox"
                 android:textSize="24sp" />
 
             <CheckBox
@@ -211,7 +204,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
                 android:layout_weight="1"
-                android:text="CheckBox"
                 android:textSize="24sp" />
 
             <CheckBox
@@ -219,7 +211,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="50sp"
                 android:layout_weight="1"
-                android:text="CheckBox"
                 android:textSize="24sp" />
 
         </LinearLayout>

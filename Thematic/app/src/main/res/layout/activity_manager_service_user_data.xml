@@ -24,7 +24,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="個案資料"
-                android:textSize="40dp" />
+                android:textSize="30dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -38,12 +38,11 @@
                     android:text="姓名:"
                     android:textSize="30dp" />
 
-                <TextView
-                    android:id="@+id/個人資料_姓名"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="XXX"
-                    android:textSize="30dp" />
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_weight="1" />
 
             </LinearLayout>
 

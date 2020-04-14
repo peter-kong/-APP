@@ -28,6 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#EEE8E8"
+                android:gravity="center"
                 android:text="註冊"
                 android:textSize="40dp" />
 
@@ -43,8 +44,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:textSize="18dp" />
+                android:inputType="textEmailAddress" />
 
             <TextView
                 android:id="@+id/textView27"
@@ -97,11 +97,11 @@
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText10"
+                android:id="@+id/editText6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPassword" />
 
             <TextView
                 android:id="@+id/textView30"

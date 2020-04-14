@@ -24,7 +24,6 @@ public class Main extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN); //隱藏狀態
 
         button2 = (Button) findViewById(R.id.main_login);
-
         Button userBtn = (Button) findViewById(R.id.main_login);
         userBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,8 +33,8 @@ public class Main extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        button10 = (Button) findViewById(R.id.main_register);
 
+        button10 = (Button) findViewById(R.id.main_register);
         Button registerBtn = (Button) findViewById(R.id.main_register);
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override

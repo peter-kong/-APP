@@ -7,25 +7,24 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Schedule extends AppCompatActivity {
-
-    private Button 排程結果查詢;
+public class Caregive_and_case extends AppCompatActivity {
+    private Button button11;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manager_schedule);
-        getSupportActionBar().hide(); //隱藏標題
+        setContentView(R.layout.activity_manager_caregive_and_case);
 
-        Button nextBtn = (Button) findViewById(R.id.排程結果查詢);
-
-        nextBtn.setOnClickListener(new View.OnClickListener() {
+        button11 = (Button) findViewById(R.id.button11);
+        Button userBtn = (Button) findViewById(R.id.button11);
+        userBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Schedule.this, Schedule_search1.class);
+                intent.setClass(Caregive_and_case.this, Service_user_data.class);
                 startActivity(intent);
             }
         });
+
     }
 }

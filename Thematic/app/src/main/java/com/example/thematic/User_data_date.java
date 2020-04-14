@@ -25,7 +25,7 @@ public class User_data_date extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(User_data_date.this,Service_user_data .class);
+                intent.setClass(User_data_date.this,Caregive_and_case .class);
                 startActivity(intent);
             }
         });

@@ -9,23 +9,29 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView24"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="157dp"
+                android:layout_height="74dp"
                 android:layout_marginStart="144dp"
                 android:layout_marginLeft="144dp"
                 android:layout_marginTop="42dp"
                 android:layout_marginEnd="144dp"
                 android:layout_marginRight="144dp"
-                android:text="時間選擇"
+                android:gravity="center"
+                android:text="服務使用者資料維護"
                 android:textSize="30dp" />
 
             <CalendarView
@@ -33,14 +39,12 @@
                 android:layout_width="359dp"
                 android:layout_height="311dp"
                 android:layout_marginStart="26dp"
-                android:layout_marginLeft="26dp"
                 android:layout_marginTop="70dp"
-                android:layout_marginEnd="26dp"
-                android:layout_marginRight="26dp" />
+                android:layout_marginEnd="26dp" />
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="wrap_content"
+                android:layout_width="65dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="161dp"
                 android:layout_marginLeft="161dp"

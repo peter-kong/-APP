@@ -7,23 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Schedule extends AppCompatActivity {
+public class Schedule_search1 extends AppCompatActivity {
 
-    private Button 排程結果查詢;
+    private Button schedule_morning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manager_schedule);
         getSupportActionBar().hide(); //隱藏標題
+        setContentView(R.layout.activity_manager_schedule_search1);
 
-        Button nextBtn = (Button) findViewById(R.id.排程結果查詢);
-
+        schedule_morning = (Button) findViewById(R.id.schedule_morning);
+        Button nextBtn = (Button) findViewById(R.id.schedule_morning);
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Schedule.this, Schedule_search1.class);
+                intent.setClass(Schedule_search1.this, Schedule_search2.class);
                 startActivity(intent);
             }
         });
