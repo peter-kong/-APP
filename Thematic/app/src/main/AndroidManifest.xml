@@ -11,12 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
         <activity android:name=".Schedule_search2"></activity>
         <activity android:name=".Caregive_and_case" />
-=======
+
         <activity android:name=".test"></activity>
->>>>>>> 2e19e73215f25468da18e37cfce8a68985901244
         <activity android:name=".Schedule" />
         <activity android:name=".request" />
         <activity android:name=".Forget_password" />

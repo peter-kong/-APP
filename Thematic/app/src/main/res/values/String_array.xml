@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Min">
+        <item>0</item>
+        <item>30</item>
+    </string-array>
+
+    <string-array name="test">
+        <item></item>
+        <item></item>
+        <item></item>
+    </string-array>
+</resources>
