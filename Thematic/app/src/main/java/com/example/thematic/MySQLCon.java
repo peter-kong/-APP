@@ -1,5 +1,6 @@
 package com.example.mysql_connect;
 
+
 import android.util.Log;
 
 import java.sql.Connection;
@@ -10,6 +11,7 @@ import java.sql.Statement;
 
 public class MySQLCon {
 
+    //final String[] user_data = getResources().getStringArray(R.array.user_data);
     // 資料庫定義
     String mysql_ip = "192.168.0.180";
     int mysql_port = 3306; // Port 預設為 3306
@@ -58,5 +60,25 @@ public class MySQLCon {
         return data;
     }
 
+    //寫入註冊的資料
+    public void insertRegisterData(String UName,String UAccount,String UPassword,
+                           String UIDNumber,String UAddress,String Uphone,
+                           String UEmail,String UMedHistory,String ULevel,
+                           String UBirth) {
+
+        try {
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            String sql = "INSERT INTO `user` (`UName`,`UAccount`,`UPassword`,`UIDNumber`,`UAddress`,`UPhone`,`UMail`,`UMedHistory`,`ULevel`,`UBirth`)VALUES ('" + UName + "','" + UAccount + "','" + UPassword + "','" + UIDNumber + "','" + UAddress + "','" + Uphone + "','" + UEmail + "','" + UMedHistory + "','" + ULevel + "','" + UBirth + "')";
+
+            Statement st = con.createStatement();
+            st.executeUpdate(sql);
+            st.close();
+            Log.v("DB", "寫入資料完成：");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            Log.e("DB", "寫入資料失敗");
+            Log.e("DB", e.toString());
+        }
+    }
 
 }
