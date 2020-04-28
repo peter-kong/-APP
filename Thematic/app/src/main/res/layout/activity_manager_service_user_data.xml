@@ -169,37 +169,6 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/備註"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#B9254BBE"
-                android:gravity="center"
-                android:text="備註(特殊要求)"
-                android:textSize="30dp" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="center"
-                android:text="如打掃環境...."
-                android:textColor="#B4978484" />
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="center"
-                android:text="......." />
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:gravity="center"
-                android:text="......." />
-
-            <TextView
                 android:id="@+id/備註2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

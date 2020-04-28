@@ -7,25 +7,28 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Schedule extends AppCompatActivity {
+import com.example.thematic.Main;
+import com.example.thematic.R;
+import com.example.thematic.Request2;
+import com.example.thematic.test;
 
-    private Button 排程結果查詢;
+public class Request1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manager_schedule);
+        setContentView(R.layout.activity_manager_request1);
         getSupportActionBar().hide(); //隱藏標題
 
-        Button nextBtn = (Button) findViewById(R.id.排程結果查詢);
-
-        nextBtn.setOnClickListener(new View.OnClickListener() {
+        Button requestBtn = (Button)findViewById(R.id.button6);
+        requestBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Schedule.this, Schedule_search1.class);
+                intent.setClass(Request1.this, Request2.class);
                 startActivity(intent);
             }
         });
+
     }
 }

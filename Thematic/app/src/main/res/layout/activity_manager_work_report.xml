@@ -40,17 +40,17 @@
                     android:text="個案"
                     android:textSize="24dp" />
 
-                <Button
-                    android:id="@+id/button3"
+                <Spinner
+                    android:id="@+id/spinner5"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:text="XXX" />
+                    android:layout_height="20dp"
+                    android:layout_weight="1" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="49sp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -61,17 +61,18 @@
                     android:text="日期"
                     android:textSize="24sp" />
 
-                <Button
-                    android:layout_width="230dp"
-                    android:layout_height="match_parent"
-                    android:text="XXXX/XX/XX" />
+                <Spinner
+                    android:id="@+id/spinner6"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_weight="1" />
             </LinearLayout>
 
             <TextView
                 android:id="@+id/textView40"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20sp"
                 android:background="#B9254BBE"
                 android:gravity="center"
                 android:text="工作內容"

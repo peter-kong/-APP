@@ -4,12 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class request extends AppCompatActivity {
+public class Request2 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manager_request);
+        setContentView(R.layout.activity_manager_request2);
         getSupportActionBar().hide(); //隱藏標題
     }
 }

@@ -30,17 +30,6 @@
                     android:text="個人資料"
                     android:textSize="40dp" />
 
-                <Button
-                    android:id="@+id/button7"
-                    android:layout_width="107dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="0dp"
-                    android:autoText="false"
-                    android:background="#00FFFFFF"
-                    android:text="修改資料"
-                    android:textSize="20sp" />
-
             </LinearLayout>
 
             <ImageButton

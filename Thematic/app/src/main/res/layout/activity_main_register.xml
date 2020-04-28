@@ -53,6 +53,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="請輸入信箱"
                 android:inputType="textEmailAddress" />
 
             <TextView
@@ -103,18 +104,19 @@
 
                     <RadioButton
                         android:id="@+id/radioButton"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
+                        android:layout_width="75dp"
+                        android:layout_height="match_parent"
                         android:layout_marginLeft="30dp"
                         android:text="男"
-                        android:textSize="18sp" />
+                        android:textSize="25sp" />
 
                     <RadioButton
                         android:id="@+id/radioButton2"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
                         android:text="女"
-                        android:textSize="18sp" />
+                        android:textSize="25sp" />
                 </RadioGroup>
 
             </LinearLayout>
@@ -127,10 +129,12 @@
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText11"
+                android:id="@+id/editText9"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:freezesText="true"
+                android:hint="ex:1990.2.20"
                 android:inputType="date" />
 
             <TextView
@@ -187,6 +191,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="可與帳號同"
                 android:inputType="textEmailAddress" />
 
             <TextView
@@ -209,7 +214,7 @@
                 android:layout_height="wrap_content"
                 android:background="#B9254BBE"
                 android:gravity="center"
-                android:text="病史"
+                android:text="健康史"
                 android:textSize="25sp" />
 
             <EditText
@@ -217,8 +222,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:hint="如:吸菸、喝酒等"
                 android:inputType="textPersonName"
+                android:singleLine="false"
                 android:textSize="25sp" />
+
+            <EditText
+                android:id="@+id/editText8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/editText11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/register_confirm"

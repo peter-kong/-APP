@@ -5,11 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#7759FFF3"
-    tools:context=".Menu_for_user">
+    tools:context=".Menu_for_caregiver">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,43 +22,42 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/textView71"
                 android:layout_width="100dp"
                 android:layout_height="50dp"
-                android:layout_marginStart="176dp"
                 android:layout_marginLeft="176dp"
                 android:layout_marginTop="50dp"
-                android:layout_marginEnd="176dp"
                 android:layout_marginRight="176dp"
                 android:gravity="center"
                 android:text="Menu"
                 android:textSize="36sp" />
 
             <Button
-                android:id="@+id/個人資料維護"
-                android:layout_width="310dp"
+                android:id="@+id/照顧需求查詢_care"
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginStart="48dp"
                 android:layout_marginLeft="48dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginEnd="48dp"
                 android:layout_marginRight="48dp"
-                android:background="@drawable/menu_for_user_shape_rectangle"
-                android:text="個人資料維護"
+                android:background="@drawable/menu_for_manager_shape_rectangle"
+                android:text="照顧需求查詢"
                 android:textSize="20sp" />
 
             <Button
-                android:id="@+id/排程通知"
-                android:layout_width="310dp"
+                android:id="@+id/工作報表維護_care"
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginStart="48dp"
                 android:layout_marginLeft="48dp"
                 android:layout_marginTop="80dp"
                 android:layout_marginEnd="48dp"
                 android:layout_marginRight="48dp"
-                android:layout_marginBottom="50dp"
-                android:background="@drawable/menu_for_user_shape_rectangle"
-                android:text="排程通知"
-                android:textSize="20sp" />
+                android:background="@drawable/menu_for_manager_shape_rectangle"
+                android:text="工作報表維護"
+                android:textSize="20sp" />/>
+
 
         </LinearLayout>
     </ScrollView>

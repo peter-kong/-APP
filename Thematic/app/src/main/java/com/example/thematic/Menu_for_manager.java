@@ -9,11 +9,6 @@ import android.widget.Button;
 
 public class Menu_for_manager extends AppCompatActivity {
 
-    private Button 照顧需求查詢;
-    private Button 照護服務時間排程;
-    private Button 工作報表維護;
-    private Button 服務使用者資料維護;
-    private Button 輸入個案需求;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -22,18 +17,12 @@ public class Menu_for_manager extends AppCompatActivity {
         setContentView(R.layout.activity_manager_menu);
         getSupportActionBar().hide(); //隱藏標題
 
-        照顧需求查詢 = (Button) findViewById(R.id.照顧需求查詢);
-        照護服務時間排程 = (Button) findViewById(R.id.照護服務時間排程);
-        工作報表維護 = (Button)findViewById(R.id.工作報表維護);
-        服務使用者資料維護 =(Button)findViewById(R.id.服務使用者資料維護);
-        輸入個案需求 =(Button)findViewById(R.id.輸入個案需求) ;
-
         Button NextpageBtn1 = (Button) findViewById(R.id.照顧需求查詢);
         NextpageBtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this,request.class);
+                intent.setClass(Menu_for_manager.this, Request1.class);
                 startActivity(intent);
             }
         });
@@ -43,7 +32,7 @@ public class Menu_for_manager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this, Schedule.class);
+                intent.setClass(Menu_for_manager.this, Schedule_search1.class);
                 startActivity(intent);
             }
         });
@@ -68,7 +57,7 @@ public class Menu_for_manager extends AppCompatActivity {
             }
         });
 
-        Button NextpageBtn5 = (Button) findViewById(R.id.輸入個案需求);
+        /*Button NextpageBtn5 = (Button) findViewById(R.id.輸入個案需求);
         NextpageBtn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -76,7 +65,7 @@ public class Menu_for_manager extends AppCompatActivity {
                 intent.setClass(Menu_for_manager.this, Service_check.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
 

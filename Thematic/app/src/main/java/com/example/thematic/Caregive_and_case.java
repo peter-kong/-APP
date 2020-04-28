@@ -8,14 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class Caregive_and_case extends AppCompatActivity {
-    private Button button11;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager_caregive_and_case);
+        getSupportActionBar().hide(); //隱藏標題
 
-        button11 = (Button) findViewById(R.id.button11);
         Button userBtn = (Button) findViewById(R.id.button11);
         userBtn.setOnClickListener(new View.OnClickListener() {
             @Override

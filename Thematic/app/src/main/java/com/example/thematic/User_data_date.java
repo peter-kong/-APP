@@ -9,15 +9,11 @@ import android.widget.Button;
 
 public class User_data_date extends AppCompatActivity {
 
-    private Button button2 ;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide(); //隱藏標題
         setContentView(R.layout.activity_manager_user_data_date);
-
-        button2 = (Button)findViewById(R.id.button2);
 
         Button NextpageBtn = (Button) findViewById(R.id.button2);
 

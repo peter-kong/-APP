@@ -9,11 +9,6 @@ import android.widget.Button;
 
 public class Main extends AppCompatActivity {
 
-    private Button button2;
-    private Button button10;
-    private Button button26;
-    private Button main_forget_password;
-    private Button test;
 
 
     @Override
@@ -23,18 +18,16 @@ public class Main extends AppCompatActivity {
         getSupportActionBar().hide(); //隱藏標題
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN); //隱藏狀態
 
-        button2 = (Button) findViewById(R.id.main_login);
         Button userBtn = (Button) findViewById(R.id.main_login);
         userBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Main.this, Menu_for_user.class);
+                intent.setClass(Main.this,Menu_for_user.class);
                 startActivity(intent);
             }
         });
 
-        button10 = (Button) findViewById(R.id.main_register);
         Button registerBtn = (Button) findViewById(R.id.main_register);
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,7 +38,6 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        button26 = (Button)findViewById(R.id.button26);
         Button managerBtn = (Button) findViewById(R.id.button26);
         managerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,7 +48,6 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        main_forget_password = (Button)findViewById(R.id.main_forget_password);
         Button forgetBtn = (Button)findViewById(R.id.main_forget_password);
         forgetBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,13 +58,22 @@ public class Main extends AppCompatActivity {
             }
         });
 
-        test = (Button)findViewById(R.id.test);
         Button testBtn = (Button)findViewById(R.id.test);
         testBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(Main.this, test.class);
+                startActivity(intent);
+            }
+        });
+
+        Button caregiverBtn = (Button)findViewById(R.id.button4);
+        caregiverBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Main.this,Menu_for_caregiver.class);
                 startActivity(intent);
             }
         });
