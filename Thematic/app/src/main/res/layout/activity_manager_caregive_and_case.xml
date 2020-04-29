@@ -26,149 +26,56 @@
                 android:text="服務使用者資料維護"
                 android:textSize="30sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="150dp"
                 android:layout_height="match_parent"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="30sp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:text="個案名字"
+                android:textSize="24sp" />
 
-                <TextView
-                    android:id="@+id/textView19"
-                    android:layout_width="150dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="個案名字"
-                    android:textSize="24sp" />
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:text="Button" />
 
-                <TextView
-                    android:id="@+id/textView18"
-                    android:layout_width="150dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="照服員名字"
-                    android:textSize="24sp" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/button11"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:text="Button" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:text="Button" />
 
-                <Button
-                    android:id="@+id/button11"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
+            <Button
+                android:id="@+id/button13"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:text="Button" />
 
-                <Spinner
-                    android:id="@+id/spinner2"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content" />
+            <Button
+                android:id="@+id/button14"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:text="Button" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button5"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Spinner
-                    android:id="@+id/spinner3"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button12"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Spinner
-                    android:id="@+id/spinner4"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button13"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Spinner
-                    android:id="@+id/spinner5"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button14"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Spinner
-                    android:id="@+id/spinner6"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="30dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/button15"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="Button" />
-
-                <Spinner
-                    android:id="@+id/spinner7"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content" />
-
-            </LinearLayout>
+            <Button
+                android:id="@+id/button15"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30sp"
+                android:text="Button" />
 
         </LinearLayout>
     </ScrollView>

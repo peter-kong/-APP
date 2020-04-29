@@ -22,17 +22,7 @@ public class Menu_for_manager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this, Request1.class);
-                startActivity(intent);
-            }
-        });
-
-        Button NextpageBtn2 = (Button) findViewById(R.id.照護服務時間排程);
-        NextpageBtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this, Schedule_search1.class);
+                intent.setClass(Menu_for_manager.this, Request2.class);
                 startActivity(intent);
             }
         });
@@ -57,7 +47,7 @@ public class Menu_for_manager extends AppCompatActivity {
             }
         });
 
-        /*Button NextpageBtn5 = (Button) findViewById(R.id.輸入個案需求);
+        Button NextpageBtn5 = (Button) findViewById(R.id.輸入個案需求);
         NextpageBtn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,14 +55,8 @@ public class Menu_for_manager extends AppCompatActivity {
                 intent.setClass(Menu_for_manager.this, Service_check.class);
                 startActivity(intent);
             }
-        });*/
-
-
-
-
+        });
     }
-
-
 }
 
 
