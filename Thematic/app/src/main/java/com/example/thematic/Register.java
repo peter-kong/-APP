@@ -37,7 +37,7 @@ public class Register extends AppCompatActivity {
 }
 
         Button register_confirm_btn = (Button) findViewById(R.id.register_confirm);
-
+/*
         register_confirm_btn.setOnClickListener(new View.OnClickListener() {
         @Override
             public void onClick(View v) {
@@ -76,5 +76,5 @@ public class Register extends AppCompatActivity {
             }
         });
     }
-
+*/
 }
