@@ -15,6 +15,7 @@ public class MySQLCon {
     // 資料庫定義
     String mysql_ip = "192.168.0.180";
     int mysql_port = 3306; // Port 預設為 3306
+    int check_bits = 0;
     String db_name = "longcare";
     String url = "jdbc:mysql://"+mysql_ip+":"+mysql_port+"/"+db_name;
     String db_user = "LongCareUser";
@@ -61,7 +62,7 @@ public class MySQLCon {
     }
 
     //寫入註冊的資料
-    public void insertRegisterData(String UName,String UAccount,String UPassword,
+    public int  insertRegisterData(String UName,String UAccount,String UPassword,
                            String UIDNumber,String UAddress,String Uphone,
                            String UEmail,String UMedHistory,String ULevel,
                            String UBirth) {
@@ -74,11 +75,14 @@ public class MySQLCon {
             st.executeUpdate(sql);
             st.close();
             Log.v("DB", "寫入資料完成：");
+            return 1;
         } catch (SQLException e) {
             e.printStackTrace();
             Log.e("DB", "寫入資料失敗");
             Log.e("DB", e.toString());
+            return 0;
         }
     }
+
 
 }
