@@ -6,15 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
 
 
 public class Register extends AppCompatActivity {
-
 
 
     @Override
@@ -23,7 +19,7 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_main_register);
         getSupportActionBar().hide(); //隱藏標題
 
-        Button reset = (Button)findViewById(R.id.register_reset);
+        Button reset = (Button) findViewById(R.id.register_reset);
 
         reset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -34,14 +30,12 @@ public class Register extends AppCompatActivity {
             }
         });
 
-}
-
         Button register_confirm_btn = (Button) findViewById(R.id.register_confirm);
-/*
+
         register_confirm_btn.setOnClickListener(new View.OnClickListener() {
-        @Override
+            @Override
             public void onClick(View v) {
-                new Thread(new Runnable(){
+                new Thread(new Runnable() {
                     @Override
                     public void run() {
                         final EditText UName_view = (EditText) findViewById(R.id.UName);
@@ -70,11 +64,10 @@ public class Register extends AppCompatActivity {
                         String UBirth = UBirth_view.getText().toString();
 
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
-                        con.insertRegisterData(UName,UAccount,UPassword,UIDNumber,UAddress,Uphone,UEmail,UMedHistory,ULevel,UBirth);
+                        con.insertRegisterData(UName, UAccount, UPassword, UIDNumber, UAddress, Uphone, UEmail, UMedHistory, ULevel, UBirth);
                     }
                 }).start();
             }
         });
     }
-*/
 }
