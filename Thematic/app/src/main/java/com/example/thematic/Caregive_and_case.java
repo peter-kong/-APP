@@ -16,7 +16,7 @@ public class Caregive_and_case extends AppCompatActivity {
         setContentView(R.layout.activity_manager_caregive_and_case);
         getSupportActionBar().hide(); //隱藏標題
 
-        Button userBtn = (Button) findViewById(R.id.button11);
+        Button userBtn = (Button) findViewById(R.id.button5);
         userBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -7,11 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.example.thematic.Main;
-import com.example.thematic.R;
-import com.example.thematic.Request2;
-import com.example.thematic.test;
-
 public class Request1 extends AppCompatActivity {
 
     @Override

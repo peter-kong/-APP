@@ -11,12 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Schedule_search_3"></activity>
         <activity android:name=".Request2" />
         <activity android:name=".Menu_for_caregiver" />
-        <activity android:name=".Schedule_search2" />
         <activity android:name=".Caregive_and_case" />
-        <activity android:name=".test" />
         <activity android:name=".Request1" />
         <activity android:name=".Forget_password" />
         <activity android:name=".Service_user_data" />
@@ -24,7 +21,6 @@
         <activity android:name=".User_data_date" />
         <activity android:name=".Menu_for_manager" />
         <activity android:name=".Inform_arrange" />
-        <activity android:name=".Schedule_search1" />
         <activity android:name=".Register" />
         <activity android:name=".Service_check" />
         <activity android:name=".Personal_data" />
