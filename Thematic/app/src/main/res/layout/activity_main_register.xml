@@ -53,13 +53,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-<<<<<<< HEAD
                 android:hint="請輸入信箱"
                 android:inputType="textEmailAddress" />
-=======
-                android:inputType="textPersonName" />
->>>>>>> 50809e177bedb70164662f11d974e89ecc08d882
-
             <TextView
                 android:id="@+id/密碼"
                 android:layout_width="match_parent"
@@ -107,16 +102,10 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-<<<<<<< HEAD
-                        android:id="@+id/radioButton"
-                        android:layout_width="75dp"
-                        android:layout_height="match_parent"
-=======
-                        android:id="@+id/Boy"
+                        android:id="@+id/boy"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
->>>>>>> 50809e177bedb70164662f11d974e89ecc08d882
-                        android:layout_marginLeft="30dp"
+                        android:layout_marginLeft="20dp"
                         android:text="男"
                         android:textSize="25sp" />
 
@@ -139,11 +128,7 @@
                 android:textSize="25dp" />
 
             <EditText
-<<<<<<< HEAD
-                android:id="@+id/editText9"
-=======
                 android:id="@+id/UBirth"
->>>>>>> 50809e177bedb70164662f11d974e89ecc08d882
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
