@@ -24,7 +24,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView34"
+                android:id="@+id/註冊"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#EEE8E8"
@@ -42,43 +42,47 @@
                 android:textSize="25sp" />
 
             <TextView
-                android:id="@+id/textView26"
+                android:id="@+id/帳號"
                 android:layout_width="match_parent"
                 android:layout_height="38dp"
                 android:text="帳號:"
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText2"
+                android:id="@+id/UAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+<<<<<<< HEAD
                 android:hint="請輸入信箱"
                 android:inputType="textEmailAddress" />
+=======
+                android:inputType="textPersonName" />
+>>>>>>> 50809e177bedb70164662f11d974e89ecc08d882
 
             <TextView
-                android:id="@+id/textView27"
+                android:id="@+id/密碼"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="密碼:"
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText13"
+                android:id="@+id/UPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPassword" />
 
             <TextView
-                android:id="@+id/textView28"
+                android:id="@+id/姓名"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="姓名:"
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText3"
+                android:id="@+id/UName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -91,7 +95,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView57"
+                    android:id="@+id/性別"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="性別"
@@ -103,15 +107,21 @@
                     android:orientation="horizontal">
 
                     <RadioButton
+<<<<<<< HEAD
                         android:id="@+id/radioButton"
                         android:layout_width="75dp"
                         android:layout_height="match_parent"
+=======
+                        android:id="@+id/Boy"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+>>>>>>> 50809e177bedb70164662f11d974e89ecc08d882
                         android:layout_marginLeft="30dp"
                         android:text="男"
                         android:textSize="25sp" />
 
                     <RadioButton
-                        android:id="@+id/radioButton2"
+                        android:id="@+id/girl"
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
@@ -122,14 +132,18 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/textView29"
+                android:id="@+id/生日"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="生日:"
                 android:textSize="25dp" />
 
             <EditText
+<<<<<<< HEAD
                 android:id="@+id/editText9"
+=======
+                android:id="@+id/UBirth"
+>>>>>>> 50809e177bedb70164662f11d974e89ecc08d882
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -138,56 +152,56 @@
                 android:inputType="date" />
 
             <TextView
-                android:id="@+id/textView43"
+                android:id="@+id/身分證字號"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="身分證字號:"
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText6"
+                android:id="@+id/UIDNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPassword" />
 
             <TextView
-                android:id="@+id/textView30"
+                android:id="@+id/電話"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="電話:"
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText23"
+                android:id="@+id/UPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="phone" />
 
             <TextView
-                android:id="@+id/textView31"
+                android:id="@+id/地址"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="地址:"
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/UAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/textView32"
+                android:id="@+id/電子信箱"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="電子信箱:"
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText21"
+                android:id="@+id/UEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -195,21 +209,21 @@
                 android:inputType="textEmailAddress" />
 
             <TextView
-                android:id="@+id/textView33"
+                android:id="@+id/失能等級"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="失能等級:"
                 android:textSize="25dp" />
 
             <EditText
-                android:id="@+id/editText22"
+                android:id="@+id/ULevel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="number" />
 
             <TextView
-                android:id="@+id/textView66"
+                android:id="@+id/病史"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#B9254BBE"
@@ -218,7 +232,7 @@
                 android:textSize="25sp" />
 
             <EditText
-                android:id="@+id/editText10"
+                android:id="@+id/UMedHistory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
