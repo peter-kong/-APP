@@ -56,6 +56,16 @@ public class Menu_for_manager extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button ScheduleBtn = (Button) findViewById(R.id.照護服務時間排程);
+        ScheduleBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Menu_for_manager.this,Schedule.class);
+                startActivity(intent);
+            }
+        });
     }
 }
 
