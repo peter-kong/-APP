@@ -3,6 +3,7 @@ package com.example.thematic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -26,7 +27,8 @@ public class Personal_data extends AppCompatActivity {
         final TextView healthsitu = (TextView) findViewById(R.id.個人資料_健康狀況);
         final TextView personid   = (TextView) findViewById(R.id.個人資料_身分證字號);
 
-        String Account = "b123456789";
+        String Account = "a123456789";
+
         new Thread(new Runnable(){
             @Override
             public void run(){
