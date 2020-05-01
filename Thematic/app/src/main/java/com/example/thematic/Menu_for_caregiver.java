@@ -20,7 +20,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_caregiver.this, Request1.class);
+                intent.setClass(Menu_for_caregiver.this, Request2.class);
                 startActivity(intent);
             }
         });
