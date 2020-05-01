@@ -2,6 +2,7 @@ package com.example.thematic;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -19,6 +20,10 @@ public class Menu_for_user extends AppCompatActivity {
 
         Button nextPage5 = (Button)findViewById(R.id.排程通知);
         Button nextPage6 = (Button)findViewById(R.id.個人資料維護);
+
+
+        GlobalVariable_Account 帳號保存物件 = (GlobalVariable_Account)getApplicationContext();
+        Log.e("不同 activity test",帳號保存物件.returnAcc());
 
 
         nextPage5.setOnClickListener(new View.OnClickListener() {

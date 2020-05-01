@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class Main extends AppCompatActivity {
+public class Login extends AppCompatActivity {
 
 
 
@@ -33,10 +33,10 @@ public class Main extends AppCompatActivity {
 
                 GlobalVariable_Account 帳號保存物件 = (GlobalVariable_Account)getApplicationContext();
                 帳號保存物件.setAccount(登入帳號.getText().toString().trim());
-                Log.e("帳號",帳號保存物件.returnAcc());
+                //Log.e("帳號",帳號保存物件.returnAcc());
 
                 Intent intent = new Intent();
-                intent.setClass(Main.this,Menu_for_user.class);
+                intent.setClass(Login.this,Menu_for_user.class);
                 startActivity(intent);
             }
         });
@@ -46,7 +46,7 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Main.this, Register.class);
+                intent.setClass(Login.this, Register.class);
                 startActivity(intent);
             }
         });
@@ -56,7 +56,7 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Main.this, Menu_for_manager.class);
+                intent.setClass(Login.this, Menu_for_manager.class);
                 startActivity(intent);
             }
         });
@@ -66,7 +66,7 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Main.this, Forget_password.class);
+                intent.setClass(Login.this, Forget_password.class);
                 startActivity(intent);
             }
         });
@@ -77,7 +77,7 @@ public class Main extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Main.this,Menu_for_caregiver.class);
+                intent.setClass(Login.this,Menu_for_caregiver.class);
                 startActivity(intent);
             }
         });

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#7759FFF3"
     android:foregroundGravity="center"
-    tools:context=".Main">
+    tools:context=".Login">
 
     <ImageView
         android:id="@+id/imageView7"
