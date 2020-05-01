@@ -15,7 +15,7 @@ public class Personal_data extends AppCompatActivity {
         setContentView(R.layout.activity_user_personal_data);
         getSupportActionBar().hide(); //隱藏標題
         //設定變數 並在layout中找到相對應的東西
-        Log.e("OK","Hello Line 40");
+        //Log.e("OK","Hello Line 40");
         final TextView account    = (TextView) findViewById(R.id.個人資料_帳號);
         final TextView name       = (TextView) findViewById(R.id.個人資料_姓名);
         final TextView gender     = (TextView) findViewById(R.id.個人資料_性別);
@@ -28,7 +28,10 @@ public class Personal_data extends AppCompatActivity {
         final TextView personid   = (TextView) findViewById(R.id.個人資料_身分證字號);
 
         String Account = "a123456789";
+<<<<<<< HEAD
+=======
 
+>>>>>>> 63dfe174b6677bb8d121570a7f6f7b79dcd1da82
         new Thread(new Runnable(){
             @Override
             public void run(){
