@@ -15,6 +15,7 @@ public class MySQLCon {
     // 資料庫定義
     String mysql_ip = "192.168.0.180";
     int mysql_port = 3306; // Port 預設為 3306
+    int check_bits = 0;
     String db_name = "longcare";
     String url = "jdbc:mysql://"+mysql_ip+":"+mysql_port+"/"+db_name;
     String db_user = "LongCareUser";
@@ -39,29 +40,85 @@ public class MySQLCon {
         }
     }
 
-    public String getData() {
+    public String getData(String 帳號, String 需求) {
+
+        String 關聯表名稱="",屬性="";
+//========以下為Personal_data的內容=========
+        if(需求.equals("account_get")){
+            關聯表名稱 = "user";
+            屬性 = "UAccount";
+        }
+
+        else if(需求.equals("name_get")){
+            關聯表名稱 = "user";
+            屬性 = "UName";
+        }
+        //gender 還沒好
+        /*
+        else if(需求.equals("gender_get")){
+            關聯表名稱 = "user";
+            屬性 = "Ugender";
+        }*/
+        else if(需求.equals("birthday_get")){
+            關聯表名稱 = "user";
+            屬性 = "UBirth";
+        }
+        else if(需求.equals("level_get")){
+            關聯表名稱 = "user";
+            屬性 = "ULevel";
+        }
+        else if(需求.equals("connectnum_get")){
+            關聯表名稱 = "user";
+            屬性 = "UPhone";
+        }
+        else if(需求.equals("email_get")){
+            關聯表名稱 = "user";
+            屬性 = "UMail";
+        }
+        else if(需求.equals("address_get")){
+            關聯表名稱 = "user";
+            屬性 = "UAddress";
+        }
+        else if(需求.equals("healthsitu")){
+            關聯表名稱 = "user";
+            屬性 = "UMedHistory";
+        }
+        else if(需求.equals("personid_get")){
+            關聯表名稱 = "user";
+            屬性 = "UIDNumber";
+        }
+
+
+//===============Personal_data完畢===================
+
         String data = "";
         try {
+            //Log.v("DB","Test:"+關聯表名稱+屬性);
+
             Connection con = DriverManager.getConnection(url, db_user, db_password);
-            String sql = "SELECT * FROM Manager";
+            //在關聯表裡面找到帳號
+            String sql = "SELECT * FROM `"+ 關聯表名稱 + "` WHERE `UAccount` = "+ "\"" + 帳號 + "\"" ;
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
+            //Log.e("Line 104",sql);
+
             while (rs.next())
             {
-                String id = rs.getString("MID");
-                String name = rs.getString("Mname");
-                data += id + ", " + name + "\n";
+                String id = rs.getString(屬性);
+                data = id;
+
             }
             st.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return data;
     }
 
     //寫入註冊的資料
-    public void insertRegisterData(String UName,String UAccount,String UPassword,
+    public int  insertRegisterData(String UName,String UAccount,String UPassword,
                            String UIDNumber,String UAddress,String Uphone,
                            String UEmail,String UMedHistory,String ULevel,
                            String UBirth) {
@@ -74,11 +131,14 @@ public class MySQLCon {
             st.executeUpdate(sql);
             st.close();
             Log.v("DB", "寫入資料完成：");
+            return 1;
         } catch (SQLException e) {
             e.printStackTrace();
             Log.e("DB", "寫入資料失敗");
             Log.e("DB", e.toString());
+            return 0;
         }
     }
+
 
 }
