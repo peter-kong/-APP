@@ -40,25 +40,80 @@ public class MySQLCon {
         }
     }
 
+    public String getData(String 帳號, String 需求) {
 
-    public String getData() {
+        String 關聯表名稱="",屬性="";
+//========以下為Personal_data的內容=========
+        if(需求.equals("account_get")){
+            關聯表名稱 = "user";
+            屬性 = "UAccount";
+        }
+
+        else if(需求.equals("name_get")){
+            關聯表名稱 = "user";
+            屬性 = "UName";
+        }
+        //gender 還沒好
+        /*
+        else if(需求.equals("gender_get")){
+            關聯表名稱 = "user";
+            屬性 = "Ugender";
+        }*/
+        else if(需求.equals("birthday_get")){
+            關聯表名稱 = "user";
+            屬性 = "UBirth";
+        }
+        else if(需求.equals("level_get")){
+            關聯表名稱 = "user";
+            屬性 = "ULevel";
+        }
+        else if(需求.equals("connectnum_get")){
+            關聯表名稱 = "user";
+            屬性 = "UPhone";
+        }
+        else if(需求.equals("email_get")){
+            關聯表名稱 = "user";
+            屬性 = "UMail";
+        }
+        else if(需求.equals("address_get")){
+            關聯表名稱 = "user";
+            屬性 = "UAddress";
+        }
+        else if(需求.equals("healthsitu")){
+            關聯表名稱 = "user";
+            屬性 = "UMedHistory";
+        }
+        else if(需求.equals("personid_get")){
+            關聯表名稱 = "user";
+            屬性 = "UIDNumber";
+        }
+
+
+//===============Personal_data完畢===================
+
         String data = "";
         try {
+            //Log.v("DB","Test:"+關聯表名稱+屬性);
+
             Connection con = DriverManager.getConnection(url, db_user, db_password);
-            String sql = "SELECT * FROM Manager";
+            //在關聯表裡面找到帳號
+            String sql = "SELECT * FROM `"+ 關聯表名稱 + "` WHERE `UAccount` = "+ "\"" + 帳號 + "\"" ;
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
+            //Log.e("Line 104",sql);
+
             while (rs.next())
             {
-                String id = rs.getString("MID");
-                String name = rs.getString("Mname");
-                data += id + ", " + name + "\n";
+                String id = rs.getString(屬性);
+                data = id;
+
             }
             st.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return data;
     }
 
