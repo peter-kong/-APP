@@ -41,7 +41,7 @@
                     android:textSize="24dp" />
 
                 <Spinner
-                    android:id="@+id/spinner5"
+                    android:id="@+id/objectspinner"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:layout_weight="1" />
@@ -62,7 +62,7 @@
                     android:textSize="24sp" />
 
                 <Spinner
-                    android:id="@+id/spinner6"
+                    android:id="@+id/datespinner"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:layout_weight="1" />
@@ -110,7 +110,7 @@
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/textView25"
+                    android:id="@+id/workername"
                     android:layout_width="230dp"
                     android:layout_height="match_parent"
                     android:gravity="center"

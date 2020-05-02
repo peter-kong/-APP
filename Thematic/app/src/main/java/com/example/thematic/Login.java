@@ -45,7 +45,7 @@ public class Login extends AppCompatActivity {
                             Intent intent = new Intent();
                             check = 1;
                             Log.v("Login","caregiver登入成功");
-                            intent.setClass(Login.this,Menu_for_caregiver.class);
+                            intent.setClass(Login.this,Menu_for_manager.class);
                             startActivity(intent);
 
                         }
