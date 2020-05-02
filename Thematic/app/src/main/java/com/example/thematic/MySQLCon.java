@@ -20,7 +20,8 @@ public class MySQLCon {
     String url = "jdbc:mysql://"+mysql_ip+":"+mysql_port+"/"+db_name;
     String db_user = "LongCareUser";
     String db_password = "12345";
-
+    String sql = "";
+    int counter = 0;
     public void run() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -33,7 +34,7 @@ public class MySQLCon {
         // 連接資料庫
         try {
             Connection con = DriverManager.getConnection(url,db_user,db_password);
-            Log.v("DB","遠端連接成功");
+            Log.e("DB","遠端連接成功");
         }catch(SQLException e) {
             Log.e("DB","遠端連接失敗");
             Log.e("DB", e.toString());
@@ -41,14 +42,12 @@ public class MySQLCon {
     }
 
     public String getData(String 帳號, String 需求) {
-
         String 關聯表名稱="",屬性="";
 //========以下為Personal_data的內容=========
         if(需求.equals("account_get")){
             關聯表名稱 = "user";
             屬性 = "UAccount";
         }
-
         else if(需求.equals("name_get")){
             關聯表名稱 = "user";
             屬性 = "UName";
@@ -87,24 +86,31 @@ public class MySQLCon {
             關聯表名稱 = "user";
             屬性 = "UIDNumber";
         }
-
-
-//===============Personal_data完畢===================
-
+        else if(需求.equals("我要manager密碼")){  //帳號登入找manager
+            關聯表名稱 = "manager";
+            屬性 = "MPassword";
+        }
+        else if(需求.equals("我要user密碼")){    //帳號登入找user
+            關聯表名稱 = "user";
+            屬性 = "UPassword";
+        }
         String data = "";
         try {
             //Log.v("DB","Test:"+關聯表名稱+屬性);
-
             Connection con = DriverManager.getConnection(url, db_user, db_password);
             //在關聯表裡面找到帳號
-            String sql = "SELECT * FROM `"+ 關聯表名稱 + "` WHERE `UAccount` = "+ "\"" + 帳號 + "\"" ;
+            if(關聯表名稱 == "user") {
+                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `UAccount` = " + "\"" + 帳號 + "\"";
+            }
+            else if(關聯表名稱 == "manager"){
+                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `MAccount` = " + "\"" + 帳號 + "\"";
+            }
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
-
-            //Log.e("Line 104",sql);
-
+            counter = 0;
             while (rs.next())
             {
+                counter = 1;
                 String id = rs.getString(屬性);
                 data = id;
 
@@ -113,10 +119,11 @@ public class MySQLCon {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        if(counter == 0)
+            data = "There are no data in the database";
 
         return data;
     }
-
     //寫入註冊的資料
     public int  insertRegisterData(String UName,String UAccount,String UPassword,
                            String UIDNumber,String UAddress,String Uphone,
