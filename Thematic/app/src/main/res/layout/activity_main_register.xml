@@ -21,6 +21,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#F1ECEC"
             android:orientation="vertical">
 
             <TextView
@@ -55,6 +56,7 @@
                 android:ems="10"
                 android:hint="請輸入信箱"
                 android:inputType="textEmailAddress" />
+
             <TextView
                 android:id="@+id/密碼"
                 android:layout_width="match_parent"

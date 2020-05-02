@@ -9,7 +9,8 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#7759FFF3">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -29,14 +30,15 @@
 
             <Button
                 android:id="@+id/個人資料維護"
-                android:layout_width="310dp"
-                android:layout_height="200dp"
+                android:layout_width="301dp"
+                android:layout_height="206dp"
                 android:layout_marginStart="48dp"
                 android:layout_marginLeft="48dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginEnd="48dp"
                 android:layout_marginRight="48dp"
                 android:background="@drawable/menu_for_user_shape_rectangle"
+                android:gravity="center"
                 android:text="個人資料維護"
                 android:textSize="20sp" />
 

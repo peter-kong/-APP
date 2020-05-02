@@ -5,8 +5,6 @@
     <!-- 顏色 -->
     <solid android:color="#46E6AE" />
 
-    <solid android:color="#31F0C6" />
-
     <!-- 文字與邊框的間距 -->
     <padding
         android:top="10dp"

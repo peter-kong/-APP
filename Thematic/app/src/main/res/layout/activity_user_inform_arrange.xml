@@ -12,8 +12,10 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -21,7 +23,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="42dp"
             android:layout_marginLeft="42dp"
-            android:layout_marginTop="23dp"
+            android:layout_marginTop="30dp"
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
             android:background="#ECE8E8"
@@ -31,6 +33,7 @@
                 android:id="@+id/textView8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="#7759FFF3"
                 android:gravity="center"
                 android:text="排程通知"
                 android:textSize="36sp" />
@@ -38,7 +41,7 @@
             <TextView
                 android:id="@+id/textView35"
                 android:layout_width="194dp"
-                android:layout_height="40dp"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginStart="80dp"
                 android:layout_marginTop="40dp"
@@ -54,13 +57,10 @@
                 android:text="@string/時間"
                 android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/textView60"
+            <Spinner
+                android:id="@+id/spinner"
                 android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:gravity="center"
-                android:text="@string/確切時間"
-                android:textSize="24sp" />
+                android:layout_height="52dp" />
 
             <TextView
                 android:id="@+id/textView51"
@@ -91,23 +91,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:gravity="center"
-                android:text="環境打掃"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView48"
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:gravity="center"
-                android:text="協助上下樓"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView49"
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:gravity="center"
-                android:text="倒垃圾"
                 android:textSize="30sp" />
 
             <TextView
@@ -115,28 +98,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:gravity="center"
-                android:text="量血壓"
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/textView53"
+                android:id="@+id/textView48"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:gravity="center"
-                android:text="心理關懷"
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/textView54"
+                android:id="@+id/textView49"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
-                android:gravity="center" />
-
-            <TextView
-                android:id="@+id/textView55"
-                android:layout_width="301dp"
-                android:layout_height="38dp"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textSize="30sp" />
 
         </LinearLayout>
     </ScrollView>
