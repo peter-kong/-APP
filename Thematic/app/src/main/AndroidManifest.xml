@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.thematic">
 
+    <!-- WIFI權限 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Socket網路權限 -->
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Schedule"></activity>
+        <activity android:name=".SocketTest"></activity>
+        <activity android:name=".Schedule" />
         <activity android:name=".Request2" />
         <activity android:name=".Menu_for_caregiver" />
         <activity android:name=".Caregive_and_case" />

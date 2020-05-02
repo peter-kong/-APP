@@ -40,6 +40,18 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+/*
+        //Test for Socket
+        Button 測試 = (Button) findViewById(R.id.Transfer);
+        測試.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Login.this,SocketTest.class);
+                startActivity(intent);
+            }
+        });
+*/
 
         Button registerBtn = (Button) findViewById(R.id.main_register);
         registerBtn.setOnClickListener(new View.OnClickListener() {
