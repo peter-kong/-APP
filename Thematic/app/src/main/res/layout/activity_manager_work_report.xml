@@ -42,16 +42,10 @@
                     android:textSize="30sp" />
 
                 <Spinner
-<<<<<<< HEAD
-                    android:id="@+id/spinner5"
-                    android:layout_width="220dp"
-                    android:layout_height="20dp" />
-=======
                     android:id="@+id/objectspinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_weight="1" />
->>>>>>> 7829fd853a3f538d2a1f7ab499fcc84e479ece59
+                    android:layout_width="230dp"
+                    android:layout_height="20dp" />
+
 
             </LinearLayout>
 
@@ -70,16 +64,9 @@
                     android:textSize="30sp" />
 
                 <Spinner
-<<<<<<< HEAD
-                    android:id="@+id/spinner6"
-                    android:layout_width="220dp"
-                    android:layout_height="20dp" />
-=======
                     android:id="@+id/datespinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_weight="1" />
->>>>>>> 7829fd853a3f538d2a1f7ab499fcc84e479ece59
+                    android:layout_width="230dp"
+                    android:layout_height="20dp" />
             </LinearLayout>
 
             <TextView
@@ -125,13 +112,8 @@
                     android:textSize="24sp" />
 
                 <TextView
-<<<<<<< HEAD
-                    android:id="@+id/textView25"
-                    android:layout_width="wrap_content"
-=======
                     android:id="@+id/workername"
-                    android:layout_width="230dp"
->>>>>>> 7829fd853a3f538d2a1f7ab499fcc84e479ece59
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="XXX"
