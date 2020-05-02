@@ -1,11 +1,14 @@
 package com.example.thematic;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -19,8 +22,6 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide(); //隱藏標題
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN); //隱藏狀態
-
-
 
         Button LoginBtn = (Button) findViewById(R.id.main_login);
         LoginBtn.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +65,9 @@ public class Login extends AppCompatActivity {
                 }).start();
             }
         });
+
+
+
 
         Button registerBtn = (Button) findViewById(R.id.main_register);
         registerBtn.setOnClickListener(new View.OnClickListener() {
