@@ -141,6 +141,8 @@ public class Login extends AppCompatActivity {
         測試.setLayoutParams(params);
 
         */
+
+/*
         Button 測試 = (Button) findViewById(R.id.Transfer);
         測試.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,7 +152,7 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+*/
 
 /*
         //Test for 動態新增元件測試
