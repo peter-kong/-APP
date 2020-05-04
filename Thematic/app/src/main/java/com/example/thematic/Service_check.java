@@ -1,6 +1,9 @@
 package com.example.thematic;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.NumberPicker;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,5 +40,16 @@ public class Service_check extends AppCompatActivity {
         mNumberPicker.setMinValue(0);
         mNumberPicker.setMaxValue(Min.length - 1);
         mNumberPicker.setDisplayedValues(Min);
+
+        Button reset = (Button)findViewById(R.id.service_重填);
+
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Service_check.this, Service_check.class);
+                startActivity(intent);
+            }
+        });
     }
 }

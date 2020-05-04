@@ -62,7 +62,7 @@ public class Menu_for_manager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this,Schedule.class);
+                intent.setClass(Menu_for_manager.this,Schedule0.class);
                 startActivity(intent);
             }
         });

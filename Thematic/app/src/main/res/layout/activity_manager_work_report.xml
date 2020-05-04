@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7759FFF3"
+    android:background="#77E79292"
     tools:context=".Work_report">
 
     <ScrollView
@@ -14,7 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView42"
@@ -74,7 +74,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="20sp"
-                android:background="#B9254BBE"
+                android:background="#B9DD8888"
                 android:gravity="center"
                 android:text="工作內容"
                 android:textSize="25sp"
@@ -148,6 +148,7 @@
                 android:id="@+id/textView37"
                 android:layout_width="match_parent"
                 android:layout_height="49dp"
+                android:background="#B9DD8888"
                 android:gravity="center"
                 android:text="備註"
                 android:textSize="24sp" />

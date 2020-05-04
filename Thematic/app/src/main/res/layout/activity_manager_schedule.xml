@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7759FFF3"
+    android:background="#77E79292"
     tools:context=".Schedule">
 
     <ScrollView
@@ -26,6 +26,7 @@
                 android:id="@+id/textView173"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="照護服務時間排程結果"
                 android:textSize="30sp" />
 

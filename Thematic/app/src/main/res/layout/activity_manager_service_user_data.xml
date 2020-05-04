@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7759FFF3"
+    android:background="#77E79292"
     tools:context=".Service_user_data">
 
     <ScrollView
@@ -29,15 +29,15 @@
             <TextView
                 android:id="@+id/textView22"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#B9254BBE"
+                android:layout_height="40dp"
+                android:background="#B9DD8888"
                 android:gravity="center"
                 android:text="個案資料"
                 android:textSize="30dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -62,7 +62,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -82,7 +82,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -103,7 +103,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -123,7 +123,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -144,11 +144,11 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"/>
+                android:orientation="horizontal" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="50dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -170,8 +170,8 @@
             <TextView
                 android:id="@+id/備註2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#B9254BBE"
+                android:layout_height="40dp"
+                android:background="#B9DD8888"
                 android:gravity="center"
                 android:text="照護員"
                 android:textSize="30dp" />

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7759FFF3"
+    android:background="#77E79292"
     tools:context=".Menu_for_caregiver">
 
     <ScrollView
@@ -14,12 +14,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -35,30 +34,36 @@
             <Button
                 android:id="@+id/照顧需求查詢_care"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="48dp"
                 android:layout_marginLeft="48dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginEnd="48dp"
                 android:layout_marginRight="48dp"
-                android:background="@drawable/menu_for_manager_shape_rectangle"
+                android:background="@drawable/menu_for_caregiver_shape_rectangle"
                 android:text="照顧需求查詢"
                 android:textSize="20sp" />
 
             <Button
                 android:id="@+id/工作報表維護_care"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="48dp"
                 android:layout_marginLeft="48dp"
                 android:layout_marginTop="80dp"
                 android:layout_marginEnd="48dp"
                 android:layout_marginRight="48dp"
-                android:background="@drawable/menu_for_manager_shape_rectangle"
+                android:background="@drawable/menu_for_caregiver_shape_rectangle"
                 android:text="工作報表維護"
-                android:textSize="20sp" />/>
+                android:textSize="20sp" /><![CDATA[
 
 
+
+            />
+
+
+
+        ]]>
         </LinearLayout>
     </ScrollView>
 
