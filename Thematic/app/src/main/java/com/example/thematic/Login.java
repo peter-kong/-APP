@@ -131,7 +131,7 @@ public class Login extends AppCompatActivity {
 /*
 
         //Test for Socket
-        Button 測試 = (Button) findViewById(R.id.Transfer);
+
 
         /*
 
@@ -141,7 +141,7 @@ public class Login extends AppCompatActivity {
         測試.setLayoutParams(params);
 
         */
-
+        Button 測試 = (Button) findViewById(R.id.Transfer);
         測試.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
