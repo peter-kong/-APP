@@ -17,20 +17,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/textView22"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView22"
-                    android:layout_width="281dp"
-                    android:layout_height="match_parent"
-                    android:gravity="right"
-                    android:text="個人資料"
-                    android:textSize="40dp" />
-
-            </LinearLayout>
+                android:gravity="center"
+                android:text="個人資料"
+                android:textSize="40dp" />
 
             <ImageButton
                 android:id="@+id/imageButton"
@@ -187,7 +180,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="HXXXXXXXXX"
-                    android:textSize="30dp" />
+                    android:textSize="26dp" />
             </LinearLayout>
 
             <LinearLayout

@@ -96,6 +96,39 @@ public class Login extends AppCompatActivity {
             }
         });
 
+        /*
+        //介面優化....有Bug
+        ConstraintLayout Main_layout = (ConstraintLayout)findViewById(R.id.Main_layout);
+        Button Login = (Button)findViewById(R.id.main_login);
+
+        public void addLayoutListener(final View Main_layout,final View scroll){
+            Main_layout.getViewTreeObserver().addOnGlobalLayoutListener(
+                    new ViewTreeObserver.OnGlobalLayoutListener(){
+                        @Override
+                        public Void onGlobolLayout() {
+                            Rect rect = new Rect();
+
+                            Main_layout.getWindowVisibleDisplayFrame(rect);
+
+                            int InvisibleHeight = Main_layout.getRootView().getHeight() - rect.bottom;
+
+                            if (InvisibleHeight > 100) {
+                                int[] location = new int[2];
+                                scroll.getLocationInWindow(location);
+
+                                int srollHeight = (location[1] + scroll.getHeight()) - rect.bottom;
+
+                                Main_layout.scrollTo(0, srollHeight);
+                            } else {
+                                Main_layout.scrollTo(0, 0);
+                            }
+                        }
+                    });
+        }*/
+
+
+
+/*
 
         //Test for Socket
         Button 測試 = (Button) findViewById(R.id.Transfer);
