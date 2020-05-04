@@ -107,7 +107,7 @@ public class Register extends AppCompatActivity {
                                         }
                                     }).setNegativeButton("cancel",null).create()
                                     .show();
-                            ch = 0;
+
                         }
 
                     }}, 1000);
