@@ -61,7 +61,7 @@ public class Login extends AppCompatActivity {
                             startActivity(intent);
                         }
 
-
+                        check = 1;
 
                     }
                 }).start();
@@ -70,33 +70,23 @@ public class Login extends AppCompatActivity {
 
                 Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
-                    @Override    public void run() {
+                    @Override
+                    public void run() {
                         //過五秒後要做的事情
                         Log.e("Login_Failed","登入失敗");
-                        new AlertDialog.Builder(Login.this)
-                                .setTitle("登入失敗")
-                                .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
+                        if(check == 0) {
+                            new AlertDialog.Builder(Login.this)
+                                    .setTitle("登入失敗")
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
 
-                                    }
-                                }).setNegativeButton("cancel",null).create()
-                                .show();
-
+                                        }
+                                    }).setNegativeButton("cancel", null).create()
+                                    .show();
+                        }
                     }}, 1000);
 
-/*
-                Log.e("Login_Failed","登入失敗");
-                new AlertDialog.Builder(Login.this)
-                        .setTitle("登入失敗")
-                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        }).setNegativeButton("cancel",null).create()
-                        .show();
-*/
             }
         });
 

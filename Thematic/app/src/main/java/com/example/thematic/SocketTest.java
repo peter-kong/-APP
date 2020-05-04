@@ -58,7 +58,7 @@ public class SocketTest extends AppCompatActivity {
 
                             Log.e("Line 50", "Good");
                             //  Log.e("Line 51",sc_add.toString());
-                            socket.connect(sc_add, 10000);
+                            socket.connect(sc_add, 20000);
 
 
                             Log.e("Line 55", "Good");
