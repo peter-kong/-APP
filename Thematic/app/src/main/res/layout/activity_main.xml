@@ -186,7 +186,6 @@
     </LinearLayout>
 
     <Button
-<<<<<<< HEAD
         android:id="@+id/main_forget_password"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -198,13 +197,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
-=======
+
+    <Button
         android:id="@+id/Transfer"
         android:layout_width="100dp"
         android:layout_height="73dp"
         android:text="Button"
         tools:layout_editor_absoluteX="287dp"
         tools:layout_editor_absoluteY="102dp" />
->>>>>>> 3001e38ab2756a2d8abefd01d4b51966480d677e
 
 </androidx.constraintlayout.widget.ConstraintLayout>

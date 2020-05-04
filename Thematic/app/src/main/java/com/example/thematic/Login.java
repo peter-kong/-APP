@@ -90,7 +90,6 @@ public class Login extends AppCompatActivity {
             }
         });
 
-<<<<<<< HEAD
         /*
         //介面優化....有Bug
         ConstraintLayout Main_layout = (ConstraintLayout)findViewById(R.id.Main_layout);
@@ -124,9 +123,7 @@ public class Login extends AppCompatActivity {
 
 
 /*
-=======
 
->>>>>>> 3001e38ab2756a2d8abefd01d4b51966480d677e
         //Test for Socket
         Button 測試 = (Button) findViewById(R.id.Transfer);
         測試.setOnClickListener(new View.OnClickListener() {
