@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,6 +49,7 @@ public class Login extends AppCompatActivity {
                         String Password = ""+登入密碼.getText().toString()+"";
 
                         if((con.getData(Account,"我要manager密碼")).equals(Password)){
+                            check = 1;
                             Log.e("get,Password",Password+","+(con.getData(Account,"我要manager密碼")));
                             Intent intent = new Intent();
                             Log.v("Login","caregiver登入成功");
@@ -55,13 +57,16 @@ public class Login extends AppCompatActivity {
                             startActivity(intent);
                         }
                         else if((con.getData(Account,"我要user密碼").equals(Password))){
+                            check = 1;
                             Intent intent = new Intent();
                             Log.v("Login","user登入成功");
                             intent.setClass(Login.this,Menu_for_user.class);
                             startActivity(intent);
+                        }else{
+                            check = 0;
                         }
 
-                        check = 1;
+
 
                     }
                 }).start();
@@ -85,6 +90,7 @@ public class Login extends AppCompatActivity {
                                     }).setNegativeButton("cancel", null).create()
                                     .show();
                         }
+
                     }}, 1000);
 
             }
@@ -125,6 +131,16 @@ public class Login extends AppCompatActivity {
 /*
 
         //Test for Socket
+
+
+        /*
+
+        ViewGroup.LayoutParams params = 測試.getLayoutParams();
+        params.width = 3000;
+        params.height = 2000;
+        測試.setLayoutParams(params);
+
+        */
         Button 測試 = (Button) findViewById(R.id.Transfer);
         測試.setOnClickListener(new View.OnClickListener() {
             @Override
