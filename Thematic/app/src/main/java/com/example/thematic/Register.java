@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -76,6 +78,41 @@ public class Register extends AppCompatActivity {
                     }
                 }).start();
 
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        //過五秒後要做的事情
+                        if(check_bits == 1){
+                            new AlertDialog.Builder(Register.this)
+                                    .setTitle("恭喜發財")
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            Intent intent = new Intent();
+                                            intent.setClass(Register.this, Menu_for_user.class);
+                                            startActivity(intent);
+                                        }
+                                    }).setNegativeButton("cancel",null).create()
+                                    .show();
+
+                        }else if(check_bits == 0){
+                            new AlertDialog.Builder(Register.this)
+                                    .setTitle("帳號已經註冊或資料填寫不齊")
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                        }
+                                    }).setNegativeButton("cancel",null).create()
+                                    .show();
+                            ch = 0;
+                        }
+
+                    }}, 1000);
+
+/*
                 if(check_bits == 1){
                     new AlertDialog.Builder(Register.this)
                                    .setTitle("恭喜發財")
@@ -103,7 +140,7 @@ public class Register extends AppCompatActivity {
                 }else if(ch == 0){
                     ch = 1;
                     new AlertDialog.Builder(Register.this)
-                            .setTitle("請再按一次確定")
+                            .setTitle("請仔細檢查後再一次按下確定 = . <")
                             .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
@@ -112,7 +149,7 @@ public class Register extends AppCompatActivity {
                             }).setNegativeButton("cancel",null).create()
                             .show();
                 }
-
+*/
             }
         });
     }

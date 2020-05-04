@@ -43,8 +43,8 @@ public class SocketTest extends AppCompatActivity {
                         Socket socket = null;
 
                         String message = "I need SC";
-                        String IP = "192.168.0.141";
-                        int port = 6606;
+                        String IP = "134.208.41.238";
+                        int port = 21;
                         try {
                             //設定 Server IP, Port
                             serverAddr = InetAddress.getByName(IP);
@@ -58,18 +58,18 @@ public class SocketTest extends AppCompatActivity {
 
                             Log.e("Line 50", "Good");
                             //  Log.e("Line 51",sc_add.toString());
-                            socket.connect(sc_add, 10000);
+                            socket.connect(sc_add, 20000);
 
 
                             Log.e("Line 55", "Good");
 
                             //傳送資料(無視機器平台輸出語法)
                             DataOutputStream out = new DataOutputStream(socket.getOutputStream());
-
-                            Log.e("Line 60", "Good");
-
+                            //byte [] data = message.getBytes("UTF-8");
+                            //Log.e("Line 60", "Good");
+                            //out.writeShort(data.length);
                             out.writeUTF(message);
-
+                            //out.flush();
                             Log.e("Line 64", "Good");
 
                             socket.close();

@@ -1,16 +1,22 @@
 package com.example.thematic;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.EditText;
+
+import java.net.UnknownHostException;
 
 public class Login extends AppCompatActivity {
 
@@ -44,28 +50,47 @@ public class Login extends AppCompatActivity {
                         if((con.getData(Account,"我要manager密碼")).equals(Password)){
                             Log.e("get,Password",Password+","+(con.getData(Account,"我要manager密碼")));
                             Intent intent = new Intent();
-                            check = 1;
                             Log.v("Login","caregiver登入成功");
                             intent.setClass(Login.this,Menu_for_manager.class);
                             startActivity(intent);
-
                         }
                         else if((con.getData(Account,"我要user密碼").equals(Password))){
                             Intent intent = new Intent();
-                            check = 2;
                             Log.v("Login","user登入成功");
                             intent.setClass(Login.this,Menu_for_user.class);
                             startActivity(intent);
+                        }
 
-                        }
-                        else if (check == 0){
-                            Log.e("Login_Failed","登入失敗");
-                        }
+                        check = 1;
+
                     }
                 }).start();
+
+
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        //過五秒後要做的事情
+                        Log.e("Login_Failed","登入失敗");
+                        if(check == 0) {
+                            new AlertDialog.Builder(Login.this)
+                                    .setTitle("登入失敗")
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                        }
+                                    }).setNegativeButton("cancel", null).create()
+                                    .show();
+                        }
+                    }}, 1000);
+
             }
         });
 
+<<<<<<< HEAD
         /*
         //介面優化....有Bug
         ConstraintLayout Main_layout = (ConstraintLayout)findViewById(R.id.Main_layout);
@@ -99,6 +124,9 @@ public class Login extends AppCompatActivity {
 
 
 /*
+=======
+
+>>>>>>> 3001e38ab2756a2d8abefd01d4b51966480d677e
         //Test for Socket
         Button 測試 = (Button) findViewById(R.id.Transfer);
         測試.setOnClickListener(new View.OnClickListener() {
@@ -109,7 +137,21 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+/*
+        //Test for 動態新增元件測試
+        Button 測試 = (Button) findViewById(R.id.動態新增元件測試);
+        測試.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Login.this,Dynamic_button.class);
+                startActivity(intent);
+            }
+        });
 */
+
 
 
 
