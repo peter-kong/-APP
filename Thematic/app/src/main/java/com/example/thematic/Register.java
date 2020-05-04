@@ -103,7 +103,7 @@ public class Register extends AppCompatActivity {
                 }else if(ch == 0){
                     ch = 1;
                     new AlertDialog.Builder(Register.this)
-                            .setTitle("請再按一次確定")
+                            .setTitle("請仔細檢查後再一次按下確定 = . <")
                             .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {

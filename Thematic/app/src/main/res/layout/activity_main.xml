@@ -209,4 +209,12 @@
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/Transfer"
+        android:layout_width="100dp"
+        android:layout_height="73dp"
+        android:text="Button"
+        tools:layout_editor_absoluteX="287dp"
+        tools:layout_editor_absoluteY="102dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
