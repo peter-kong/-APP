@@ -5,17 +5,17 @@
     android:id="@+id/Main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#7759FFF3"
+    android:background="#77E79292"
     android:foregroundGravity="center"
     tools:context=".Login">
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="128dp"
-        android:layout_height="116dp"
+        android:layout_width="82dp"
+        android:layout_height="87dp"
         android:layout_marginStart="142dp"
         android:layout_marginLeft="142dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="141dp"
         android:layout_marginRight="141dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,6 +27,7 @@
         android:id="@+id/textView4"
         android:layout_width="0dp"
         android:layout_height="50dp"
+        android:layout_marginTop="25dp"
         android:background="#0059FFF3"
         android:gravity="center"
         android:text="登入"
@@ -40,14 +41,11 @@
         android:id="@+id/imageView6"
         android:layout_width="603dp"
         android:layout_height="41dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/imageView8"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@mipmap/elderly">
 
         <TextView
@@ -78,14 +76,12 @@
 
     <LinearLayout
         android:id="@+id/imageView8"
-        android:layout_width="608dp"
-        android:layout_height="40dp"
+        android:layout_width="625dp"
+        android:layout_height="34dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="20dp"
         android:gravity="center"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6"
         app:srcCompat="@mipmap/elderly">
@@ -117,39 +113,21 @@
 
     <TextView
         android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="104dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
-        android:layout_marginBottom="20dp"
+        android:autoSizeTextType="uniform"
         android:gravity="center"
         android:singleLine="false"
         android:text="長照2.0照顧服務規劃\n管理系統"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView7"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/main_forget_password"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginBottom="88dp"
-        android:background="#00FFFFFF"
-        android:foregroundGravity="center"
-        android:text="忘記密碼?"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2"
-        app:layout_constraintVertical_bias="0.868" />
 
     <Button
         android:id="@+id/button26"
@@ -178,11 +156,9 @@
         android:layout_height="67dp"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="48dp"
+        android:layout_marginTop="30dp"
         android:gravity="center"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/main_forget_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -208,5 +184,18 @@
             android:textSize="24sp" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/main_forget_password"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#00FFFFFF"
+        android:foregroundGravity="center"
+        android:text="忘記密碼?"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

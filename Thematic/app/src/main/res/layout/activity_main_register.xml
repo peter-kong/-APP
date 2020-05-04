@@ -27,7 +27,7 @@
             <TextView
                 android:id="@+id/註冊"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:background="#EEE8E8"
                 android:gravity="center"
                 android:text="註冊"
@@ -45,7 +45,7 @@
             <TextView
                 android:id="@+id/帳號"
                 android:layout_width="match_parent"
-                android:layout_height="38dp"
+                android:layout_height="wrap_content"
                 android:text="帳號:"
                 android:textSize="25dp" />
 
