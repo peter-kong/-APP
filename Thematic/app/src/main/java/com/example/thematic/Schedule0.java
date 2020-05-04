@@ -24,6 +24,7 @@ public class Schedule0 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager_schedule0);
+        getSupportActionBar().hide(); //隱藏標題
 
         sc = (Button)findViewById(R.id.schedule);
         sc.setOnClickListener(new Button.OnClickListener() {
