@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#77E79292"
-    tools:context=".Inform_arrange">
+    tools:context=".Next_Inform_arrange">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,27 +28,16 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/最近照服時間"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#7759FFF3"
                 android:gravity="center"
-                android:text="排程通知"
+                android:text="歷史照服時間"
                 android:textSize="36sp" />
 
             <TextView
-                android:id="@+id/textView35"
-                android:layout_width="194dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_marginStart="80dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginEnd="80dp"
-                android:text="@string/今日照服時間"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView58"
+                android:id="@+id/時間"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:gravity="center_vertical"
@@ -56,12 +45,14 @@
                 android:textSize="30sp" />
 
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/時間下拉選單"
                 android:layout_width="match_parent"
-                android:layout_height="52dp" />
+                android:layout_height="51dp"
+                android:gravity="center_vertical"
+                android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/textView51"
+                android:id="@+id/照服員"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:gravity="center_vertical"
@@ -69,7 +60,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/textView44"
+                android:id="@+id/照服員名稱"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -77,7 +68,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/textView61"
+                android:id="@+id/照服內容"
                 android:layout_width="match_parent"
                 android:layout_height="51dp"
                 android:gravity="center_vertical"

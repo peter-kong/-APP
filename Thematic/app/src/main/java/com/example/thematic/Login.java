@@ -29,7 +29,6 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide(); //隱藏標題
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN); //隱藏狀態
-
         Button LoginBtn = (Button) findViewById(R.id.main_login);
         LoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +46,6 @@ public class Login extends AppCompatActivity {
                         con.run();
                         String Account = ""+登入帳號.getText().toString()+"";
                         String Password = ""+登入密碼.getText().toString()+"";
-
                         if((con.getData(Account,"我要manager密碼")).equals(Password)){
                             check = 1;
                             Log.e("get,Password",Password+","+(con.getData(Account,"我要manager密碼")));
