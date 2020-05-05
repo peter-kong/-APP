@@ -32,9 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#7759FFF3"
-                android:gravity="center"
-                android:text="下次照服時間"
-                android:textSize="36sp" />
+                android:gravity="center"/>
 
             <TextView
                 android:id="@+id/時間"

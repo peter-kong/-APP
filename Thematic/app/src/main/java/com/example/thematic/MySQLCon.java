@@ -95,6 +95,10 @@ public class MySQLCon {
             關聯表名稱 = "user";
             屬性 = "UPassword";
         }
+        else if(需求.equals("我要caregiver密碼")){    //帳號登入找caregiver
+            關聯表名稱 = "caregiver";
+            屬性 = "CPassword";
+        }
         String data = "";
         try {
             //Log.v("DB","Test:"+關聯表名稱+屬性);
@@ -106,6 +110,9 @@ public class MySQLCon {
             else if(關聯表名稱 == "manager"){
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `MAccount` = " + "\"" + 帳號 + "\"";
             }
+            else if(關聯表名稱 == "caregiver"){
+                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `CAccount` = " + "\"" + 帳號 + "\"";
+            }
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
             counter = 0;
@@ -114,7 +121,6 @@ public class MySQLCon {
                 counter = 1;
                 String id = rs.getString(屬性);
                 data = id;
-
             }
             st.close();
         } catch (SQLException e) {

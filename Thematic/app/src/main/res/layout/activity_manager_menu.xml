@@ -22,16 +22,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:text="督導Menu"
+                android:text="主選單"
                 android:textSize="36sp" />
 
             <Button
-                android:id="@+id/照護服務時間排程"
+                android:id="@+id/人力配置查詢"
                 android:layout_width="300dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="35dp"
                 android:background="@drawable/menu_for_manager_shape_rectangle"
-                android:text="照護服務時間排程"
+                android:text="人力配置查詢"
                 android:textSize="20sp" />
 
             <LinearLayout
@@ -42,23 +42,23 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/照顧需求查詢"
+                    android:id="@+id/照服員管理"
                     android:layout_width="140dp"
                     android:layout_height="150dp"
                     android:layout_marginLeft="9dp"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/menu_for_manager_shape_rectangle"
-                    android:text="照顧需求查詢"
+                    android:text="照服員管理"
                     android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/服務使用者資料維護"
+                    android:id="@+id/個案管理"
                     android:layout_width="140dp"
                     android:layout_height="150dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/menu_for_manager_shape_rectangle"
-                    android:text="服務使用者資料維護"
+                    android:text="個案管理"
                     android:textSize="20sp" />
 
             </LinearLayout>
@@ -78,7 +78,7 @@
                     android:layout_marginTop="35dp"
                     android:layout_marginBottom="35dp"
                     android:background="@drawable/menu_for_manager_shape_rectangle"
-                    android:text="工作報表維護"
+                    android:text="工作報表維護(刪除)"
                     android:textSize="20sp" />
 
                 <Button
@@ -87,7 +87,7 @@
                     android:layout_height="150dp"
                     android:layout_marginLeft="20dp"
                     android:background="@drawable/menu_for_manager_shape_rectangle"
-                    android:text="輸入個案需求"
+                    android:text="輸入個案需求(刪除)"
                     android:textSize="20sp" />
             </LinearLayout>
 

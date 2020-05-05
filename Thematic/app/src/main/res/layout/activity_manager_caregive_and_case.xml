@@ -23,7 +23,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="42dp"
-                android:text="服務使用者資料維護"
+                android:text="個案服務內容查詢"
                 android:textSize="30sp" />
 
             <TextView
