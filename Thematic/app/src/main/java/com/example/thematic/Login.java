@@ -46,16 +46,22 @@ public class Login extends AppCompatActivity {
                         con.run();
                         String Account = ""+登入帳號.getText().toString()+"";
                         String Password = ""+登入密碼.getText().toString()+"";
-                        if((con.getData(Account,"我要manager密碼")).equals(Password)){
-                            check = 1;
-                            Log.e("get,Password",Password+","+(con.getData(Account,"我要manager密碼")));
+                        if((con.getData(Account,"我要manager密碼").equals(Password))){
+                            check = 3;
                             Intent intent = new Intent();
-                            Log.v("Login","caregiver登入成功");
+                            Log.v("Login","manager登入成功");
                             intent.setClass(Login.this,Menu_for_manager.class);
                             startActivity(intent);
                         }
-                        else if((con.getData(Account,"我要user密碼").equals(Password))){
+                        else if((con.getData(Account,"我要caregiver密碼")).equals(Password)){
                             check = 1;
+                            Intent intent = new Intent();
+                            Log.v("Login","caregiver登入成功");
+                            intent.setClass(Login.this,Menu_for_caregiver.class);
+                            startActivity(intent);
+                        }
+                        else if((con.getData(Account,"我要user密碼").equals(Password))){
+                            check = 2;
                             Intent intent = new Intent();
                             Log.v("Login","user登入成功");
                             intent.setClass(Login.this,Menu_for_user.class);
@@ -63,9 +69,6 @@ public class Login extends AppCompatActivity {
                         }else{
                             check = 0;
                         }
-
-
-
                     }
                 }).start();
 
