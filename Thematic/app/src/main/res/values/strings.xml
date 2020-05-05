@@ -25,5 +25,9 @@
     <string name="確切時間">下午 2 點 到 下午 4 點</string>
     <string name="照護內容">照護內容:</string>
     <string name="確切照護內容">量血壓|環境清潔</string>
+    <string name="title_activity_choose_time_for_work_report">choose_time_for_work_report</string>
+    <string name="title_activity_choose_time_for_history_work_report">
+        choose_time_for_history_work_report
+    </string>
 
 </resources>
