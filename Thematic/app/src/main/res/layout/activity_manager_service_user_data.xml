@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="服務使用者資料維護"
+                android:text="個案服務內容查詢"
                 android:textSize="30sp" />
 
             <TextView

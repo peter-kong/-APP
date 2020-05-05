@@ -7,20 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Request1 extends AppCompatActivity {
+public class UserDataQuery extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manager_request1);
-        getSupportActionBar().hide(); //隱藏標題
+        setContentView(R.layout.activity_user_data_query);
 
-        Button requestBtn = (Button)findViewById(R.id.button6);
-        requestBtn.setOnClickListener(new View.OnClickListener() {
+        Button c = (Button) findViewById(R.id.確認);
+        c.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Request1.this, Request2.class);
+                intent.setClass(UserDataQuery.this,Personal_data.class);
                 startActivity(intent);
             }
         });

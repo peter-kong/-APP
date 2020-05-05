@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateMonthandDayRportForUser">
+
+    <TextView
+        android:id="@+id/textView54"
+        android:layout_width="499dp"
+        android:layout_height="112dp"
+        android:text="個人資料及服務報表生成"
+        android:textSize="35sp"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="46dp" />
+
+    <Spinner
+        android:id="@+id/spinner6"
+        android:layout_width="378dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="25dp"
+        tools:layout_editor_absoluteY="158dp" />
+
+    <Spinner
+        android:id="@+id/spinner7"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="204dp" />
+
+    <Spinner
+        android:id="@+id/spinner8"
+        android:layout_width="395dp"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="252dp" />
+
+    <EditText
+        android:id="@+id/editText16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="名字"
+        tools:layout_editor_absoluteX="98dp"
+        tools:layout_editor_absoluteY="342dp" />
+
+    <Button
+        android:id="@+id/確認"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="確認"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="477dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

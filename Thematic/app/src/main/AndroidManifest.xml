@@ -15,7 +15,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Schedule0"></activity>
+        <activity android:name=".CreateMonthandDayRportForUser"></activity>
+        <activity android:name=".CreatePersonalDataandServiceReport" />
+        <activity android:name=".UserManage" />
+        <activity android:name=".UserDataQuery" />
+        <activity android:name=".CreateMonthandDayRportForCaregiver" />
+        <activity android:name=".WorkContent_query" />
+        <activity android:name=".Caregiver_Manage" />
+        <activity android:name=".Day_Condition" />
+        <activity android:name=".Month_Condition" />
+        <activity android:name=".Schedule0" />
         <activity android:name=".Dynamic_button" />
         <activity android:name=".SocketTest" />
         <activity android:name=".Schedule" />
