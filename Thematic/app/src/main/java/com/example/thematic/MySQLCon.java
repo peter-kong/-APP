@@ -1,27 +1,13 @@
 package com.example.mysql_connect;
 
-
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.util.Log;
-
-import com.example.thematic.GlobalVariable_Account;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 public class MySQLCon {
 
@@ -195,7 +181,7 @@ public class MySQLCon {
             關聯表名稱 = "caregiver";
             屬性 = "CPassword";
         }
-        else if(需求.equals("我要caregiver名字")){
+        else if(需求.equals("我要caregiver名字")){    //取得caregiver名字
             關聯表名稱 = "caregiver";
             屬性 = "CName";
         }
@@ -254,16 +240,13 @@ public class MySQLCon {
             return 0;
         }
     }
-
+    //獲得schedule內容放入最近照服時間
     public ArrayList getschedule(String Date, String 需求,String user帳號){
             ArrayList data = new ArrayList();
         try{
             String 關聯表名稱 = "schedule";
-            Log.e("173",user帳號);
             Connection con = DriverManager.getConnection(url, db_user, db_password);
-
             String sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `UID` = "+ "\"" + user帳號 + "\"";
-            Log.e("line 175",sql);
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
@@ -271,14 +254,13 @@ public class MySQLCon {
                 int int_date = Integer.parseInt(Date);
                 String nextDate = rs.getString("Date");
                 int db_date = Integer.parseInt(nextDate);
+                //取得最近的時間
                 while (int_date < db_date) {
                     if (int_date < db_date) {
-
                         String firsttime = rs.getString("FirstTime");
                         String lasttime = rs.getString("LastTime");
                         int CID = rs.getInt("CID");
                         String input_CID = String.valueOf(CID);
-                        Log.e("CID",""+CID);
                         String caregiver = getData(input_CID, "我要caregiver名字");
                         String sql1 = "SELECT * FROM `longcare`.`usertime` WHERE `Date` = \"" + nextDate + "\" ORDER BY `UID` = \"" + user帳號 + "\"";
                         Statement st1 = con.createStatement();
@@ -287,7 +269,6 @@ public class MySQLCon {
                         while (rs1.next()) {
                             request = rs1.getString("Request");
                         }
-
                         data.add(firsttime);
                         data.add(lasttime);
                         data.add(caregiver);
