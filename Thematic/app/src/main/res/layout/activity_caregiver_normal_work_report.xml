@@ -161,59 +161,6 @@
                 android:layout_height="wrap_content"
                 android:textSize="25sp" />
 
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="14:00~16:00"
-                android:textSize="24sp"
-                android:textStyle="bold|italic" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView39"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="照服員:"
-                    android:textSize="24sp" />
-
-                <TextView
-                    android:id="@+id/textView41"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="XXX"
-                    android:textSize="24sp" />
-            </LinearLayout>
-
-            <CheckBox
-                android:id="@+id/checkBox10"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_weight="1"
-                android:textSize="24sp" />
-
-            <CheckBox
-                android:id="@+id/checkBox11"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_weight="1"
-                android:textSize="24sp" />
-
-            <CheckBox
-                android:id="@+id/checkBox12"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_weight="1"
-                android:textSize="24sp" />
-
         </LinearLayout>
     </ScrollView>
 
