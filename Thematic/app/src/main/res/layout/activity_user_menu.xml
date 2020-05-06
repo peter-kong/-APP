@@ -67,7 +67,7 @@
                 android:layout_marginRight="48dp"
                 android:background="@drawable/menu_for_user_shape_rectangle"
                 android:gravity="center"
-                android:text="上一次照服時間"
+                android:text="上次照服時間"
                 android:textSize="20sp" />
 
             <Button

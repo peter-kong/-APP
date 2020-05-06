@@ -32,7 +32,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#7759FFF3"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textSize="30sp"/>
 
             <TextView
                 android:id="@+id/時間"
@@ -75,29 +76,9 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/個人資料_email"
+                android:id="@+id/個人資料"
                 android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:gravity="center"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView47"
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:gravity="center"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView48"
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:gravity="center"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView49"
-                android:layout_width="match_parent"
+                android:singleLine="false"
                 android:layout_height="51dp"
                 android:gravity="center"
                 android:textSize="30sp" />

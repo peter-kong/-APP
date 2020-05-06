@@ -3,8 +3,6 @@ package com.example.thematic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.provider.Settings;
-import android.util.Log;
 import android.widget.TextView;
 
 public class Personal_data extends AppCompatActivity {
@@ -22,7 +20,7 @@ public class Personal_data extends AppCompatActivity {
         final TextView birthday   = (TextView) findViewById(R.id.個人資料_生日);
         final TextView level      = (TextView) findViewById(R.id.個人資料_失能等級);
         final TextView connectnum = (TextView) findViewById(R.id.個人資料_連絡電話);
-        final TextView email      = (TextView) findViewById(R.id.個人資料_email);
+        final TextView email      = (TextView) findViewById(R.id.個人資料);
         final TextView address    = (TextView) findViewById(R.id.個人資料_住址);
         final TextView healthsitu = (TextView) findViewById(R.id.個人資料_健康狀況);
         final TextView personid   = (TextView) findViewById(R.id.個人資料_身分證字號);

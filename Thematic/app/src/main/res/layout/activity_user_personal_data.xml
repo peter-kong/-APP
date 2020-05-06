@@ -195,7 +195,7 @@
                     android:textSize="30dp" />
 
                 <TextView
-                    android:id="@+id/個人資料_email"
+                    android:id="@+id/個人資料"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="XXX@XXXXX"
