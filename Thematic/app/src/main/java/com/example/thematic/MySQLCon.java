@@ -8,6 +8,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.HashSet;
 
 public class MySQLCon {
 
@@ -40,6 +42,86 @@ public class MySQLCon {
             Log.e("DB","遠端連接失敗");
             Log.e("DB", e.toString());
         }
+    }
+    /*
+    public ArrayList getusername(String ID,String 需求)
+    {
+        String 關聯表名稱="",屬性="";
+
+        if (需求.equals("want_names"))
+        {
+            關聯表名稱 = "user";
+            屬性 = "UName";
+        }
+
+        ArrayList name = new ArrayList();
+
+        try
+        {
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+
+            if(關聯表名稱 == "user")
+        }
+    }*/
+
+    public ArrayList gotoschedule(String 日期, String 需求)
+    {
+        String 關聯表名稱 = "",屬性 = "";
+
+        //要個案ID
+        if(需求.equals("want_objects"))
+        {
+            關聯表名稱 =  "schedule";
+            屬性 = "UID";
+        }
+
+        ArrayList name = new ArrayList();
+
+        try
+        {
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+
+            //在關聯表中將當日的UID取出
+            if(關聯表名稱 == "schedule")
+            {
+                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `Date` = " + "\"" + 日期 + "\"";
+            }
+
+
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            ArrayList uids = new ArrayList();
+
+            //將取出來的關聯表放入ArrayList中
+            while(rs.next())
+            {
+                String X = rs.getString(屬性);
+                uids.add(X);
+            }
+            //篩選有沒有重複的
+            HashSet different = new HashSet(uids);
+            ArrayList cleanid = new ArrayList(different);
+
+            //將id轉成名字
+            for(int i = 0;i<cleanid.size();i++)
+            {
+                sql = "SELECT * FROM `" +"longcare`.`"+"user" + "` WHERE `UID` = " + "\"" + cleanid.get(i) + "\"";
+                Statement st1 = con.createStatement();
+                ResultSet rs1 = st1.executeQuery(sql);
+                while(rs1.next())
+                {
+                    name.add(rs1.getString("UName"));
+                }
+            }
+
+            st.close();
+        }
+        catch (SQLException e)
+        {
+            e.printStackTrace();
+        }
+
+        return name;
     }
 
     public String getData(String 帳號, String 需求) {
