@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".caregiver_normal_work_report"></activity>
+        <activity android:name=".caregiver_normal_work_report" />
         <activity android:name=".Recent_Inform_arrange" />
         <activity android:name=".History_Inform_arrange" />
         <activity android:name=".Schedule0" />

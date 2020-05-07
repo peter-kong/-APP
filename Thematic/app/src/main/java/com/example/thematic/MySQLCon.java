@@ -13,8 +13,8 @@ public class MySQLCon {
 
     //final String[] user_data = getResources().getStringArray(R.array.user_data);
     // 資料庫定義
-    String mysql_ip = "192.168.0.180";
-    //String mysql_ip = "134.208.41.237";
+    //String mysql_ip = "192.168.0.180";
+    String mysql_ip = "134.208.41.237";
     int mysql_port = 3306; // Port 預設為 3306
     int check_bits = 0;
     String db_name = "longcare";
@@ -242,8 +242,13 @@ public class MySQLCon {
     }
     //獲得schedule內容放入最近照服時間
     public ArrayList getschedule(String Date, String 需求,String user帳號){
-            ArrayList data = new ArrayList();
+        ArrayList data = new ArrayList();
+        int int_date = Integer.parseInt(Date);  //目前的日期
+        int db_date;
+        String need_date = "";
         try{
+
+
             String 關聯表名稱 = "schedule";
             Connection con = DriverManager.getConnection(url, db_user, db_password);
             String sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `UID` = "+ "\"" + user帳號 + "\"";
@@ -251,36 +256,97 @@ public class MySQLCon {
             ResultSet rs = st.executeQuery(sql);
 
             while(rs.next()) {
-                int int_date = Integer.parseInt(Date);
-                String nextDate = rs.getString("Date");
-                int db_date = Integer.parseInt(nextDate);
-                //取得最近的時間
-                while (int_date < db_date) {
-                    if (int_date < db_date) {
-                        String firsttime = rs.getString("FirstTime");
-                        String lasttime = rs.getString("LastTime");
-                        int CID = rs.getInt("CID");
-                        String input_CID = String.valueOf(CID);
-                        String caregiver = getData(input_CID, "我要caregiver名字");
-                        String sql1 = "SELECT * FROM `longcare`.`usertime` WHERE `Date` = \"" + nextDate + "\" ORDER BY `UID` = \"" + user帳號 + "\"";
-                        Statement st1 = con.createStatement();
-                        ResultSet rs1 = st1.executeQuery(sql1);
-                        String request = "";
-                        while (rs1.next()) {
-                            request = rs1.getString("Request");
+                need_date = rs.getString("Date"); //想要找的日期
+                db_date = Integer.parseInt(need_date);
+                //取得時間
+                if (需求.equals("我要下次工作內容")){
+                    while (int_date < db_date) {
+                        if (int_date < db_date) {   //第一個超過目前日期的日期
+                            GetUsertimeData(data,rs,need_date,user帳號);
+                            break;
                         }
-                        data.add(firsttime);
-                        data.add(lasttime);
-                        data.add(caregiver);
-                        data.add(request);
-                        data.add(nextDate);
-                        break;
                     }
                 }
+                else if(需求.equals("我要上次工作內容")){
+                    String check_date = "";
+                    while(rs.next()){
+                        check_date = rs.getString("Date"); //想要找的日期
+                        db_date = Integer.parseInt(check_date);
+                        if(db_date < int_date){
+                            need_date = check_date;
+                        }
+                        else if(db_date >= int_date){
+                            GetUsertimeData(data, rs, need_date,user帳號);
+                            break;
+                        }
+                    }
+                }
+
             }
         } catch (SQLException e){
             e.printStackTrace();
             Log.e("DB","獲取schedule資料失敗");
+            Log.e("DB",e.toString());
+        }
+        return data;
+    }
+    //獲得usertime中的資料(包含起終時間、照服員名稱、服務內容)
+    public ArrayList GetUsertimeData(ArrayList data, ResultSet rs,String 日期, String user帳號){
+        try {
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            String firsttime = rs.getString("FirstTime");
+            String lasttime = rs.getString("LastTime");
+            int CID = rs.getInt("CID");
+            String input_CID = String.valueOf(CID);
+            String caregiver = getData(input_CID, "我要caregiver名字");
+            String sql1 = "SELECT * FROM `longcare`.`usertime` WHERE `Date` = \"" + 日期 + "\" ORDER BY `UID` = \"" + user帳號 + "\"";
+            Statement st1 = con.createStatement();
+            ResultSet rs1 = st1.executeQuery(sql1);
+            String request = "";
+            while (rs1.next()) {
+                request = rs1.getString("Request");
+            }
+            data.add(firsttime);
+            data.add(lasttime);
+            data.add(caregiver);
+            data.add(request);
+            data.add(日期);
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            Log.e("DB","獲取usertime資料失敗");
+            Log.e("DB",e.toString());
+        }
+        return data;
+    }
+    //獲取schedule的日期
+    public ArrayList GetDate(String Date, String user帳號){
+        ArrayList data = new ArrayList();
+        int IntDate = Integer.parseInt(Date);
+        try{
+            //藉由帳號取得對應的UID
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            String sql = "SELECT * FROM `user` WHERE `UAccount` = "+ "\"" + user帳號 + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            rs.next();
+            String id = rs.getString("UID");
+            //使用UID進schedule取得對應的所有資料
+            String sql1 = "SELECT * FROM `schedule` WHERE `UID` = "+ "\"" + id + "\"";
+            Statement st1 = con.createStatement();
+            ResultSet rs1 = st1.executeQuery(sql1);
+            while(rs1.next()){
+                String DbDate = rs1.getString("Date");
+                int CheckDate = Integer.parseInt(DbDate);
+                if(CheckDate < IntDate){
+                    data.add(DbDate);
+                }
+
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            Log.e("DB","獲取日期資料失敗");
             Log.e("DB",e.toString());
         }
         return data;

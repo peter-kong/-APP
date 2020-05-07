@@ -33,8 +33,8 @@
                 android:layout_height="wrap_content"
                 android:background="#7759FFF3"
                 android:gravity="center"
-                android:text="上一次照服時間"
-                android:textSize="36sp" />
+                android:textSize="30sp"
+                android:text="最近照服時間" />
 
             <TextView
                 android:id="@+id/時間"
@@ -79,29 +79,9 @@
             <TextView
                 android:id="@+id/個人資料"
                 android:layout_width="match_parent"
-                android:layout_height="51dp"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView47"
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:gravity="center"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView48"
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:gravity="center"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView49"
-                android:layout_width="match_parent"
-                android:layout_height="51dp"
-                android:gravity="center"
+                android:lineSpacingMultiplier="1.5"
                 android:textSize="30sp" />
 
         </LinearLayout>

@@ -25,7 +25,8 @@ public class Personal_data extends AppCompatActivity {
         final TextView healthsitu = (TextView) findViewById(R.id.個人資料_健康狀況);
         final TextView personid   = (TextView) findViewById(R.id.個人資料_身分證字號);
 
-        String Account = "a123456789";
+        GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
+        String Account  = obj.returnAcc();
 
         new Thread(new Runnable(){
             @Override

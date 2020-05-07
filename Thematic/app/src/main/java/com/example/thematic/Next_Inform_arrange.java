@@ -19,12 +19,12 @@ public class Next_Inform_arrange extends AppCompatActivity {
         final TextView time_view = (TextView) findViewById(R.id.時間顯示);
         final TextView caregiver_view = (TextView) findViewById(R.id.照服員名稱);
         final TextView work_view = (TextView) findViewById(R.id.個人資料);
-        final TextView 日期 = (TextView)findViewById(R.id.最近照服時間);
+        final TextView 日期 = (TextView)findViewById(R.id.下次照服時間);
 
         new Thread(new Runnable() {
             @Override
             public void run() {
-
+                //取得本日日期
                 com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                 con.run();
                 Time t = new Time();
@@ -46,10 +46,10 @@ public class Next_Inform_arrange extends AppCompatActivity {
                         Date = "" + month + day;
                     }
                 }
-
+                //取得全域變數中的帳號
                 GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
                 String user帳號  = obj.returnAcc();
-
+                //取得下次服務的資料(包含日期、時間、照服員、服務內容)
                 ArrayList data = con.getschedule(Date,"我要下次工作內容",user帳號);
                 time_view.post(new Runnable() {
                     public void run() {
@@ -66,13 +66,13 @@ public class Next_Inform_arrange extends AppCompatActivity {
                     public void run() {
                         String work;
                         work = ""+data.get(3);
-                        //work = work.replaceAll(",","\\n");
+                        work = work.replace("、","\n");
                         work_view.setText(work);
                     }
                 });
                 日期.post(new Runnable() {
                     public void run() {
-                        日期.setText("下次日期:"+data.get(4));
+                        日期.setText("下次照服時間:"+data.get(4));
                     }
                 });
             }
