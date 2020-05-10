@@ -15,7 +15,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".Tab_caregiver"></activity>
+=======
+        <activity android:name=".caregiver_normal_work_report" />
+        <activity android:name=".Recent_Inform_arrange" />
+        <activity android:name=".History_Inform_arrange" />
+>>>>>>> 29315ff5d7db6d655052f846a40f23e8bdc74b9a
         <activity android:name=".Schedule0" />
         <activity android:name=".Dynamic_button" />
         <activity android:name=".SocketTest" />
@@ -29,7 +35,7 @@
         <activity android:name=".Work_report" />
         <activity android:name=".User_data_date" />
         <activity android:name=".Menu_for_manager" />
-        <activity android:name=".Inform_arrange" />
+        <activity android:name=".Next_Inform_arrange" />
         <activity
             android:name=".Register"
             android:windowSoftInputMode="adjustPan" />

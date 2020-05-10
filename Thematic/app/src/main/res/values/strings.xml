@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">照顧服務規劃管理系統</string>
+    <string name="app_name">行動長照2.0APP</string>
     <string name="Register">註冊</string>
     <string name="Login">登入</string>
     <string name="客製化">客製化</string>
@@ -25,6 +25,10 @@
     <string name="確切時間">下午 2 點 到 下午 4 點</string>
     <string name="照護內容">照護內容:</string>
     <string name="確切照護內容">量血壓|環境清潔</string>
+    <string name="title_activity_choose_time_for_work_report">choose_time_for_work_report</string>
+    <string name="title_activity_choose_time_for_history_work_report">
+        choose_time_for_history_work_report
+    </string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

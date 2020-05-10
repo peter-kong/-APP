@@ -2,22 +2,15 @@ package com.example.thematic;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
-
-import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Rect;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.EditText;
 
-import java.net.UnknownHostException;
 
 public class Login extends AppCompatActivity {
 
@@ -29,7 +22,6 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide(); //隱藏標題
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN); //隱藏狀態
-
         Button LoginBtn = (Button) findViewById(R.id.main_login);
         LoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,17 +39,22 @@ public class Login extends AppCompatActivity {
                         con.run();
                         String Account = ""+登入帳號.getText().toString()+"";
                         String Password = ""+登入密碼.getText().toString()+"";
-
-                        if((con.getData(Account,"我要manager密碼")).equals(Password)){
-                            check = 1;
-                            Log.e("get,Password",Password+","+(con.getData(Account,"我要manager密碼")));
+                        if((con.getData(Account,"我要manager密碼").equals(Password))){
+                            check = 3;
                             Intent intent = new Intent();
-                            Log.v("Login","caregiver登入成功");
+                            Log.v("Login","manager登入成功");
                             intent.setClass(Login.this,Menu_for_manager.class);
                             startActivity(intent);
                         }
-                        else if((con.getData(Account,"我要user密碼").equals(Password))){
+                        else if((con.getData(Account,"我要caregiver密碼")).equals(Password)){
                             check = 1;
+                            Intent intent = new Intent();
+                            Log.v("Login","caregiver登入成功");
+                            intent.setClass(Login.this,Menu_for_caregiver.class);
+                            startActivity(intent);
+                        }
+                        else if((con.getData(Account,"我要user密碼").equals(Password))){
+                            check = 2;
                             Intent intent = new Intent();
                             Log.v("Login","user登入成功");
                             intent.setClass(Login.this,Menu_for_user.class);
@@ -65,9 +62,6 @@ public class Login extends AppCompatActivity {
                         }else{
                             check = 0;
                         }
-
-
-
                     }
                 }).start();
 
@@ -141,7 +135,12 @@ public class Login extends AppCompatActivity {
         測試.setLayoutParams(params);
 
         */
+<<<<<<< HEAD
         /*
+=======
+
+/*
+>>>>>>> 29315ff5d7db6d655052f846a40f23e8bdc74b9a
         Button 測試 = (Button) findViewById(R.id.Transfer);
         測試.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -150,8 +149,13 @@ public class Login extends AppCompatActivity {
                 intent.setClass(Login.this,SocketTest.class);
                 startActivity(intent);
             }
+<<<<<<< HEAD
         });*/
 
+=======
+        });
+*/
+>>>>>>> 29315ff5d7db6d655052f846a40f23e8bdc74b9a
 
 /*
         //Test for 動態新增元件測試

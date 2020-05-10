@@ -22,8 +22,63 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+<<<<<<< HEAD
             android:orientation="vertical"/>
     </ScrollView>
+=======
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView71"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:text="主選單"
+                android:textSize="36sp" />
+
+            <Button
+                android:id="@+id/明日工作報表_care"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginRight="48dp"
+                android:background="@drawable/menu_for_caregiver_shape_rectangle"
+                android:text="明日工作報表"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/本日工作報表_care"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginRight="48dp"
+                android:background="@drawable/menu_for_caregiver_shape_rectangle"
+                android:text="本日工作報表"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/歷史工作報表_care"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginRight="48dp"
+                android:background="@drawable/menu_for_caregiver_shape_rectangle"
+                android:text="歷史工作報表"
+                android:textSize="20sp" /><![CDATA[
+
+
+
+            />
+
+>>>>>>> 29315ff5d7db6d655052f846a40f23e8bdc74b9a
 
     <LinearLayout
         android:id="@+id/care"

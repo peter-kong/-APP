@@ -18,19 +18,20 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/使用者Menu"
                 android:layout_width="217dp"
                 android:layout_height="44dp"
                 android:layout_marginStart="176dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="176dp"
                 android:gravity="center"
-                android:text="使用者Menu"
+                android:text="主選單"
                 android:textSize="36sp" />
 
             <Button
-                android:id="@+id/個人資料維護"
-                android:layout_width="301dp"
-                android:layout_height="206dp"
+                android:id="@+id/個人資料"
+                android:layout_width="265dp"
+                android:layout_height="113dp"
                 android:layout_marginStart="48dp"
                 android:layout_marginLeft="48dp"
                 android:layout_marginTop="100dp"
@@ -38,21 +39,49 @@
                 android:layout_marginRight="48dp"
                 android:background="@drawable/menu_for_user_shape_rectangle"
                 android:gravity="center"
-                android:text="個人資料維護"
+                android:text="個人資料"
                 android:textSize="20sp" />
 
             <Button
-                android:id="@+id/排程通知"
-                android:layout_width="310dp"
-                android:layout_height="200dp"
+                android:id="@+id/下次照服時間"
+                android:layout_width="265dp"
+                android:layout_height="113dp"
                 android:layout_marginStart="48dp"
                 android:layout_marginLeft="48dp"
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="100dp"
                 android:layout_marginEnd="48dp"
                 android:layout_marginRight="48dp"
-                android:layout_marginBottom="50dp"
                 android:background="@drawable/menu_for_user_shape_rectangle"
-                android:text="排程通知"
+                android:gravity="center"
+                android:text="下次照服時間"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/上次照服時間"
+                android:layout_width="265dp"
+                android:layout_height="113dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginRight="48dp"
+                android:background="@drawable/menu_for_user_shape_rectangle"
+                android:gravity="center"
+                android:text="上次照服時間"
+                android:textSize="20sp"  />
+
+            <Button
+                android:id="@+id/歷史照服時間"
+                android:layout_width="265dp"
+                android:layout_height="113dp"
+                android:layout_marginStart="48dp"
+                android:layout_marginLeft="48dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginEnd="48dp"
+                android:layout_marginRight="48dp"
+                android:background="@drawable/menu_for_user_shape_rectangle"
+                android:gravity="center"
+                android:text="歷史照服時間"
                 android:textSize="20sp" />
 
         </LinearLayout>

@@ -17,12 +17,10 @@ public class Request2 extends AppCompatActivity {
         getSupportActionBar().hide(); //隱藏標題
         setContentView(R.layout.activity_manager_request2);
 
-        Time = (Spinner)findViewById(R.id.Time_spinner);
+
     }
 
-    public void  order(View v){
-        String[] Time = getResources().getStringArray(R.array.Time);
-    }
+
 }
 
 

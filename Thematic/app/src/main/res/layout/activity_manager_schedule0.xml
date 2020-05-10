@@ -28,25 +28,25 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/scheduling"
+                android:id="@+id/月人力配置概況"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="50dp"
                 android:background="#E7DBD9"
-                android:text="一鍵排程"
+                android:text="月人力配置概況"
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/Schedule_search"
+                android:id="@+id/日人力配置概況"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="50dp"
                 android:background="#E7DBD9"
-                android:text="排程結果查詢"
+                android:text="日人力配置概況"
                 android:textSize="30sp" />
         </LinearLayout>
 

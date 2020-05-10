@@ -7,34 +7,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Schedule0 extends AppCompatActivity {
-
-    Button sc;
+public class Caregiver_Manage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manager_schedule0);
-        getSupportActionBar().hide(); //隱藏標題
+        setContentView(R.layout.activity_caregiver__manage);
 
-        sc = (Button)findViewById(R.id.月人力配置概況);
-        sc.setOnClickListener(new Button.OnClickListener() {
-            @Override
-            public void onClick(View V) {
-                Intent intent = new Intent();
-                intent.setClass(Schedule0.this, Month_Condition.class);
-                startActivity(intent);
-            }
-
-
-        });
-
-        Button search = (Button) findViewById(R.id.日人力配置概況);
-        search.setOnClickListener(new View.OnClickListener() {
+        Button q = (Button) findViewById(R.id.工作內容查詢);
+        q.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Schedule0.this, Day_Condition.class);
+                intent.setClass(Caregiver_Manage.this, WorkContent_query.class);
+                startActivity(intent);
+            }
+        });
+
+        Button c = (Button) findViewById(R.id.日報與月報生成);
+        c.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Caregiver_Manage.this, CreateMonthandDayRportForCaregiver.class);
                 startActivity(intent);
             }
         });
