@@ -42,7 +42,7 @@
         tools:layout_editor_absoluteY="179dp" />
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/個案日期"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="日"
