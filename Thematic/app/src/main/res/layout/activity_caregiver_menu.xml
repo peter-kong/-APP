@@ -4,67 +4,56 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77E79292"
+    android:background="#46FFF8F8"
     tools:context=".Menu_for_caregiver">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#00A09696"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView71"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:gravity="center"
-                android:text="照服員Menu"
-                android:textSize="36sp" />
-
-            <Button
-                android:id="@+id/照顧需求查詢_care"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginRight="48dp"
-                android:background="@drawable/menu_for_caregiver_shape_rectangle"
-                android:text="照顧需求查詢"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/工作報表維護_care"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="80dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginRight="48dp"
-                android:background="@drawable/menu_for_caregiver_shape_rectangle"
-                android:text="工作報表維護"
-                android:textSize="20sp" /><![CDATA[
-
-
-
-            />
-
-
-
-        ]]>
-        </LinearLayout>
+            android:orientation="vertical"/>
     </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/care"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:background="#00BEB6B6"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageButton
+            android:id="@+id/imageButton7"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#E2DDDD"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/policy" />
+
+        <ImageButton
+            android:id="@+id/imageButton6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#E2DDDD"
+            android:clickable="true"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/request" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

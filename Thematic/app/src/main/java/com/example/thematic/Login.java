@@ -26,7 +26,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         getSupportActionBar().hide(); //隱藏標題
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN); //隱藏狀態
 
@@ -141,6 +141,7 @@ public class Login extends AppCompatActivity {
         測試.setLayoutParams(params);
 
         */
+        /*
         Button 測試 = (Button) findViewById(R.id.Transfer);
         測試.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,7 +150,7 @@ public class Login extends AppCompatActivity {
                 intent.setClass(Login.this,SocketTest.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
 /*
@@ -208,5 +209,19 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        Button testBtn = (Button)findViewById(R.id.test);
+        testBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Login.this,Tab_caregiver.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
 }
