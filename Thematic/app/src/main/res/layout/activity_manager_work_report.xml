@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".W">
+    android:background="#4DD8978E"
+    tools:context=".Work_report">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -13,18 +14,17 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#4DD8978E"
             android:orientation="vertical">
 
 
             <TextView
                 android:id="@+id/textView42"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:background="#80D8978E"
                 android:gravity="center"
                 android:text="工作報表"
-                android:textSize="36sp" />
+                android:textSize="30sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -49,7 +49,7 @@
                     android:textSize="30sp" />
 
                 <Spinner
-                    android:id="@+id/objectspinner"
+                    android:id="@+id/個案下拉選單"
                     android:layout_width="230dp"
                     android:layout_height="20dp" />
 
@@ -77,10 +77,14 @@
                     android:text="日期"
                     android:textSize="30sp" />
 
-                <Spinner
-                    android:id="@+id/datespinner"
+                <TextView
+                    android:id="@+id/日期顯示"
                     android:layout_width="230dp"
-                    android:layout_height="20dp" />
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="日期顯示"
+                    android:textSize="24sp" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -120,6 +124,7 @@
                     android:src="@drawable/time" />
 
                 <TextView
+                    android:id="@+id/工作時間"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -203,14 +208,6 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="以下動態新增"
-                android:textSize="36sp" />
 
         </LinearLayout>
     </ScrollView>

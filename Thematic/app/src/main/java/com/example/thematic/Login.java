@@ -194,17 +194,8 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        Button forgetBtn = (Button)findViewById(R.id.main_forget_password);
-        forgetBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(Login.this, Forget_password.class);
-                startActivity(intent);
-            }
-        });
 
-        /*Button caregiverBtn = (Button)findViewById(R.id.caretest);
+        Button caregiverBtn = (Button)findViewById(R.id.caretest);
         caregiverBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -212,7 +203,7 @@ public class Login extends AppCompatActivity {
                 intent.setClass(Login.this,Menu_for_caregiver.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
 
         /*Button testBtn = (Button)findViewById(R.id.test);

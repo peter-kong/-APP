@@ -30,7 +30,7 @@
                 android:id="@+id/明日工作報表_care"
                 android:layout_width="300dp"
                 android:layout_height="150dp"
-                android:layout_marginTop="35dp"
+                android:layout_marginTop="70dp"
                 android:background="@drawable/menu_for_manager_shape_rectangle"
                 android:text="明日工作報表"
                 android:textSize="20sp" />

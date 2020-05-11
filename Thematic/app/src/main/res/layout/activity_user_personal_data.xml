@@ -248,14 +248,6 @@
                 android:layout_height="50dp"
                 android:textSize="30dp" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="以下動態新增"
-                android:textSize="36sp" />
-
         </LinearLayout>
     </ScrollView>
 

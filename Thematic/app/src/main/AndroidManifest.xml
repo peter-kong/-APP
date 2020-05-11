@@ -32,7 +32,6 @@
         <activity android:name=".manager_people_use_search_month_read" />
         <activity android:name=".Menu_for_caregiver" />
         <activity android:name=".Day_Condition" />
-        <activity android:name=".Forget_password" />
         <activity android:name=".Service_user_data" />
         <activity android:name=".Work_report" />
         <activity android:name=".User_data_date" />

@@ -12,6 +12,7 @@ public class manager_people_use_search_day_read extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager_people_use_search_day_read);
+        getSupportActionBar().hide(); //隱藏標題
 
         final TextView count1 = (TextView)findViewById(R.id.區間一人數);
         final TextView count2 = (TextView)findViewById(R.id.區間二人數);

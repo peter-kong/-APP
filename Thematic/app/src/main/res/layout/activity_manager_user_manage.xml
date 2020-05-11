@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77E79292"
+    android:background="#4DD8978E"
     tools:context=".manager_user_manage">
 
 
@@ -16,15 +16,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/個案資料查詢"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#80D8978E"
+                android:gravity="center"
                 android:text="個案管理"
-                android:textSize="36sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/個案資料查詢"

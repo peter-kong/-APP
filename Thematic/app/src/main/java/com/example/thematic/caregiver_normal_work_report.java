@@ -23,7 +23,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caregiver_normal_work_report);
         getSupportActionBar().hide(); //隱藏標題
-        final Spinner 個案名稱 = (Spinner)findViewById(R.id.objectspinner);
+        final Spinner 個案名稱 = (Spinner)findViewById(R.id.個案下拉選單);
 
         GlobalVariable_Account t = (GlobalVariable_Account)getApplicationContext();
         //t.println();

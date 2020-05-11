@@ -4,19 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77E79292"
+    android:background="#4DD8978E"
     tools:context=".manager_caregiver_manage">
 
     <ScrollView
         android:id="@+id/照服員管理ScrollView"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginLeft="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,39 +25,27 @@
 
             <TextView
                 android:id="@+id/照服員管理"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:text="照服員管理"
-                android:textSize="36sp" />
-
-            <TextView
-                android:id="@+id/空白區塊"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="60dp"
+                android:background="#80D8978E"
+                android:gravity="center"
+                android:text="照服員管理"
+                android:textSize="30sp" />
 
             <EditText
                 android:id="@+id/輸入照服員ID"
                 android:layout_width="300dp"
                 android:layout_height="51dp"
+                android:layout_marginTop="100dp"
                 android:ems="10"
                 android:hint="請輸入照服員的ID"
                 android:inputType="textPersonName" />
-
-            <TextView
-                android:id="@+id/空白區塊1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/空白區塊2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:id="@+id/輸入需要時間"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="80dp"
                 android:orientation="horizontal">
 
                 <TextView
@@ -106,19 +88,15 @@
                     android:textSize="36sp" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/空白區塊5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
             <Button
                 android:id="@+id/查詢"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginTop="80dp"
                 android:background="@android:drawable/btn_default"
-                android:textSize="24sp"
                 android:gravity="center"
-                android:text="查詢" />
+                android:text="查詢"
+                android:textSize="24sp" />
 
         </LinearLayout>
     </ScrollView>

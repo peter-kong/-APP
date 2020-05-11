@@ -13,6 +13,7 @@ public class Day_Condition extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager_day__condition);
+        getSupportActionBar().hide(); //隱藏標題
 
         final EditText month = (EditText)findViewById(R.id.輸入月份);
         final EditText day = (EditText)findViewById(R.id.輸入日期);

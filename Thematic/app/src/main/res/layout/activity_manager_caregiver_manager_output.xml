@@ -4,33 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77E79292"
+    android:background="#4DD8978E"
     tools:context=".manager_caregiver_manager_output">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="42dp"
             android:layout_marginLeft="42dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
-            android:gravity="center"
             android:background="#ECE8E8"
-            android:orientation="vertical" >
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/照服員當日工作內容"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="36sp"
-                android:background="#7759FFF3"
-                android:text="照服員當日工作內容" />
+                android:background="#779BC2DD"
+                android:gravity="center"
+                android:text="照服員當日工作內容"
+                android:textSize="30sp" />
 
             <Spinner
                 android:id="@+id/當日時間下拉選單"

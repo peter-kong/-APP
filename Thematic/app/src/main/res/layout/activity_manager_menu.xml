@@ -26,19 +26,35 @@
                 android:text="主選單"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/人力配置查詢"
-                android:layout_width="300dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="35dp"
-                android:background="@drawable/menu_for_manager_shape_rectangle"
-                android:text="人力配置查詢"
-                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/人力配置查詢"
+                    android:layout_width="140dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/menu_for_manager_shape_rectangle"
+                    android:text="人力配置查詢"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="140dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/menu_for_manager_shape_rectangle"
+                    android:text="工作報表查詢"
+                    android:textSize="20sp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="60dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
