@@ -3,6 +3,7 @@ package com.example.thematic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 public class Personal_data extends AppCompatActivity {
@@ -25,39 +26,52 @@ public class Personal_data extends AppCompatActivity {
         final TextView healthsitu = (TextView) findViewById(R.id.個人資料_健康狀況);
         final TextView personid   = (TextView) findViewById(R.id.個人資料_身分證字號);
 
-        GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
-        String Account  = obj.returnAcc();
-
         new Thread(new Runnable(){
             @Override
             public void run(){
+
+                GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
+
+                String Account  = obj.returnAcc();
                 com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
+                con.run();
+                Log.e("38","Hi");
                 //Log.e("OK","Hello Line 34");
                 //con.run();
                 //設定一個物件來裝從getData中拿到的東西
                 //Log.e("OK","Hello");
-                final String account_get = con.getData(Account,"account_get");
+                final String account_get = Account;
+                Log.e("44","Hi");
                 //跟server說OK(?
                 //Log.v("OK",account_get);
                 final String name_get = con.getData(Account,"name_get");
+
                 //Log.v("OK",name_get);
                 /*
                 final String gender_get = con.getData(Account,"gender_get");
                 Log.v("OK",gender_get);
                 */
                 final String birthday_get = con.getData(Account,"birthday_get");
+
+
                 //Log.v("OK",birthday_get);
                 final String level_get = con.getData(Account,"level_get");
+
                 //Log.v("OK",level_get);
                 final String connectnum_get = con.getData(Account,"connectnum_get");
+
                 //Log.v("OK",connectnum_get);
                 final String email_get = con.getData(Account,"email_get");
+
                 //Log.v("OK",email_get);
                 final String address_get = con.getData(Account,"address_get");
+
                 //Log.v("OK",address_get);
                 final String healthsitu_get = con.getData(Account,"healthsitu_get");
+
                 //Log.v("OK",healthsitu_get);
                 final String personid_get = con.getData(Account,"personid_get");
+
                 //Log.v("OK",personid_get);
 
                 //讓上面的變數來拿到從getData獲得的物件
@@ -85,7 +99,7 @@ public class Personal_data extends AppCompatActivity {
                 });
                 level.post(new Runnable() {
                     public void run() {
-                        level.setText(level_get);
+                        level.setText(""+level_get);
                     }
                 });
                 connectnum.post(new Runnable() {

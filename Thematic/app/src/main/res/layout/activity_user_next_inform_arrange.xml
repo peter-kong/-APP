@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77E79292"
+    android:background="#4DD8978E"
     tools:context=".Next_Inform_arrange">
 
     <ScrollView
@@ -21,20 +21,33 @@
             android:layout_height="match_parent"
             android:layout_marginStart="42dp"
             android:layout_marginLeft="42dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
             android:background="#ECE8E8"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/下次照服時間"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#7759FFF3"
+                android:layout_height="match_parent"
+                android:background="#779BC2DD"
                 android:gravity="center"
-                android:text="下次照服時間"
-                android:textSize="30sp" />
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat="@drawable/time" />
+
+                <TextView
+                    android:id="@+id/下次照服時間"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="下次照服時間"
+                    android:textSize="30sp" />
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/時間"
@@ -49,8 +62,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="時間顯示"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:text="時間顯示"/>
 
             <TextView
                 android:id="@+id/照服員"

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77E79292"
+    android:background="#4DD8978E"
     tools:context=".Service_user_data">
 
     <ScrollView
@@ -21,7 +21,8 @@
             <TextView
                 android:id="@+id/textView9"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
+                android:background="#80D8978E"
                 android:gravity="center"
                 android:text="個案服務內容查詢"
                 android:textSize="30sp" />
@@ -30,7 +31,7 @@
                 android:id="@+id/textView22"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="#B9DD8888"
+                android:background="#779BC2DD"
                 android:gravity="center"
                 android:text="個案資料"
                 android:textSize="30dp" />
@@ -171,7 +172,7 @@
                 android:id="@+id/備註2"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="#B9DD8888"
+                android:background="#779BC2DD"
                 android:gravity="center"
                 android:text="照護員"
                 android:textSize="30dp" />

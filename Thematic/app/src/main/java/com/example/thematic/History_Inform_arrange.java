@@ -25,6 +25,7 @@ public class History_Inform_arrange extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide(); //隱藏標題
 
         setContentView(R.layout.activity_user_history_inform_arrange);
         final TextView time_view = (TextView) findViewById(R.id.時間顯示);
@@ -87,7 +88,7 @@ public class History_Inform_arrange extends AppCompatActivity {
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Log.e("nothingSelected","沒有選則內容");
+                Log.e("nothingSelected","沒有選擇內容");
             }
         });
 

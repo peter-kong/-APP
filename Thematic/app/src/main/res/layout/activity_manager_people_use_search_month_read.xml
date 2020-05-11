@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77E79292"
-    tools:context=".Schedule">
+    android:background="#4DD8978E"
+    tools:context=".manager_people_use_search_month_read">
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -24,11 +25,24 @@
 
             <TextView
                 android:id="@+id/textView173"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#80D8978E"
                 android:gravity="center"
                 android:text="照護服務時間排程結果"
                 android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/選擇週數"
+                android:layout_width="match_parent"
+                android:layout_height="43dp"
+                android:text="選擇週數:"
+                android:textSize="30sp" />
+
+            <Spinner
+                android:id="@+id/週"
+                android:layout_width="match_parent"
+                android:layout_height="38dp" />
 
             <TableLayout
                 android:id="@+id/table"
@@ -47,7 +61,7 @@
 
 
                     <TextView
-                        android:id="@+id/textView26"
+                        android:id="@+id/空白格"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -55,6 +69,7 @@
                         android:textSize="23sp" />
 
                     <TextView
+                        android:id="@+id/星期一"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -63,6 +78,7 @@
                         android:textSize="18sp" />
 
                     <TextView
+                        android:id="@+id/星期二"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -71,6 +87,7 @@
                         android:textSize="18sp" />
 
                     <TextView
+                        android:id="@+id/星期三"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -79,7 +96,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/textView18"
+                        android:id="@+id/星期四"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -88,7 +105,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/textView172"
+                        android:id="@+id/星期五"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -107,7 +124,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView27"
+                        android:id="@+id/區間一"
                         android:layout_width="50dp"
                         android:layout_height="96dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -116,35 +133,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule0"
+                        android:id="@+id/count1"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule1"
+                        android:id="@+id/count19"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule2"
+                        android:id="@+id/count37"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule3"
+                        android:id="@+id/count55"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule4"
+                        android:id="@+id/count73"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -159,7 +176,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView166"
+                        android:id="@+id/區間二"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -168,35 +185,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule5"
+                        android:id="@+id/count2"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule6"
+                        android:id="@+id/count20"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule7"
+                        android:id="@+id/count38"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule8"
+                        android:id="@+id/count56"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule9"
+                        android:id="@+id/count74"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -211,7 +228,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView162"
+                        android:id="@+id/區間三"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -220,35 +237,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule10"
+                        android:id="@+id/count3"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule11"
+                        android:id="@+id/count21"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule12"
+                        android:id="@+id/count39"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule13"
+                        android:id="@+id/count57"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule14"
+                        android:id="@+id/count75"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -263,7 +280,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView154"
+                        android:id="@+id/區間四"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -272,35 +289,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule15"
+                        android:id="@+id/count4"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule16"
+                        android:id="@+id/count22"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule17"
+                        android:id="@+id/count40"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule18"
+                        android:id="@+id/count58"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/textView15819"
+                        android:id="@+id/count76"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -315,7 +332,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView150"
+                        android:id="@+id/區間五"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -324,35 +341,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule20"
+                        android:id="@+id/count5"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule21"
+                        android:id="@+id/count23"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule22"
+                        android:id="@+id/count41"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule23"
+                        android:id="@+id/count59"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule24"
+                        android:id="@+id/count77"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -367,7 +384,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView143"
+                        android:id="@+id/區間六"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -376,35 +393,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule25"
+                        android:id="@+id/count6"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule26"
+                        android:id="@+id/count24"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule27"
+                        android:id="@+id/count42"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule28"
+                        android:id="@+id/count60"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule29"
+                        android:id="@+id/count78"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -419,7 +436,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView136"
+                        android:id="@+id/區間七"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -428,35 +445,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule30"
+                        android:id="@+id/count7"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule31"
+                        android:id="@+id/count25"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule32"
+                        android:id="@+id/count43"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule33"
+                        android:id="@+id/count61"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule34"
+                        android:id="@+id/count79"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -471,7 +488,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView130"
+                        android:id="@+id/區間八"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -480,35 +497,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule35"
+                        android:id="@+id/count8"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule36"
+                        android:id="@+id/count26"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule37"
+                        android:id="@+id/count44"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule38"
+                        android:id="@+id/count62"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule39"
+                        android:id="@+id/count80"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -523,7 +540,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView124"
+                        android:id="@+id/區間九"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -532,35 +549,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule40"
+                        android:id="@+id/count9"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule41"
+                        android:id="@+id/count27"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule42"
+                        android:id="@+id/count45"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule43"
+                        android:id="@+id/count63"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule44"
+                        android:id="@+id/count81"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -575,7 +592,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView118"
+                        android:id="@+id/區間十"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -584,35 +601,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule45"
+                        android:id="@+id/count10"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule46"
+                        android:id="@+id/count28"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule47"
+                        android:id="@+id/count46"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule48"
+                        android:id="@+id/count64"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule49"
+                        android:id="@+id/count82"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -627,7 +644,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView112"
+                        android:id="@+id/區間十一"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -636,35 +653,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule50"
+                        android:id="@+id/count11"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule51"
+                        android:id="@+id/count29"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule52"
+                        android:id="@+id/count47"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule53"
+                        android:id="@+id/count65"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule54"
+                        android:id="@+id/count83"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -679,7 +696,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView106"
+                        android:id="@+id/區間十二"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -688,35 +705,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule55"
+                        android:id="@+id/count12"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule56"
+                        android:id="@+id/count30"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule57"
+                        android:id="@+id/count48"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule58"
+                        android:id="@+id/count66"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule59"
+                        android:id="@+id/count84"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -731,7 +748,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView100"
+                        android:id="@+id/區間十三"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -740,35 +757,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule60"
+                        android:id="@+id/count13"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule61"
+                        android:id="@+id/count31"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule62"
+                        android:id="@+id/count49"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule63"
+                        android:id="@+id/count67"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule64"
+                        android:id="@+id/count85"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -783,7 +800,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView94"
+                        android:id="@+id/區間十四"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -792,35 +809,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule65"
+                        android:id="@+id/count14"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule66"
+                        android:id="@+id/count32"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule67"
+                        android:id="@+id/count50"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule68"
+                        android:id="@+id/count68"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule69"
+                        android:id="@+id/count86"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -835,7 +852,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView88"
+                        android:id="@+id/區間十五"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -844,35 +861,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule70"
+                        android:id="@+id/count15"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule71"
+                        android:id="@+id/count33"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule72"
+                        android:id="@+id/count51"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule73"
+                        android:id="@+id/count69"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule74"
+                        android:id="@+id/count87"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -887,7 +904,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView82"
+                        android:id="@+id/區間十六"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -896,35 +913,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule75"
+                        android:id="@+id/count16"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule76"
+                        android:id="@+id/count34"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule77"
+                        android:id="@+id/count52"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule78"
+                        android:id="@+id/count70"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule79"
+                        android:id="@+id/count88"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -939,7 +956,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView65"
+                        android:id="@+id/區間十七"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -948,35 +965,35 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule80"
+                        android:id="@+id/count17"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule81"
+                        android:id="@+id/count35"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule82"
+                        android:id="@+id/count53"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule83"
+                        android:id="@+id/count71"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule84"
+                        android:id="@+id/count89"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -991,7 +1008,7 @@
                     android:layout_marginBottom="1dp">
 
                     <TextView
-                        android:id="@+id/textView33"
+                        android:id="@+id/區間十八"
                         android:layout_width="50dp"
                         android:layout_height="120dp"
                         android:background="@drawable/textview_border_for_schedule"
@@ -1000,7 +1017,7 @@
                         android:textSize="18sp" />
 
                     <TextView
-                        android:id="@+id/schedule85"
+                        android:id="@+id/count18"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
@@ -1008,28 +1025,28 @@
 
 
                     <TextView
-                        android:id="@+id/schedule86"
+                        android:id="@+id/count36"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule87"
+                        android:id="@+id/count54"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule88"
+                        android:id="@+id/count72"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center" />
 
                     <TextView
-                        android:id="@+id/schedule89"
+                        android:id="@+id/count90"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:background="@drawable/textview_border_for_schedule"

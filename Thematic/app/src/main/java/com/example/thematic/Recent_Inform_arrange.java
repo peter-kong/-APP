@@ -30,7 +30,7 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                 Time t = new Time();
                 t.setToNow();
                 int month = t.month + 1;
-                int day = t.monthDay;
+                int day = t.monthDay ;
                 Log.e("next_inform_arrange", "" + month + "," + day + "");
                 String Date = "";
                 if (month < 10) {

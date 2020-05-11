@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DD8978E"
-    tools:context=".manager_Work_report">
+    tools:context=".caregiver_normal_work_report1">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -50,8 +50,8 @@
 
                 <Spinner
                     android:id="@+id/個案下拉選單"
-                    android:layout_width="231dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="230dp"
+                    android:layout_height="20dp" />
 
 
             </LinearLayout>
@@ -77,15 +77,27 @@
                     android:text="日期"
                     android:textSize="30sp" />
 
-                <TextView
-                    android:id="@+id/日期顯示"
+
+                <Spinner
+                    android:id="@+id/datespinner"
                     android:layout_width="230dp"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="日期顯示"
-                    android:textSize="24sp" />
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:id="@+id/個案日期"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#CC5F97BE"
+                android:gravity="center"
+                android:text="1"
+                android:textSize="24sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -105,7 +117,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="46dp"
                     android:gravity="center"
-                    android:text="工作內容"
+                    android:text="工作內容與時間"
                     android:textSize="24sp" />
 
             </LinearLayout>
@@ -124,7 +136,7 @@
                     android:src="@drawable/time" />
 
                 <TextView
-                    android:id="@+id/工作時間"
+                    android:id="@+id/Time"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
@@ -149,15 +161,13 @@
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/照服員名字"
+                    android:id="@+id/workername"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="照服員名稱"
                     android:textSize="24sp" />
             </LinearLayout>
 
-<<<<<<< HEAD
             <CheckBox
                 android:id="@+id/checkBox"
                 android:layout_width="match_parent"
@@ -183,52 +193,12 @@
                 android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/textView37"
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:background="#B9DD8888"
-                android:gravity="center"
-                android:text="備註"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/備註"
+                android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:text="14:00~16:00"
-                android:textSize="24sp"
-                android:textStyle="bold|italic" />
-
-=======
->>>>>>> ab76f0b3b0a8a2cc85d67d24253ea8802684ad4d
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/服務內容顯示"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:id="@+id/完成度"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textSize="30sp" />
-            </LinearLayout>
+                android:textSize="36sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -250,18 +220,18 @@
                     android:gravity="center"
                     android:text="備註"
                     android:textSize="24sp" />
+
             </LinearLayout>
 
             <EditText
-                android:id="@+id/備註顯示"
+                android:id="@+id/editText17"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:text="備註內容"
                 android:inputType="textPersonName" />
 
         </LinearLayout>
     </ScrollView>
 
-</FrameLayout>
+</LinearLayout>
 

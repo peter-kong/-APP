@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#4DD8978E"
+    tools:context=".manager_user_search">
+
+    <ScrollView
+        android:id="@+id/個案資料查詢ScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/輸入個案資料"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/個案資料查詢"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#80D8978E"
+                android:gravity="center"
+                android:text="個案資料查詢"
+                android:textSize="30sp" />
+
+
+            <EditText
+                android:id="@+id/輸入個案ID"
+                android:layout_width="306dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:hint="請輸入個案的ID"
+                android:inputType="textPersonName" />
+
+            <Button
+                android:id="@+id/查詢"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="80dp"
+                android:background="@android:drawable/btn_default"
+                android:gravity="center"
+                android:text="查詢"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

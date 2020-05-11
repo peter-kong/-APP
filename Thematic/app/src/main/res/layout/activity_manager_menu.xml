@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77E79292"
+    android:background="#4DD8978E"
     tools:context=".Menu_for_manager">
 
     <ScrollView
@@ -19,25 +19,42 @@
 
             <TextView
                 android:id="@+id/textView48"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#80D8978E"
+                android:gravity="center"
                 android:text="主選單"
-                android:textSize="36sp" />
+                android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/人力配置查詢"
-                android:layout_width="300dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="35dp"
-                android:background="@drawable/menu_for_manager_shape_rectangle"
-                android:text="人力配置查詢"
-                android:textSize="20sp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/人力配置查詢"
+                    android:layout_width="140dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/menu_for_manager_shape_rectangle"
+                    android:text="人力配置查詢"
+                    android:textSize="20sp" />
+
+                <Button
+                    android:id="@+id/工作報表查詢"
+                    android:layout_width="140dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/menu_for_manager_shape_rectangle"
+                    android:text="工作報表查詢"
+                    android:textSize="20sp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="60dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -52,43 +69,15 @@
                     android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/個案管理"
+                    android:id="@+id/個案資料查詢"
                     android:layout_width="140dp"
                     android:layout_height="150dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/menu_for_manager_shape_rectangle"
-                    android:text="個案管理"
+                    android:text="個案資料查詢"
                     android:textSize="20sp" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="152dp"
-                android:layout_marginTop="50dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/工作報表維護"
-                    android:layout_width="140dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="9dp"
-                    android:layout_marginTop="35dp"
-                    android:layout_marginBottom="35dp"
-                    android:background="@drawable/menu_for_manager_shape_rectangle"
-                    android:text="工作報表維護(刪除)"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:id="@+id/輸入個案需求"
-                    android:layout_width="140dp"
-                    android:layout_height="150dp"
-                    android:layout_marginLeft="20dp"
-                    android:background="@drawable/menu_for_manager_shape_rectangle"
-                    android:text="輸入個案需求(刪除)"
-                    android:textSize="20sp" />
             </LinearLayout>
 
         </LinearLayout>
