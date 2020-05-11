@@ -61,7 +61,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         if(!tmp.returnUID().get(0).toString().equals("No data")){
                             Log.e("tag","Tomorrow");
                             Intent intent = new Intent();
-                            intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report.class);
+                            intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report1.class);
                             startActivity(intent);
                         }
 

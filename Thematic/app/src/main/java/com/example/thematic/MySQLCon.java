@@ -594,12 +594,12 @@ public class MySQLCon {
 
     }
 
-<<<<<<< HEAD
+
     public ArrayList getUserUID(String 照服員帳號,String strDate){
-=======
+
 
     public ArrayList getUserUID(String 照服員帳號){
->>>>>>> ab76f0b3b0a8a2cc85d67d24253ea8802684ad4d
+
 
         ArrayList UID = new ArrayList();
         UID.add("No data");
@@ -618,12 +618,11 @@ public class MySQLCon {
             Statement st2 = con.createStatement();
             ResultSet re2 = st2.executeQuery(sql2);
 
-<<<<<<< HEAD
-=======
+
             SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
             java.util.Date date = new Date();
             String strDate = sdFormat.format(date);
->>>>>>> ab76f0b3b0a8a2cc85d67d24253ea8802684ad4d
+
 
 
 
@@ -773,10 +772,9 @@ public class MySQLCon {
 
         return content;//照服員名字,開始時間,結束時間,工作內容
     }
-<<<<<<< HEAD
+
 
 }
 
-=======
+
 }
->>>>>>> ab76f0b3b0a8a2cc85d67d24253ea8802684ad4d
