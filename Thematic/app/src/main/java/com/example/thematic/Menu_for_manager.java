@@ -47,6 +47,18 @@ public class Menu_for_manager extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button WorkreportBtn = (Button) findViewById(R.id.工作報表查詢);
+        WorkreportBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Menu_for_manager.this, manager_Work_report_search.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }
 

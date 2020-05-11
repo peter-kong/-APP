@@ -17,7 +17,7 @@ public class Day_Condition extends AppCompatActivity {
 
         final EditText month = (EditText)findViewById(R.id.輸入月份);
         final EditText day = (EditText)findViewById(R.id.輸入日期);
-        final Button check = (Button)findViewById(R.id.檢視);
+        final Button check = (Button)findViewById(R.id.查詢);
 
         check.setOnClickListener(new View.OnClickListener() {
             @Override

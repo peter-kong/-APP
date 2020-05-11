@@ -42,7 +42,7 @@
                     android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/工作報表查詢"
                     android:layout_width="140dp"
                     android:layout_height="150dp"
                     android:layout_marginLeft="20dp"
