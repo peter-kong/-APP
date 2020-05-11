@@ -13,12 +13,8 @@ public class MySQLCon {
 
     //final String[] user_data = getResources().getStringArray(R.array.user_data);
     // 資料庫定義
-<<<<<<< HEAD
     String mysql_ip = "192.168.1.124";
-=======
     //String mysql_ip = "192.168.0.180";
-    String mysql_ip = "134.208.41.237";
->>>>>>> 29315ff5d7db6d655052f846a40f23e8bdc74b9a
     int mysql_port = 3306; // Port 預設為 3306
     int check_bits = 0;
     String db_name = "longcare";

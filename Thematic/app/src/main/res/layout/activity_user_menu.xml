@@ -4,29 +4,30 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77E79292"
+    android:background="#4DD8978E"
     tools:context=".Menu_for_user">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/使用者Menu"
-                android:layout_width="217dp"
-                android:layout_height="44dp"
-                android:layout_marginStart="176dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="176dp"
+                android:id="@+id/textView22"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#80D8978E"
                 android:gravity="center"
                 android:text="主選單"
-                android:textSize="36sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/個人資料"
@@ -68,7 +69,7 @@
                 android:background="@drawable/menu_for_user_shape_rectangle"
                 android:gravity="center"
                 android:text="上次照服時間"
-                android:textSize="20sp"  />
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/歷史照服時間"

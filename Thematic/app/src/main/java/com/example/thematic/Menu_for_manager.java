@@ -28,15 +28,6 @@ public class Menu_for_manager extends AppCompatActivity {
             }
         });
 
-        Button NextpageBtn3 = (Button) findViewById(R.id.工作報表維護);
-        NextpageBtn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this, Work_report.class);
-                startActivity(intent);
-            }
-        });
 
         Button NextpageBtn4 = (Button) findViewById(R.id.個案管理);
         NextpageBtn4.setOnClickListener(new View.OnClickListener() {
@@ -44,16 +35,6 @@ public class Menu_for_manager extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(Menu_for_manager.this, UserManage.class);
-                startActivity(intent);
-            }
-        });
-
-        Button NextpageBtn5 = (Button) findViewById(R.id.輸入個案需求);
-        NextpageBtn5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this, Service_check.class);
                 startActivity(intent);
             }
         });

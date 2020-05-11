@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77E79292"
+    android:background="#4DD8978E"
     tools:context=".Next_Inform_arrange">
 
     <ScrollView
@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="42dp"
             android:layout_marginLeft="42dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="100dp"
             android:layout_marginEnd="42dp"
             android:layout_marginRight="42dp"
             android:background="#ECE8E8"
@@ -31,7 +31,7 @@
                 android:id="@+id/下次照服時間"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#7759FFF3"
+                android:background="#779BC2DD"
                 android:gravity="center"
                 android:text="下次照服時間"
                 android:textSize="30sp" />

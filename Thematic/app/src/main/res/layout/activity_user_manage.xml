@@ -4,31 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#4DD8978E"
     tools:context=".UserManage">
 
     <TextView
-        android:id="@+id/textView34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/textView22"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#80D8978E"
+        android:gravity="center"
         android:text="個案管理"
-        android:textSize="50sp"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="64dp" />
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/個案資料查詢"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="#779BC2DD"
         android:text="個案資料查詢"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="247dp" />
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/個人資料及服務報表生成"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="152dp"
-        android:text="個人資料及服務報表生成"
-        app:layout_constraintTop_toBottomOf="@+id/個案資料查詢"
-        tools:layout_editor_absoluteX="116dp" />
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:background="#779BC2DD"
+        android:text="個人資料\n與工作報表生成"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/個案資料查詢" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,16 +28,16 @@
                 android:id="@+id/註冊"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:background="#00FFFFFF"
+                android:background="#80D8978E"
                 android:gravity="center"
                 android:text="註冊"
-                android:textSize="40dp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/基本資料"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="#4DD8978E"
+                android:background="#779BC2DD"
                 android:gravity="center"
                 android:text="基本資料"
                 android:textSize="25sp" />
@@ -207,7 +207,7 @@
                 android:id="@+id/病史"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
-                android:background="#4DD8978E"
+                android:background="#779BC2DD"
                 android:gravity="center"
                 android:text="健康史"
                 android:textSize="25sp" />

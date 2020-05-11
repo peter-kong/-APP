@@ -46,13 +46,13 @@ public class Login extends AppCompatActivity {
                             intent.setClass(Login.this,Menu_for_manager.class);
                             startActivity(intent);
                         }
-                        else if((con.getData(Account,"我要caregiver密碼")).equals(Password)){
+                        /*else if((con.getData(Account,"我要caregiver密碼")).equals(Password)){
                             check = 1;
                             Intent intent = new Intent();
                             Log.v("Login","caregiver登入成功");
                             intent.setClass(Login.this,Menu_for_caregiver.class);
                             startActivity(intent);
-                        }
+                        }*/
                         else if((con.getData(Account,"我要user密碼").equals(Password))){
                             check = 2;
                             Intent intent = new Intent();
@@ -122,11 +122,9 @@ public class Login extends AppCompatActivity {
 
 
 
-/*
+
 
         //Test for Socket
-
-
         /*
 
         ViewGroup.LayoutParams params = 測試.getLayoutParams();
@@ -135,12 +133,9 @@ public class Login extends AppCompatActivity {
         測試.setLayoutParams(params);
 
         */
-<<<<<<< HEAD
         /*
-=======
 
-/*
->>>>>>> 29315ff5d7db6d655052f846a40f23e8bdc74b9a
+
         Button 測試 = (Button) findViewById(R.id.Transfer);
         測試.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -149,13 +144,8 @@ public class Login extends AppCompatActivity {
                 intent.setClass(Login.this,SocketTest.class);
                 startActivity(intent);
             }
-<<<<<<< HEAD
         });*/
 
-=======
-        });
-*/
->>>>>>> 29315ff5d7db6d655052f846a40f23e8bdc74b9a
 
 /*
         //Test for 動態新增元件測試
@@ -184,12 +174,22 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        Button managerBtn = (Button) findViewById(R.id.button26);
+        Button managerBtn = (Button) findViewById(R.id.managertest);
         managerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setClass(Login.this, Menu_for_manager.class);
+                startActivity(intent);
+            }
+        });
+
+        Button userBtn = (Button) findViewById(R.id.usertest);
+        userBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Login.this, Menu_for_user.class);
                 startActivity(intent);
             }
         });
@@ -204,7 +204,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        Button caregiverBtn = (Button)findViewById(R.id.button4);
+        /*Button caregiverBtn = (Button)findViewById(R.id.caretest);
         caregiverBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -212,10 +212,10 @@ public class Login extends AppCompatActivity {
                 intent.setClass(Login.this,Menu_for_caregiver.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
-        Button testBtn = (Button)findViewById(R.id.test);
+        /*Button testBtn = (Button)findViewById(R.id.test);
         testBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -223,7 +223,7 @@ public class Login extends AppCompatActivity {
                 intent.setClass(Login.this,Tab_caregiver.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
 
