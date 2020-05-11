@@ -21,7 +21,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
             public void onClick(View v) {
 
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report.class);
+                intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report1.class);
                 startActivity(intent);
             }
         });
@@ -45,7 +45,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         //tmp2.println();
 
                         Intent intent = new Intent();
-                        intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report.class);
+                        intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report1.class);
                         startActivity(intent);
                     }
                 }).start();
@@ -60,7 +60,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_caregiver.this, Work_report.class);
+                intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report2.class);
                 startActivity(intent);
             }
         });

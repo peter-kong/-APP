@@ -14,14 +14,14 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class caregiver_normal_work_report extends AppCompatActivity
+public class caregiver_normal_work_report1 extends AppCompatActivity
 {
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caregiver_normal_work_report);
+        setContentView(R.layout.activity_caregiver_normal_work_report1);
         getSupportActionBar().hide(); //隱藏標題
         final Spinner 個案名稱 = (Spinner)findViewById(R.id.個案下拉選單);
 
@@ -45,7 +45,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
         String[] namestr = new String[name.size()];
         name.toArray(namestr);
 
-        ArrayAdapter datelist = new ArrayAdapter(caregiver_normal_work_report.this, android.R.layout.simple_spinner_item,namestr);
+        ArrayAdapter datelist = new ArrayAdapter(caregiver_normal_work_report1.this, android.R.layout.simple_spinner_item,namestr);
         datelist.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         個案名稱.setAdapter(datelist);
 

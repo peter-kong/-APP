@@ -15,13 +15,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".manager_Work_report_search"></activity>
+        <activity android:name=".caregiver_normal_work_report2"></activity>
+        <activity android:name=".manager_Work_report_search" />
         <activity android:name=".Request" />
         <activity android:name=".manager_people_use_search_day_read" />
         <activity android:name=".manager_user_search" />
         <activity android:name=".manager_caregiver_manager_output" />
         <activity android:name=".manager_caregiver_manage" />
-        <activity android:name=".caregiver_normal_work_report" />
+        <activity android:name=".caregiver_normal_work_report1" />
         <activity android:name=".Recent_Inform_arrange" />
         <activity android:name=".History_Inform_arrange" />
         <activity android:name=".people_use_search" />
@@ -39,7 +40,6 @@
         <activity
             android:name=".Register"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".Service_check" />
         <activity android:name=".Personal_data" />
         <activity android:name=".Menu_for_user" />
         <activity
