@@ -597,10 +597,6 @@ public class MySQLCon {
 
     public ArrayList getUserUID(String 照服員帳號,String strDate){
 
-
-    public ArrayList getUserUID(String 照服員帳號){
-
-
         ArrayList UID = new ArrayList();
         UID.add("No data");
 
@@ -617,14 +613,6 @@ public class MySQLCon {
             String sql2 = "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + cid + "\"";
             Statement st2 = con.createStatement();
             ResultSet re2 = st2.executeQuery(sql2);
-
-
-            SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
-            java.util.Date date = new Date();
-            String strDate = sdFormat.format(date);
-
-
-
 
             Log.e("strDate",strDate);
 
@@ -777,4 +765,4 @@ public class MySQLCon {
 }
 
 
-}
+

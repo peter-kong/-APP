@@ -178,10 +178,10 @@
                 android:gravity="center"
                 android:textSize="36sp" />
 
-<<<<<<< HEAD:Thematic/app/src/main/res/layout/activity_caregiver_normal_work_report.xml
+
             <EditText
-                android:id="@+id/備註"
-=======
+                android:id="@+id/備註"/>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -207,8 +207,7 @@
 
             <EditText
                 android:id="@+id/editText17"
->>>>>>> ab76f0b3b0a8a2cc85d67d24253ea8802684ad4d:Thematic/app/src/main/res/layout/activity_caregiver_normal_work_report1.xml
-                android:layout_width="match_parent"
+               android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName" />
@@ -216,7 +215,6 @@
         </LinearLayout>
     </ScrollView>
 
-<<<<<<< HEAD:Thematic/app/src/main/res/layout/activity_caregiver_normal_work_report.xml
     <Button
         android:id="@+id/Send"
         android:layout_width="88dp"
@@ -228,8 +226,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
-=======
-</LinearLayout>
 
->>>>>>> ab76f0b3b0a8a2cc85d67d24253ea8802684ad4d:Thematic/app/src/main/res/layout/activity_caregiver_normal_work_report1.xml
+
+</LinearLayout>

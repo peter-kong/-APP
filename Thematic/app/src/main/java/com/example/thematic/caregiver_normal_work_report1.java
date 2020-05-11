@@ -196,7 +196,7 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
                         for(int k = 0;k < 工作.length;k++){
 
                             Log.e("Line 122",工作[k]);
-                            CheckBox work1 = new CheckBox(caregiver_normal_work_report.this);
+                            CheckBox work1 = new CheckBox(caregiver_normal_work_report1.this);
                             work1.setText(工作[k]);
                             work1.setOnCheckedChangeListener(checkBoxOnCheckedChange);
 
@@ -241,7 +241,7 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
 
 
                         Intent intent = new Intent();
-                        intent.setClass(caregiver_normal_work_report.this, Menu_for_caregiver.class);
+                        intent.setClass(caregiver_normal_work_report1.this, Menu_for_caregiver.class);
                         startActivity(intent);
 
                     }

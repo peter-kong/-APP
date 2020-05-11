@@ -157,7 +157,7 @@
                     android:textSize="24sp" />
             </LinearLayout>
 
-<<<<<<< HEAD
+
             <CheckBox
                 android:id="@+id/checkBox"
                 android:layout_width="match_parent"
@@ -206,9 +206,7 @@
                 android:textSize="24sp"
                 android:textStyle="bold|italic" />
 
-=======
->>>>>>> ab76f0b3b0a8a2cc85d67d24253ea8802684ad4d
-            <LinearLayout
+ <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
