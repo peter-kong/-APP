@@ -74,7 +74,7 @@ public class manager_Work_report extends AppCompatActivity {
                                 服務內容.setText(("" + data.get(5)).replace("、", ":\n")+":");
                             }
                         });
-                        
+
                         備註.post(new Runnable() {
                             public void run() {
                                 備註.setText("" + data.get(0));
