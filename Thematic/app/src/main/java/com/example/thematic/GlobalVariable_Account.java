@@ -10,7 +10,7 @@ public class GlobalVariable_Account extends Application{
     private int Month; //月概況鎖進入的月份
     private ArrayList 星期數; //月概況spinner紀錄有幾週
     private String caregiverID,ScheduleDate; //Schedule的caregiverID,Schedule的日期
-    private String 帳號;
+    //private String 帳號;
     //private ArrayList HistoryDate;
     private ArrayList Name;
     private ArrayList Uid;
