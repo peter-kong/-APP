@@ -1,5 +1,6 @@
 package com.example.mysql_connect;
 
+import android.text.method.SingleLineTransformationMethod;
 import android.util.Log;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -15,6 +16,7 @@ public class MySQLCon {
     // 資料庫定義
     //String mysql_ip = "192.168.0.180";
     String mysql_ip = "134.208.41.237";
+    //String mysql_ip = "192.168.1.124";
     int mysql_port = 3306; // Port 預設為 3306
     int check_bits = 0;
     String db_name = "longcare";
@@ -125,7 +127,7 @@ public class MySQLCon {
 
     public String getData(String 帳號, String 需求) {
         String 關聯表名稱="",屬性="";
-        int CID = Integer.parseInt(帳號);
+        int CID = 0;
 //========以下為Personal_data的內容=========
         if(需求.equals("account_get")){
             關聯表名稱 = "user";
@@ -167,7 +169,7 @@ public class MySQLCon {
         }
         else if(需求.equals("personid_get")){
             關聯表名稱 = "user";
-            屬性 = "UIDNumber";
+            屬性 = "UID";
         }
         else if(需求.equals("我要manager密碼")){  //帳號登入找manager
             關聯表名稱 = "manager";
@@ -177,11 +179,13 @@ public class MySQLCon {
             關聯表名稱 = "user";
             屬性 = "UPassword";
         }
-        else if(需求.equals("我要caregiver密碼")){    //帳號登入找caregiver
+        else if(需求.equals("我要caregiver密碼")){
+            CID = Integer.parseInt(帳號);//帳號登入找caregiver
             關聯表名稱 = "caregiver";
             屬性 = "CPassword";
         }
         else if(需求.equals("我要caregiver名字")){    //取得caregiver名字
+            CID = Integer.parseInt(帳號);
             關聯表名稱 = "caregiver";
             屬性 = "CName";
         }
@@ -241,17 +245,20 @@ public class MySQLCon {
         }
     }
     //獲得schedule內容放入最近照服時間
-    public ArrayList getschedule(String Date, String 需求,String user帳號){
+    public ArrayList getschedule(String Date, String 需求,String 帳號){
         ArrayList data = new ArrayList();
-        int int_date = Integer.parseInt(Date);  //目前的日期
-        int db_date;
-        String need_date = "";
+        int int_date = Integer.parseInt(Date),db_date;  //目前的日期,db選擇的日期
+        String sql = new String(),need_date = new String();
         try{
-
-
             String 關聯表名稱 = "schedule";
             Connection con = DriverManager.getConnection(url, db_user, db_password);
-            String sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `UID` = "+ "\"" + user帳號 + "\"";
+            if(需求.equals("我要caregiver工作時間")){
+                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `CID` = " + "\"" + 帳號 + "\"";
+            }
+            else {
+                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `UID` = " + "\"" + 帳號 + "\"";
+            }
+            Log.e("260",sql);
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
@@ -260,11 +267,9 @@ public class MySQLCon {
                 db_date = Integer.parseInt(need_date);
                 //取得時間
                 if (需求.equals("我要下次工作內容")){
-                    while (int_date < db_date) {
-                        if (int_date < db_date) {   //第一個超過目前日期的日期
-                            GetUsertimeData(data,rs,need_date,user帳號);
+                    while (int_date <= db_date) {//第一個超過目前日期的日期
+                            GetUsertimeData(data,rs,need_date,帳號,"我要工作內容");
                             break;
-                        }
                     }
                 }
                 else if(需求.equals("我要上次工作內容")){
@@ -276,10 +281,18 @@ public class MySQLCon {
                             need_date = check_date;
                         }
                         else if(db_date >= int_date){
-                            GetUsertimeData(data, rs, need_date,user帳號);
+                            GetUsertimeData(data, rs, need_date,帳號,"我要工作內容");
                             break;
                         }
                     }
+                }
+                else if(需求.equals("我要caregiver工作時間")){
+                    if(db_date == int_date) {
+                        String firsttime = rs.getString("FirstTime");
+                        String lasttime = rs.getString("LastTime");
+                        data.add(firsttime+"~"+lasttime);
+                    }
+
                 }
 
             }
@@ -291,14 +304,15 @@ public class MySQLCon {
         return data;
     }
     //獲得usertime中的資料(包含起終時間、照服員名稱、服務內容)
-    public ArrayList GetUsertimeData(ArrayList data, ResultSet rs,String 日期, String user帳號){
+    public ArrayList GetUsertimeData(ArrayList data, ResultSet rs,String 日期, String user帳號,String 需求){
+        String firsttime = new String(),lasttime = new String(), input_CID = new String(),caregiver = new String();
         try {
             Connection con = DriverManager.getConnection(url, db_user, db_password);
-            String firsttime = rs.getString("FirstTime");
-            String lasttime = rs.getString("LastTime");
+            firsttime = rs.getString("FirstTime");
+            lasttime = rs.getString("LastTime");
             int CID = rs.getInt("CID");
-            String input_CID = String.valueOf(CID);
-            String caregiver = getData(input_CID, "我要caregiver名字");
+            input_CID = String.valueOf(CID);
+            caregiver = getData(input_CID, "我要caregiver名字");
             String sql1 = "SELECT * FROM `longcare`.`usertime` WHERE `Date` = \"" + 日期 + "\" ORDER BY `UID` = \"" + user帳號 + "\"";
             Statement st1 = con.createStatement();
             ResultSet rs1 = st1.executeQuery(sql1);
@@ -311,6 +325,7 @@ public class MySQLCon {
             data.add(caregiver);
             data.add(request);
             data.add(日期);
+            Log.e("OK","data獲取成功");
         }
         catch (SQLException e){
             e.printStackTrace();
@@ -347,6 +362,166 @@ public class MySQLCon {
         catch (SQLException e){
             e.printStackTrace();
             Log.e("DB","獲取日期資料失敗");
+            Log.e("DB",e.toString());
+        }
+        return data;
+    }
+
+    public String getAccount(String ID,String 需求){
+        String 關聯表名稱 = "",屬性 = "",data = "";
+        if(需求.equals("我要user帳號")){
+            關聯表名稱 = "user";
+            屬性 = "UAccount";
+        }
+
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            if(關聯表名稱.equals("user")) {
+                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `UID` = " + "\"" + ID + "\"";
+            }
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            rs.next();
+            data = rs.getString(屬性);
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            Log.e("DB","獲取user帳號失敗");
+            Log.e("DB",e.toString());
+        }
+        return data;
+    }
+    //獲得使用人數/總人數的資料
+    public void get_people_use(ArrayList data,ArrayList data1, int week_index, String Date,String 需求){
+        ArrayList WeekDate = new ArrayList();
+        ArrayList 星期幾 = new ArrayList();
+        int 同天區間 = 0;
+        Log.e("get_people_sue","進入搜尋人力配置資料");
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            if(需求.equals("我要單日的Empty")) {
+                sql = "SELECT * FROM `people_use` WHERE `Date` = " + "\"" + Date + "\"";
+            }
+            if(需求.equals("我要一週的Empty")) {
+                sql = "SELECT  `Date`,`星期`,`used`,`total`  FROM `people_use` WHERE  `Date` LIKE  '%" + Date + "%' ";
+            }
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            int count = 1;
+            //檢查週數是否是需要的
+            int week_choose_count = 0;
+            while(rs.next()){
+                if(需求.equals("我要一週的Empty")){
+                    int check_month = Integer.parseInt(rs.getString("Date"))/100;
+                    //檢查是否為需要的月份
+                    if(check_month == Integer.parseInt(Date)){
+                        int db星期 = rs.getInt("星期");
+
+                        //檢查是否為想要的週數
+                        if(week_choose_count != week_index){
+                            //如果第一週不是星期一開始
+                            if(week_choose_count == 0){
+                                if(db星期 != 1){
+                                    week_choose_count ++;
+                                }
+                            }
+                            //如果是星期一代表到了新的一週了
+                            if(db星期 == 1){
+                                week_choose_count ++;
+                            }
+                        }
+                        //已經到了想要的週了
+                        else if(week_choose_count == week_index){
+                            data.set(0,"no data");
+                            data.set((db星期-1)*18+1+同天區間,rs.getString("used")+"/");
+                            data1.set((db星期-1)*18+1+同天區間,rs.getString("total"));
+                            同天區間++;
+                            if(同天區間 == 18){
+                                同天區間 = 0;
+                            }
+                        }
+                    }
+                }
+                else if(需求.equals("我要單日的Empty")) {
+                    String total = rs.getString("total");
+                    String used = rs.getString("used");
+                    data.set(count, used+"/");
+                    data1.set(count,total);
+                    count ++;
+                }
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            Log.e("DB","獲取日人力配置失敗");
+            Log.e("DB",e.toString());
+        }
+    }
+    //計算月概況總共有幾週
+    public ArrayList get_week_count(int month){
+        ArrayList 需要的星期數 = new ArrayList();
+        String[] week = {"一","二","三","四","五","六"};
+        String Date = new String();
+        if(month<10) {
+            Date = "0"+String.valueOf(month);
+        }
+        else{
+            Date = String.valueOf(month);
+        }
+        int count = 0;
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            sql = "SELECT  `Date`,`星期`,`used`,`total`  FROM `people_use` WHERE  `Date` LIKE  '%" + Date + "%' ";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while(rs.next()){
+                int check_month = Integer.parseInt(rs.getString("Date"))/100;
+                if(check_month == month){
+                    int check_星期幾 = rs.getInt("星期");
+                    if(count == 0 && check_month != 1){
+                        count ++;
+                    }
+                    if(check_month == 1){
+                        count ++;
+                    }
+                }
+            }
+
+            for(int i = 0 ;i < count ; i++){
+                需要的星期數.add("第"+week[i]+"週");
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            Log.e("DB","獲取週的數目配置失敗");
+            Log.e("DB",e.toString());
+        }
+        return 需要的星期數;
+    }
+
+    public ArrayList getschedule_work(String Date,String firsttime,String 需求,String 帳號){
+        ArrayList data = new ArrayList();
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            String sql = "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + 帳號 + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                if(firsttime.equals(rs.getString("FirstTime"))){
+                    GetUsertimeData(data,rs,Date,rs.getString("UID"),"我要schedule工作內容");
+                    String sql1 = "SELECT * FROM `longcare`.`user` WHERE `UID` = \"" + rs.getString("UID") + "\"";
+                    Statement st1 = con.createStatement();
+                    ResultSet rs1 = st1.executeQuery(sql1);
+                    rs1.next();
+                    data.set(2,rs1.getString("UName"));
+                }
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            Log.e("DB","獲取週的數目配置失敗");
             Log.e("DB",e.toString());
         }
         return data;

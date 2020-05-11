@@ -171,7 +171,7 @@
                     android:id="@+id/身分證字號"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="身分證字號"
+                    android:text="身分證字號:"
                     android:textSize="30dp" />
 
                 <TextView

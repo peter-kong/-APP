@@ -7,22 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class UserDataQuery extends AppCompatActivity {
+public class manager_user_manage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_data_query);
-
-        Button c = (Button) findViewById(R.id.確認);
-        c.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_manager_user_manage);
+        getSupportActionBar().hide(); //隱藏標題
+        Button user_Search = (Button)findViewById(R.id.個案資料查詢);
+        user_Search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(UserDataQuery.this,Personal_data.class);
+                intent.setClass(manager_user_manage.this, manager_user_search.class);
                 startActivity(intent);
             }
         });
+
 
     }
 }

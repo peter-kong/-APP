@@ -52,13 +52,13 @@
                     android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/個案管理"
+                    android:id="@+id/個案資料查詢"
                     android:layout_width="140dp"
                     android:layout_height="150dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/menu_for_manager_shape_rectangle"
-                    android:text="個案管理"
+                    android:text="個案資料查詢"
                     android:textSize="20sp" />
 
             </LinearLayout>
