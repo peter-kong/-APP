@@ -8,6 +8,7 @@
     tools:context=".Work_report">
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -116,36 +117,18 @@
 
                 <TextView
                     android:id="@+id/workername"
-                    android:layout_width="wrap_content"
+                    android:layout_width="142dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="XXX"
                     android:textSize="24sp" />
             </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/checkBox"
+            <LinearLayout
+                android:id="@+id/工作內容"
                 android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:textSize="24sp" />
-
-            <CheckBox
-                android:id="@+id/checkBox2"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:textSize="24sp" />
-
-            <CheckBox
-                android:id="@+id/checkBox3"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:textSize="24sp" />
-
-            <CheckBox
-                android:id="@+id/checkBox4"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:textSize="24sp" />
+                android:layout_height="match_parent"
+                android:orientation="vertical"></LinearLayout>
 
             <TextView
                 android:id="@+id/textView37"
@@ -156,13 +139,25 @@
                 android:text="備註"
                 android:textSize="24sp" />
 
-            <TextView
-                android:id="@+id/textView38"
+            <EditText
+                android:id="@+id/備註"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="25sp" />
+                android:ems="10"
+                android:inputType="textPersonName" />
 
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:id="@+id/Send"
+        android:layout_width="88dp"
+        android:layout_height="55dp"
+        android:layout_marginEnd="160dp"
+        android:layout_marginRight="160dp"
+        android:layout_marginBottom="28dp"
+        android:text="Send"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

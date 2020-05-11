@@ -23,8 +23,8 @@ public class MySQLCon {
 
     //final String[] user_data = getResources().getStringArray(R.array.user_data);
     // 資料庫定義
-    //String mysql_ip = "192.168.0.180";
-    String mysql_ip = "134.208.41.237";
+    String mysql_ip = "192.168.0.180";
+    //String mysql_ip = "134.208.41.237";
     int mysql_port = 3306; // Port 預設為 3306
     int check_bits = 0;
     String db_name = "longcare";
@@ -228,6 +228,7 @@ public class MySQLCon {
 
         return data;
     }
+
     //寫入註冊的資料
     public int  insertRegisterData(String UName,String UAccount,String UPassword,
                            String UIDNumber,String UAddress,String Uphone,
@@ -250,6 +251,55 @@ public class MySQLCon {
             return 0;
         }
     }
+
+    //傳送報表
+    public void SendFinishandnotice(String 使用者ID,ArrayList Finish,String meg,String time){
+
+        //資料前處理
+        String a  = "";
+        for(int i = 0;i < Finish.size();i++){
+
+            //Log.e("項目: ",Finish.get(i).toString());
+
+            if(i != 0)
+                a = a.concat("、" + Finish.get(i).toString());
+            else
+                a = a.concat(Finish.get(i).toString());
+
+        }
+
+        Log.e("Finish0",Finish.get(0).toString());
+        Log.e("Finish1",Finish.get(1).toString());
+        Log.e("Finish2",Finish.get(2).toString());
+        Log.e("a:",a);
+
+        //在 schedule 資料表內找出 UID 的資料，並將 Finish 欄位內的資料修改為 a.toString
+        String sql = "UPDATE `schedule` SET `Finish` = '" + a + "' WHERE `UID` = '"+ 使用者ID + "' AND  `Date` = '" + time + "'";
+        String sql2 = "UPDATE `schedule` SET `備註` = '" + meg + "' WHERE `UID` = '" + 使用者ID + "' AND  `Date` = '" + time + "'";
+
+        Log.e("sql1",sql);
+        Log.e("sql2",sql2);
+
+        try {
+
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+
+            Statement st = con.createStatement();
+            st.executeUpdate(sql);
+            st.executeUpdate(sql2);
+            st.close();
+            //
+
+
+
+        }catch(SQLException e){
+            Log.e("SendFinishandnotice","傳送報表失敗");
+        }
+
+
+
+    }
+
     //獲得schedule內容放入最近照服時間
     public ArrayList getschedule(String Date, String 需求,String user帳號){
         ArrayList data = new ArrayList();
@@ -362,7 +412,7 @@ public class MySQLCon {
         return data;
     }
 
-    public ArrayList getUserUID(String 照服員帳號){
+    public ArrayList getUserUID(String 照服員帳號,String strDate){
 
         ArrayList UID = new ArrayList();
         UID.add("No data");
@@ -381,11 +431,10 @@ public class MySQLCon {
             Statement st2 = con.createStatement();
             ResultSet re2 = st2.executeQuery(sql2);
 
-            SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
-            Date date = new Date();
-            String strDate = sdFormat.format(date);
 
-            //Log.e("tag",strDate);
+
+
+            Log.e("strDate",strDate);
 
             int flag = 0;
             while(re2.next()){
@@ -481,16 +530,35 @@ public class MySQLCon {
                     break;
                 }
             }
-/*
-            String sql3 =  "SELECT * FROM `usertime` WHERE `Request` = " + "\"" + cid + "\"";
-            Statement st = con.createStatement();
+
+            //工作內容
+            String sql3 =  "SELECT * FROM `usertime` WHERE `UID` = " + "\"" + UID + "\"";
             ResultSet rs3 = st.executeQuery(sql3);
-*/
+            //Log.e("UID",UID);
+            //Log.e("Sql3:",sql3);
+            //Log.e("time",strDate);
+            content.add("No data");
+
+            while(rs3.next()){
+                //Log.e("Data",rs3.getString("Date")+rs3.getString("UID"));
+                if(rs3.getString("Date").equals(strDate) &&
+                    rs3.getString("UID").equals(UID)){
+                    content.set(3,rs3.getString("Request"));
+                    //Log.e("Request: ",rs3.getString("Request"));
+                    break;
+                }
+            }
+
+
+
+            // Log.e("Final",content.get(3).toString());
+
         }catch(SQLException e){
 
         }
 
-        return content;//照服員名字,開始時間,結束時間
+        return content;//照服員名字,開始時間,結束時間,工作內容
     }
+
 }
 

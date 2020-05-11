@@ -2,6 +2,7 @@ package com.example.thematic;
 import  android.app.Application;
 import android.util.Log;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class GlobalVariable_Account extends Application{
@@ -9,7 +10,8 @@ public class GlobalVariable_Account extends Application{
     private ArrayList HistoryDate;
     private ArrayList Name;
     private ArrayList Uid;
-
+    private ArrayList Finish;
+    private boolean t;
     //帳號
     public void setAccount(String input){
         帳號 = input;
@@ -36,10 +38,18 @@ public class GlobalVariable_Account extends Application{
 
     public  void println(){
 
-        for(int i = 0;i < Name.size();i++){
-            Log.e("db",Name.get(i).toString());
-        }
-
+        if(Uid.size() != 0)
+            for(int i = 0;i < Uid.size();i++){
+                Log.e("db",Uid.get(i).toString());
+            }
+        else
+            Log.e("Empty","E");
     }
+
+    public void  setFinish(ArrayList str){Finish = str;}
+    public ArrayList returnFinish(){return Finish;}
+
+    public void setTommorrowoToday(boolean number){t = number;}
+    public boolean returnTommorrowToday(){return t;}
 
 }

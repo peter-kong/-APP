@@ -2,17 +2,32 @@ package com.example.thematic;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 public class caregiver_normal_work_report extends AppCompatActivity
 {
@@ -26,7 +41,6 @@ public class caregiver_normal_work_report extends AppCompatActivity
         final Spinner 個案名稱 = (Spinner)findViewById(R.id.objectspinner);
 
         GlobalVariable_Account t = (GlobalVariable_Account)getApplicationContext();
-        //t.println();
 
         ArrayList name = t.returnName();
         //ArrayList id = t.returnUID();
@@ -38,9 +52,12 @@ public class caregiver_normal_work_report extends AppCompatActivity
             Log.e("nameid", nameid.get(i).toString());
         }
         */
-
+        /*
         for(int i = 0;i < name.size();i++)
             Log.e("name:",name.get(i).toString());
+        */
+        ArrayList curuid = new ArrayList();
+        curuid.add("No data");
 
         String[] namestr = new String[name.size()];
         name.toArray(namestr);
@@ -49,18 +66,27 @@ public class caregiver_normal_work_report extends AppCompatActivity
         datelist.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         個案名稱.setAdapter(datelist);
 
-
-
+        GlobalVariable_Account judgetoday = (GlobalVariable_Account)getApplicationContext();
 
         //日期
         SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
         Date date = new Date();
-        String strDate = sdFormat.format(date);
 
+        if(judgetoday.returnTommorrowToday()) {
+            Calendar calendar = new GregorianCalendar();
+            calendar.setTime(date);
+            calendar.add(calendar.DATE, 1);
+            date = calendar.getTime();
+        }
+
+        String strDate = sdFormat.format(date);
         final TextView 日期 = (TextView)findViewById(R.id.個案日期);
         日期.setText(strDate);
 
 
+
+
+        //選取spinner
         個案名稱.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
@@ -82,7 +108,8 @@ public class caregiver_normal_work_report extends AppCompatActivity
                             i++;
                         }
 
-
+                        //Log.e("所有當前照護員被照護UID",obj.returnUID().get(i).toString());
+                        curuid.set(0,obj.returnUID().get(i));
                         ArrayList data = con.getcaregiverworkcontent(caregiver帳號,obj.returnUID().get(i).toString());
                         //照服員名字,開始時間,結束時間
                         String Time = data.get(1).toString() + " - " +data.get(2).toString();
@@ -101,12 +128,124 @@ public class caregiver_normal_work_report extends AppCompatActivity
                             }
                         });
 
+
+                        LinearLayout work = (LinearLayout)findViewById(R.id.工作內容);
+
+                        //reset the Require
+                        work.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                if(((LinearLayout) work).getChildCount() > 0)
+                                    ((LinearLayout) work).removeAllViews();
+
+                            }
+                        });
+
+                        String [] 工作 = data.get(3).toString().split("、");
+                        //Log.e("工作一", 工作[0]);
+
+                        GlobalVariable_Account tmp = (GlobalVariable_Account)getApplicationContext();
+
+                        //裝True False
+                        ArrayList 工作名 = new ArrayList();
+                        ArrayList Finish = new ArrayList();
+
+                        for(int k = 0;k < 工作.length;k++) {
+                            Finish.add("False");
+                            工作名.add(工作[k]);
+                            //Log.e("tags",工作名.get(k).toString());
+                        }
+
+
+                        //辨識True False
+                        CompoundButton.OnCheckedChangeListener checkBoxOnCheckedChange =
+                                new CompoundButton.OnCheckedChangeListener()
+                                {
+                                    @Override
+                                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+                                    { //buttonView 為目前觸發此事件的 CheckBox, isChecked 為此 CheckBox 目前的選取狀態
+                                        if(isChecked)//等於 buttonView.isChecked()
+                                        {
+                                            Toast.makeText(getApplicationContext(),buttonView.getText()+" 被選取", Toast.LENGTH_LONG).show();
+                                            for(int k = 0;k < 工作名.size();k++) {
+                                                if (工作名.get(k).toString().equals(buttonView.getText())) {
+                                                    Finish.set(k, "True");
+                                                    Log.e(工作名.get(k).toString(),Finish.get(k).toString());
+                                                }
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            Toast.makeText(getApplicationContext(),buttonView.getText()+" 被取消", Toast.LENGTH_LONG).show();
+                                            for(int k = 0;k < 工作名.size();k++) {
+                                                if (工作名.get(k).toString().equals(buttonView.getText())) {
+                                                    Finish.set(k, "False");
+                                                    Log.e(工作名.get(k).toString(),Finish.get(k).toString());
+                                                }
+                                            }
+                                        }
+
+                                        tmp.setFinish(Finish);
+
+                                        tmp.println();
+                                    }
+                                };
+
+
+                        for(int k = 0;k < 工作.length;k++){
+
+                            Log.e("Line 122",工作[k]);
+                            CheckBox work1 = new CheckBox(caregiver_normal_work_report.this);
+                            work1.setText(工作[k]);
+                            work1.setOnCheckedChangeListener(checkBoxOnCheckedChange);
+
+                            work.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    work.addView(work1, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                                }
+                            });
+                            Log.e("Work Normal",工作[k]);
+                        }
+
                     }
                 }).start();
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 Log.e("nothingSelected","沒有選則內容");
+            }
+        });
+
+
+
+        GlobalVariable_Account test = (GlobalVariable_Account)getApplicationContext();
+
+        Button Send = (Button)findViewById(R.id.Send);
+        Send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        test.println();
+
+                        TextView 備註 = (TextView)findViewById(R.id.備註);
+                        String meg = 備註.getText().toString();
+
+                        com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
+                        con.SendFinishandnotice(curuid.get(0).toString(),test.returnFinish(),meg,strDate);
+                        Log.e("Data: ",curuid.get(0).toString()+test.returnFinish().get(0).toString());
+
+
+                        Intent intent = new Intent();
+                        intent.setClass(caregiver_normal_work_report.this, Menu_for_caregiver.class);
+                        startActivity(intent);
+
+                    }
+                }).start();
             }
         });
 
