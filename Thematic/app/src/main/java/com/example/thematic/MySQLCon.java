@@ -525,5 +525,136 @@ public class MySQLCon {
             Log.e("DB",e.toString());
         }
         return data;
+
+    public ArrayList getUserUID(String 照服員帳號){
+
+        ArrayList UID = new ArrayList();
+        UID.add("No data");
+
+        //藉由帳號取得對應的CID
+        try {
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            String sql = "SELECT * FROM `caregiver` WHERE `CAccount` = " + "\"" + 照服員帳號 + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            rs.next();
+            String cid = rs.getString("CID");
+
+            String sql2 = "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + cid + "\"";
+            Statement st2 = con.createStatement();
+            ResultSet re2 = st2.executeQuery(sql2);
+
+            SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
+            Date date = new Date();
+            String strDate = sdFormat.format(date);
+
+            //Log.e("tag",strDate);
+
+            int flag = 0;
+            while(re2.next()){
+                if(re2.getString("Date").equals(strDate)){
+                    if(UID.size() == 1 && flag == 0) {
+                        UID.set(0, re2.getString("UID"));
+                        flag = 1;
+                    }else {
+                        UID.add(re2.getString("UID"));
+                      //  Log.e("Yes",re2.getString("UID"));
+                    }
+                }else{
+                   // Log.e("Not time:",re2.getString("Date"));
+                }
+            }
+
+        }catch(SQLException e){
+            Log.e("DB","獲取UID失敗");
+        }
+
+       // Log.e("DBtest",UID.get(0).toString());
+
+        return UID;
+    }
+
+    public ArrayList getName(ArrayList UID){
+
+        ArrayList name = new ArrayList();
+        name.add("no data");
+
+        try {
+
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+
+            int flag = 0;
+            for (int i = 0; i < UID.size(); i++) {
+
+                String sql = "SELECT * FROM `user` WHERE `UID` = " + "\"" + UID.get(i) + "\"";
+                //Log.e("Ins: ",sql);
+                Statement st = con.createStatement();
+                ResultSet rs = st.executeQuery(sql);
+
+                rs.next();
+                if(name.size() == 1 && flag == 0){
+                    name.set(0,rs.getString("UName"));
+                    flag = 1;
+                }else{
+                    name.add(rs.getString("UName"));
+                }
+
+            }
+        }catch(SQLException e){
+            Log.e("Name","姓名取得失敗");
+        }
+
+        return name;
+    }
+
+    public ArrayList getcaregiverworkcontent(String 照服員帳號, String UID){
+
+        ArrayList content = new ArrayList();
+        content.add("no data");
+
+        try{
+           // Log.e("照服員帳號",照服員帳號);
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            String sql =  "SELECT * FROM `caregiver` WHERE `CAccount` = " + "\"" + 照服員帳號 + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            //Log.e("sql: ",sql);
+
+            //第一照服員名字
+            rs.next();
+            content.set(0,rs.getString("CName"));
+            String cid = rs.getString("CID");
+
+            SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
+            Date date = new Date();
+            String strDate = sdFormat.format(date);
+
+            //對照CID UID DATE
+            String sql2 =  "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + cid + "\"";
+            ResultSet rs2 = st.executeQuery(sql2);
+
+            while(rs2.next()){
+               // Log.e("rs2:",rs2.getString("CID").toString() + rs2.getString("UID") + rs2.getString("Date"));
+                //Log.e("target:",cid+UID+strDate);
+                if(cid.equals(rs2.getString("CID")) && UID.equals(rs2.getString("UID")) && strDate.equals(rs2.getString("Date"))){
+                    content.add(rs2.getString("FirstTime"));
+                    content.add(rs2.getString("LastTime"));
+                   // Log.e("Time:",content.get(1).toString() + " - " + content.get(2).toString());
+                    break;
+                }
+            }
+/*
+            String sql3 =  "SELECT * FROM `usertime` WHERE `Request` = " + "\"" + cid + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs3 = st.executeQuery(sql3);
+*/
+        }catch(SQLException e){
+
+        }
+
+        return content;//照服員名字,開始時間,結束時間
     }
 }
+

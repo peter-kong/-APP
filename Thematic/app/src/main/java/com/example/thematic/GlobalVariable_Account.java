@@ -1,5 +1,6 @@
 package com.example.thematic;
 import  android.app.Application;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -9,6 +10,11 @@ public class GlobalVariable_Account extends Application{
     private int Month; //月概況鎖進入的月份
     private ArrayList 星期數; //月概況spinner紀錄有幾週
     private String caregiverID,ScheduleDate; //Schedule的caregiverID,Schedule的日期
+    private String 帳號;
+    //private ArrayList HistoryDate;
+    private ArrayList Name;
+    private ArrayList Uid;
+
 
     //帳號
     public void setAccount(String input){
@@ -48,5 +54,23 @@ public class GlobalVariable_Account extends Application{
     public void setweek_count(ArrayList 星期List) {星期數 = 星期List; }
 
     public ArrayList returnWeekCount(){return 星期數;}
+
+    //工作報表 名字
+    public void setName(ArrayList str) {Name = str; }
+
+    public ArrayList returnName() {return Name; }
+
+    //工作報表 UID
+    public void setUID(ArrayList str) {Uid = str; }
+
+    public ArrayList returnUID() {return Uid; }
+
+    public  void println(){
+
+        for(int i = 0;i < Name.size();i++){
+            Log.e("db",Name.get(i).toString());
+        }
+
+    }
 
 }

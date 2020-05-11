@@ -19,6 +19,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
         NextpageBtn1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent();
                 intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report.class);
                 startActivity(intent);
@@ -29,9 +30,27 @@ public class Menu_for_caregiver extends AppCompatActivity {
         NextpageBtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report.class);
-                startActivity(intent);
+
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+
+                        GlobalVariable_Account tmp = (GlobalVariable_Account)getApplicationContext();
+                        String 照服員帳號 = tmp.returnAcc();
+                        GlobalVariable_Account tmp2 = (GlobalVariable_Account)getApplicationContext();
+
+                        com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
+                        tmp2.setUID(con.getUserUID(照服員帳號));
+                        tmp2.setName(con.getName(tmp2.returnUID()));
+                        //tmp2.println();
+
+                        Intent intent = new Intent();
+                        intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report.class);
+                        startActivity(intent);
+                    }
+                }).start();
+
+
             }
         });
 

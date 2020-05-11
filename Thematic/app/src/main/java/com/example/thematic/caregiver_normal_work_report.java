@@ -4,8 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class caregiver_normal_work_report extends AppCompatActivity
 {
@@ -15,43 +22,93 @@ public class caregiver_normal_work_report extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caregiver_normal_work_report);
-
         getSupportActionBar().hide(); //隱藏標題
+        final Spinner 個案名稱 = (Spinner)findViewById(R.id.objectspinner);
+
+        GlobalVariable_Account t = (GlobalVariable_Account)getApplicationContext();
+        //t.println();
+
+        ArrayList name = t.returnName();
+        //ArrayList id = t.returnUID();
+        ArrayList nameid = null;
+
+        /*
+        for(int i = 0;i < name.size();i++){
+            nameid.add(name.get(i).toString()+id.get(i).toString());
+            Log.e("nameid", nameid.get(i).toString());
+        }
+        */
+
+        for(int i = 0;i < name.size();i++)
+            Log.e("name:",name.get(i).toString());
+
+        String[] namestr = new String[name.size()];
+        name.toArray(namestr);
+
+        ArrayAdapter datelist = new ArrayAdapter(caregiver_normal_work_report.this, android.R.layout.simple_spinner_item,namestr);
+        datelist.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        個案名稱.setAdapter(datelist);
 
 
-        //給日期
-        String date = "0502";
-        //要知道要取幾筆 首先要找到關聯表
-        new Thread(new Runnable()
-        {
+
+
+        //日期
+        SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
+        Date date = new Date();
+        String strDate = sdFormat.format(date);
+
+        final TextView 日期 = (TextView)findViewById(R.id.個案日期);
+        日期.setText(strDate);
+
+
+        個案名稱.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void run()
-            {
-                //連接mysqljava檔
-                com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
-                //獲取object id 以找到名字
-                final ArrayList objects = con.gotoschedule(date, "want_objects");
-                Log.e("objects",""+objects.get(0) +"");
-                //獲取有幾個工作
-                //獲取工作內容
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
 
+                //拿到被選擇项的值進行連接DB並顯示資料
+                String chooseDate = (String) 個案名稱.getSelectedItem();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
+                        con.run();
+                        GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
+                        String caregiver帳號  = obj.returnAcc();
+
+                        int i = 0;
+                        ArrayList 所有當前照護員被照護名字 = obj.returnName();
+                        while(!所有當前照護員被照護名字.get(i).equals(chooseDate)){
+                            i++;
+                        }
+
+
+                        ArrayList data = con.getcaregiverworkcontent(caregiver帳號,obj.returnUID().get(i).toString());
+                        //照服員名字,開始時間,結束時間
+                        String Time = data.get(1).toString() + " - " +data.get(2).toString();
+                        final TextView workername = (TextView)findViewById(R.id.workername);
+                        final TextView Timeview = (TextView)findViewById(R.id.Time);
+
+                        workername.post(new Runnable() {
+                            public void run() {
+                                workername.setText(data.get(0).toString());
+                            }
+                        });
+
+                        Timeview.post(new Runnable() {
+                            public void run() {
+                                Timeview.setText(Time);
+                            }
+                        });
+
+                    }
+                }).start();
             }
-        }).start();
-
-/*
-    //繫結activity user_data_date與amcc
-    LinearLayout LL = (LinearLayout)findViewById(R.id.amcc);
-    //知道有幾筆後再新增按鍵
-    for(int i=0;i<howmany.size();i++)
-    {
-        String s = howmany.get(i).toString();
-        Button userbtn = new Button(this);
-        userbtn.setId(i);
-        userbtn.setText(s);
-        LL.addView(userbtn);
-
-
-    }*/
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Log.e("nothingSelected","沒有選則內容");
+            }
+        });
 
     }
 }
