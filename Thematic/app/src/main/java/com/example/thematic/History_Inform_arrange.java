@@ -87,7 +87,7 @@ public class History_Inform_arrange extends AppCompatActivity {
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                Log.e("nothingSelected","沒有選則內容");
+                Log.e("nothingSelected","沒有選擇內容");
             }
         });
 

@@ -23,57 +23,79 @@
         android:id="@+id/button28"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="89dp"
+        android:layout_marginLeft="89dp"
+        android:layout_marginTop="122dp"
         android:text="檢視"
-        tools:layout_editor_absoluteX="89dp"
-        tools:layout_editor_absoluteY="182dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <Button
         android:id="@+id/button29"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="121dp"
         android:text="下載"
-        tools:layout_editor_absoluteX="237dp"
-        tools:layout_editor_absoluteY="181dp" />
+        app:layout_constraintStart_toEndOf="@+id/button28"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <EditText
         android:id="@+id/editText4"
         android:layout_width="69dp"
         android:layout_height="51dp"
+        android:layout_marginStart="98dp"
+        android:layout_marginLeft="98dp"
+        android:layout_marginTop="45dp"
         android:ems="10"
         android:inputType="date"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button28" />
 
     <EditText
         android:id="@+id/editText6"
         android:layout_width="86dp"
         android:layout_height="49dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="46dp"
         android:ems="10"
         android:inputType="date"
-        tools:layout_editor_absoluteX="237dp"
-        tools:layout_editor_absoluteY="275dp" />
+        app:layout_constraintStart_toEndOf="@+id/textView17"
+        app:layout_constraintTop_toBottomOf="@+id/button29" />
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="59dp"
         android:text="月"
-        tools:layout_editor_absoluteX="167dp"
-        tools:layout_editor_absoluteY="289dp" />
+        app:layout_constraintStart_toEndOf="@+id/editText4"
+        app:layout_constraintTop_toBottomOf="@+id/button28" />
 
     <TextView
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="227dp"
         android:text="日"
-        tools:layout_editor_absoluteX="325dp"
-        tools:layout_editor_absoluteY="287dp" />
+        app:layout_constraintStart_toEndOf="@+id/editText6"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <Button
         android:id="@+id/button30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="161dp"
+        android:layout_marginLeft="161dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginRight="162dp"
         android:text="確定"
-        tools:layout_editor_absoluteX="161dp"
-        tools:layout_editor_absoluteY="397dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText4" />
 </androidx.constraintlayout.widget.ConstraintLayout>

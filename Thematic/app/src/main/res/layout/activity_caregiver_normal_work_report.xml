@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DD8978E"
-    tools:context=".Frag_work_report">
+    tools:context=".caregiver_normal_work_report">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -77,10 +77,16 @@
                     android:text="日期"
                     android:textSize="30sp" />
 
+
                 <Spinner
                     android:id="@+id/datespinner"
                     android:layout_width="230dp"
                     android:layout_height="20dp" />
+
+                <TextView
+                    android:id="@+id/個案日期"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -130,7 +136,8 @@
                     android:src="@drawable/time" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/Time"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="09:00~10:00"

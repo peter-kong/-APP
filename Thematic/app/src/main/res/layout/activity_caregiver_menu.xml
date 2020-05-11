@@ -27,12 +27,12 @@
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/人力配置查詢"
+                android:id="@+id/明日工作報表_care"
                 android:layout_width="300dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="35dp"
                 android:background="@drawable/menu_for_manager_shape_rectangle"
-                android:text="人力配置查詢"
+                android:text="明日工作報表"
                 android:textSize="20sp" />
 
             <LinearLayout
@@ -43,23 +43,23 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/照服員管理"
+                    android:id="@+id/本日工作報表_care"
                     android:layout_width="140dp"
                     android:layout_height="150dp"
                     android:layout_marginLeft="9dp"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/menu_for_manager_shape_rectangle"
-                    android:text="照服員管理"
+                    android:text="本日工作報表"
                     android:textSize="20sp" />
 
                 <Button
-                    android:id="@+id/個案資料查詢"
+                    android:id="@+id/歷史工作報表_care"
                     android:layout_width="140dp"
                     android:layout_height="150dp"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="0dp"
                     android:background="@drawable/menu_for_manager_shape_rectangle"
-                    android:text="個案資料查詢"
+                    android:text="歷史工作報表"
                     android:textSize="20sp" />
 
             </LinearLayout>

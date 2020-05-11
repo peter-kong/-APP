@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DD8978E"
-    tools:context=".Frag_request_search">
+    tools:context=".Request">
 
     <!-- TODO: Update blank fragment layout -->
 

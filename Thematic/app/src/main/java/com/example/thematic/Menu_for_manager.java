@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.service.autofill.UserData;
 import android.view.View;
 import android.widget.Button;
 
@@ -23,18 +22,18 @@ public class Menu_for_manager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this, Caregiver_Manage.class);
+                intent.setClass(Menu_for_manager.this, manager_caregiver_manage.class);
                 startActivity(intent);
             }
         });
 
 
-        Button NextpageBtn4 = (Button) findViewById(R.id.個案管理);
+        Button NextpageBtn4 = (Button) findViewById(R.id.個案資料查詢);
         NextpageBtn4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this, UserManage.class);
+                intent.setClass(Menu_for_manager.this, manager_user_search.class);
                 startActivity(intent);
             }
         });
@@ -44,7 +43,7 @@ public class Menu_for_manager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this,Schedule0.class);
+                intent.setClass(Menu_for_manager.this, people_use_search.class);
                 startActivity(intent);
             }
         });
