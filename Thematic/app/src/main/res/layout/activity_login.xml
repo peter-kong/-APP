@@ -11,17 +11,18 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
+        android:layout_width="296dp"
+        android:layout_height="213dp"
         android:background="#00D8978E"
         android:cropToPadding="false"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/elderly" />
+        app:layout_constraintVertical_bias="0.528"
+        app:srcCompat="@drawable/unknown" />
 
     <LinearLayout
         android:id="@+id/linearLayout3"
