@@ -20,7 +20,6 @@
         <activity android:name=".Caregiver_tab" />
         <activity android:name=".Manager_tab" />
         <activity android:name=".User_tab" />
-        <activity android:name=".caregiver_normal_work_report2" />
         <activity android:name=".manager_Work_report_search" />
         <activity android:name=".Request" />
         <activity android:name=".manager_people_use_search_day_read" />
