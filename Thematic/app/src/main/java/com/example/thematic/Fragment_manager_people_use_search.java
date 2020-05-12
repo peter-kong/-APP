@@ -32,18 +32,7 @@ public class Fragment_manager_people_use_search extends Fragment {
     }
 
 
-    /*private void toNext() {
-        Btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                RootFragmentDirections.ActionRootFragmentToSettingsFragment action =
-                        RootFragmentDirections.actionRootFragmentToSettingsFragment();
-
-                Navigation.findNavController(Btn)
-                        .navigate(action);
-            }
-        });*/
 
 
-    }
+}
 
