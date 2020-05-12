@@ -146,7 +146,6 @@ public class MySQLCon {
             關聯表名稱 = "user";
             屬性 = "UPassword";
         } else if (需求.equals("我要caregiver密碼")) {
-            CID = Integer.parseInt(帳號);//帳號登入找caregiver
             關聯表名稱 = "caregiver";
             屬性 = "CPassword";
         } else if (需求.equals("我要caregiver名字")) {    //取得caregiver名字
@@ -159,7 +158,7 @@ public class MySQLCon {
             屬性 = "UID";
             Date = 帳號;
         }
-        String data = "";
+        String data = "No data";
         try {
             //Log.v("DB","Test:"+關聯表名稱+屬性);
             Connection con = DriverManager.getConnection(url, db_user, db_password);
@@ -169,7 +168,7 @@ public class MySQLCon {
             } else if (關聯表名稱 == "manager") {
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `MAccount` = " + "\"" + 帳號 + "\"";
             } else if (關聯表名稱 == "caregiver") {
-                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `CID` = " + "\"" + CID + "\"";
+                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `CAccount` = " + "\"" + 帳號 + "\"";
             } else if(關聯表名稱 == "schedule"){
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `Date` = " + "\"" + Date + "\"";
             }
@@ -184,10 +183,14 @@ public class MySQLCon {
             }
             st.close();
         } catch (SQLException e) {
+            Log.e("Here","Line 187");
             e.printStackTrace();
+
         }
         if (counter == 0)
-            data = "";
+            data = "No data";
+
+        Log.e("Line 194",data);
 
         return data;
     }
