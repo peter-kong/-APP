@@ -174,6 +174,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
+
         Button managerBtn = (Button) findViewById(R.id.managertest);
         managerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,7 +190,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Login.this, Menu_for_user.class);
+                intent.setClass(Login.this, User_tab.class);
                 startActivity(intent);
             }
         });
@@ -204,17 +205,6 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-        /*Button testBtn = (Button)findViewById(R.id.test);
-        testBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(Login.this,Tab_caregiver.class);
-                startActivity(intent);
-            }
-        });*/
 
 
 
