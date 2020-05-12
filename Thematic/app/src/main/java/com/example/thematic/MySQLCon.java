@@ -10,15 +10,17 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.HashSet;
 
 public class MySQLCon {
 
     //final String[] user_data = getResources().getStringArray(R.array.user_data);
     // 資料庫定義
-    String mysql_ip = "192.168.0.180";
-    //String mysql_ip = "134.208.41.237";
+    //String mysql_ip = "192.168.0.180";
+    String mysql_ip = "134.208.41.237";
     //tring mysql_ip = "134.208.41.237";
     //String mysql_ip = "192.168.1.124";
     int mysql_port = 3306; // Port 預設為 3306
@@ -614,7 +616,7 @@ public class MySQLCon {
             Statement st2 = con.createStatement();
             ResultSet re2 = st2.executeQuery(sql2);
 
-            Log.e("strDate",strDate);
+            Log.e("照服員帳號",照服員帳號);
 
             int flag = 0;
             while(re2.next()){
@@ -622,12 +624,13 @@ public class MySQLCon {
                     if(UID.size() == 1 && flag == 0) {
                         UID.set(0, re2.getString("UID"));
                         flag = 1;
+                        //Log.e("Yes",re2.getString("UID"));
                     }else {
                         UID.add(re2.getString("UID"));
-                        //  Log.e("Yes",re2.getString("UID"));
+                       // Log.e("Yes",re2.getString("UID"));
                     }
                 }else{
-                    // Log.e("Not time:",re2.getString("Date"));
+                     Log.e("Not time:",re2.getString("Date"));
                 }
             }
 
@@ -635,7 +638,8 @@ public class MySQLCon {
             Log.e("DB","獲取UID失敗");
         }
 
-        // Log.e("DBtest",UID.get(0).toString());
+        for(int j = 0;j < UID.size();j++)
+            Log.e("DBtest1",UID.get(j).toString());
 
         return UID;
     }
@@ -694,7 +698,7 @@ public class MySQLCon {
         return name;
     }
 
-    public ArrayList getcaregiverworkcontent(String 照服員帳號, String UID){
+    public ArrayList getcaregiverworkcontent(String 照服員帳號, String UID,String strDate){
 
         ArrayList content = new ArrayList();
         content.add("no data");
@@ -713,13 +717,11 @@ public class MySQLCon {
             content.set(0,rs.getString("CName"));
             String cid = rs.getString("CID");
 
-            SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
-            Date date = new Date();
-            String strDate = sdFormat.format(date);
 
             //對照CID UID DATE
             String sql2 =  "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + cid + "\"";
             ResultSet rs2 = st.executeQuery(sql2);
+
 
             while(rs2.next()){
                 // Log.e("rs2:",rs2.getString("CID").toString() + rs2.getString("UID") + rs2.getString("Date"));
