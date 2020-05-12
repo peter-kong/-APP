@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DD8978E"
-    tools:context=".Work_report">
+    tools:context=".manager_Work_report">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -50,8 +50,8 @@
 
                 <Spinner
                     android:id="@+id/個案下拉選單"
-                    android:layout_width="230dp"
-                    android:layout_height="20dp" />
+                    android:layout_width="231dp"
+                    android:layout_height="wrap_content" />
 
 
             </LinearLayout>
@@ -149,12 +149,14 @@
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/workername"
+                    android:id="@+id/照服員名字"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:text="照服員名稱"
                     android:textSize="24sp" />
             </LinearLayout>
+
 
             <CheckBox
                 android:id="@+id/checkBox"
@@ -180,6 +182,52 @@
                 android:layout_height="50sp"
                 android:textSize="24sp" />
 
+            <TextView
+                android:id="@+id/textView37"
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:background="#B9DD8888"
+                android:gravity="center"
+                android:text="備註"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/備註"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="14:00~16:00"
+                android:textSize="24sp"
+                android:textStyle="bold|italic" />
+
+ <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/服務內容顯示"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:id="@+id/完成度"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:textSize="30sp" />
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -203,10 +251,11 @@
             </LinearLayout>
 
             <EditText
-                android:id="@+id/editText17"
+                android:id="@+id/備註顯示"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
+                android:text="備註內容"
                 android:inputType="textPersonName" />
 
         </LinearLayout>

@@ -1,3 +1,4 @@
+
 package com.example.mysql_connect;
 
 import android.text.method.SingleLineTransformationMethod;
@@ -18,6 +19,7 @@ public class MySQLCon {
     // 資料庫定義
     String mysql_ip = "192.168.0.180";
     //String mysql_ip = "134.208.41.237";
+    //tring mysql_ip = "134.208.41.237";
     //String mysql_ip = "192.168.1.124";
     int mysql_port = 3306; // Port 預設為 3306
     int check_bits = 0;
@@ -120,7 +122,7 @@ public class MySQLCon {
     }
 
     public String getData(String 帳號, String 需求) {
-        String 關聯表名稱 = "", 屬性 = "";
+        String 關聯表名稱 = "", 屬性 = "",Date = "";
         int CID = 0;
 //========以下為Personal_data的內容=========
         if (需求.equals("account_get")) {
@@ -172,6 +174,11 @@ public class MySQLCon {
             關聯表名稱 = "caregiver";
             屬性 = "CName";
         }
+        else if(需求.equals("我要schedule當日所有的UID")){
+            關聯表名稱 = "schedule";
+            屬性 = "UID";
+            Date = 帳號;
+        }
         String data = "";
         try {
             //Log.v("DB","Test:"+關聯表名稱+屬性);
@@ -183,6 +190,8 @@ public class MySQLCon {
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `MAccount` = " + "\"" + 帳號 + "\"";
             } else if (關聯表名稱 == "caregiver") {
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `CID` = " + "\"" + CID + "\"";
+            } else if(關聯表名稱 == "schedule"){
+                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `Date` = " + "\"" + Date + "\"";
             }
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
@@ -226,10 +235,59 @@ public class MySQLCon {
         }
     }
 
+    //傳送報表
+    public void SendFinishandnotice(String 使用者ID,ArrayList Finish,String meg,String time){
+
+        //資料前處理
+        String a  = "";
+        for(int i = 0;i < Finish.size();i++){
+
+            //Log.e("項目: ",Finish.get(i).toString());
+
+            if(i != 0)
+                a = a.concat("、" + Finish.get(i).toString());
+            else
+                a = a.concat(Finish.get(i).toString());
+
+        }
+
+        Log.e("Finish0",Finish.get(0).toString());
+        Log.e("Finish1",Finish.get(1).toString());
+        Log.e("Finish2",Finish.get(2).toString());
+        Log.e("a:",a);
+
+        //在 schedule 資料表內找出 UID 的資料，並將 Finish 欄位內的資料修改為 a.toString
+        String sql = "UPDATE `schedule` SET `Finish` = '" + a + "' WHERE `UID` = '"+ 使用者ID + "' AND  `Date` = '" + time + "'";
+        String sql2 = "UPDATE `schedule` SET `備註` = '" + meg + "' WHERE `UID` = '" + 使用者ID + "' AND  `Date` = '" + time + "'";
+
+        Log.e("sql1",sql);
+        Log.e("sql2",sql2);
+
+        try {
+
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+
+            Statement st = con.createStatement();
+            st.executeUpdate(sql);
+            st.executeUpdate(sql2);
+            st.close();
+            //
+
+
+
+        }catch(SQLException e){
+            Log.e("SendFinishandnotice","傳送報表失敗");
+        }
+
+
+
+    }
+
     //獲得schedule內容放入最近照服時間
     public ArrayList getschedule(String Date, String 需求, String 帳號) {
         ArrayList data = new ArrayList();
         int int_date = Integer.parseInt(Date), db_date;  //目前的日期,db選擇的日期
+        String re = 需求;
         String sql = new String(), need_date = new String();
         try {
             String 關聯表名稱 = "schedule";
@@ -239,11 +297,11 @@ public class MySQLCon {
             } else {
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `UID` = " + "\"" + 帳號 + "\"";
             }
-            Log.e("260", sql);
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
 
             while (rs.next()) {
+                Log.e("getschedule","進入rs");
                 need_date = rs.getString("Date"); //想要找的日期
                 db_date = Integer.parseInt(need_date);
                 //取得時間
@@ -270,7 +328,21 @@ public class MySQLCon {
                         String lasttime = rs.getString("LastTime");
                         data.add(firsttime + "~" + lasttime);
                     }
+                }
+                else if (需求.equals("我要排程工作內容")){
 
+                    if(rs.getString("Date").equals(Date)) {
+                        data.add(rs.getString("備註"));
+                        data.add(rs.getString("Finish"));
+                        data.add(rs.getString("FirstTime"));
+                        data.add(rs.getString("LastTime"));
+                        String caregiverID = ""+rs.getString("CID");
+                        data.add(getData(caregiverID, "我要caregiver名字"));
+                        String request = ""+getrequest(Date,rs.getString("FirstTime"),帳號);
+                        data.add(request);
+                        Log.e("OK","資料讀取完成");
+                        //break;
+                    }
                 }
 
             }
@@ -282,6 +354,26 @@ public class MySQLCon {
         return data;
     }
 
+    public String getrequest(String Date,String firsttime,String 帳號){
+        String data = new String();
+
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            String sql = "SELECT * FROM `usertime` WHERE `UID` = " + "\"" + 帳號 + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                if(Date.equals(rs.getString("Date")) && firsttime.equals(rs.getString("Firsttime"))){
+                    data = rs.getString("request");
+                    break;
+                }
+            }
+        }
+        catch(SQLException e){
+
+        }
+        return data;
+    }
     //獲得usertime中的資料(包含起終時間、照服員名稱、服務內容)
     public ArrayList GetUsertimeData(ArrayList data, ResultSet rs, String 日期, String user帳號, String 需求) {
         String firsttime = new String(), lasttime = new String(), input_CID = new String(), caregiver = new String();
@@ -503,7 +595,7 @@ public class MySQLCon {
     }
 
 
-    public ArrayList getUserUID(String 照服員帳號){
+    public ArrayList getUserUID(String 照服員帳號,String strDate){
 
         ArrayList UID = new ArrayList();
         UID.add("No data");
@@ -522,11 +614,7 @@ public class MySQLCon {
             Statement st2 = con.createStatement();
             ResultSet re2 = st2.executeQuery(sql2);
 
-            SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
-            java.util.Date date = new Date();
-            String strDate = sdFormat.format(date);
-
-            //Log.e("tag",strDate);
+            Log.e("strDate",strDate);
 
             int flag = 0;
             while(re2.next()){
@@ -552,6 +640,27 @@ public class MySQLCon {
         return UID;
     }
 
+    public ArrayList getSchedule_UID(String Date,String 需求){
+        String sql = new String();
+        ArrayList data = new ArrayList();
+        try {
+            if (需求.equals("我要schedule單日的所有的UID")) {
+                sql = "SELECT * FROM `schedule` WHERE `Date` = " + "\"" + Date + "\"";
+            }
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while(rs.next()){
+                String id = rs.getString("UID");
+                data.add(id);
+            }
+        }
+        catch(SQLException e){
+            Log.e("DB","獲取schedule當日所有UID失敗");
+        }
+        return data;
+    }
     public ArrayList getName(ArrayList UID){
 
         ArrayList name = new ArrayList();
@@ -622,16 +731,38 @@ public class MySQLCon {
                     break;
                 }
             }
-/*
-            String sql3 =  "SELECT * FROM `usertime` WHERE `Request` = " + "\"" + cid + "\"";
-            Statement st = con.createStatement();
+
+            //工作內容
+            String sql3 =  "SELECT * FROM `usertime` WHERE `UID` = " + "\"" + UID + "\"";
             ResultSet rs3 = st.executeQuery(sql3);
-*/
+            //Log.e("UID",UID);
+            //Log.e("Sql3:",sql3);
+            //Log.e("time",strDate);
+            content.add("No data");
+
+            while(rs3.next()){
+                //Log.e("Data",rs3.getString("Date")+rs3.getString("UID"));
+                if(rs3.getString("Date").equals(strDate) &&
+                    rs3.getString("UID").equals(UID)){
+                    content.set(3,rs3.getString("Request"));
+                    //Log.e("Request: ",rs3.getString("Request"));
+                    break;
+                }
+            }
+
+
+
+            // Log.e("Final",content.get(3).toString());
+
         }catch(SQLException e){
 
         }
 
-        return content;//照服員名字,開始時間,結束時間
+        return content;//照服員名字,開始時間,結束時間,工作內容
     }
+
+
 }
+
+
 
