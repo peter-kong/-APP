@@ -158,7 +158,7 @@ public class MySQLCon {
             屬性 = "UID";
             Date = 帳號;
         }
-        String data = "No data";
+        String data = "";
         try {
             //Log.v("DB","Test:"+關聯表名稱+屬性);
             Connection con = DriverManager.getConnection(url, db_user, db_password);
@@ -195,7 +195,7 @@ public class MySQLCon {
 
         }
         if (counter == 0)
-            data = "No data";
+            data = "";
 
         Log.e("Line 194",data);
 
@@ -645,7 +645,7 @@ public class MySQLCon {
     public ArrayList getUserUID(String 照服員帳號,String strDate){
 
         ArrayList UID = new ArrayList();
-        UID.add("No data");
+        //UID.add("No data");
 
         //藉由帳號取得對應的CID
         try {
