@@ -168,7 +168,14 @@ public class MySQLCon {
             } else if (關聯表名稱 == "manager") {
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `MAccount` = " + "\"" + 帳號 + "\"";
             } else if (關聯表名稱 == "caregiver") {
-                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `CAccount` = " + "\"" + 帳號 + "\"";
+                if(CID == 0){
+                    Log.e("123","123");
+                    sql ="SELECT * FROM `" + 關聯表名稱 + "` WHERE `CAccount` = " + "\"" + 帳號 + "\"";
+                }
+                else {
+                    Log.e("456","456");
+                    sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `CID` = " + "\"" + CID + "\"";
+                }
             } else if(關聯表名稱 == "schedule"){
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `Date` = " + "\"" + Date + "\"";
             }
@@ -706,7 +713,6 @@ public class MySQLCon {
     public ArrayList getName(ArrayList UID){
 
         ArrayList name = new ArrayList();
-        name.add("no data");
 
         try {
 
