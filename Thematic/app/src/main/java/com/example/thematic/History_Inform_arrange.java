@@ -59,6 +59,11 @@ public class History_Inform_arrange extends AppCompatActivity {
                         String user帳號  = obj.returnAcc();
 
                         ArrayList data = con.getschedule(chooseDate,"我要上次工作內容",user帳號);
+                        if(data.size() == 0) {
+                            for (int i = 0; i < 5; i++) {
+                                data.add("無資料");
+                            }
+                        }
                         time_view.post(new Runnable() {
                             public void run() {
                                 time_view.setText(""+data.get(0)+"~"+data.get(1));
@@ -86,6 +91,7 @@ public class History_Inform_arrange extends AppCompatActivity {
                     }
                 }).start();
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 Log.e("nothingSelected","沒有選擇內容");

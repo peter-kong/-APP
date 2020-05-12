@@ -81,7 +81,7 @@
 
                 <TextView
                     android:id="@+id/個案日期"
-                    android:layout_width="100dp"
+                    android:layout_width="228dp"
                     android:layout_height="wrap_content" />
 
             </LinearLayout>

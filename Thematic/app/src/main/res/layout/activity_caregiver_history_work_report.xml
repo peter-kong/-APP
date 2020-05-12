@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DD8978E"
-    tools:context=".manager_Work_report">
+    tools:context=".caregiver_history_work_report">
 
     <ScrollView
+        android:id="@+id/scrollView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -25,6 +26,37 @@
                 android:gravity="center"
                 android:text="工作報表"
                 android:textSize="30sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="49sp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView15"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/calendar" />
+
+                <TextView
+                    android:id="@+id/textView36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="日期"
+                    android:textSize="30sp" />
+
+
+                <TextView
+                    android:id="@+id/個案日期"
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="30sp"/>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -50,40 +82,11 @@
 
                 <Spinner
                     android:id="@+id/個案下拉選單"
-                    android:layout_width="231dp"
-                    android:layout_height="wrap_content" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49sp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageView15"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/calendar" />
-
-                <TextView
-                    android:id="@+id/textView36"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:text="日期"
-                    android:textSize="30sp" />
-
-                <TextView
-                    android:id="@+id/日期顯示"
                     android:layout_width="230dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="20dp"
                     android:gravity="center"
-                    android:text="無資料"
-                    android:textSize="24sp" />
+                    android:textSize="30sp"/>
+
 
             </LinearLayout>
 
@@ -105,7 +108,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="46dp"
                     android:gravity="center"
-                    android:text="工作內容"
+                    android:text="工作內容與時間"
                     android:textSize="24sp" />
 
             </LinearLayout>
@@ -124,10 +127,11 @@
                     android:src="@drawable/time" />
 
                 <TextView
-                    android:id="@+id/工作時間"
+                    android:id="@+id/Time"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
+                    android:text="09:00~10:00"
                     android:textSize="24sp"
                     android:textStyle="bold|italic" />
 
@@ -148,82 +152,45 @@
                     android:textSize="24sp" />
 
                 <TextView
-                    android:id="@+id/照服員名字"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/workername"
+                    android:layout_width="142dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:textSize="24sp" />
             </LinearLayout>
 
-
-            <CheckBox
-                android:id="@+id/checkBox"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:textSize="24sp" />
-
-            <CheckBox
-                android:id="@+id/checkBox2"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:textSize="24sp" />
-
-            <CheckBox
-                android:id="@+id/checkBox3"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:textSize="24sp" />
-
-            <CheckBox
-                android:id="@+id/checkBox4"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/textView37"
-                android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:background="#B9DD8888"
-                android:gravity="center"
-                android:text="備註"
-                android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/備註"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/textView23"
+            <LinearLayout
+                android:id="@+id/工作內容"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:textSize="24sp"
-                android:textStyle="bold|italic" />
+                android:orientation="vertical">
 
- <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/服務內容顯示"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:gravity="center"
-                    android:textSize="30sp" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/完成度"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:textSize="30sp" />
+                    <TextView
+                        android:id="@+id/服務內容"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="36sp" />
+
+                    <TextView
+                        android:id="@+id/完成度"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:lineSpacingMultiplier="1.5"
+                        android:textSize="36sp"/>
+                </LinearLayout>
+
             </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -245,18 +212,18 @@
                     android:gravity="center"
                     android:text="備註"
                     android:textSize="24sp" />
+
             </LinearLayout>
 
-            <EditText
-                android:id="@+id/備註顯示"
+            <TextView
+                android:id="@+id/備註"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:text="備註內容"
-                android:inputType="textPersonName" />
+                android:gravity="center"
+                android:textSize="36sp"/>
 
         </LinearLayout>
     </ScrollView>
 
-</FrameLayout>
-
+</androidx.constraintlayout.widget.ConstraintLayout>

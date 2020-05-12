@@ -48,20 +48,20 @@ public class Register extends AppCompatActivity {
                         final EditText UName_view = (EditText) findViewById(R.id.UName);
                         final EditText UAccount_view = (EditText) findViewById(R.id.UAccount);
                         final EditText UPassowrd_view = (EditText) findViewById(R.id.UPassword);
-                        final EditText UIDNumber_view = (EditText) findViewById(R.id.UIDNumber);
+                        final EditText UID_view = (EditText) findViewById(R.id.UIDNumber);
                         final EditText UAddress_view = (EditText) findViewById(R.id.UAddress);
                         final EditText Uphone_view = (EditText) findViewById(R.id.UPhone);
                         final EditText UEmail_view = (EditText) findViewById(R.id.UEmail);
                         final EditText UMedHistory_view = (EditText) findViewById(R.id.UMedHistory);
                         final EditText ULevel_view = (EditText) findViewById(R.id.ULevel);
-                        //final EditText UGenderB_view = (EditText) findViewById(R.id.Boy);
-                        //final EditText UGenderG_view = (EditText) findViewById(R.id.girl);
+                        final EditText UGender_view = (EditText) findViewById(R.id.gender);
                         final EditText UBirth_view = (EditText) findViewById(R.id.UBirth);
 
+                        String UGender = UGender_view.getText().toString();
                         String UName = UName_view.getText().toString();
                         String UAccount = UAccount_view.getText().toString();
                         String UPassword = UPassowrd_view.getText().toString();
-                        String UIDNumber = UIDNumber_view.getText().toString();
+                        String UID = UID_view.getText().toString();
                         String UAddress = UAddress_view.getText().toString();
                         String Uphone = Uphone_view.getText().toString();
                         String UEmail = UEmail_view.getText().toString();
@@ -73,7 +73,7 @@ public class Register extends AppCompatActivity {
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                         //con.insertRegisterData(UName, UAccount, UPassword, UIDNumber, UAddress, Uphone, UEmail, UMedHistory, ULevel, UBirth);
 
-                        check_bits = con.insertRegisterData(UName, UAccount, UPassword, UIDNumber, UAddress, Uphone, UEmail, UMedHistory, ULevel, UBirth);
+                        check_bits = con.insertRegisterData(UName, UAccount, UPassword, UID, UAddress, Uphone, UEmail, UMedHistory, ULevel, UBirth, UGender);
 
                     }
                 }).start();

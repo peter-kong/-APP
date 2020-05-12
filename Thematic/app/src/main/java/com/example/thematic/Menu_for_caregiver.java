@@ -31,8 +31,11 @@ public class Menu_for_caregiver extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                GlobalVariable_Account tmp = (GlobalVariable_Account)getApplicationContext();
 
+
+                GlobalVariable_Account tmp = (GlobalVariable_Account)getApplicationContext();
+                Log.e("Line 37","Enter");
+                //Log.e("明日工作報表",tmp.returnUID().get(0).toString());
 
                 new Thread(new Runnable() {
                     @Override
@@ -76,17 +79,19 @@ public class Menu_for_caregiver extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            new AlertDialog.Builder(Menu_for_caregiver.this)
-                                    .setTitle("沒有個資喔!!")
-                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
+                            if(tmp.returnUID().get(0).toString().equals("No data")) {
+                                new AlertDialog.Builder(Menu_for_caregiver.this)
+                                        .setTitle("沒有個資喔!!")
+                                        .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
 
-                                        }
-                                    }).setNegativeButton("cancel",null).create()
-                                    .show();
-
-                        }}, 1000);
+                                            }
+                                        }).setNegativeButton("cancel", null).create()
+                                        .show();
+                            }
+                        }
+                    }, 3000);
 
 
 
@@ -136,7 +141,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_caregiver.this, manager_Work_report.class);
+                intent.setClass(Menu_for_caregiver.this, caregiver_work_report_search.class);
                 startActivity(intent);
             }
         });

@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Caregiver_tab"></activity>
+        <activity android:name=".caregiver_work_report_search"></activity>
+        <activity android:name=".caregiver_history_work_report" />
+        <activity android:name=".Caregiver_tab" />
         <activity android:name=".Manager_tab" />
         <activity android:name=".User_tab" />
         <activity android:name=".caregiver_normal_work_report2" />

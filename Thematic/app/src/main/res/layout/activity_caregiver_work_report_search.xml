@@ -5,11 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DD8978E"
-    tools:context=".Day_Condition">
+    tools:context=".caregiver_work_report_search">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,12 +22,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/每日人力配置"
+                android:id="@+id/歷史工作報表查詢"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="每日人力配置"
+                android:text="歷史工作報表查詢"
                 android:textSize="30sp" />
 
             <LinearLayout
@@ -38,6 +42,7 @@
                     android:layout_width="150dp"
                     android:layout_height="71dp"
                     android:ems="10"
+                    android:gravity="center"
                     android:textSize="36sp" />
 
                 <TextView
@@ -53,6 +58,7 @@
                     android:layout_width="150dp"
                     android:layout_height="71dp"
                     android:ems="10"
+                    android:gravity="center"
                     android:textSize="36sp" />
 
                 <TextView
@@ -64,22 +70,15 @@
                     android:textSize="18sp" />
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            <Button
+                android:id="@+id/查詢"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="80dp"
                 android:gravity="center"
-                android:orientation="horizontal">
+                android:text="查詢"
+                android:textSize="30sp" />
 
-                <Button
-                    android:id="@+id/查詢"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="檢視"
-                    android:textSize="30sp" />
-
-            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

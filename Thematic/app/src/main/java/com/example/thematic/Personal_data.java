@@ -47,10 +47,10 @@ public class Personal_data extends AppCompatActivity {
                 final String name_get = con.getData(Account,"name_get");
 
                 //Log.v("OK",name_get);
-                /*
+
                 final String gender_get = con.getData(Account,"gender_get");
                 Log.v("OK",gender_get);
-                */
+                
                 final String birthday_get = con.getData(Account,"birthday_get");
 
 
@@ -77,7 +77,12 @@ public class Personal_data extends AppCompatActivity {
                 //讓上面的變數來拿到從getData獲得的物件
                 account.post(new Runnable() {
                     public void run() {
-                        account.setText(account_get);
+                        if(account_get.equals("")){
+                            account.setText("無資料");
+                        }
+                        else{
+                            account.setText(account_get);
+                        }
                     }
                 });
                 name.post(new Runnable() {
@@ -86,12 +91,12 @@ public class Personal_data extends AppCompatActivity {
                     }
                 });
                 //gender db not yet
-                /*
+
                 gender.post(new Runnable() {
                     public void run() {
                         gender.setText(gender_get);
                     }
-                });*/
+                });
                 birthday.post(new Runnable() {
                     public void run() {
                         birthday.setText(birthday_get);

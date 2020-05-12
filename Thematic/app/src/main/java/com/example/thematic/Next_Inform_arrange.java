@@ -12,6 +12,7 @@ public class Next_Inform_arrange extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide(); //隱藏標題
         setContentView(R.layout.activity_user_next_inform_arrange);
@@ -50,7 +51,15 @@ public class Next_Inform_arrange extends AppCompatActivity {
                 GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
                 String user帳號  = obj.returnAcc();
                 //取得下次服務的資料(包含日期、時間、照服員、服務內容)
+                Log.e("Next_Inform_arrange","Start");
                 ArrayList data = con.getschedule(Date,"我要下次工作內容",user帳號);
+                Log.e("Next_Inform_arrange","End"+data.size());
+                if(data.size() == 0){
+                    for (int i = 0 ; i < 5 ; i ++) {
+                        data.add("無資料");
+                    }
+                }
+
                 time_view.post(new Runnable() {
                     public void run() {
                         time_view.setText(""+data.get(0)+"~"+data.get(1));
@@ -75,6 +84,8 @@ public class Next_Inform_arrange extends AppCompatActivity {
                         日期.setText("下次照服時間:"+data.get(4));
                     }
                 });
+
+
             }
         }).start();
     }
