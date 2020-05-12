@@ -142,7 +142,6 @@ public class manager_people_use_search_day_read extends AppCompatActivity {
                     }
                 });
 
-
             }
         }).start();
     }

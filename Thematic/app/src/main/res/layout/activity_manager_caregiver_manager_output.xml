@@ -66,7 +66,7 @@
                     android:textSize="30sp" />
 
                 <TextView
-                    android:id="@+id/服務內容顯示"
+                    android:id="@+id/服務內容欄位"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:text="服務內容:"
