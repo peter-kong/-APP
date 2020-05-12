@@ -95,8 +95,5 @@ public class Fragment_user_next_inform_arrange extends Fragment {
                 });
             }
         }).start();
-
-
-
     }
 }

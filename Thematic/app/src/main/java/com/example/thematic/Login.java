@@ -57,7 +57,7 @@ public class Login extends AppCompatActivity {
                             check = 2;
                             Intent intent = new Intent();
                             Log.v("Login","user登入成功");
-                            intent.setClass(Login.this,Menu_for_user.class);
+                            intent.setClass(Login.this,User_tab.class);
                             startActivity(intent);
                         }else{
                             check = 0;
