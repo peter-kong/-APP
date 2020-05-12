@@ -304,29 +304,29 @@ public class MySQLCon {
             }
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
-
+            String answer_date = "";
             while (rs.next()) {
                 Log.e("getschedule","進入rs");
                 need_date = rs.getString("Date"); //想要找的日期
                 db_date = Integer.parseInt(need_date);
+                Log.e("input_date,db_date",int_date+","+db_date);
                 //取得時間
                 if (需求.equals("我要下次工作內容")) {
-                    while (int_date <= db_date) {//第一個超過目前日期的日期
+                    if (int_date <= db_date) {//第一個超過目前日期的日期
                         GetUsertimeData(data, rs, need_date, 帳號, "我要工作內容");
                         break;
                     }
                 } else if (需求.equals("我要上次工作內容")) {
                     String check_date = "";
-                    while (rs.next()) {
                         check_date = rs.getString("Date"); //想要找的日期
                         db_date = Integer.parseInt(check_date);
                         if (db_date < int_date) {
-                            need_date = check_date;
+                            answer_date = check_date;
                         } else if (db_date >= int_date) {
-                            GetUsertimeData(data, rs, need_date, 帳號, "我要工作內容");
+                            Log.e("answer_date",""+answer_date);
+                            GetUsertimeData(data, rs, answer_date, 帳號, "我要工作內容");
                             break;
                         }
-                    }
                 } else if (需求.equals("我要caregiver工作時間")) {
                     if (db_date == int_date) {
                         String firsttime = rs.getString("FirstTime");
