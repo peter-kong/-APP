@@ -6,11 +6,14 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class GlobalVariable_Account extends Application{
-    private String 帳號;
-    private ArrayList HistoryDate;
+    private String 帳號,人力配置日期;
     private ArrayList Name;
     private ArrayList Uid;
     private ArrayList Finish;
+    private ArrayList HistoryDate,Scheduletime;      //歷史日期,照服員管理的工作時間
+    private int Month; //月概況鎖進入的月份
+    private ArrayList 星期數; //月概況spinner紀錄有幾週
+    private String caregiverID,ScheduleDate; //Schedule的caregiverID,Schedule的日期
     private boolean t;
     //帳號
     public void setAccount(String input){
@@ -51,5 +54,30 @@ public class GlobalVariable_Account extends Application{
 
     public void setTommorrowoToday(boolean number){t = number;}
     public boolean returnTommorrowToday(){return t;}
+
+    public void setScheduletime(ArrayList str, String ID,String Date) {Scheduletime = str ; caregiverID = ID; ScheduleDate = Date;}
+
+    public ArrayList returnScheduletime() { return Scheduletime; }
+
+    public String returncaregiverID() {return caregiverID; }
+
+    public void setScheduleDate(String str){ScheduleDate = str; }
+
+    public String returnScheduleDate() {return ScheduleDate; }
+
+    //人力配置
+    public void setPeopleUseRead(String Date) {人力配置日期 = Date;}
+
+    public String returnPeopleUseRead(){return 人力配置日期; }
+
+    //月概況的月份
+
+    public void setMonth(int month) {Month = month; }
+
+    public int returnMonth(){return Month;}
+
+    public void setweek_count(ArrayList 星期List) {星期數 = 星期List; }
+
+    public ArrayList returnWeekCount(){return 星期數;}
 
 }
