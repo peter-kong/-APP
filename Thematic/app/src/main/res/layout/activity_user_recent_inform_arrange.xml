@@ -46,7 +46,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="最近照服時間"
+                    android:text="上次照服時間"
                     android:textSize="30sp" />
             </LinearLayout>
 
@@ -63,7 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="時間顯示"
+                android:text="無資料"
                 android:textSize="30sp" />
 
             <TextView
@@ -79,7 +79,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/照服員名字"
                 android:textSize="30sp" />
 
             <TextView
