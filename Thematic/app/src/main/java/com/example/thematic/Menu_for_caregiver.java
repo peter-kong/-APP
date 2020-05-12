@@ -91,7 +91,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
                                         .show();
                             }
                         }
-                    }, 3000);
+                    }, 1000);
 
 
 
@@ -102,6 +102,8 @@ public class Menu_for_caregiver extends AppCompatActivity {
         NextpageBtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                GlobalVariable_Account tmp = (GlobalVariable_Account)getApplicationContext();
 
                 new Thread(new Runnable() {
                     @Override
@@ -125,11 +127,32 @@ public class Menu_for_caregiver extends AppCompatActivity {
 
                         tmp.setTommorrowoToday(false);
 
-                        Intent intent = new Intent();
-                        intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report1.class);
-                        startActivity(intent);
+                        if(!tmp.returnUID().get(0).toString().equals("No data")) {
+                            Intent intent = new Intent();
+                            intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report1.class);
+                            startActivity(intent);
+                        }
+
                     }
                 }).start();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(tmp.returnUID().get(0).toString().equals("No data")) {
+                            new AlertDialog.Builder(Menu_for_caregiver.this)
+                                    .setTitle("沒有個資喔!!")
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                        }
+                                    }).setNegativeButton("cancel", null).create()
+                                    .show();
+                        }
+                    }
+                }, 1000);
 
 
             }
