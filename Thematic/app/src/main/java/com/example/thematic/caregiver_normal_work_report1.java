@@ -35,10 +35,21 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+
+        Log.e("Line 39","reminded");
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caregiver_normal_work_report1);
         getSupportActionBar().hide(); //隱藏標題
+
+        Log.e("Line 46","remind");
+
+
         final Spinner 個案名稱 = (Spinner)findViewById(R.id.個案下拉選單);
+
+        Log.e("Line 51","remind");
+
 
         GlobalVariable_Account t = (GlobalVariable_Account)getApplicationContext();
 
@@ -61,6 +72,10 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
 
         String[] namestr = new String[name.size()];
         name.toArray(namestr);
+
+        for(int j = 0;j < name.size();j++){
+            Log.e("namestr",name.get(j).toString());
+        }
 
         ArrayAdapter datelist = new ArrayAdapter(caregiver_normal_work_report1.this, android.R.layout.simple_spinner_item,namestr);
         datelist.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -110,7 +125,12 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
 
                         //Log.e("所有當前照護員被照護UID",obj.returnUID().get(i).toString());
                         curuid.set(0,obj.returnUID().get(i));
-                        ArrayList data = con.getcaregiverworkcontent(caregiver帳號,obj.returnUID().get(i).toString());
+
+                        //Log.e("DB 今日",strDate);
+
+
+                        ArrayList data = con.getcaregiverworkcontent(caregiver帳號,
+                                    obj.returnUID().get(i).toString(),strDate);
                         //照服員名字,開始時間,結束時間
                         String Time = data.get(1).toString() + " - " +data.get(2).toString();
                         final TextView workername = (TextView)findViewById(R.id.workername);

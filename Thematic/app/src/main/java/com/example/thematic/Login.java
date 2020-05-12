@@ -46,13 +46,13 @@ public class Login extends AppCompatActivity {
                             intent.setClass(Login.this,Menu_for_manager.class);
                             startActivity(intent);
                         }
-                        /*else if((con.getData(Account,"我要caregiver密碼")).equals(Password)){
+                        else if((con.getData(Account,"我要caregiver密碼")).equals(Password)){
                             check = 1;
                             Intent intent = new Intent();
                             Log.v("Login","caregiver登入成功");
                             intent.setClass(Login.this,Menu_for_caregiver.class);
                             startActivity(intent);
-                        }*/
+                        }
                         else if((con.getData(Account,"我要user密碼").equals(Password))){
                             check = 2;
                             Intent intent = new Intent();

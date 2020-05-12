@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -51,6 +52,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
 
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                         Log.e("strDateformenu",strDate);
+
                         tmp2.setUID(con.getUserUID(照服員帳號,strDate));
                         tmp2.setName(con.getName(tmp2.returnUID()));
                         tmp.setTommorrowoToday(true);
@@ -111,8 +113,10 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         Log.e("本日",strDate);
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                         tmp2.setUID(con.getUserUID(照服員帳號,strDate));
+
                         tmp2.setName(con.getName(tmp2.returnUID()));
                         //tmp2.println();
+
 
                         tmp.setTommorrowoToday(false);
 
