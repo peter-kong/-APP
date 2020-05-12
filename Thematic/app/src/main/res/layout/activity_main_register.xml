@@ -98,29 +98,14 @@
                     android:text="性別"
                     android:textSize="25sp" />
 
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <RadioButton
-                        android:id="@+id/boy"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:text="男"
-                        android:textSize="25sp" />
-
-                    <RadioButton
-                        android:id="@+id/girl"
-                        android:layout_width="80dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:text="女"
-                        android:textSize="25sp" />
-                </RadioGroup>
-
             </LinearLayout>
+
+            <EditText
+                android:id="@+id/gender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName" />
 
             <TextView
                 android:id="@+id/生日"
