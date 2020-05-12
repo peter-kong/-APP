@@ -34,8 +34,20 @@ public class caregiver_work_report_search extends AppCompatActivity {
                         String Date = new String();
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                         con.run();
-                        String input_month = 月份.getText().toString();
-                        String input_day = 日期.getText().toString();
+                        String input_month;
+                        String input_day;
+                        if(月份.getText().toString().matches("")){
+                            input_month = "0";
+                        }
+                        else {
+                            input_month = 月份.getText().toString();
+                        }
+                        if(日期.getText().toString().matches("")){
+                            input_day = "0";
+                        }
+                        else {
+                            input_day = 日期.getText().toString();
+                        }
                         if (Integer.parseInt(input_month) < 10) {
                             if (Integer.parseInt(input_day) < 10) {
                                 Date = "0" + input_month + "0" + input_day;
