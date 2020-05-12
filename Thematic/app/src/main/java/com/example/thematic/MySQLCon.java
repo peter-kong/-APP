@@ -51,26 +51,6 @@ public class MySQLCon {
             Log.e("DB", e.toString());
         }
     }
-    /*
-    public ArrayList getusername(String ID,String 需求)
-    {
-        String 關聯表名稱="",屬性="";
-
-        if (需求.equals("want_names"))
-        {
-            關聯表名稱 = "user";
-            屬性 = "UName";
-        }
-
-        ArrayList name = new ArrayList();
-
-        try
-        {
-            Connection con = DriverManager.getConnection(url, db_user, db_password);
-
-            if(關聯表名稱 == "user")
-        }
-    }*/
 
     public ArrayList gotoschedule(String 日期, String 需求) {
         String 關聯表名稱 = "", 屬性 = "";
@@ -134,12 +114,10 @@ public class MySQLCon {
             關聯表名稱 = "user";
             屬性 = "UName";
         }
-        //gender 還沒好
-        /*
         else if(需求.equals("gender_get")){
             關聯表名稱 = "user";
             屬性 = "Ugender";
-        }*/
+        }
         else if (需求.equals("birthday_get")) {
             關聯表名稱 = "user";
             屬性 = "UBirth";
@@ -216,14 +194,13 @@ public class MySQLCon {
 
     //寫入註冊的資料
     public int insertRegisterData(String UName, String UAccount, String UPassword,
-                                  String UIDNumber, String UAddress, String Uphone,
+                                  String UID, String UAddress, String Uphone,
                                   String UEmail, String UMedHistory, String ULevel,
-                                  String UBirth) {
+                                  String UBirth,String UGender){
 
         try {
             Connection con = DriverManager.getConnection(url, db_user, db_password);
-            String sql = "INSERT INTO `user` (`UName`,`UAccount`,`UPassword`,`UIDNumber`,`UAddress`,`UPhone`,`UMail`,`UMedHistory`,`ULevel`,`UBirth`)VALUES ('" + UName + "','" + UAccount + "','" + UPassword + "','" + UIDNumber + "','" + UAddress + "','" + Uphone + "','" + UEmail + "','" + UMedHistory + "','" + ULevel + "','" + UBirth + "')";
-
+            String sql = "INSERT INTO `user` (`UName`,`UAccount`,`UPassword`,`UID`,`UAddress`,`UPhone`,`UMail`,`UMedHistory`,`ULevel`,`UBirth`,`UGender`)VALUES ('" + UName + "','" + UAccount + "','" + UPassword + "','" + UID + "','" + UAddress + "','" + Uphone + "','" + UEmail + "','" + UMedHistory + "','" + ULevel + "','" + UBirth + "','" + UGender + "')";
             Statement st = con.createStatement();
             st.executeUpdate(sql);
             st.close();

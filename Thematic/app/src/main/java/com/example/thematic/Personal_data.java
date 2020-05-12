@@ -47,10 +47,10 @@ public class Personal_data extends AppCompatActivity {
                 final String name_get = con.getData(Account,"name_get");
 
                 //Log.v("OK",name_get);
-                /*
+
                 final String gender_get = con.getData(Account,"gender_get");
                 Log.v("OK",gender_get);
-                */
+                
                 final String birthday_get = con.getData(Account,"birthday_get");
 
 
@@ -91,12 +91,12 @@ public class Personal_data extends AppCompatActivity {
                     }
                 });
                 //gender db not yet
-                /*
+
                 gender.post(new Runnable() {
                     public void run() {
                         gender.setText(gender_get);
                     }
-                });*/
+                });
                 birthday.post(new Runnable() {
                     public void run() {
                         birthday.setText(birthday_get);
