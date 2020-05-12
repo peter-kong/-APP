@@ -286,6 +286,29 @@ public class MySQLCon {
     }
 
     //獲得schedule內容放入最近照服時間
+    public String get_ID(String 帳號,String 需求){
+        String data = new String();
+        String 關聯表名稱 = "",屬性 = "";
+        if(需求.equals("我要caregiverID")){
+            關聯表名稱 = "caregiver";
+            屬性 = "CID";
+        }
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `CAccount` = " + "\"" + 帳號 + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            rs.next();
+            String id = rs.getString(屬性);
+            data = id;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            Log.e("DB", "獲取ID失敗");
+            Log.e("DB", e.toString());
+        }
+        return data;
+    }
     public ArrayList getschedule(String Date, String 需求, String 帳號) {
         ArrayList data = new ArrayList();
         int int_date = Integer.parseInt(Date), db_date;  //目前的日期,db選擇的日期
@@ -345,6 +368,17 @@ public class MySQLCon {
                         Log.e("OK","資料讀取完成");
                         //break;
                     }
+                }
+                else if(需求.equals("我要歷史工作報表內容")){
+                    data.add(rs.getString("備註"));
+                    data.add(rs.getString("Finish"));
+                    data.add(rs.getString("FirstTime"));
+                    data.add(rs.getString("LastTime"));
+                    String caregiverID = get_ID(帳號,"我要caregiverID");
+                    data.add(getData(caregiverID, "我要caregiver名字"));
+                    String request = ""+getrequest(Date,rs.getString("FirstTime"),帳號);
+                    data.add(request);
+                    Log.e("OK","歷史工作報表內容獲取完成");
                 }
 
             }
@@ -569,7 +603,31 @@ public class MySQLCon {
         }
         return 需要的星期數;
     }
+    public ArrayList getworkreport_UID(String Date,String 需求,String 帳號){
+        ArrayList data = new ArrayList();
+        String sql = "";
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            String ID = get_ID(帳號,"我要caregiverID");
+            sql = "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + ID + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
 
+            while(rs.next()){
+                if(Date.equals(rs.getString("Date"))) {
+                    String UID = rs.getString("UID");
+                    data.add(UID);
+                }
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            Log.e("DB", "獲取工作報表UID失敗");
+            Log.e("DB", e.toString());
+        }
+
+        return data;
+    }
     public ArrayList getschedule_work(String Date, String firsttime, String 需求, String 帳號) {
         ArrayList data = new ArrayList();
         try {

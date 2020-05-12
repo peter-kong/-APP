@@ -136,7 +136,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_caregiver.this, manager_Work_report.class);
+                intent.setClass(Menu_for_caregiver.this, caregiver_work_report_search.class);
                 startActivity(intent);
             }
         });

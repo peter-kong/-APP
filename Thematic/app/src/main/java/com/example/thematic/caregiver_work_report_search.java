@@ -4,19 +4,22 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class manager_Work_report_search extends AppCompatActivity {
+public class caregiver_work_report_search extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manager_work_report_search);
-        getSupportActionBar().hide(); //隱藏標題
+        setContentView(R.layout.activity_caregiver_work_report_search);
 
         final TextView 月份 = (TextView) findViewById(R.id.輸入月份);
         final TextView 日期 = (TextView) findViewById(R.id.輸入日期);
@@ -48,14 +51,14 @@ public class manager_Work_report_search extends AppCompatActivity {
                             }
                         }
                         GlobalVariable_Account obj = (GlobalVariable_Account) getApplicationContext();
-                        ;
-                        ArrayList UID = con.getSchedule_UID(Date, "我要schedule單日的所有的UID");
+                        String 帳號 = obj.returnAcc();
+                        ArrayList UID = con.getworkreport_UID(Date, "我要caregiver當日的UID",帳號);
                         ArrayList Name = con.getName(UID);
                         obj.setUID(UID);
                         obj.setName(Name);
                         obj.setScheduleDate(Date);
                         Intent intent = new Intent();
-                        intent.setClass(manager_Work_report_search.this, manager_Work_report.class);
+                        intent.setClass(caregiver_work_report_search.this, caregiver_history_work_report.class);
                         startActivity(intent);
 
                     }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DD8978E"
-    tools:context=".caregiver_normal_work_report1">
+    tools:context=".caregiver_history_work_report">
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -26,6 +26,37 @@
                 android:gravity="center"
                 android:text="工作報表"
                 android:textSize="30sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="49sp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView15"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/calendar" />
+
+                <TextView
+                    android:id="@+id/textView36"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="日期"
+                    android:textSize="30sp" />
+
+
+                <TextView
+                    android:id="@+id/個案日期"
+                    android:layout_width="225dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="30sp"/>
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -52,48 +83,12 @@
                 <Spinner
                     android:id="@+id/個案下拉選單"
                     android:layout_width="230dp"
-                    android:layout_height="20dp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="49sp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imageView15"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="10dp"
-                    android:src="@drawable/calendar" />
-
-                <TextView
-                    android:id="@+id/textView36"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="20dp"
                     android:gravity="center"
-                    android:text="日期"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"/>
 
-
-                <TextView
-                    android:id="@+id/個案日期"
-                    android:layout_width="228dp"
-                    android:layout_height="wrap_content" />
 
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#CC5F97BE"
-                android:gravity="center"
-                android:text="1"
-                android:textSize="24sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -168,15 +163,33 @@
                 android:id="@+id/工作內容"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:textSize="36sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/服務內容"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:textSize="36sp" />
+
+                    <TextView
+                        android:id="@+id/完成度"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:lineSpacingMultiplier="1.5"
+                        android:textSize="36sp"/>
+                </LinearLayout>
+
+            </LinearLayout>
 
 
             <LinearLayout
@@ -202,27 +215,15 @@
 
             </LinearLayout>
 
-            <EditText
+            <TextView
                 android:id="@+id/備註"
-               android:layout_width="match_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:inputType="textPersonName" />
-
-            <Button
-                android:id="@+id/Send"
-                android:layout_width="398dp"
-                android:layout_height="64dp"
-                android:layout_marginEnd="160dp"
-                android:layout_marginRight="160dp"
-                android:layout_marginBottom="28dp"
                 android:gravity="center"
-                android:text="Send"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                android:textSize="36sp"/>
 
         </LinearLayout>
     </ScrollView>
 
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
