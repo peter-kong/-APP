@@ -4,77 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77E79292"
-    tools:context=".Menu_for_caregiver">
+    android:background="#4DD8978E"
+    tools:context=".Menu_for_manager">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView71"
+                android:id="@+id/textView48"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_height="60dp"
+                android:background="#80D8978E"
                 android:gravity="center"
                 android:text="主選單"
-                android:textSize="36sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/明日工作報表_care"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginRight="48dp"
-                android:background="@drawable/menu_for_caregiver_shape_rectangle"
+                android:layout_width="300dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="70dp"
+                android:background="@drawable/menu_for_manager_shape_rectangle"
                 android:text="明日工作報表"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/本日工作報表_care"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginStart="48dp"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="80dp"
-                android:layout_marginEnd="48dp"
-                android:layout_marginRight="48dp"
-                android:background="@drawable/menu_for_caregiver_shape_rectangle"
-                android:text="本日工作報表"
-                android:textSize="20sp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-            <Button
-                android:id="@+id/歷史工作報表_care"
-                android:layout_width="match_parent"
-                android:layout_height="120dp"
-                android:layout_marginLeft="48dp"
-                android:layout_marginTop="80dp"
-                android:layout_marginRight="48dp"
-                android:background="@drawable/menu_for_caregiver_shape_rectangle"
-                android:text="歷史工作報表"
-                android:textSize="20sp" /><![CDATA[
+                <Button
+                    android:id="@+id/本日工作報表_care"
+                    android:layout_width="140dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/menu_for_manager_shape_rectangle"
+                    android:text="本日工作報表"
+                    android:textSize="20sp" />
 
+                <Button
+                    android:id="@+id/歷史工作報表_care"
+                    android:layout_width="140dp"
+                    android:layout_height="150dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:background="@drawable/menu_for_manager_shape_rectangle"
+                    android:text="歷史工作報表"
+                    android:textSize="20sp" />
 
+            </LinearLayout>
 
-            />
-
-
-
-        ]]>
         </LinearLayout>
     </ScrollView>
 

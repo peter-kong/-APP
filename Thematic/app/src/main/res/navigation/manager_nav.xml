@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/manager_nav"
+    app:startDestination="@id/people_use_search_Fragment">
+
+    <keep_state_fragment
+        android:id="@+id/caregiver_manage_Fragment"
+        android:name="com.example.thematic.Fragment_manager_caregiver_manage"
+        android:label="fragment_manager_caregiver_manage"
+        tools:layout="@layout/fragment_manager_caregiver_manage" />
+
+    <keep_state_fragment
+        android:id="@+id/people_use_search_Fragment"
+        android:name="com.example.thematic.Fragment_manager_people_use_search"
+        android:label="fragment_manager_people_use_search"
+        tools:layout="@layout/fragment_manager_people_use_search" />
+
+    <keep_state_fragment
+        android:id="@+id/user_search_Fragment"
+        android:name="com.example.thematic.Fragment_manager_user_search"
+        android:label="fragment_manager_user_search"
+        tools:layout="@layout/fragment_manager_user_search" />
+
+    <keep_state_fragment
+        android:id="@+id/work_report_search_Fragment"
+        android:name="com.example.thematic.Fragment_manager_work_report_search"
+        android:label="fragment_manager_work_report_search"
+        tools:layout="@layout/fragment_manager_work_report_search" />
+
+
+</navigation>

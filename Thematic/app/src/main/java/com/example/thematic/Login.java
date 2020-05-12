@@ -19,7 +19,7 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         getSupportActionBar().hide(); //隱藏標題
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN); //隱藏狀態
         Button LoginBtn = (Button) findViewById(R.id.main_login);
@@ -85,7 +85,7 @@ public class Login extends AppCompatActivity {
                                     .show();
                         }
 
-                    }}, 1000);
+                    }}, 2000);
 
             }
         });
@@ -122,11 +122,9 @@ public class Login extends AppCompatActivity {
 
 
 
-/*
+
 
         //Test for Socket
-
-
         /*
 
         ViewGroup.LayoutParams params = 測試.getLayoutParams();
@@ -135,8 +133,9 @@ public class Login extends AppCompatActivity {
         測試.setLayoutParams(params);
 
         */
+        /*
 
-/*
+
         Button 測試 = (Button) findViewById(R.id.Transfer);
         測試.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,8 +144,8 @@ public class Login extends AppCompatActivity {
                 intent.setClass(Login.this,SocketTest.class);
                 startActivity(intent);
             }
-        });
-*/
+        });*/
+
 
 /*
         //Test for 動態新增元件測試
@@ -175,7 +174,8 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        Button managerBtn = (Button) findViewById(R.id.button26);
+
+        Button managerBtn = (Button) findViewById(R.id.managertest);
         managerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -185,17 +185,18 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        Button forgetBtn = (Button)findViewById(R.id.main_forget_password);
-        forgetBtn.setOnClickListener(new View.OnClickListener() {
+        Button userBtn = (Button) findViewById(R.id.usertest);
+        userBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Login.this, Forget_password.class);
+                intent.setClass(Login.this, User_tab.class);
                 startActivity(intent);
             }
         });
 
-        Button caregiverBtn = (Button)findViewById(R.id.button4);
+
+        Button caregiverBtn = (Button)findViewById(R.id.caretest);
         caregiverBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -204,5 +205,8 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
     }
 }

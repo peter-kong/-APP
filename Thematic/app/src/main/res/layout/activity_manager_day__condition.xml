@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#77E79292"
+    android:background="#4DD8978E"
     tools:context=".Day_Condition">
 
     <ScrollView
@@ -15,111 +15,76 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/空白區塊7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/空白區塊8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/每日人力配置"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#80D8978E"
+                android:gravity="center"
                 android:text="每日人力配置"
-                android:textSize="50sp" />
-
-            <TextView
-                android:id="@+id/空白區塊"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/空白區塊2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/空白區塊3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:textSize="30sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="100dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/輸入月份"
-                    android:layout_width="86dp"
+                    android:layout_width="150dp"
                     android:layout_height="71dp"
                     android:ems="10"
                     android:textSize="36sp" />
 
                 <TextView
                     android:id="@+id/月"
-                    android:layout_width="86dp"
-                    android:layout_height="71dp"
-                    android:text="月"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textSize="36sp" />
+                    android:text="月"
+                    android:textSize="18sp" />
 
                 <EditText
                     android:id="@+id/輸入日期"
-                    android:layout_width="86dp"
+                    android:layout_width="150dp"
                     android:layout_height="71dp"
                     android:ems="10"
                     android:textSize="36sp" />
 
                 <TextView
                     android:id="@+id/日"
-                    android:layout_width="86dp"
-                    android:layout_height="71dp"
-                    android:text="日"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textSize="36sp" />
+                    android:text="日"
+                    android:textSize="18sp" />
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/空白區塊4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:id="@+id/空白區塊5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginTop="80dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/檢視"
+                    android:id="@+id/查詢"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="36sp"
-                    android:text="檢視" />
-
-                <TextView
-                    android:id="@+id/空白區塊6"
-                    android:layout_width="75dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_marginRight="80dp"
+                    android:text="檢視"
+                    android:textSize="30sp" />
 
                 <Button
                     android:id="@+id/下載"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="36sp"
-                    android:text="下載" />
+                    android:text="下載"
+                    android:textSize="30sp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
