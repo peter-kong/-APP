@@ -47,7 +47,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="時間"
+                    android:text="無資料"
                     android:textSize="30sp" />
 
                 <TextView
@@ -62,11 +62,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="使用者名稱"
                     android:textSize="30sp" />
 
                 <TextView
-                    android:id="@+id/服務內容顯示"
+                    android:id="@+id/服務內容欄位"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:text="服務內容:"
@@ -77,7 +76,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="服務內容"
                     android:textSize="30sp" />
 
             </LinearLayout>

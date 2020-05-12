@@ -77,7 +77,12 @@ public class Personal_data extends AppCompatActivity {
                 //讓上面的變數來拿到從getData獲得的物件
                 account.post(new Runnable() {
                     public void run() {
-                        account.setText(account_get);
+                        if(account_get.equals("")){
+                            account.setText("無資料");
+                        }
+                        else{
+                            account.setText(account_get);
+                        }
                     }
                 });
                 name.post(new Runnable() {

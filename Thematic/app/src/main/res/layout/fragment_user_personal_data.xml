@@ -71,6 +71,7 @@
                     android:id="@+id/個人資料_帳號"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="無資料"
                     android:textSize="30dp" />
 
             </LinearLayout>

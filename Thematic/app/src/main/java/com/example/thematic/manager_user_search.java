@@ -28,8 +28,19 @@ public class manager_user_search extends AppCompatActivity {
                         con.run();
                         String user_Account = new String();
                         String data = new String();
+                        if(userID.getText().toString().matches("")){
+                            data = "0";
+                        }
+                        else {
+                            data = userID.getText().toString();
+                        }
                         data = userID.getText().toString();
-                        user_Account = con.getAccount(data,"我要user帳號");
+                        if(data.equals("0")){
+                            user_Account = "0";
+                        }
+                        else {
+                            user_Account = con.getAccount(data, "我要user帳號");
+                        }
                         Log.e("33",""+user_Account);
                         GlobalVariable_Account obj = (GlobalVariable_Account) getApplicationContext();
                         obj.setAccount(user_Account);

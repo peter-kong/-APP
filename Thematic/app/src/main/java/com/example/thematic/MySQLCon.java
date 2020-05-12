@@ -209,7 +209,7 @@ public class MySQLCon {
             e.printStackTrace();
         }
         if (counter == 0)
-            data = "There are no data in the database";
+            data = "";
 
         return data;
     }

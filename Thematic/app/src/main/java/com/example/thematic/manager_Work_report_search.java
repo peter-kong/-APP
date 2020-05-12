@@ -33,6 +33,18 @@ public class manager_Work_report_search extends AppCompatActivity {
                         con.run();
                         String input_month = 月份.getText().toString();
                         String input_day = 日期.getText().toString();
+                        if(月份.getText().toString().matches("")){
+                            input_month = "0";
+                        }
+                        else {
+                            input_month = 月份.getText().toString();
+                        }
+                        if(日期.getText().toString().matches("")){
+                            input_day = "0";
+                        }
+                        else {
+                            input_day = 日期.getText().toString();
+                        }
                         if (Integer.parseInt(input_month) < 10) {
                             if (Integer.parseInt(input_day) < 10) {
                                 Date = "0" + input_month + "0" + input_day;
@@ -48,12 +60,20 @@ public class manager_Work_report_search extends AppCompatActivity {
                             }
                         }
                         GlobalVariable_Account obj = (GlobalVariable_Account) getApplicationContext();
-                        ;
-                        ArrayList UID = con.getSchedule_UID(Date, "我要schedule單日的所有的UID");
-                        ArrayList Name = con.getName(UID);
-                        obj.setUID(UID);
-                        obj.setName(Name);
-                        obj.setScheduleDate(Date);
+                        if(Date.equals("00")){
+                            ArrayList nullUID = new ArrayList();
+                            ArrayList nullName = new ArrayList();
+                            obj.setUID(nullUID);
+                            obj.setName(nullName);
+                        }
+                        else {
+                            ArrayList UID = con.getSchedule_UID(Date, "我要schedule單日的所有的UID");
+                            ArrayList Name = con.getName(UID);
+                            obj.setUID(UID);
+                            obj.setName(Name);
+                        }
+                            obj.setScheduleDate(Date);
+
                         Intent intent = new Intent();
                         intent.setClass(manager_Work_report_search.this, manager_Work_report.class);
                         startActivity(intent);

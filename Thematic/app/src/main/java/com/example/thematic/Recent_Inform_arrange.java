@@ -30,7 +30,7 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                 Time t = new Time();
                 t.setToNow();
                 int month = t.month + 1;
-                int day = t.monthDay ;
+                int day = t.monthDay;
                 Log.e("next_inform_arrange", "" + month + "," + day + "");
                 String Date = "";
                 if (month < 10) {
@@ -47,38 +47,40 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                     }
                 }
                 //獲得全域中的帳號
-                GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
-                String user帳號  = obj.returnAcc();
+                GlobalVariable_Account obj = (GlobalVariable_Account) getApplicationContext();
+                String user帳號 = obj.returnAcc();
                 //取得最近一次的服務內容(包含時間、照服員、服務內容)
-                ArrayList data = con.getschedule(Date,"我要上次工作內容",user帳號);
-                time_view.post(new Runnable() {
-                    public void run() {
-                        time_view.setText(""+data.get(0)+"~"+data.get(1));
+                ArrayList data = con.getschedule(Date, "我要上次工作內容", user帳號);
+                if (data.size() == 0) {
+                    for (int i = 0; i < 5; i++) {
+                        data.add("無資料");
                     }
-                });
-                caregiver_view.post(new Runnable() {
-                    public void run() {
-                        caregiver_view.setText(""+data.get(2));
-                    }
-                });
+                    time_view.post(new Runnable() {
+                        public void run() {
+                            time_view.setText("" + data.get(0) + "~" + data.get(1));
+                        }
+                    });
+                    caregiver_view.post(new Runnable() {
+                        public void run() {
+                            caregiver_view.setText("" + data.get(2));
+                        }
+                    });
 
-                work_view.post(new Runnable() {
-                    public void run() {
-                        String work;
-                        work = ""+data.get(3);
-                        work = work.replace("、","\n");
-                        work_view.setText(work);
-                    }
-                });
-                日期.post(new Runnable() {
-                    public void run() {
-                        日期.setText("上次照服時間:"+data.get(4));
-                    }
-                });
+                    work_view.post(new Runnable() {
+                        public void run() {
+                            String work;
+                            work = "" + data.get(3);
+                            work = work.replace("、", "\n");
+                            work_view.setText(work);
+                        }
+                    });
+                    日期.post(new Runnable() {
+                        public void run() {
+                            日期.setText("上次照服時間:" + data.get(4));
+                        }
+                    });
+                }
             }
-
         }).start();
-
-
     }
 }

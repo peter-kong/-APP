@@ -30,9 +30,28 @@ public class manager_caregiver_manage extends AppCompatActivity {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        String caregiverID = ""+ID.getText().toString();
-                        String inputMonth = ""+Month.getText().toString();
-                        String inputDay = ""+Day.getText().toString();
+                        String caregiverID;
+                        String inputMonth;
+                        String inputDay;
+                        if(ID.getText().toString().matches("")){
+                            caregiverID = "0";
+                        }
+                        else {
+                            caregiverID = ID.getText().toString();
+                        }
+                        if(Month.getText().toString().matches("")){
+                            inputMonth = "0";
+                        }
+                        else {
+                            inputMonth = Month.getText().toString();
+                        }
+                        if(Day.getText().toString().matches("")){
+                            inputDay = "0";
+                        }
+                        else {
+                            inputDay = Day.getText().toString();
+                        }
+
                         String Date = new String();
                         if(Integer.parseInt(inputMonth)<10){
                             if(Integer.parseInt(inputDay)<10){
