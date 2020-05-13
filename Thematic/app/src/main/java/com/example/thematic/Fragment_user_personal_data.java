@@ -1,6 +1,7 @@
 package com.example.thematic;
 
 import android.os.Bundle;
+import android.text.format.Time;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import java.util.ArrayList;
 
 /**
  * @description
@@ -52,13 +55,36 @@ public class Fragment_user_personal_data extends Fragment {
         new Thread(new Runnable(){
             @Override
             public void run(){
-
                 GlobalVariable_Account obj = (GlobalVariable_Account)getActivity().getApplicationContext();
-
                 String Account  = obj.returnAcc();
                 com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                 con.run();
                 Log.e("38","Hi");
+                Time t = new Time();
+                t.setToNow();
+                int month = t.month + 1;
+                int day = t.monthDay;
+                String Date = "";
+                if (month < 10) {
+                    if (day < 10) {
+                        Date = "0" + month + "0" + day;
+                    } else if (day >= 10) {
+                        Date = "0" + month + day;
+                    }
+                } else if (month >= 10) {
+                    if (day < 10) {
+                        Date = month + "0" + day;
+                    } else if (day >= 10) {
+                        Date = "" + month + day;
+                    }
+                }
+                String[] str = null;
+                String user帳號 = obj.returnAcc();
+                ArrayList HistoryDate = new ArrayList();
+                HistoryDate = con.GetDate(Date, user帳號);
+                Log.e("HistoryDate",""+HistoryDate.size());
+                GlobalVariable_Account 歷史日期保存 = (GlobalVariable_Account)getActivity().getApplicationContext();
+                歷史日期保存.setDate(HistoryDate);
                 //Log.e("OK","Hello Line 34");
                 //con.run();
                 //設定一個物件來裝從getData中拿到的東西

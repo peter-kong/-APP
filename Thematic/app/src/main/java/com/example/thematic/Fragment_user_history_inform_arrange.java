@@ -46,6 +46,7 @@ public class Fragment_user_history_inform_arrange extends Fragment {
         ArrayList Historydate = obj1.returnDate();
         String[] 歷史日期 = new String[Historydate.size()];
         Historydate.toArray(歷史日期);
+
         //將所有日期資料放入spinner中
         ArrayAdapter datelist = new ArrayAdapter(getActivity(), android.R.layout.simple_spinner_item, 歷史日期);
         datelist.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -105,5 +106,7 @@ public class Fragment_user_history_inform_arrange extends Fragment {
                 Log.e("nothingSelected","沒有選擇內容");
             }
         });
+
+
     }
 }
