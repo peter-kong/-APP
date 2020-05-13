@@ -134,17 +134,5 @@ public class Menu_for_caregiver extends AppCompatActivity {
 
             }
         });
-
-
-        Button NextpageBtn4 = (Button) findViewById(R.id.歷史工作報表_care);
-        NextpageBtn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(Menu_for_caregiver.this, caregiver_work_report_search.class);
-                startActivity(intent);
-            }
-        });
-
     }
 }

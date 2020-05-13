@@ -50,7 +50,7 @@ public class Login extends AppCompatActivity {
                             check = 1;
                             Intent intent = new Intent();
                             Log.v("Login","caregiver登入成功");
-                            intent.setClass(Login.this,Menu_for_caregiver.class);
+                            intent.setClass(Login.this,Caregiver_tab.class);
                             startActivity(intent);
                         }
                         else if((con.getData(Account,"我要user密碼").equals(Password))){
@@ -201,7 +201,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Login.this,Menu_for_caregiver.class);
+                intent.setClass(Login.this,Caregiver_tab.class);
                 startActivity(intent);
             }
         });
