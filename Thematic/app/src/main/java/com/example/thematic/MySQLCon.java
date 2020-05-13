@@ -195,7 +195,7 @@ public class MySQLCon {
 
         }
         if (counter == 0)
-            data = "";
+            data = "no data";
 
         Log.e("Line 194",data);
 

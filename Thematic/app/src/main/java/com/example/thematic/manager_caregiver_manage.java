@@ -36,16 +36,25 @@ public class manager_caregiver_manage extends AppCompatActivity {
                         if(ID.getText().toString().matches("")){
                             caregiverID = "0";
                         }
+                        else if(ID.getText().toString().matches(" ")){
+                            caregiverID = "0";
+                        }
                         else {
                             caregiverID = ID.getText().toString();
                         }
                         if(Month.getText().toString().matches("")){
                             inputMonth = "0";
                         }
+                        else if(Month.getText().toString().matches(" ")){
+                            inputMonth = "0";
+                        }
                         else {
                             inputMonth = Month.getText().toString();
                         }
                         if(Day.getText().toString().matches("")){
+                            inputDay = "0";
+                        }
+                        else if(Day.getText().toString().matches(" ")){
                             inputDay = "0";
                         }
                         else {

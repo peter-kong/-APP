@@ -39,10 +39,16 @@ public class caregiver_work_report_search extends AppCompatActivity {
                         if(月份.getText().toString().matches("")){
                             input_month = "0";
                         }
+                        else if(月份.getText().toString().matches(" ")){
+                            input_month = "0";
+                        }
                         else {
                             input_month = 月份.getText().toString();
                         }
                         if(日期.getText().toString().matches("")){
+                            input_day = "0";
+                        }
+                        else if(日期.getText().toString().matches(" ")){
                             input_day = "0";
                         }
                         else {
