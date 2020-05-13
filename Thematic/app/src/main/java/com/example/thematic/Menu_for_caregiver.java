@@ -56,18 +56,11 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         tmp2.setUID(con.getUserUID(照服員帳號,strDate));
                         tmp2.setName(con.getName(tmp2.returnUID()));
                         tmp.setTommorrowoToday(true);
-
+                        Intent intent = new Intent();
+                        intent.setClass(Menu_for_caregiver.this, caregiver_next_work_report.class);
+                        startActivity(intent);
                         tmp2.println();
                        // Log.e("tmpreturn", tmp.returnUID().get(0).toString());
-
-                        if(tmp.returnUID().size() != 0){
-                            Log.e("tag","Tomorrow");
-                            Intent intent = new Intent();
-                            intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report1.class);
-                            startActivity(intent);
-                        }
-
-
                     }
                 }).start();
 

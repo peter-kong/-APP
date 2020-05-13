@@ -276,13 +276,20 @@ public class MySQLCon {
     public String get_ID(String 帳號,String 需求){
         String data = new String();
         String 關聯表名稱 = "",屬性 = "";
-        if(需求.equals("我要caregiverID")){
-            關聯表名稱 = "caregiver";
-            屬性 = "CID";
-        }
+
         try{
             Connection con = DriverManager.getConnection(url, db_user, db_password);
-            sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `CAccount` = " + "\"" + 帳號 + "\"";
+            if(需求.equals("我要caregiverID")){
+                關聯表名稱 = "caregiver";
+                屬性 = "CID";
+                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `CAccount` = " + "\"" + 帳號 + "\"";
+            }
+            if(需求.equals("我要userID")){
+                關聯表名稱 = "user";
+                屬性 = "UID";
+                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `UAccount` = " + "\"" + 帳號 + "\"";
+            }
+
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
             rs.next();
@@ -299,7 +306,6 @@ public class MySQLCon {
     public ArrayList getschedule(String Date, String 需求, String 帳號) {
         ArrayList data = new ArrayList();
         int int_date = Integer.parseInt(Date), db_date;  //目前的日期,db選擇的日期
-        String re = 需求;
         String sql = new String(), need_date = new String();
         try {
             String 關聯表名稱 = "schedule";
@@ -313,66 +319,97 @@ public class MySQLCon {
             ResultSet rs = st.executeQuery(sql);
             String answer_date = "0000";
             while (rs.next()) {
-                Log.e("getschedule","進入rs");
+                Log.e("getschedule", "進入rs");
                 need_date = rs.getString("Date"); //想要找的日期
                 db_date = Integer.parseInt(need_date);
-                Log.e("input_date,db_date",int_date+","+db_date);
+                Log.e("input_date,db_date", int_date + "," + db_date);
                 //取得時間
                 if (需求.equals("我要下次工作內容")) {
                     if (int_date <= db_date) {//第一個超過目前日期的日期
-                        GetUsertimeData(data, rs, need_date, 帳號, "我要工作內容");
-                        break;
+                        if(answer_date.equals("0000")){
+                            answer_date =  need_date;
+                        }
+                        else if(Integer.parseInt(answer_date) > db_date){
+                            answer_date = need_date;
+                        }
                     }
-                }
-                else if (需求.equals("我要上次工作內容")) {
+                } else if (需求.equals("我要上次工作內容")) {
                     String check_date = "";
-                        check_date = rs.getString("Date"); //想要找的日期
-                        db_date = Integer.parseInt(check_date);
-                        if (db_date < int_date && db_date > Integer.parseInt((answer_date))) {
-                            Log.e("answer_date",""+answer_date);
+                    check_date = rs.getString("Date"); //想要找的日期
+                    Log.e("檢查的日期", check_date);
+                    db_date = Integer.parseInt(check_date);
+                    Log.e("db_date,int_date,Integer.parseInt(answer_date)", db_date + "," +
+                            int_date + "," + Integer.parseInt((answer_date)));
+                    if (db_date < int_date) {
+                        if (db_date > Integer.parseInt((answer_date))) {
+                            Log.e("answer_date", "" + answer_date);
                             answer_date = check_date;
                         }
-                }
-                else if (需求.equals("我要caregiver工作時間")) {
+                    }
+                } else if (需求.equals("我要caregiver工作時間")) {
                     if (db_date == int_date) {
                         String firsttime = rs.getString("FirstTime");
                         String lasttime = rs.getString("LastTime");
                         data.add(firsttime + "~" + lasttime);
                     }
-                }
-                else if (需求.equals("我要排程工作內容")){
-                    if(rs.getString("Date").equals(Date)) {
+                } else if (需求.equals("我要排程工作內容")) {
+                    if (rs.getString("Date").equals(Date)) {
                         data.add(rs.getString("備註"));
                         data.add(rs.getString("Finish"));
                         data.add(rs.getString("FirstTime"));
                         data.add(rs.getString("LastTime"));
-                        String caregiverID = ""+rs.getString("CID");
+                        String caregiverID = "" + rs.getString("CID");
                         data.add(getData(caregiverID, "我要caregiver名字"));
-                        String request = ""+getrequest(Date,rs.getString("FirstTime"),帳號);
+                        String request = "" + getrequest(Date, rs.getString("FirstTime"), 帳號);
                         data.add(request);
-                        Log.e("OK","資料讀取完成");
+                        Log.e("OK", "資料讀取完成");
                         //break;
                     }
-                }
-                else if(需求.equals("我要歷史工作報表內容")){
+                } else if (需求.equals("我要歷史工作內容")) {
+                    if (rs.getString("Date").equals(Date)) {
+                        data.add(rs.getString("FirstTime"));
+                        data.add(rs.getString("LastTime"));
+                        String caregiverID = "" + rs.getString("CID");
+                        data.add(getData(caregiverID, "我要caregiver名字"));
+                        String request = "" + getrequest(Date, rs.getString("FirstTime"), 帳號);
+                        data.add(request);
+                    }
+                } else if (需求.equals("我要歷史工作報表內容")) {
                     data.add(rs.getString("備註"));
                     data.add(rs.getString("Finish"));
                     data.add(rs.getString("FirstTime"));
                     data.add(rs.getString("LastTime"));
-                    String caregiverID = get_ID(帳號,"我要caregiverID");
+                    String caregiverID = get_ID(帳號, "我要caregiverID");
                     data.add(getData(caregiverID, "我要caregiver名字"));
-                    String request = ""+getrequest(Date,rs.getString("FirstTime"),帳號);
+                    String request = "" + getrequest(Date, rs.getString("FirstTime"), 帳號);
                     data.add(request);
-                    Log.e("OK","歷史工作報表內容獲取完成");
+                    Log.e("OK", "歷史工作報表內容獲取完成");
                 }
-                Log.e("rs->finish","這一筆結束");
+                Log.e("rs->finish", "這一筆結束");
             }
             if(需求.equals("我要上次工作內容")){
-                Log.e("answer_date after search",answer_date);
-                rs = st.executeQuery(sql);
-                rs.next();
-                GetUsertimeData(data, rs, answer_date, 帳號, "我要工作內容");
+                if(answer_date.equals("0000")){
+                    Log.e("上次工作內容找不到","無資料");
+                }
+                else {
+                    Log.e("answer_date after search", answer_date);
+                    rs = st.executeQuery(sql);
+                    rs.next();
+                    GetUsertimeData(data, rs, answer_date, 帳號, "我要工作內容");
+                }
             }
+            else if(需求.equals("我要下次工作內容")){
+                if(answer_date.equals("0000")){
+                    Log.e("下次工作內容找不到","無資料");
+                }
+                else {
+                    Log.e("answer_date after search", answer_date);
+                    rs = st.executeQuery(sql);
+                    rs.next();
+                    GetUsertimeData(data, rs, answer_date, 帳號, "我要工作內容");
+                }
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
             Log.e("DB", "獲取schedule資料失敗");
@@ -450,6 +487,7 @@ public class MySQLCon {
             ResultSet rs = st.executeQuery(sql);
             rs.next();
             String id = rs.getString("UID");
+            Log.e("尋找ID成功",id);
             //使用UID進schedule取得對應的所有資料
             String sql1 = "SELECT * FROM `schedule` WHERE `UID` = " + "\"" + id + "\"";
             Statement st1 = con.createStatement();
@@ -457,6 +495,7 @@ public class MySQLCon {
             while (rs1.next()) {
                 String DbDate = rs1.getString("Date");
                 int CheckDate = Integer.parseInt(DbDate);
+                Log.e("檢查的日期,現在的日期",DbDate+","+IntDate);
                 if (CheckDate < IntDate) {
                     data.add(DbDate);
                 }
@@ -576,20 +615,30 @@ public class MySQLCon {
             sql = "SELECT  `Date`,`星期`,`used`,`total`  FROM `people_use` WHERE  `Date` LIKE  '%" + Date + "%' ";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
-
+            ArrayList used_date = new ArrayList();
             while (rs.next()) {
                 int check_month = Integer.parseInt(rs.getString("Date")) / 100;
+                String date = rs.getString("Date");
+                Log.e("日期:",date);
                 if (check_month == month) {
                     int check_星期幾 = rs.getInt("星期");
-                    if (count == 0 && check_month != 1) {
-                        count++;
+                    Log.e("星期:",""+check_星期幾);
+                    if (count == 0 && check_month != Integer.parseInt(Date)) {
+                        if(used_date.contains(rs.getString("Date").equals("false")) ){
+                            used_date.add(rs.getString("Date"));
+                            count++;
+                            Log.e("count first++",count+"");
+                        }
                     }
-                    if (check_month == 1) {
-                        count++;
+                    if (check_month == Integer.parseInt(Date)) {
+                        if(used_date.contains(rs.getString("Date").equals("false"))) {
+                            used_date.add(rs.getString("Date"));
+                            count++;
+                            Log.e("count ++",count+"");
                     }
                 }
             }
-
+            }
             for (int i = 0; i < count; i++) {
                 需要的星期數.add("第" + week[i] + "週");
             }

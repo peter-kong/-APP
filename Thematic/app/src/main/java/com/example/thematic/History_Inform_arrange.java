@@ -57,8 +57,8 @@ public class History_Inform_arrange extends AppCompatActivity {
                         con.run();
                         GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
                         String user帳號  = obj.returnAcc();
-
-                        ArrayList data = con.getschedule(chooseDate,"我要上次工作內容",user帳號);
+                        String UID = con.get_ID(user帳號,"我要userID");
+                        ArrayList data = con.getschedule(chooseDate,"我要歷史工作內容",UID);
                         if(data.size() == 0) {
                             for (int i = 0; i < 5; i++) {
                                 data.add("無資料");
