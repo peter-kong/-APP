@@ -29,7 +29,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="#F1EFEF"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/main_register"
@@ -41,18 +40,23 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="2dp"
             android:background="#80D8978E"
             android:gravity="center"
             android:text="會員登入"
-            android:textColor="#CC5F97BE"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textColor="#CC010B13"
+            android:textSize="24sp" />
 
         <LinearLayout
             android:id="@+id/imageView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/layout_for_account"
             android:gravity="center_vertical"
             app:srcCompat="@mipmap/elderly">
 
@@ -69,8 +73,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="60dp"
-                android:ems="12"
-                android:hint="請輸入您的信箱" />
+                android:ems="15"
+                android:hint="請輸入您的信箱"
+                android:inputType="textEmailAddress" />
 
         </LinearLayout>
 
@@ -78,7 +83,10 @@
             android:id="@+id/imageView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/layout_for_account"
             android:gravity="center_vertical"
             app:srcCompat="@mipmap/elderly">
 
@@ -95,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="60dp"
-                android:ems="12"
+                android:ems="15"
                 android:hint="請輸入您的密碼"
                 android:inputType="textPassword" />
         </LinearLayout>
@@ -107,11 +115,13 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="15dp"
-            android:background="#66D8978E"
+            android:layout_marginBottom="10dp"
+            android:background="#80D8978E"
             android:gravity="center"
             android:text="登入"
-            android:textSize="30sp" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#248FE0"
+            android:textSize="24sp" />
 
     </LinearLayout>
 
@@ -134,7 +144,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         android:gravity="center"
         android:text="註冊"

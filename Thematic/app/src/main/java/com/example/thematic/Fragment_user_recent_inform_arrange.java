@@ -66,13 +66,16 @@ public class Fragment_user_recent_inform_arrange extends Fragment {
                 GlobalVariable_Account obj = (GlobalVariable_Account) getActivity().getApplicationContext();
                 String user帳號 = obj.returnAcc();
                 //取得最近一次的服務內容(包含時間、照服員、服務內容)
-                ArrayList data = con.getschedule(Date, "我要上次工作內容", user帳號);
-                Log.e("獲取結果",data.get(0)+","+data.get(1)+","+data.get(2)+","+data.get(3)+","+data.get(4)+",");
+                String UID = con.get_ID(user帳號,"我要userID");
+                Log.e("recent_Inform_arrange","Start");
+                ArrayList data = con.getschedule(Date, "我要上次工作內容", UID);
+
                 if (data.size() == 0) {
                     for (int i = 0; i < 5; i++) {
                         data.add("無資料");
                     }
                 }
+                Log.e("獲取結果",data.get(0)+","+data.get(1)+","+data.get(2)+","+data.get(3)+","+data.get(4));
                 time_view.post(new Runnable() {
                     public void run() {
                         time_view.setText("" + data.get(0) + "~" + data.get(1));

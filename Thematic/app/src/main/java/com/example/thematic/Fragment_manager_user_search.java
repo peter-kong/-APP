@@ -53,10 +53,12 @@ public class Fragment_manager_user_search extends Fragment {
                         if(userID.getText().toString().matches("")){
                             data = "0";
                         }
+                        else if(userID.getText().toString().matches(" ")){
+                            data = "0";
+                        }
                         else {
                             data = userID.getText().toString();
                         }
-                        data = userID.getText().toString();
                         if(data.equals("0")){
                             user_Account = "0";
                         }
@@ -72,16 +74,8 @@ public class Fragment_manager_user_search extends Fragment {
                         startActivity(intent);
                     }
                 }).start();
-
-
             }
         });
-
-
     }
-
-
-
-
 }
 

@@ -69,7 +69,8 @@ public class Fragment_user_next_inform_arrange extends Fragment {
                 String user帳號  = obj.returnAcc();
                 //取得下次服務的資料(包含日期、時間、照服員、服務內容)
                 Log.e("Next_Inform_arrange","Start");
-                ArrayList data = con.getschedule(Date,"我要下次工作內容",user帳號);
+                String UID = con.get_ID(user帳號,"我要userID");
+                ArrayList data = con.getschedule(Date,"我要下次工作內容",UID);
                 Log.e("Next_Inform_arrange","End"+data.size());
                 if(data.size() == 0){
                     for (int i = 0 ; i < 5 ; i ++) {

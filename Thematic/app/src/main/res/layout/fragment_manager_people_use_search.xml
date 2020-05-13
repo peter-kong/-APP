@@ -25,7 +25,7 @@
                 android:layout_marginTop="0dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="照護服務時間排程"
+                android:text="照護服務時間排程概況"
                 android:textSize="30sp" />
 
             <Button

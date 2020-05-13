@@ -143,8 +143,6 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         }
                     }
                 }, 1000);
-
-
             }
         });
     }

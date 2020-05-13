@@ -42,7 +42,7 @@ public class Fragment_user_history_inform_arrange extends Fragment {
     }
 
     private void DB(){
-        GlobalVariable_Account obj1 = (GlobalVariable_Account)getActivity().getApplicationContext();
+        GlobalVariable_Account obj1 = (GlobalVariable_Account) getActivity().getApplicationContext();
         ArrayList Historydate = obj1.returnDate();
         String[] 歷史日期 = new String[Historydate.size()];
         Historydate.toArray(歷史日期);
@@ -65,8 +65,13 @@ public class Fragment_user_history_inform_arrange extends Fragment {
                         con.run();
                         GlobalVariable_Account obj = (GlobalVariable_Account)getActivity().getApplicationContext();
                         String user帳號  = obj.returnAcc();
-
-                        ArrayList data = con.getschedule(chooseDate,"我要上次工作內容",user帳號);
+                        String UID = con.get_ID(user帳號,"我要userID");
+                        ArrayList data = con.getschedule(chooseDate,"我要歷史工作內容",UID);
+                        if(data.size() == 0) {
+                            for (int i = 0; i < 5; i++) {
+                                data.add("無資料");
+                            }
+                        }
                         time_view.post(new Runnable() {
                             public void run() {
                                 time_view.setText(""+data.get(0)+"~"+data.get(1));
@@ -94,6 +99,7 @@ public class Fragment_user_history_inform_arrange extends Fragment {
                     }
                 }).start();
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 Log.e("nothingSelected","沒有選擇內容");

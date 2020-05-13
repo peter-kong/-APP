@@ -32,15 +32,35 @@
                 android:text="個案資料查詢"
                 android:textSize="30sp" />
 
-
-            <EditText
-                android:id="@+id/輸入個案ID"
-                android:layout_width="306dp"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
-                android:ems="10"
-                android:hint="請輸入個案的ID"
-                android:inputType="textPersonName" />
+                android:layout_marginTop="80dp"
+                android:text="     請填入以下資料:"
+                android:textSize="24sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/layout_background_for_manager"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/輸入個案ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="請輸入個案ID"
+                    android:inputType="textPersonName"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
             <Button
                 android:id="@+id/查詢"

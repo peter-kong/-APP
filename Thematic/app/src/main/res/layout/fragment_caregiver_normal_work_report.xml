@@ -23,7 +23,7 @@
                 android:layout_height="60dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="主選單"
+                android:text="今日與明日工作報表查詢"
                 android:textSize="30sp" />
 
             <Button
