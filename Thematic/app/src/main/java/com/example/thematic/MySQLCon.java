@@ -501,6 +501,43 @@ public class MySQLCon {
                 }
 
             }
+
+            int[] data1 = new int[data.size()];
+            for(int i= 0 ;i<data.size();i++){
+                String a = ""+data.get(i);
+                int d = Integer.parseInt(a);
+                data1[i]=d;
+            }
+            for(int i=0;i<data.size();i++){
+                for(int j=0;j<data.size();j++){
+                    if(data1[i]<data1[j]){
+                        int c = data1[i];
+                        data1[i]=data1[j];
+                        data1[j]=c;
+                    }
+                }
+            }
+            for (int i = 0; i < data.size();i++){
+                int m = data1[i]/100;
+                int d = data1[i]%100;
+                if(m<10){
+                    if(d<10){
+                        data.set(i,"0"+m+"0"+d);
+                    }
+                    else{
+                        data.set(i,"0"+m+d);
+                    }
+                }
+                else{
+                    if(d<10){
+                        data.set(i,m+"0"+d);
+                    }
+                    else{
+                        data.set(i,m+d);
+                    }
+                }
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
             Log.e("DB", "獲取日期資料失敗");
