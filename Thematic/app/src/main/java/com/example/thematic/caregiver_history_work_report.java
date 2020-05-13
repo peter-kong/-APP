@@ -41,6 +41,7 @@ public class caregiver_history_work_report extends AppCompatActivity {
             String[] 個案名單 = new String[name.size()];
             name.toArray(個案名單);
             //將所有日期資料放入spinner中
+
             ArrayAdapter datelist = new ArrayAdapter(caregiver_history_work_report.this, android.R.layout.simple_spinner_item, 個案名單);
             datelist.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             個案下拉選單.setAdapter(datelist);

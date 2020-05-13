@@ -158,7 +158,7 @@ public class MySQLCon {
             屬性 = "UID";
             Date = 帳號;
         }
-        String data = "No data";
+        String data = "";
         try {
             //Log.v("DB","Test:"+關聯表名稱+屬性);
             Connection con = DriverManager.getConnection(url, db_user, db_password);
@@ -168,7 +168,14 @@ public class MySQLCon {
             } else if (關聯表名稱 == "manager") {
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `MAccount` = " + "\"" + 帳號 + "\"";
             } else if (關聯表名稱 == "caregiver") {
-                sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `CAccount` = " + "\"" + 帳號 + "\"";
+                if(CID == 0){
+                    Log.e("123","123");
+                    sql ="SELECT * FROM `" + 關聯表名稱 + "` WHERE `CAccount` = " + "\"" + 帳號 + "\"";
+                }
+                else {
+                    Log.e("456","456");
+                    sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `CID` = " + "\"" + CID + "\"";
+                }
             } else if(關聯表名稱 == "schedule"){
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `Date` = " + "\"" + Date + "\"";
             }
@@ -188,7 +195,7 @@ public class MySQLCon {
 
         }
         if (counter == 0)
-            data = "No data";
+            data = "";
 
         Log.e("Line 194",data);
 
@@ -638,7 +645,7 @@ public class MySQLCon {
     public ArrayList getUserUID(String 照服員帳號,String strDate){
 
         ArrayList UID = new ArrayList();
-        UID.add("No data");
+        //UID.add("No data");
 
         //藉由帳號取得對應的CID
         try {
@@ -706,7 +713,6 @@ public class MySQLCon {
     public ArrayList getName(ArrayList UID){
 
         ArrayList name = new ArrayList();
-        name.add("no data");
 
         try {
 
