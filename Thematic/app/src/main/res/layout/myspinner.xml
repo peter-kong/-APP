@@ -3,11 +3,10 @@
     android:id="@android:id/text1"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="#E4DCDC"
     android:ellipsize="marquee"
     android:gravity="center"
     android:paddingLeft="8dip"
     android:singleLine="true"
     android:textColor="#070007"
-    android:textSize="28sp"
-    android:background="#DAD5D5"
-    ></TextView>
+    android:textSize="28sp"></TextView>
