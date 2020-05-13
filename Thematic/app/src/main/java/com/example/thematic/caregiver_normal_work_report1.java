@@ -255,14 +255,26 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
                         TextView 備註 = (TextView)findViewById(R.id.備註);
                         String meg = 備註.getText().toString();
 
-                        com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
-                        con.SendFinishandnotice(curuid.get(0).toString(),test.returnFinish(),meg,strDate);
-                        Log.e("Data: ",curuid.get(0).toString()+test.returnFinish().get(0).toString());
 
+                        //檢查沒有輸入
+                        ArrayList checkpoint = test.returnFinish();
 
-                        Intent intent = new Intent();
-                        intent.setClass(caregiver_normal_work_report1.this, Menu_for_caregiver.class);
-                        startActivity(intent);
+                        int c = 0;
+
+                        if(checkpoint != null)
+                            c = 1;
+
+                        Log.e("meg",meg);
+
+                        if(c == 1) {
+                            com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
+                            con.SendFinishandnotice(curuid.get(0).toString(), test.returnFinish(), meg, strDate);
+                            Log.e("Data: ", curuid.get(0).toString() + test.returnFinish().get(0).toString());
+
+                            Intent intent = new Intent();
+                            intent.setClass(caregiver_normal_work_report1.this, Menu_for_caregiver.class);
+                            startActivity(intent);
+                        }
 
                     }
                 }).start();
