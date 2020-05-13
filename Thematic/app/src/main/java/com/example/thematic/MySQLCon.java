@@ -535,10 +535,7 @@ public class MySQLCon {
     }
 
     //獲得使用人數/總人數的資料
-    public void get_people_use(ArrayList data, ArrayList data1, int week_index, String Date, String 需求) {
-        ArrayList WeekDate = new ArrayList();
-        ArrayList 星期幾 = new ArrayList();
-        int 同天區間 = 0;
+    public void get_people_use(ArrayList data, ArrayList data1, String week_index, String Date, String 需求) {
         Log.e("get_people_sue", "進入搜尋人力配置資料");
         try {
             Connection con = DriverManager.getConnection(url, db_user, db_password);
@@ -546,42 +543,44 @@ public class MySQLCon {
                 sql = "SELECT * FROM `people_use` WHERE `Date` = " + "\"" + Date + "\"";
             }
             if (需求.equals("我要一週的Empty")) {
-                sql = "SELECT  `Date`,`星期`,`used`,`total`  FROM `people_use` WHERE  `Date` LIKE  '%" + Date + "%' ";
+                sql = "SELECT  `Date`,`星期`,`time`,`used`,`total`  FROM `people_use` WHERE  `Date` LIKE  '%" + Date + "%' ";
             }
+            Log.e("week_index",week_index);
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
+            int 上限星期 = 5;
             int count = 1;
-            //檢查週數是否是需要的
-            int week_choose_count = 0;
             while (rs.next()) {
                 if (需求.equals("我要一週的Empty")) {
-                    int check_month = Integer.parseInt(rs.getString("Date")) / 100;
-                    //檢查是否為需要的月份
-                    if (check_month == Integer.parseInt(Date)) {
-                        int db星期 = rs.getInt("星期");
+                    String db_date = rs.getString("Date");
+                    if(Integer.parseInt(db_date)/100 == Integer.parseInt(week_index)/100){
+                        String total = rs.getString("total");
+                        String used = rs.getString("used");
+                        String 星期 = rs.getString("星期");
+                        String 隔間 = rs.getString("time");
 
-                        //檢查是否為想要的週數
-                        if (week_choose_count != week_index) {
-                            //如果第一週不是星期一開始
-                            if (week_choose_count == 0) {
-                                if (db星期 != 1) {
-                                    week_choose_count++;
-                                }
-                            }
-                            //如果是星期一代表到了新的一週了
-                            if (db星期 == 1) {
-                                week_choose_count++;
-                            }
+                        int 區間 = ((Integer.parseInt(星期))-1)*18+Integer.parseInt(隔間);
+                        if(Integer.parseInt(db_date) == Integer.parseInt(week_index)){
+                            data.set(區間+1,used+"/");
+                            data1.set(區間+1,total);
+                            上限星期 = Integer.parseInt(rs.getString("星期"));
+                            Log.e("更改上限日期成功",""+上限星期);
                         }
-                        //已經到了想要的週了
-                        else if (week_choose_count == week_index) {
-                            data.set(0, "no data");
-                            data.set((db星期 - 1) * 18 + 1 + 同天區間, rs.getString("used") + "/");
-                            data1.set((db星期 - 1) * 18 + 1 + 同天區間, rs.getString("total"));
-                            同天區間++;
-                            if (同天區間 == 18) {
-                                同天區間 = 0;
-                            }
+                        else if(Integer.parseInt(db_date) == Integer.parseInt(week_index)+1 && Integer.parseInt(星期) > 上限星期){
+                            data.set(區間+1,used+"/");
+                            data1.set(區間+1,total);
+                        }
+                        else if(Integer.parseInt(db_date) == Integer.parseInt(week_index)+2 && Integer.parseInt(星期) > 上限星期){
+                            data.set(區間+1,used+"/");
+                            data1.set(區間+1,total);
+                        }
+                        else if(Integer.parseInt(db_date) == Integer.parseInt(week_index)+3 && Integer.parseInt(星期) > 上限星期){
+                            data.set(區間+1,used+"/");
+                            data1.set(區間+1,total);
+                        }
+                        else if(Integer.parseInt(db_date) == Integer.parseInt(week_index)+4 && Integer.parseInt(星期) > 上限星期){
+                            data.set(區間+1,used+"/");
+                            data1.set(區間+1,total);
                         }
                     }
                 } else if (需求.equals("我要單日的Empty")) {
@@ -601,8 +600,7 @@ public class MySQLCon {
 
     //計算月概況總共有幾週
     public ArrayList get_week_count(int month) {
-        ArrayList 需要的星期數 = new ArrayList();
-        String[] week = {"一", "二", "三", "四", "五", "六"};
+        ArrayList data = new ArrayList();
         String Date = new String();
         if (month < 10) {
             Date = "0" + String.valueOf(month);
@@ -615,39 +613,36 @@ public class MySQLCon {
             sql = "SELECT  `Date`,`星期`,`used`,`total`  FROM `people_use` WHERE  `Date` LIKE  '%" + Date + "%' ";
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
-            ArrayList used_date = new ArrayList();
             while (rs.next()) {
-                int check_month = Integer.parseInt(rs.getString("Date")) / 100;
-                String date = rs.getString("Date");
-                Log.e("日期:",date);
-                if (check_month == month) {
-                    int check_星期幾 = rs.getInt("星期");
-                    Log.e("星期:",""+check_星期幾);
-                    if (count == 0 && check_month != Integer.parseInt(Date)) {
-                        if(used_date.contains(rs.getString("Date").equals("false")) ){
-                            used_date.add(rs.getString("Date"));
-                            count++;
-                            Log.e("count first++",count+"");
+                String db_date = rs.getString("Date");
+                String 星期 = rs.getString("星期");
+                if(count == 0){
+                    if(Integer.parseInt(db_date)/100 == month){
+                        if(Integer.parseInt(星期) != 1){
+                            if(!data.contains(db_date+"~")) {
+                                data.add(db_date+"~");
+                                count++;
+                            }
                         }
                     }
-                    if (check_month == Integer.parseInt(Date)) {
-                        if(used_date.contains(rs.getString("Date").equals("false"))) {
-                            used_date.add(rs.getString("Date"));
-                            count++;
-                            Log.e("count ++",count+"");
+                }
+                else{
+                    if(Integer.parseInt(db_date)/100 == month) {
+                        if (Integer.parseInt(星期) == 1) {
+                            if(!data.contains(db_date+"~")) {
+                                data.add(db_date+"~");
+                                count++;
+                            }
+                        }
                     }
                 }
-            }
-            }
-            for (int i = 0; i < count; i++) {
-                需要的星期數.add("第" + week[i] + "週");
             }
         } catch (SQLException e) {
             e.printStackTrace();
             Log.e("DB", "獲取週的數目配置失敗");
             Log.e("DB", e.toString());
         }
-        return 需要的星期數;
+        return data;
     }
     public ArrayList getworkreport_UID(String Date,String 需求,String 帳號){
         ArrayList data = new ArrayList();

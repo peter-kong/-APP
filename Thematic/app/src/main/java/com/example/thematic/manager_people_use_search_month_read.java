@@ -124,20 +124,26 @@ public class manager_people_use_search_month_read extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
-                int choose_index = spnWeek.getSelectedItemPosition();
+                ArrayList data = new ArrayList();   //區間的使用人數
+                ArrayList data1 = new ArrayList();  //區間的總人數
+                for (int i = 0 ; i < 92 ; i++){
+                    data.add("");
+                    data1.add("");
+                }
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
+                        String choose_index = (String)spnWeek.getSelectedItem();
+                        choose_index = choose_index.replace("~","");
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                         con.run();
                         GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
                         int month  = obj.returnMonth();
 
-                        ArrayList data = new ArrayList();   //區間的使用人數
-                        ArrayList data1 = new ArrayList();  //區間的總人數
-                        for (int i = 0 ; i < 92 ; i++){
-                            data.add("");
-                            data1.add("");
+                        Log.e("choose_index",""+choose_index);
+                        for (int i = 0 ; i < 92 ; i ++){
+                            data.set(i,"");
+                            data1.set(i,"");
                         }
                         con.get_people_use(data ,data1,choose_index,String.valueOf(month),"我要一週的Empty");
                         count1.post(new Runnable() {
