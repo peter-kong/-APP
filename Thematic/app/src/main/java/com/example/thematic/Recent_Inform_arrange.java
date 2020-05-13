@@ -50,6 +50,8 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                 GlobalVariable_Account obj = (GlobalVariable_Account) getApplicationContext();
                 String user帳號 = obj.returnAcc();
                 //取得最近一次的服務內容(包含時間、照服員、服務內容)
+
+                Log.e("recent_Inform_arrange","Start");
                 ArrayList data = con.getschedule(Date, "我要上次工作內容", user帳號);
                 Log.e("獲取結果",data.get(0)+","+data.get(1)+","+data.get(2)+","+data.get(3)+","+data.get(4)+",");
                 if (data.size() == 0) {
