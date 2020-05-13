@@ -57,10 +57,16 @@ public class Fragment_caregiver_history_work_report extends Fragment {
                         if(月份.getText().toString().matches("")){
                             input_month = "0";
                         }
+                        else if(月份.getText().toString().matches(" ")){
+                            input_month = "0";
+                        }
                         else {
                             input_month = 月份.getText().toString();
                         }
                         if(日期.getText().toString().matches("")){
+                            input_day = "0";
+                        }
+                        else if(日期.getText().toString().matches(" ")){
                             input_day = "0";
                         }
                         else {

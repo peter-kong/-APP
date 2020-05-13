@@ -178,7 +178,7 @@ public class Login extends AppCompatActivity {
         });
 
 
-        Button managerBtn = (Button) findViewById(R.id.managertest);
+        /*Button managerBtn = (Button) findViewById(R.id.managertest);
         managerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -186,9 +186,9 @@ public class Login extends AppCompatActivity {
                 intent.setClass(Login.this, Manager_tab.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
-        Button userBtn = (Button) findViewById(R.id.usertest);
+        /*Button userBtn = (Button) findViewById(R.id.usertest);
         userBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -196,10 +196,10 @@ public class Login extends AppCompatActivity {
                 intent.setClass(Login.this, User_tab.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
-        Button caregiverBtn = (Button)findViewById(R.id.caretest);
+       /* Button caregiverBtn = (Button)findViewById(R.id.caretest);
         caregiverBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -207,7 +207,7 @@ public class Login extends AppCompatActivity {
                 intent.setClass(Login.this,Caregiver_tab.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
 

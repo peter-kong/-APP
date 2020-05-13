@@ -104,7 +104,6 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
                 }, 1000);
             }
         });
-
         NextpageBtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -159,8 +158,6 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
                         }
                     }
                 }, 1000);
-
-
             }
         });
     }

@@ -37,7 +37,7 @@
                 android:layout_marginRight="50dp"
                 android:background="@drawable/menu_for_caregiver_shape_rectangle"
                 android:text="月人力配置概況"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/日人力配置概況"
