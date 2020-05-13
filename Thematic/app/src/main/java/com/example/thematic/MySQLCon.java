@@ -311,7 +311,7 @@ public class MySQLCon {
             }
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
-            String answer_date = "";
+            String answer_date = "0000";
             while (rs.next()) {
                 Log.e("getschedule","進入rs");
                 need_date = rs.getString("Date"); //想要找的日期
@@ -323,18 +323,17 @@ public class MySQLCon {
                         GetUsertimeData(data, rs, need_date, 帳號, "我要工作內容");
                         break;
                     }
-                } else if (需求.equals("我要上次工作內容")) {
+                }
+                else if (需求.equals("我要上次工作內容")) {
                     String check_date = "";
                         check_date = rs.getString("Date"); //想要找的日期
                         db_date = Integer.parseInt(check_date);
-                        if (db_date < int_date) {
-                            answer_date = check_date;
-                        } else if (db_date >= int_date) {
+                        if (db_date < int_date && db_date > Integer.parseInt((answer_date))) {
                             Log.e("answer_date",""+answer_date);
-                            GetUsertimeData(data, rs, answer_date, 帳號, "我要工作內容");
-                            break;
+                            answer_date = check_date;
                         }
-                } else if (需求.equals("我要caregiver工作時間")) {
+                }
+                else if (需求.equals("我要caregiver工作時間")) {
                     if (db_date == int_date) {
                         String firsttime = rs.getString("FirstTime");
                         String lasttime = rs.getString("LastTime");
@@ -342,7 +341,6 @@ public class MySQLCon {
                     }
                 }
                 else if (需求.equals("我要排程工作內容")){
-
                     if(rs.getString("Date").equals(Date)) {
                         data.add(rs.getString("備註"));
                         data.add(rs.getString("Finish"));
@@ -367,7 +365,13 @@ public class MySQLCon {
                     data.add(request);
                     Log.e("OK","歷史工作報表內容獲取完成");
                 }
-
+                Log.e("rs->finish","這一筆結束");
+            }
+            if(需求.equals("我要上次工作內容")){
+                Log.e("answer_date after search",answer_date);
+                rs = st.executeQuery(sql);
+                rs.next();
+                GetUsertimeData(data, rs, answer_date, 帳號, "我要工作內容");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -403,17 +407,23 @@ public class MySQLCon {
         try {
             Connection con = DriverManager.getConnection(url, db_user, db_password);
             firsttime = rs.getString("FirstTime");
+            Log.e("OK","獲取usertime資料成功");
             lasttime = rs.getString("LastTime");
+            Log.e("OK","獲取usertime資料成功");
             int CID = rs.getInt("CID");
             input_CID = String.valueOf(CID);
+            Log.e("OK","獲取usertime資料成功");
             caregiver = getData(input_CID, "我要caregiver名字");
+            Log.e("OK","獲取usertime資料成功");
             String sql1 = "SELECT * FROM `longcare`.`usertime` WHERE `Date` = \"" + 日期 + "\" ORDER BY `UID` = \"" + user帳號 + "\"";
+            Log.e("OK","獲取usertime資料成功");
             Statement st1 = con.createStatement();
             ResultSet rs1 = st1.executeQuery(sql1);
             String request = "";
             while (rs1.next()) {
                 request = rs1.getString("Request");
             }
+            Log.e("OK","獲取usertime資料成功");
             data.add(firsttime);
             data.add(lasttime);
             data.add(caregiver);
