@@ -46,13 +46,15 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="日期"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
 
                 <TextView
                     android:id="@+id/個案日期"
-                    android:layout_width="225dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:gravity="center"
                     android:text="無資料"
                     android:textSize="30sp" />
@@ -79,14 +81,16 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="個案"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/個案下拉選單"
-                    android:layout_width="230dp"
-                    android:layout_height="20dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:gravity="center"
-                    android:textSize="30sp"/>
+                    android:textSize="30sp" />
 
 
             </LinearLayout>
@@ -124,13 +128,21 @@
                     android:id="@+id/imageView14"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_marginRight="10dp"
                     android:src="@drawable/time" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="時間"
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/Time"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
                     android:gravity="center"
                     android:text="   "
                     android:textSize="24sp"

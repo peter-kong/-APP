@@ -4,22 +4,20 @@
     <item
         android:id="@+id/people_use_search_Fragment"
         android:icon="@drawable/calendar"
-        android:title="Feed" />
+        android:title="人力配置概況" />
 
     <item
         android:id="@+id/caregiver_manage_Fragment"
-        android:icon="@drawable/calendar"
-        android:title="Timer" />
+        android:icon="@drawable/caregiver_manage"
+        android:title="照服員管理" />
 
     <item
         android:id="@+id/work_report_search_Fragment"
-        android:icon="@drawable/calendar"
-        android:title="Mine" />
+        android:icon="@drawable/report"
+        android:title="工作報表查詢" />
 
     <item
         android:id="@+id/user_search_Fragment"
-        android:icon="@drawable/calendar"
-        android:title="Mine" />
-
-
+        android:icon="@drawable/elderly_man"
+        android:title="個案資料查詢" />
 </menu>

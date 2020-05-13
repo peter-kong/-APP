@@ -79,7 +79,7 @@
                     android:ems="5"
                     android:gravity="center"
                     android:hint="請輸入月份"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="18sp" />
 
                 <TextView
@@ -98,7 +98,7 @@
                     android:ems="5"
                     android:gravity="center"
                     android:hint="請輸入日期"
-                    android:inputType="textPersonName"
+                    android:inputType="number"
                     android:textSize="18sp" />
 
                 <TextView

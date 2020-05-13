@@ -77,8 +77,8 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
             Log.e("namestr",name.get(j).toString());
         }
 
-        ArrayAdapter datelist = new ArrayAdapter(caregiver_normal_work_report1.this, android.R.layout.simple_spinner_item,namestr);
-        datelist.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter datelist = new ArrayAdapter(caregiver_normal_work_report1.this, R.layout.myspinner,namestr);
+        datelist.setDropDownViewResource(R.layout.myspinner);
         個案名稱.setAdapter(datelist);
 
         GlobalVariable_Account judgetoday = (GlobalVariable_Account)getApplicationContext();

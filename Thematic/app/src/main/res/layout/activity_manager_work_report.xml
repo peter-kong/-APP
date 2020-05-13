@@ -51,8 +51,9 @@
 
                 <Spinner
                     android:id="@+id/個案下拉選單"
-                    android:layout_width="231dp"
-                    android:layout_height="wrap_content" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp" />
 
 
             </LinearLayout>
@@ -81,8 +82,9 @@
 
                 <TextView
                     android:id="@+id/日期顯示"
-                    android:layout_width="230dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:gravity="center"
                     android:text="無資料"
                     android:textSize="24sp" />
@@ -124,6 +126,14 @@
                     android:layout_height="20dp"
                     android:layout_marginRight="10dp"
                     android:src="@drawable/time" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="時間"
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/工作時間"

@@ -15,6 +15,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:orientation="vertical">
 
 
@@ -46,15 +47,17 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="日期"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
 
                 <TextView
                     android:id="@+id/個案日期"
-                    android:layout_width="228dp"
-                    android:textSize="30sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
                     android:gravity="center"
-                    android:layout_height="wrap_content" />
+                    android:textSize="30sp" />
 
             </LinearLayout>
 
@@ -78,24 +81,17 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="個案"
-                    android:textSize="30sp" />
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
 
                 <Spinner
                     android:id="@+id/個案下拉選單"
-                    android:layout_width="230dp"
-                    android:layout_height="20dp" />
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp" />
 
 
             </LinearLayout>
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#CC5F97BE"
-                android:gravity="center"
-                android:text="1"
-                android:textSize="24sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -130,13 +126,21 @@
                     android:id="@+id/imageView14"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    android:layout_marginRight="10dp"
                     android:src="@drawable/time" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="時間"
+                    android:textSize="24sp" />
 
                 <TextView
                     android:id="@+id/Time"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
                     android:gravity="center"
                     android:text="                    "
                     android:textSize="24sp"
@@ -160,7 +164,7 @@
 
                 <TextView
                     android:id="@+id/workername"
-                    android:layout_width="142dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:textSize="24sp" />
@@ -206,22 +210,20 @@
 
             <EditText
                 android:id="@+id/備註"
-               android:layout_width="match_parent"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="textPersonName" />
 
             <Button
                 android:id="@+id/Send"
-                android:layout_width="398dp"
-                android:layout_height="64dp"
-                android:layout_marginEnd="160dp"
-                android:layout_marginRight="160dp"
-                android:layout_marginBottom="28dp"
-                android:gravity="center"
-                android:text="Send"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:text="Send" />
 
         </LinearLayout>
     </ScrollView>
