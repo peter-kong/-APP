@@ -25,7 +25,6 @@ public class Fragment_manager_caregiver_manage extends Fragment {
         // Required empty public constructor
     }
 
-    Button Btn_month,Btn_day;
     EditText ID;
     EditText Month;
     EditText Day;
