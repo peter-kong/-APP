@@ -186,7 +186,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:lineSpacingMultiplier="1.5"
+                        android:lineSpacingMultiplier="1.2"
                         android:textSize="36sp"/>
                 </LinearLayout>
 

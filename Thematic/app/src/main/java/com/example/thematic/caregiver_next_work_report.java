@@ -3,6 +3,7 @@ package com.example.thematic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,16 +11,14 @@ import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
-public class caregiver_history_work_report extends AppCompatActivity {
+public class caregiver_next_work_report extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caregiver_history_work_report);
+        setContentView(R.layout.activity_caregiver_next_work_report);
         getSupportActionBar().hide(); //隱藏標題
 
         final TextView time_view = (TextView) findViewById(R.id.Time);
@@ -27,22 +26,17 @@ public class caregiver_history_work_report extends AppCompatActivity {
         final TextView 日期 = (TextView) findViewById(R.id.個案日期);
         final Spinner 個案下拉選單 = (Spinner) findViewById(R.id.個案下拉選單);
         final TextView 服務內容 = (TextView)findViewById(R.id.服務內容);
-        final TextView 完成度 = (TextView)findViewById(R.id.完成度);
         final TextView 備註 = (TextView)findViewById(R.id.備註  );
 
         //取全域的歷史日期的資料
         GlobalVariable_Account obj1 = (GlobalVariable_Account) getApplicationContext();
-        String Date = obj1.returnScheduleDate();
-        if(Date.equals("0000")){
-        }
-        else {
             ArrayList name = obj1.returnName();
             ArrayList UID = obj1.returnUID();
             String[] 個案名單 = new String[name.size()];
             name.toArray(個案名單);
             //將所有日期資料放入spinner中
 
-            ArrayAdapter datelist = new ArrayAdapter(caregiver_history_work_report.this, android.R.layout.simple_spinner_item, 個案名單);
+            ArrayAdapter datelist = new ArrayAdapter(caregiver_next_work_report.this, android.R.layout.simple_spinner_item, 個案名單);
             datelist.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             個案下拉選單.setAdapter(datelist);
 
@@ -60,7 +54,24 @@ public class caregiver_history_work_report extends AppCompatActivity {
                             com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                             con.run();
                             String userID = "" + UID.get(chooseID_index);
-                            String Date = obj1.returnScheduleDate();
+                            String Date = "";
+                            Time t = new Time();
+                            t.setToNow();
+                            int month = t.month + 1;
+                            int day = t.monthDay +1;
+                            if (month < 10) {
+                                if (day < 10) {
+                                    Date = "0" + month + "0" + day;
+                                } else if (day >= 10) {
+                                    Date = "0" + month + day;
+                                }
+                            } else if (month >= 10) {
+                                if (day < 10) {
+                                    Date = month + "0" + day;
+                                } else if (day >= 10) {
+                                    Date = "" + month + day;
+                                }
+                            }
                             ArrayList data = con.getschedule(Date, "我要排程工作內容", userID);
                             Log.e("62", "" + data.size());
                             Log.e("63", data.get(0) + "," + data.get(1) + "," + data.get(2) + "," + data.get(3) + "," + data.get(4) + "," +
@@ -87,18 +98,27 @@ public class caregiver_history_work_report extends AppCompatActivity {
                                 }
                             });
 
-                            完成度.post(new Runnable() {
-                                public void run() {
-                                    String work;
-                                    work = "" + data.get(1);
-                                    work = work.replace("、", "\n");
-                                    完成度.setText(work);
-                                }
-                            });
-
                             日期.post(new Runnable() {
                                 public void run() {
-                                    日期.setText(Date);
+                                    String Date1 = "";
+                                    Time t = new Time();
+                                    t.setToNow();
+                                    int month = t.month + 1;
+                                    int day = t.monthDay +1;
+                                    if (month < 10) {
+                                        if (day < 10) {
+                                            Date1 = "0" + month + "0" + day;
+                                        } else if (day >= 10) {
+                                            Date1 = "0" + month + day;
+                                        }
+                                    } else if (month >= 10) {
+                                        if (day < 10) {
+                                            Date1 = month + "0" + day;
+                                        } else if (day >= 10) {
+                                            Date1 = "" + month + day;
+                                        }
+                                    }
+                                    日期.setText(Date1);
                                 }
                             });
 
@@ -107,8 +127,6 @@ public class caregiver_history_work_report extends AppCompatActivity {
                                     備註.setText(("" + data.get(0)));
                                 }
                             });
-
-
                         }
                     }).start();
                 }
@@ -120,5 +138,7 @@ public class caregiver_history_work_report extends AppCompatActivity {
             });
 
         }
-    }
+
+
+
 }

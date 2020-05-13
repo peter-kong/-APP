@@ -39,6 +39,9 @@ public class Login extends AppCompatActivity {
                         con.run();
                         String Account = ""+登入帳號.getText().toString()+"";
                         String Password = ""+登入密碼.getText().toString()+"";
+
+                        Log.e("Account",Account);
+
                         if((con.getData(Account,"我要manager密碼").equals(Password))){
                             check = 3;
                             Intent intent = new Intent();
@@ -85,7 +88,7 @@ public class Login extends AppCompatActivity {
                                     .show();
                         }
 
-                    }}, 2000);
+                    }}, 1000);
 
             }
         });

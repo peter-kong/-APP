@@ -30,9 +30,6 @@ public class Menu_for_caregiver extends AppCompatActivity {
         NextpageBtn1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
-
-
                 GlobalVariable_Account tmp = (GlobalVariable_Account)getApplicationContext();
                 Log.e("Line 37","Enter");
                 //Log.e("明日工作報表",tmp.returnUID().get(0).toString());
@@ -59,18 +56,11 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         tmp2.setUID(con.getUserUID(照服員帳號,strDate));
                         tmp2.setName(con.getName(tmp2.returnUID()));
                         tmp.setTommorrowoToday(true);
-
+                        Intent intent = new Intent();
+                        intent.setClass(Menu_for_caregiver.this, caregiver_next_work_report.class);
+                        startActivity(intent);
                         tmp2.println();
                        // Log.e("tmpreturn", tmp.returnUID().get(0).toString());
-
-                        if(!tmp.returnUID().get(0).toString().equals("No data")){
-                            Log.e("tag","Tomorrow");
-                            Intent intent = new Intent();
-                            intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report1.class);
-                            startActivity(intent);
-                        }
-
-
                     }
                 }).start();
 
@@ -79,7 +69,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            if(tmp.returnUID().get(0).toString().equals("No data")) {
+                            if(tmp.returnUID().size() == 0) {
                                 new AlertDialog.Builder(Menu_for_caregiver.this)
                                         .setTitle("沒有個資喔!!")
                                         .setPositiveButton("ok", new DialogInterface.OnClickListener() {
@@ -91,7 +81,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
                                         .show();
                             }
                         }
-                    }, 3000);
+                    }, 1000);
 
 
 
@@ -102,6 +92,8 @@ public class Menu_for_caregiver extends AppCompatActivity {
         NextpageBtn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                GlobalVariable_Account tmp = (GlobalVariable_Account)getApplicationContext();
 
                 new Thread(new Runnable() {
                     @Override
@@ -125,11 +117,32 @@ public class Menu_for_caregiver extends AppCompatActivity {
 
                         tmp.setTommorrowoToday(false);
 
-                        Intent intent = new Intent();
-                        intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report1.class);
-                        startActivity(intent);
+                        if(tmp.returnUID().size() != 0) {
+                            Intent intent = new Intent();
+                            intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report1.class);
+                            startActivity(intent);
+                        }
+
                     }
                 }).start();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(tmp.returnUID().size() == 0) {
+                            new AlertDialog.Builder(Menu_for_caregiver.this)
+                                    .setTitle("沒有個資喔!!")
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                        }
+                                    }).setNegativeButton("cancel", null).create()
+                                    .show();
+                        }
+                    }
+                }, 1000);
 
 
             }

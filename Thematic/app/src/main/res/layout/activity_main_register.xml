@@ -167,21 +167,6 @@
                 android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/電子信箱"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="電子信箱:"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/UEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="可與帳號同"
-                android:inputType="textEmailAddress" />
-
-            <TextView
                 android:id="@+id/失能等級"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -212,22 +197,6 @@
                 android:hint="如:吸菸、喝酒等"
                 android:inputType="textPersonName"
                 android:singleLine="false"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/editText8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textSize="24sp" />
-
-            <EditText
-                android:id="@+id/editText11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
                 android:textSize="24sp" />
 
             <Button

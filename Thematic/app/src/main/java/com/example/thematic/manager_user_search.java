@@ -31,10 +31,12 @@ public class manager_user_search extends AppCompatActivity {
                         if(userID.getText().toString().matches("")){
                             data = "0";
                         }
+                        else if(userID.getText().toString().matches(" ")){
+                            data = "0";
+                        }
                         else {
                             data = userID.getText().toString();
                         }
-                        data = userID.getText().toString();
                         if(data.equals("0")){
                             user_Account = "0";
                         }
