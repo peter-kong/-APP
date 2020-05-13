@@ -30,9 +30,6 @@ public class Menu_for_caregiver extends AppCompatActivity {
         NextpageBtn1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-
-
-
                 GlobalVariable_Account tmp = (GlobalVariable_Account)getApplicationContext();
                 Log.e("Line 37","Enter");
                 //Log.e("明日工作報表",tmp.returnUID().get(0).toString());
@@ -63,7 +60,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         tmp2.println();
                        // Log.e("tmpreturn", tmp.returnUID().get(0).toString());
 
-                        if(!tmp.returnUID().get(0).toString().equals("No data")){
+                        if(tmp.returnUID().size() != 0){
                             Log.e("tag","Tomorrow");
                             Intent intent = new Intent();
                             intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report1.class);
@@ -79,7 +76,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
                     handler.postDelayed(new Runnable() {
                         @Override
                         public void run() {
-                            if(tmp.returnUID().get(0).toString().equals("No data")) {
+                            if(tmp.returnUID().size() == 0) {
                                 new AlertDialog.Builder(Menu_for_caregiver.this)
                                         .setTitle("沒有個資喔!!")
                                         .setPositiveButton("ok", new DialogInterface.OnClickListener() {
@@ -127,7 +124,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
 
                         tmp.setTommorrowoToday(false);
 
-                        if(!tmp.returnUID().get(0).toString().equals("No data")) {
+                        if(tmp.returnUID().size() != 0) {
                             Intent intent = new Intent();
                             intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report1.class);
                             startActivity(intent);
@@ -140,7 +137,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
-                        if(tmp.returnUID().get(0).toString().equals("No data")) {
+                        if(tmp.returnUID().size() == 0) {
                             new AlertDialog.Builder(Menu_for_caregiver.this)
                                     .setTitle("沒有個資喔!!")
                                     .setPositiveButton("ok", new DialogInterface.OnClickListener() {
