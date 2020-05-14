@@ -11,17 +11,17 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:background="#00D8978E"
         android:cropToPadding="false"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
         app:srcCompat="@drawable/unknown" />
 
     <LinearLayout
@@ -166,5 +166,17 @@
         android:textColor="#4A160808"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="長照2.0服務規劃\n管理系統"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -64,7 +64,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
                     }
                 }).start();
 
-
+/*
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -83,7 +83,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         }
                     }, 1000);
 
-
+*/
 
             }
         });

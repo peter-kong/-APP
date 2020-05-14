@@ -76,9 +76,11 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
                         tmp2.setUID(con.getUserUID(照服員帳號,strDate));
                         tmp2.setName(con.getName(tmp2.returnUID()));
                         tmp.setTommorrowoToday(true);
-                        Intent intent = new Intent();
-                        intent.setClass(getActivity(), caregiver_next_work_report.class);
-                        startActivity(intent);
+                        if(tmp.returnUID().size() != 0) {
+                            Intent intent = new Intent();
+                            intent.setClass(getActivity(), caregiver_next_work_report.class);
+                            startActivity(intent);
+                        }
                         tmp2.println();
                         // Log.e("tmpreturn", tmp.returnUID().get(0).toString());
                     }

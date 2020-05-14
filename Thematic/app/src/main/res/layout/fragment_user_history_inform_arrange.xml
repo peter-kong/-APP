@@ -53,7 +53,7 @@
                 android:id="@+id/日期"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
+                android:gravity="center|center_vertical"
                 android:text="日期:"
                 android:textSize="30sp" />
 
@@ -71,7 +71,8 @@
                 android:id="@+id/時間"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
+                android:background="#00FFFFFF"
+                android:gravity="center|center_vertical"
                 android:text="@string/時間"
                 android:textSize="30sp" />
 
@@ -89,7 +90,7 @@
                 android:id="@+id/照服員"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
+                android:gravity="center|center_vertical"
                 android:text="@string/照服員"
                 android:textSize="30sp" />
 
@@ -107,7 +108,7 @@
                 android:id="@+id/照服內容"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
+                android:gravity="center|center_vertical"
                 android:text="@string/照護內容"
                 android:textSize="30sp" />
 
@@ -115,7 +116,7 @@
                 android:id="@+id/個人資料"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="left"
                 android:lineSpacingMultiplier="1.5"
                 android:textSize="30sp" />
 
@@ -123,7 +124,7 @@
                 android:id="@+id/textView23"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
+                android:gravity="left"
                 android:textSize="30sp" />
 
         </LinearLayout>

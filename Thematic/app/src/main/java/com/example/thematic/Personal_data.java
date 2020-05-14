@@ -132,7 +132,6 @@ public class Personal_data extends AppCompatActivity {
                         personid.setText(personid_get);
                     }
                 });
-
             }
         }).start();
 

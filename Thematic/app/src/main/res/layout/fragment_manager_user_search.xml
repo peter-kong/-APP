@@ -57,7 +57,7 @@
                     android:layout_marginRight="5dp"
                     android:ems="10"
                     android:gravity="center"
-                    android:hint="請輸入個案ID"
+                    android:hint="例如 : AXXXXXXXXX"
                     android:inputType="textPersonName"
                     android:textSize="18sp" />
             </LinearLayout>
