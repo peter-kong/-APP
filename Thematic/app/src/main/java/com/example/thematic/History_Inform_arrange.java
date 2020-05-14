@@ -85,7 +85,7 @@ public class History_Inform_arrange extends AppCompatActivity {
                         });
                         日期.post(new Runnable() {
                             public void run() {
-                                日期.setText("歷史照服時間");
+                                日期.setText("照服時間");
                             }
                         });
                     }

@@ -22,7 +22,7 @@ public class Menu_for_manager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this, manager_caregiver_manage.class);
+                intent.setClass(Menu_for_manager.this, manager_caregiver_manage_day_selected.class);
                 startActivity(intent);
             }
         });
@@ -33,7 +33,7 @@ public class Menu_for_manager extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(Menu_for_manager.this, manager_user_search.class);
+                intent.setClass(Menu_for_manager.this, manager_user_manage_menu.class);
                 startActivity(intent);
             }
         });

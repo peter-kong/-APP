@@ -5,114 +5,99 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DD8978E"
-    tools:context=".caregiver_work_report_search">
+    tools:context=".manager_caregiver_manage_month_selected">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:id="@+id/照服員管理ScrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/輸入照服員資料"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/工作報表查詢"
+                android:id="@+id/週工作報表查詢"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="工作報表查詢"
+                android:text="週工作報表查詢"
                 android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/空白區塊"
-                android:layout_width="396dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:text="" />
-
-            <TextView
-                android:id="@+id/空白區塊1"
-                android:layout_width="396dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:text="" />
-
-            <TextView
-                android:id="@+id/空白區塊3"
-                android:layout_width="396dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:text="" />
-
-            <TextView
-                android:id="@+id/空白區塊4"
-                android:layout_width="396dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:text="" />
+            <EditText
+                android:id="@+id/輸入照服員ID"
+                android:layout_width="300dp"
+                android:layout_height="51dp"
+                android:layout_marginTop="100dp"
+                android:ems="10"
+                android:hint="請輸入照服員的ID"
+                android:inputType="textPersonName" />
 
             <LinearLayout
+                android:id="@+id/輸入需要時間"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="100dp"
-                android:gravity="center"
+                android:layout_marginTop="80dp"
                 android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/空白區塊4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textSize="36sp" />
 
                 <EditText
                     android:id="@+id/輸入月份"
-                    android:layout_width="150dp"
-                    android:layout_height="71dp"
+                    android:layout_width="59dp"
+                    android:layout_height="wrap_content"
                     android:ems="10"
-                    android:gravity="center"
+                    android:inputType="textPersonName"
                     android:textSize="36sp" />
 
                 <TextView
-                    android:id="@+id/月"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/月份"
+                    android:layout_width="36dp"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:layout_weight="1"
                     android:text="月"
-                    android:textSize="18sp" />
+                    android:textSize="36sp" />
 
                 <EditText
                     android:id="@+id/輸入日期"
-                    android:layout_width="150dp"
-                    android:layout_height="71dp"
+                    android:layout_width="61dp"
+                    android:layout_height="wrap_content"
                     android:ems="10"
-                    android:gravity="center"
+                    android:inputType="textPersonName"
                     android:textSize="36sp" />
 
                 <TextView
-                    android:id="@+id/日"
+                    android:id="@+id/日期"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
+                    android:layout_weight="1"
                     android:text="日"
-                    android:textSize="18sp" />
+                    android:textSize="36sp" />
             </LinearLayout>
 
             <Button
                 android:id="@+id/查詢"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginTop="80dp"
                 android:background="@android:drawable/btn_default"
                 android:gravity="center"
                 android:text="查詢"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

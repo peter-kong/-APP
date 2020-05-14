@@ -4,19 +4,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import java.util.ArrayList;
 
-public class manager_caregiver_manage extends AppCompatActivity {
+public class manager_caregiver_manage_day_selected extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_manager_caregiver_manage);
+        setContentView(R.layout.activity_manager_caregiver_manage_day_selected);
         getSupportActionBar().hide(); //隱藏標題
 
         EditText ID = (EditText)findViewById(R.id.輸入照服員ID);
@@ -86,7 +85,7 @@ public class manager_caregiver_manage extends AppCompatActivity {
                         obj.setScheduletime(data,caregiverID,Date);
 
                         Intent intent = new Intent();
-                        intent.setClass(manager_caregiver_manage.this, manager_caregiver_manager_output.class);
+                        intent.setClass(manager_caregiver_manage_day_selected.this, manager_caregiver_manager_output.class);
                         startActivity(intent);
                     }
                 }).start();
