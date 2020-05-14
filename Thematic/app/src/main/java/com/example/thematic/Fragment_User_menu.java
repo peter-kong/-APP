@@ -61,7 +61,7 @@ public class Fragment_User_menu extends Fragment {
                 GlobalVariable_Account obj = (GlobalVariable_Account) getActivity().getApplicationContext();
                 String user帳號 = obj.returnAcc();
                 ArrayList HistoryDate = new ArrayList();
-                HistoryDate = con.GetDate(Date, user帳號);
+                HistoryDate = con.GetDate(Date, user帳號,"");
                 GlobalVariable_Account 歷史日期保存 = (GlobalVariable_Account)getActivity().getApplicationContext();
                 歷史日期保存.setDate(HistoryDate);
             }

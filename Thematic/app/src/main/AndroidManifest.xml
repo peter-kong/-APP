@@ -24,15 +24,6 @@
         <activity android:name=".caregiver_history_work_report"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".manager_user_manage_month_selected"></activity>
-        <activity android:name=".manager_user_manage_day_selected" />
-        <activity android:name=".manager_caregiver_manage_month_selected" />
-        <activity android:name=".manager_user_manage_menu" />
-        <activity android:name=".manager_caregiver_manage_menu" />
-        <activity android:name=".caregiver_work_report_maintain" />
-        <activity android:name=".caregiver_next_work_report" />
-        <activity android:name=".caregiver_work_report_search" />
-        <activity android:name=".caregiver_history_work_report" />
         <activity android:name=".Caregiver_tab" />
 
         <activity android:name=".Manager_tab" />
@@ -54,8 +45,6 @@
         <activity android:name=".manager_caregiver_manager_output"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".manager_caregiver_manage"
-            android:screenOrientation="portrait"/>
 
         <activity android:name=".caregiver_normal_work_report1"
             android:screenOrientation="portrait"/>
@@ -72,17 +61,6 @@
         <activity android:name=".Month_Condition"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".manager_Work_report_search" />
-        <activity android:name=".Request" />
-        <activity android:name=".manager_people_use_search_day_read" />
-        <activity android:name=".manager_user_search" />
-        <activity android:name=".manager_caregiver_manager_output" />
-        <activity android:name=".manager_caregiver_manage_day_selected" />
-        <activity android:name=".caregiver_normal_work_report1" />
-        <activity android:name=".Recent_Inform_arrange" />
-        <activity android:name=".History_Inform_arrange" />
-        <activity android:name=".people_use_search" />
-        <activity android:name=".Month_Condition" />
         <activity android:name=".Dynamic_button" />
 
         <activity android:name=".SocketTest" />
