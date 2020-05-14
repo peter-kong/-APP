@@ -20,6 +20,10 @@ public class MySQLCon {
     //final String[] user_data = getResources().getStringArray(R.array.user_data);
     // 資料庫定義
     //String mysql_ip = "192.168.0.180";
+<<<<<<< HEAD
+=======
+    String mysql_ip = "172.20.10.5";
+>>>>>>> e4bb8ed22f29e514e82e5ce7ed4704972e116fff
     //String mysql_ip = "134.208.41.237";
     //String mysql_ip = "192.168.1.124";
     String mysql_ip = "172.20.10.5";
@@ -333,18 +337,17 @@ public class MySQLCon {
                             answer_date = need_date;
                         }
                     }
-                } else if (需求.equals("我要上次工作內容")) {
+                } else if (需求.equals("我要這次工作內容")) {
                     String check_date = "";
                     check_date = rs.getString("Date"); //想要找的日期
                     Log.e("檢查的日期", check_date);
                     db_date = Integer.parseInt(check_date);
                     Log.e("db_date,int_date,Integer.parseInt(answer_date)", db_date + "," +
                             int_date + "," + Integer.parseInt((answer_date)));
-                    if (db_date < int_date) {
-                        if (db_date > Integer.parseInt((answer_date))) {
-                            Log.e("answer_date", "" + answer_date);
+                    if (db_date == int_date) {
                             answer_date = check_date;
-                        }
+                            break;
+
                     }
                 } else if (需求.equals("我要caregiver工作時間")) {
                     if (db_date == int_date) {
@@ -387,7 +390,7 @@ public class MySQLCon {
                 }
                 Log.e("rs->finish", "這一筆結束");
             }
-            if(需求.equals("我要上次工作內容")){
+            if(需求.equals("我要這次工作內容")){
                 if(answer_date.equals("0000")){
                     Log.e("上次工作內容找不到","無資料");
                 }
@@ -476,7 +479,7 @@ public class MySQLCon {
     }
 
     //獲取schedule的日期
-    public ArrayList GetDate(String Date, String user帳號) {
+    public ArrayList GetDate(String Date, String user帳號,String 需求) {
         ArrayList data = new ArrayList();
         int IntDate = Integer.parseInt(Date);
         try {
@@ -495,11 +498,17 @@ public class MySQLCon {
             while (rs1.next()) {
                 String DbDate = rs1.getString("Date");
                 int CheckDate = Integer.parseInt(DbDate);
-                Log.e("檢查的日期,現在的日期",DbDate+","+IntDate);
-                if (CheckDate < IntDate) {
-                    data.add(DbDate);
+                if(需求.equals("我要本月日期")){
+                    if((CheckDate/100) == Integer.parseInt(Date)/100){
+                        data.add(DbDate);
+                    }
                 }
-
+                else {
+                    Log.e("檢查的日期,現在的日期", DbDate + "," + IntDate);
+                    if (CheckDate < IntDate) {
+                        data.add(DbDate);
+                    }
+                }
             }
 
             int[] data1 = new int[data.size()];
@@ -537,6 +546,7 @@ public class MySQLCon {
                     }
                 }
             }
+            Log.e("資料獲取成功",data.size()+"");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -898,6 +908,50 @@ public class MySQLCon {
         return content;//照服員名字,開始時間,結束時間,工作內容
     }
 
+    public ArrayList get_recent_date(String Date,String 需求,String 帳號){
+        ArrayList data = new ArrayList();
+        ArrayList data_chase = new ArrayList();
+        try {
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            String CID = get_ID(帳號,"我要caregiverID");
+            String sql = "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + CID + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while (rs.next()) {
+                String db_date = rs.getString("Date");
+                if(Integer.parseInt(db_date) <= Integer.parseInt(Date)){
+                    data_chase.add(db_date);
+                }
+            }
+            Log.e("data_chase",""+data_chase.size());
+            for(int i = 0 ; i < data_chase.size() ; i ++){
+                for(int j = 1 ; j < data_chase.size() ; j++){
+                    String a = ""+data_chase.get(i);
+                    String b = ""+data_chase.get(j);
+                    if(Integer.parseInt(a)> Integer.parseInt(b)){
+                        String c = a;
+                        a = b ;
+                        b = c;
+                    }
+                }
+            }
+
+            for (int i = 0 ; i < data_chase.size() ; i ++){
+                data.add(data_chase.get(i));
+                if(i == 4){
+                    break;
+                }
+            }
+
+            Log.e("DB_GetRecentDate","獲取資料成功");
+            //Log.e("Date",data.get(0)+","+data.get(1)+","+data.get(2)+","+data.get(3)+","+data.get(4));
+        }
+        catch(SQLException e){
+            Log.e("DB","獲取以前日期失敗");
+            Log.e("DB",e.toString());
+        }
+        return data;
+    }
 
 }
 

@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DD8978E"
-    tools:context=".caregiver_work_report_search">
+    tools:context=".manager_user_manage_day_selected">
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,45 +23,45 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/工作報表查詢"
+                android:id="@+id/日排程資料查詢"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="工作報表查詢"
+                android:text="日排程資料查詢"
                 android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/空白區塊"
-                android:layout_width="396dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:text="" />
 
             <TextView
-                android:id="@+id/空白區塊1"
-                android:layout_width="396dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:text="" />
+                android:layout_marginTop="80dp"
+                android:text="     請填入以下資料:"
+                android:textSize="24sp" />
 
-            <TextView
-                android:id="@+id/空白區塊3"
-                android:layout_width="396dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:text="" />
 
-            <TextView
-                android:id="@+id/空白區塊4"
-                android:layout_width="396dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="30sp"
-                android:text="" />
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/layout_background_for_manager"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/輸入個案ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="請輸入個案ID"
+                    android:inputType="textPersonName"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"

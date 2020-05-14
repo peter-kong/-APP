@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DD8978E"
-    tools:context=".manager_caregiver_manage">
+    tools:context=".manager_caregiver_manage_day_selected">
 
     <ScrollView
         android:id="@+id/照服員管理ScrollView"

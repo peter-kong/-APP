@@ -27,32 +27,15 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                 //取得本日的日期
                 com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                 con.run();
-                Time t = new Time();
-                t.setToNow();
-                int month = t.month + 1;
-                int day = t.monthDay;
-                Log.e("Recent_inform_arrange", "" + month + "," + day + "");
-                String Date = "";
-                if (month < 10) {
-                    if (day < 10) {
-                        Date = "0" + month + "0" + day;
-                    } else if (day >= 10) {
-                        Date = "0" + month + day;
-                    }
-                } else if (month >= 10) {
-                    if (day < 10) {
-                        Date = month + "0" + day;
-                    } else if (day >= 10) {
-                        Date = "" + month + day;
-                    }
-                }
+
                 //獲得全域中的帳號
                 GlobalVariable_Account obj = (GlobalVariable_Account) getApplicationContext();
                 String user帳號 = obj.returnAcc();
+                String Date = obj.returnScheduleDate();
                 //取得最近一次的服務內容(包含時間、照服員、服務內容)
                 String UID = con.get_ID(user帳號,"我要userID");
                 Log.e("recent_Inform_arrange","Start");
-                ArrayList data = con.getschedule(Date, "我要上次工作內容", UID);
+                ArrayList data = con.getschedule(Date, "我要這次工作內容", UID);
 
                 if (data.size() == 0) {
                     for (int i = 0; i < 5; i++) {
@@ -81,7 +64,7 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                     });
                     日期.post(new Runnable() {
                         public void run() {
-                            日期.setText("上次照服時間:" + data.get(4));
+                            日期.setText("照服時間:" + data.get(4));
                         }
                     });
                 }
