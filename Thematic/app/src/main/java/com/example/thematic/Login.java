@@ -87,7 +87,8 @@ public class Login extends AppCompatActivity {
                                     .show();
                         }
 
-                    }}, 2000);
+                    }}, 3000);
+
 
             }
         });
