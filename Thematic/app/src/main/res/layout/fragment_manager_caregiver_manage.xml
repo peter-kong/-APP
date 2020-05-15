@@ -29,7 +29,7 @@
                 android:layout_height="60dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="照服員管理"
+                android:text="照顧服務員管理"
                 android:textSize="30sp" />
 
             <TextView

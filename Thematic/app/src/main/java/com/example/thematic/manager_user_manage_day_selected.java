@@ -18,6 +18,8 @@ public class manager_user_manage_day_selected extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager_user_manage_day_selected);
+        getSupportActionBar().hide(); //隱藏標題
+
         final EditText userID = (EditText) findViewById(R.id.輸入個案ID);
 
         final TextView 月份 = (TextView) findViewById(R.id.輸入月份);

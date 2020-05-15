@@ -45,6 +45,11 @@
         <activity android:name=".manager_caregiver_manager_output"
             android:screenOrientation="portrait"/>
 
+        <activity android:name=".manager_user_manage_month_selected"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".manager_user_manage_day_selected"
+            android:screenOrientation="portrait"/>
 
         <activity android:name=".caregiver_normal_work_report1"
             android:screenOrientation="portrait"/>

@@ -177,6 +177,17 @@ public class Login extends AppCompatActivity {
         });
 
 
+        /*Button test = (Button) findViewById(R.id.Test);
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Login.this, manager_user_manage_menu.class);
+                startActivity(intent);
+            }
+        });*/
+
+
         /*Button managerBtn = (Button) findViewById(R.id.managertest);
         managerBtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -12,11 +12,6 @@
         android:title="照服員管理" />
 
     <item
-        android:id="@+id/work_report_search_Fragment"
-        android:icon="@drawable/report"
-        android:title="工作報表查詢" />
-
-    <item
         android:id="@+id/user_search_Fragment"
         android:icon="@drawable/elderly_man"
         android:title="個案資料查詢" />

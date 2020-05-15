@@ -19,9 +19,9 @@
 
     <keep_state_fragment
         android:id="@+id/user_search_Fragment"
-        android:name="com.example.thematic.Fragment_manager_user_search"
+        android:name="com.example.thematic.Fragment_manager_user_manage_menu"
         android:label="fragment_manager_user_search"
-        tools:layout="@layout/fragment_manager_user_search" />
+        tools:layout="@layout/fragment_manager_user_manage_menu" />
 
     <keep_state_fragment
         android:id="@+id/work_report_search_Fragment"

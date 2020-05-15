@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="照護查詢"
+        android:text="照顧查詢"
         android:textSize="60sp" />
 
     <TextView

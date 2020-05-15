@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DD8978E"
-    tools:context=".people_use_search">
-
+    tools:context=".manager_user_manage_menu">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,39 +18,46 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView173"
+                android:id="@+id/個案管理"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_marginTop="0dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="照護服務時間排程概況"
+                android:text="個案管理"
                 android:textSize="30sp" />
 
             <Button
-                android:id="@+id/月人力配置概況"
+                android:id="@+id/月工作報表查詢"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="100dp"
-                android:layout_marginRight="50dp"
+                android:layout_marginRight="30dp"
                 android:background="@drawable/menu_for_caregiver_shape_rectangle"
-                android:text="月人力配置概況"
-                android:textSize="24sp" />
+                android:text="月排程資料查詢"
+                android:textSize="20sp" />
 
             <Button
-                android:id="@+id/日人力配置概況"
+                android:id="@+id/日工作報表查詢"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:layout_marginLeft="50dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="100dp"
-                android:layout_marginRight="50dp"
+                android:layout_marginRight="30dp"
                 android:background="@drawable/menu_for_caregiver_shape_rectangle"
-                android:text="日人力配置概況"
-                android:textSize="24sp" />
+                android:text="日排程報表查詢"
+                android:textSize="20sp" />
 
+            <Button
+                android:id="@+id/個案資料查詢"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/menu_for_caregiver_shape_rectangle"
+                android:text="個案資料查詢"
+                android:textSize="20sp" />
         </LinearLayout>
-
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

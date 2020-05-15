@@ -63,27 +63,34 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/輸入需要時間"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="100dp"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginRight="70dp"
+                android:background="@drawable/layout_background_for_manager"
                 android:gravity="center"
                 android:orientation="horizontal">
 
                 <EditText
                     android:id="@+id/輸入月份"
-                    android:layout_width="150dp"
-                    android:layout_height="71dp"
-                    android:ems="10"
-                    android:gravity="center"
-                    android:textSize="36sp" />
-
-                <TextView
-                    android:id="@+id/月"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:ems="9"
                     android:gravity="center"
-                    android:text="月"
+                    android:hint="請輸入月份"
+                    android:inputType="number"
                     android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/月份"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="月"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
             <Button

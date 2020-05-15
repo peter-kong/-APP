@@ -9,8 +9,10 @@
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nv_care_menu"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="50dp"
         android:background="#FFFFFF"
+        android:clickable="false"
+        android:scrollbarSize="4dp"
         app:itemHorizontalTranslationEnabled="false"
         app:itemTextColor="#944D4D"
         app:layout_constraintBottom_toBottomOf="parent"

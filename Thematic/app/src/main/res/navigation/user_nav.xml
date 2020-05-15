@@ -17,13 +17,7 @@ app:startDestination="@id/User_menu">
     android:label="fragment_user_next_inform_arrange"
     tools:layout="@layout/fragment_user_next_inform_arrange" />
 
-<keep_state_fragment
-    android:id="@+id/recent_inform_Fragment"
-    android:name="com.example.thematic.Fragment_user_recent_inform_arrange"
-    android:label="fragment_user_recent_inform_arrange"
-    tools:layout="@layout/fragment_user_recent_inform_arrange" />
-
-<keep_state_fragment
+    <keep_state_fragment
     android:id="@+id/personal_data_Fragment"
     android:name="com.example.thematic.Fragment_user_personal_data"
     android:label="fragment_user_personal_data"
