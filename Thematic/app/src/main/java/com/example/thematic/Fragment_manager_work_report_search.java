@@ -55,10 +55,16 @@ public class Fragment_manager_work_report_search extends Fragment {
                         if(月份.getText().toString().matches("")){
                             input_month = "0";
                         }
+                        else if(月份.getText().toString().matches(" ")){
+                            input_month = "0";
+                        }
                         else {
                             input_month = 月份.getText().toString();
                         }
                         if(日期.getText().toString().matches("")){
+                            input_day = "0";
+                        }
+                        else if(日期.getText().toString().matches(" ")){
                             input_day = "0";
                         }
                         else {
@@ -96,6 +102,7 @@ public class Fragment_manager_work_report_search extends Fragment {
                         Intent intent = new Intent();
                         intent.setClass(getActivity(), manager_Work_report.class);
                         startActivity(intent);
+
                     }
                 }).start();
             }

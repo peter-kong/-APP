@@ -31,8 +31,8 @@ public class manager_caregiver_manager_output extends AppCompatActivity {
 
         Log.e("Hi",""+worktime.size());
         final Spinner spnTime = (Spinner)findViewById(R.id.當日時間下拉選單);
-        ArrayAdapter adapWeekList = new ArrayAdapter(manager_caregiver_manager_output.this, android.R.layout.simple_spinner_item, data);
-        adapWeekList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter adapWeekList = new ArrayAdapter(manager_caregiver_manager_output.this, R.layout.myspinner, data);
+        adapWeekList.setDropDownViewResource(R.layout.myspinner);
         spnTime.setAdapter(adapWeekList);
 
         spnTime.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

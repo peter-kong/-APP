@@ -52,7 +52,7 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
 
 
         GlobalVariable_Account t = (GlobalVariable_Account)getApplicationContext();
-
+        String dat = t.returnScheduleDate();
         ArrayList name = t.returnName();
         //ArrayList id = t.returnUID();
         ArrayList nameid = null;
@@ -77,8 +77,8 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
             Log.e("namestr",name.get(j).toString());
         }
 
-        ArrayAdapter datelist = new ArrayAdapter(caregiver_normal_work_report1.this, android.R.layout.simple_spinner_item,namestr);
-        datelist.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter datelist = new ArrayAdapter(caregiver_normal_work_report1.this, R.layout.myspinner,namestr);
+        datelist.setDropDownViewResource(R.layout.myspinner);
         個案名稱.setAdapter(datelist);
 
         GlobalVariable_Account judgetoday = (GlobalVariable_Account)getApplicationContext();
@@ -94,7 +94,7 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
             date = calendar.getTime();
         }
 
-        String strDate = sdFormat.format(date);
+        String strDate= judgetoday.returnScheduleDate();
         final TextView 日期 = (TextView)findViewById(R.id.個案日期);
         日期.setText(strDate);
 
@@ -171,7 +171,7 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
                         ArrayList Finish = new ArrayList();
 
                         for(int k = 0;k < 工作.length;k++) {
-                            Finish.add("False");
+                            Finish.add("×");
                             工作名.add(工作[k]);
                             //Log.e("tags",工作名.get(k).toString());
                         }
@@ -189,7 +189,7 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
                                             Toast.makeText(getApplicationContext(),buttonView.getText()+" 被選取", Toast.LENGTH_LONG).show();
                                             for(int k = 0;k < 工作名.size();k++) {
                                                 if (工作名.get(k).toString().equals(buttonView.getText())) {
-                                                    Finish.set(k, "True");
+                                                    Finish.set(k, "√");
                                                     Log.e(工作名.get(k).toString(),Finish.get(k).toString());
                                                 }
                                             }
@@ -217,7 +217,8 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
 
                             Log.e("Line 122",工作[k]);
                             CheckBox work1 = new CheckBox(caregiver_normal_work_report1.this);
-                            work1.setText(工作[k]);
+                            work1.setTextSize(30);
+                            work1.setText("             "+工作[k]);
                             work1.setOnCheckedChangeListener(checkBoxOnCheckedChange);
 
                             work.post(new Runnable() {

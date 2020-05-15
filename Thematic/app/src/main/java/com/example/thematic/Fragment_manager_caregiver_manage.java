@@ -25,10 +25,10 @@ public class Fragment_manager_caregiver_manage extends Fragment {
         // Required empty public constructor
     }
 
-    Button Btn_month,Btn_day;
     EditText ID;
     EditText Month;
     EditText Day;
+    Button searchBtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class Fragment_manager_caregiver_manage extends Fragment {
         ID = (EditText)rootview.findViewById(R.id.輸入照服員ID);
         Month = (EditText)rootview.findViewById(R.id.輸入月份);
         Day = (EditText)rootview.findViewById(R.id.輸入日期);
-        Button searchBtn = (Button) rootview.findViewById(R.id.查詢);
+        searchBtn = (Button) rootview.findViewById(R.id.查詢);
         DB(searchBtn);
         return rootview;
     }
@@ -51,9 +51,37 @@ public class Fragment_manager_caregiver_manage extends Fragment {
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        String caregiverID = ""+ID.getText().toString();
-                        String inputMonth = ""+Month.getText().toString();
-                        String inputDay = ""+Day.getText().toString();
+                        String caregiverID;
+                        String inputMonth;
+                        String inputDay;
+                        if(ID.getText().toString().matches("")){
+                            caregiverID = "0";
+                        }
+                        else if(ID.getText().toString().matches(" ")){
+                            caregiverID = "0";
+                        }
+                        else {
+                            caregiverID = ID.getText().toString();
+                        }
+                        if(Month.getText().toString().matches("")){
+                            inputMonth = "0";
+                        }
+                        else if(Month.getText().toString().matches(" ")){
+                            inputMonth = "0";
+                        }
+                        else {
+                            inputMonth = Month.getText().toString();
+                        }
+                        if(Day.getText().toString().matches("")){
+                            inputDay = "0";
+                        }
+                        else if(Day.getText().toString().matches(" ")){
+                            inputDay = "0";
+                        }
+                        else {
+                            inputDay = Day.getText().toString();
+                        }
+
                         String Date = new String();
                         if(Integer.parseInt(inputMonth)<10){
                             if(Integer.parseInt(inputDay)<10){
@@ -75,7 +103,7 @@ public class Fragment_manager_caregiver_manage extends Fragment {
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                         con.run();
                         data = con.getschedule(Date,"我要caregiver工作時間",caregiverID);
-                        com.example.thematic.GlobalVariable_Account obj = ((GlobalVariable_Account)getActivity().getApplicationContext());
+                        GlobalVariable_Account obj = (GlobalVariable_Account)getActivity().getApplicationContext();
                         obj.setScheduletime(data,caregiverID,Date);
 
                         Intent intent = new Intent();
@@ -86,8 +114,6 @@ public class Fragment_manager_caregiver_manage extends Fragment {
             }
         });
     }
-
-
 }
 
 

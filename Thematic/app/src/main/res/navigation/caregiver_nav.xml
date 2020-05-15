@@ -1,3 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/caregiver_nav"/>
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/caregiver_nav"
+    app:startDestination="@id/caregiver_menu">
+
+    <keep_state_fragment
+        android:id="@+id/normal_work_report"
+        android:name="com.example.thematic.Fragment_caregiver_normal_work_report"
+        android:label="fragment_caregiver_normal_work_report"
+        tools:layout="@layout/fragment_caregiver_normal_work_report" />
+    <keep_state_fragment
+        android:id="@+id/history_work_report"
+        android:name="com.example.thematic.Fragment_caregiver_history_work_report"
+        android:label="fragment_caregiver_history_work_report"
+        tools:layout ="@layout/fragment_caregiver_history_work_report" />
+    <fragment
+        android:id="@+id/caregiver_menu"
+        android:name="com.example.thematic.Fragment_caregiver_menu"
+        android:label="Fragment_caregiver_menu"
+        tools:layout="@layout/fragment_caregiver_menu"/>
+</navigation>

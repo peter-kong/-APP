@@ -11,17 +11,17 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="296dp"
-        android:layout_height="213dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
         android:background="#00D8978E"
         android:cropToPadding="false"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.488"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.528"
+        app:layout_constraintTop_toBottomOf="@+id/textView17"
         app:srcCompat="@drawable/unknown" />
 
     <LinearLayout
@@ -29,7 +29,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        android:background="#F1EFEF"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/main_register"
@@ -41,18 +40,23 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="2dp"
             android:background="#80D8978E"
             android:gravity="center"
             android:text="會員登入"
-            android:textColor="#CC5F97BE"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textColor="#CC010B13"
+            android:textSize="24sp" />
 
         <LinearLayout
             android:id="@+id/imageView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/layout_for_account"
             android:gravity="center_vertical"
             app:srcCompat="@mipmap/elderly">
 
@@ -69,8 +73,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="60dp"
-                android:ems="12"
-                android:hint="請輸入您的信箱" />
+                android:ems="15"
+                android:hint="請輸入您的信箱"
+                android:inputType="textEmailAddress" />
 
         </LinearLayout>
 
@@ -78,7 +83,10 @@
             android:id="@+id/imageView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="40dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/layout_for_account"
             android:gravity="center_vertical"
             app:srcCompat="@mipmap/elderly">
 
@@ -95,7 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="60dp"
-                android:ems="12"
+                android:ems="15"
                 android:hint="請輸入您的密碼"
                 android:inputType="textPassword" />
         </LinearLayout>
@@ -105,26 +113,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="25dp"
             android:layout_marginRight="10dp"
-            android:layout_marginBottom="15dp"
-            android:background="#66D8978E"
+            android:layout_marginBottom="10dp"
+            android:background="#80D8978E"
             android:gravity="center"
             android:text="登入"
-            android:textSize="30sp" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textColor="#4F7AD3"
+            android:textSize="24sp" />
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/managertest"
-        android:layout_width="106dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:gravity="center"
-        android:text="manager"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/main_register"
@@ -134,34 +133,50 @@
         android:layout_marginLeft="25dp"
         android:layout_marginEnd="25dp"
         android:layout_marginRight="25dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="20dp"
         android:background="#00FFFFFF"
         android:gravity="center"
         android:text="註冊"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/textView14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/usertest"
+    <TextView
+        android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
-        android:text="user"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="8dp"
+        android:text="版本:     ver 1.0"
+        android:textColor="#4A160808"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/caretest"
+    <TextView
+        android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="caregiver"
-        app:layout_constraintEnd_toStartOf="@+id/usertest"
-        app:layout_constraintHorizontal_bias="0.366"
-        app:layout_constraintStart_toEndOf="@+id/managertest"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="8dp"
+        android:text="東華大學專題"
+        android:textColor="#4A160808"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="長照2.0服務規劃\n管理系統"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

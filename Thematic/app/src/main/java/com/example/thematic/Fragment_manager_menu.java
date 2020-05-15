@@ -13,10 +13,10 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment_caregiver_work_report2 extends Fragment {
+public class Fragment_manager_menu extends Fragment {
 
 
-    public Fragment_caregiver_work_report2() {
+    public Fragment_manager_menu() {
         // Required empty public constructor
     }
 
@@ -25,7 +25,7 @@ public class Fragment_caregiver_work_report2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_caregiver_work_report2, container, false);
+        return inflater.inflate(R.layout.fragment_manager_menu, container, false);
     }
 
 }

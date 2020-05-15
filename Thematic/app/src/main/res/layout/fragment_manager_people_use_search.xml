@@ -25,7 +25,7 @@
                 android:layout_marginTop="0dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="照護服務時間排程"
+                android:text="照護服務時間排程概況"
                 android:textSize="30sp" />
 
             <Button
@@ -35,9 +35,9 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="50dp"
-                android:background="#779BC2DD"
+                android:background="@drawable/menu_for_caregiver_shape_rectangle"
                 android:text="月人力配置概況"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/日人力配置概況"
@@ -46,7 +46,7 @@
                 android:layout_marginLeft="50dp"
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="50dp"
-                android:background="#779BC2DD"
+                android:background="@drawable/menu_for_caregiver_shape_rectangle"
                 android:text="日人力配置概況"
                 android:textSize="30sp" />
 

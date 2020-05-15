@@ -56,22 +56,15 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         tmp2.setUID(con.getUserUID(照服員帳號,strDate));
                         tmp2.setName(con.getName(tmp2.returnUID()));
                         tmp.setTommorrowoToday(true);
-
+                        Intent intent = new Intent();
+                        intent.setClass(Menu_for_caregiver.this, caregiver_work_report_maintain.class);
+                        startActivity(intent);
                         tmp2.println();
                        // Log.e("tmpreturn", tmp.returnUID().get(0).toString());
-
-                        if(tmp.returnUID().size() != 0){
-                            Log.e("tag","Tomorrow");
-                            Intent intent = new Intent();
-                            intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report1.class);
-                            startActivity(intent);
-                        }
-
-
                     }
                 }).start();
 
-
+/*
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
                         @Override
@@ -90,81 +83,19 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         }
                     }, 1000);
 
-
+*/
 
             }
         });
 
         Button NextpageBtn3 = (Button) findViewById(R.id.本日工作報表_care);
         NextpageBtn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                GlobalVariable_Account tmp = (GlobalVariable_Account)getApplicationContext();
-
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-
-                        GlobalVariable_Account tmp = (GlobalVariable_Account)getApplicationContext();
-                        String 照服員帳號 = tmp.returnAcc();
-                        GlobalVariable_Account tmp2 = (GlobalVariable_Account)getApplicationContext();
-
-                        //設時間
-                        SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
-                        Date date = new Date();
-                        String strDate = sdFormat.format(date);
-                        Log.e("本日",strDate);
-                        com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
-                        tmp2.setUID(con.getUserUID(照服員帳號,strDate));
-
-                        tmp2.setName(con.getName(tmp2.returnUID()));
-                        //tmp2.println();
-
-
-                        tmp.setTommorrowoToday(false);
-
-                        if(tmp.returnUID().size() != 0) {
-                            Intent intent = new Intent();
-                            intent.setClass(Menu_for_caregiver.this, caregiver_normal_work_report1.class);
-                            startActivity(intent);
-                        }
-
-                    }
-                }).start();
-
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if(tmp.returnUID().size() == 0) {
-                            new AlertDialog.Builder(Menu_for_caregiver.this)
-                                    .setTitle("沒有個資喔!!")
-                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-
-                                        }
-                                    }).setNegativeButton("cancel", null).create()
-                                    .show();
-                        }
-                    }
-                }, 1000);
-
-
+                                            @Override
+                                            public void onClick(View v) {
+                                                Intent intent = new Intent();
+                                                intent.setClass(Menu_for_caregiver.this, caregiver_work_report_search.class);
+                                                startActivity(intent);
+                                            }
+                                        });
             }
-        });
-
-
-        Button NextpageBtn4 = (Button) findViewById(R.id.歷史工作報表_care);
-        NextpageBtn4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setClass(Menu_for_caregiver.this, caregiver_work_report_search.class);
-                startActivity(intent);
-            }
-        });
-
     }
-}

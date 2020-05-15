@@ -7,7 +7,9 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.InputType;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,7 +53,7 @@ public class Register extends AppCompatActivity {
                         final EditText UID_view = (EditText) findViewById(R.id.UIDNumber);
                         final EditText UAddress_view = (EditText) findViewById(R.id.UAddress);
                         final EditText Uphone_view = (EditText) findViewById(R.id.UPhone);
-                        final EditText UEmail_view = (EditText) findViewById(R.id.UEmail);
+                        final EditText UEmail_view = (EditText) findViewById(R.id.UAccount);
                         final EditText UMedHistory_view = (EditText) findViewById(R.id.UMedHistory);
                         final EditText ULevel_view = (EditText) findViewById(R.id.ULevel);
                         final EditText UGender_view = (EditText) findViewById(R.id.gender);
@@ -86,7 +88,7 @@ public class Register extends AppCompatActivity {
                         //過五秒後要做的事情
                         if(check_bits == 1){
                             new AlertDialog.Builder(Register.this)
-                                    .setTitle("恭喜發財")
+                                    .setTitle("註冊成功")
                                     .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
@@ -99,7 +101,7 @@ public class Register extends AppCompatActivity {
 
                         }else if(check_bits == 0){
                             new AlertDialog.Builder(Register.this)
-                                    .setTitle("帳號已經註冊或資料填寫不齊")
+                                    .setTitle("帳號已經註冊或資料填寫不齊或網路無連線")
                                     .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {

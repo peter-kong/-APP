@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-        <item
-            android:id="@+id/people_use_search_Fragment"
-            android:icon="@drawable/calendar"
-            android:title="Feed" />
 
         <item
-            android:id="@+id/caregiver_manage_Fragment"
-            android:icon="@drawable/calendar"
-            android:title="Timer" />
-
+            android:id="@+id/normal_work_report"
+            android:icon="@drawable/report"
+            android:title="本日/明日工作報表" />
         <item
-            android:id="@+id/work_report_search_Fragment"
-            android:icon="@drawable/calendar"
-            android:title="Mine" />
+            android:id="@+id/history_work_report"
+            android:icon="@drawable/report"
+            android:title="歷史工作報表" />
 
 </menu>

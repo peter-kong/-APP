@@ -45,7 +45,7 @@ public class manager_people_use_search_day_read extends AppCompatActivity {
                     data.add("");
                     data1.add("無資料");
                 }
-                con.get_people_use(data,data1,0,Date,"我要單日的Empty");
+                con.get_people_use(data,data1,""+0,Date,"我要單日的Empty");
                 count1.post(new Runnable() {
                     public void run() {
                         count1.setText(data.get(1)+""+data1.get(1));

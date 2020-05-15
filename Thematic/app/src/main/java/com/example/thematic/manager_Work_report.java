@@ -38,8 +38,8 @@ public class manager_Work_report extends AppCompatActivity {
 
         }
         else {
-            ArrayAdapter adapWeekList = new ArrayAdapter(manager_Work_report.this, android.R.layout.simple_spinner_item, Name);
-            adapWeekList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            ArrayAdapter adapWeekList = new ArrayAdapter(manager_Work_report.this, R.layout.myspinner, Name);
+            adapWeekList.setDropDownViewResource(R.layout.myspinner);
             個案Spn.setAdapter(adapWeekList);
             個案Spn.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override

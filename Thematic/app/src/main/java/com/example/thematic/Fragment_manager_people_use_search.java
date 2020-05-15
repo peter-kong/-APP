@@ -18,7 +18,6 @@ import android.widget.Button;
  */
 public class Fragment_manager_people_use_search extends Fragment {
 
-
     public Fragment_manager_people_use_search() {
         // Required empty public constructor
     }

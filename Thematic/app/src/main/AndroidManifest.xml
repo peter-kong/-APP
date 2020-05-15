@@ -15,40 +15,90 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".caregiver_work_report_search"></activity>
-        <activity android:name=".caregiver_history_work_report" />
+        <activity android:name=".caregiver_next_work_report"
+            android:screenOrientation="portrait"></activity>
+
+        <activity android:name=".caregiver_work_report_search"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".caregiver_history_work_report"
+            android:screenOrientation="portrait"/>
+
         <activity android:name=".Caregiver_tab" />
+
         <activity android:name=".Manager_tab" />
+
         <activity android:name=".User_tab" />
-        <activity android:name=".manager_Work_report_search" />
-        <activity android:name=".Request" />
-        <activity android:name=".manager_people_use_search_day_read" />
-        <activity android:name=".manager_user_search" />
-        <activity android:name=".manager_caregiver_manager_output" />
-        <activity android:name=".manager_caregiver_manage" />
-        <activity android:name=".caregiver_normal_work_report1" />
-        <activity android:name=".Recent_Inform_arrange" />
-        <activity android:name=".History_Inform_arrange" />
-        <activity android:name=".people_use_search" />
-        <activity android:name=".Month_Condition" />
+
+        <activity android:name=".manager_Work_report_search"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".Request"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".manager_people_use_search_day_read"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".manager_user_search"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".manager_caregiver_manager_output"
+            android:screenOrientation="portrait"/>
+
+
+        <activity android:name=".caregiver_normal_work_report1"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".Recent_Inform_arrange"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".History_Inform_arrange"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".people_use_search"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".Month_Condition"
+            android:screenOrientation="portrait"/>
+
         <activity android:name=".Dynamic_button" />
+
         <activity android:name=".SocketTest" />
-        <activity android:name=".Caregive_and_case" />
-        <activity android:name=".manager_people_use_search_month_read" />
-        <activity android:name=".Menu_for_caregiver" />
-        <activity android:name=".Day_Condition" />
-        <activity android:name=".Service_user_data" />
-        <activity android:name=".manager_Work_report" />
+
+        <activity android:name=".Caregive_and_case"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".manager_people_use_search_month_read"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".Menu_for_caregiver"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".Day_Condition"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".Service_user_data"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".manager_Work_report"
+            android:screenOrientation="portrait"/>
+
         <activity android:name=".Menu_for_manager" />
-        <activity android:name=".Next_Inform_arrange" />
+
+        <activity android:name=".Next_Inform_arrange"
+            android:screenOrientation="portrait"/>
+
         <activity
             android:name=".Register"
             android:windowSoftInputMode="adjustPan" />
+
         <activity android:name=".Personal_data" />
         <activity android:name=".Menu_for_user" />
+
         <activity
             android:name=".Login"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

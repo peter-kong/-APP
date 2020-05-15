@@ -2,21 +2,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/recent_inform_Fragment"
-        android:icon="@drawable/calendar"
-        android:title="Mine" />
+        android:id="@+id/personal_data_Fragment"
+        android:icon="@drawable/person"
+        android:title="個人資料" />
     <item
         android:id="@+id/next_inform_Fragment"
-        android:icon="@drawable/calendar"
-        android:title="Timer" />
+        android:icon="@drawable/notify"
+        android:title="下次照服時間" />
+    <item
+        android:id="@+id/recent_inform_Fragment"
+        android:icon="@drawable/search"
+        android:title="上次照服時間" />
+
     <item
         android:id="@+id/history_inform_Fragment"
         android:icon="@drawable/calendar"
-        android:title="Feed" />
-    <item
-        android:id="@+id/personal_data_Fragment"
-        android:icon="@drawable/calendar"
-        android:title="Mine" />
-
+        android:title="歷史照服時間" />
 
 </menu>

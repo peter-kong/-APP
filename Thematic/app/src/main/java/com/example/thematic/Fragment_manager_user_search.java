@@ -35,10 +35,10 @@ public class Fragment_manager_user_search extends Fragment {
         super.onCreate(savedInstanceState);
         SearchBtn = (Button)rootview.findViewById(R.id.查詢);
         userID = (EditText) rootview.findViewById(R.id.輸入個案ID);
-        DB();
+        DB(SearchBtn);
         return rootview;
     }
-    private void DB(){
+    private void DB(Button SearchBtn){
         SearchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,10 +53,12 @@ public class Fragment_manager_user_search extends Fragment {
                         if(userID.getText().toString().matches("")){
                             data = "0";
                         }
+                        else if(userID.getText().toString().matches(" ")){
+                            data = "0";
+                        }
                         else {
                             data = userID.getText().toString();
                         }
-                        data = userID.getText().toString();
                         if(data.equals("0")){
                             user_Account = "0";
                         }
@@ -64,7 +66,7 @@ public class Fragment_manager_user_search extends Fragment {
                             user_Account = con.getAccount(data, "我要user帳號");
                         }
                         Log.e("33",""+user_Account);
-                        GlobalVariable_Account obj = (GlobalVariable_Account) getActivity().getApplicationContext();
+                        GlobalVariable_Account obj = (GlobalVariable_Account)getActivity().getApplicationContext();
                         obj.setAccount(user_Account);
                         Log.e("36","Hi");
                         Intent intent = new Intent();
@@ -76,12 +78,6 @@ public class Fragment_manager_user_search extends Fragment {
 
             }
         });
-
-
     }
-
-
-
-
 }
 
