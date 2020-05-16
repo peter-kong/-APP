@@ -93,7 +93,7 @@ public class Register extends AppCompatActivity {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
                                             Intent intent = new Intent();
-                                            intent.setClass(Register.this, Menu_for_user.class);
+                                            intent.setClass(Register.this, User_tab.class);
                                             startActivity(intent);
                                         }
                                     }).setNegativeButton("cancel",null).create()

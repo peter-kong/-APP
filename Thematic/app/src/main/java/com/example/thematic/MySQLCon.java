@@ -699,26 +699,26 @@ public class MySQLCon {
 
                         int 區間 = ((Integer.parseInt(星期))-1)*18+Integer.parseInt(隔間);
                         if(Integer.parseInt(db_date) == Integer.parseInt(week_index)){
-                            data.set(區間+1,used+"/");
-                            data1.set(區間+1,total);
+                            data.set(區間+1,"已用"+used+"\n");
+                            data1.set(區間+1,"總數"+total);
                             上限星期 = Integer.parseInt(rs.getString("星期"));
                             Log.e("更改上限日期成功",""+上限星期);
                         }
                         else if(Integer.parseInt(db_date) == Integer.parseInt(week_index)+1 && Integer.parseInt(星期) > 上限星期){
-                            data.set(區間+1,used+"/");
-                            data1.set(區間+1,total);
+                            data.set(區間+1,"已用"+used+"\n");
+                            data1.set(區間+1,"總數"+total);
                         }
                         else if(Integer.parseInt(db_date) == Integer.parseInt(week_index)+2 && Integer.parseInt(星期) > 上限星期){
-                            data.set(區間+1,used+"/");
-                            data1.set(區間+1,total);
+                            data.set(區間+1,"已用"+used+"\n");
+                            data1.set(區間+1,"總數"+total);
                         }
                         else if(Integer.parseInt(db_date) == Integer.parseInt(week_index)+3 && Integer.parseInt(星期) > 上限星期){
-                            data.set(區間+1,used+"/");
-                            data1.set(區間+1,total);
+                            data.set(區間+1,"已用"+used+"\n");
+                            data1.set(區間+1,"總數"+total);
                         }
                         else if(Integer.parseInt(db_date) == Integer.parseInt(week_index)+4 && Integer.parseInt(星期) > 上限星期){
-                            data.set(區間+1,used+"/");
-                            data1.set(區間+1,total);
+                            data.set(區間+1,"已用"+used+"\n");
+                            data1.set(區間+1,"總數"+total);
                         }
                     }
                 } else if (需求.equals("我要單日的Empty")) {

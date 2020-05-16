@@ -52,7 +52,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
 
 
         GlobalVariable_Account t = (GlobalVariable_Account)getApplicationContext();
-
+        String dat = t.returnScheduleDate();
         ArrayList name = t.returnName();
         //ArrayList id = t.returnUID();
         ArrayList nameid = null;
@@ -94,7 +94,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
             date = calendar.getTime();
         }
 
-        String strDate = sdFormat.format(date);
+        String strDate= judgetoday.returnScheduleDate();
         final TextView 日期 = (TextView)findViewById(R.id.個案日期);
         日期.setText(strDate);
 
@@ -273,7 +273,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
                             Log.e("Data: ", curuid.get(0).toString() + test.returnFinish().get(0).toString());
 
                             Intent intent = new Intent();
-                            intent.setClass(caregiver_normal_work_report.this, Menu_for_caregiver.class);
+                            intent.setClass(caregiver_normal_work_report.this, caregiver_normal_work_report.class);
                             startActivity(intent);
                         }
 

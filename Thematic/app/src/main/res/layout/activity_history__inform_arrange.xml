@@ -4,4 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dynamic_button"/>
+    tools:context=".History_Inform_arrange">
+
+</androidx.constraintlayout.widget.ConstraintLayout>

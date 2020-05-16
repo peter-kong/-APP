@@ -25,7 +25,7 @@
                 android:layout_height="60dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="每日人力配置檢視"
+                android:text="日人力配置概況"
                 android:textSize="30dp" />
 
             <LinearLayout

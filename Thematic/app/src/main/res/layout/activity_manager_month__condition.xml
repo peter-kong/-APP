@@ -14,7 +14,7 @@
         android:layout_height="60dp"
         android:background="#80D8978E"
         android:gravity="center"
-        android:text="每月人力配置"
+        android:text="月人力配置概況"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

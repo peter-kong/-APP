@@ -30,7 +30,7 @@
                 android:layout_height="60dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="照護服務時間排程結果"
+                android:text="月人力配置概況"
                 android:textSize="30sp" />
 
             <TextView
