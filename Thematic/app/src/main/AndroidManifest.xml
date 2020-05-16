@@ -15,6 +15,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".manager_caregiver_manage_month_output"></activity>
+        <activity android:name=".manager_caregiver_manage_month_selected" />
+        <activity android:name=".manager_caregiver_manage_day_selected" />
+        <activity android:name=".manager_user_manage_menu" />
+        <activity android:name=".manager_caregiver_manage_menu" />
+        <activity android:name=".caregiver_work_report_maintain" />
         <activity android:name=".caregiver_next_work_report"
             android:screenOrientation="portrait"></activity>
 

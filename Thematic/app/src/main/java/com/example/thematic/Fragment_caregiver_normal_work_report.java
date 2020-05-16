@@ -9,6 +9,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,6 +63,15 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
         work = (LinearLayout)rootview.findViewById(R.id.工作內容);
         Send = (Button)rootview.findViewById(R.id.Send);
         備註 = (TextView)rootview.findViewById(R.id.備註);
+
+        GlobalVariable_Account tmp = (GlobalVariable_Account)getActivity().getApplicationContext();
+
+        if(tmp.returnName().size() == 0)
+            Log.e("FUCK YOU","Line 70");
+
+        for(int i = 0;i < tmp.returnName().size();i++)
+            Log.e("NameCheck",tmp.returnName().get(i).toString());
+
         DB();
         return rootview;
     }
@@ -148,7 +158,6 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
                                 Timeview.setText(Time);
                             }
                         });
-
                         //reset the Require
                         work.post(new Runnable() {
                             @Override
@@ -161,9 +170,7 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
 
                         String [] 工作 = data.get(3).toString().split("、");
                         //Log.e("工作一", 工作[0]);
-
                         GlobalVariable_Account tmp = (GlobalVariable_Account)getActivity().getApplicationContext();
-
                         //裝True False
                         ArrayList 工作名 = new ArrayList();
                         ArrayList Finish = new ArrayList();

@@ -53,8 +53,8 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                         Log.e("strDateformenu",strDate);
 
-                        tmp2.setUID(con.getUserUID(照服員帳號,strDate));
-                        tmp2.setName(con.getName(tmp2.returnUID()));
+                        tmp2.setUID(con.getUserUID(照服員帳號,strDate));//找照服員當天要照顧的人的UID
+                        tmp2.setName(con.getName(tmp2.returnUID()));//用要照顧的人的UID，並且把UID轉換成人名，再把人名放入全域變數中
                         tmp.setTommorrowoToday(true);
                         Intent intent = new Intent();
                         intent.setClass(Menu_for_caregiver.this, caregiver_work_report_maintain.class);
@@ -63,7 +63,6 @@ public class Menu_for_caregiver extends AppCompatActivity {
                        // Log.e("tmpreturn", tmp.returnUID().get(0).toString());
                     }
                 }).start();
-
 /*
                     Handler handler = new Handler();
                     handler.postDelayed(new Runnable() {
