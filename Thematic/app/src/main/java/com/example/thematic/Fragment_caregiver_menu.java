@@ -54,8 +54,7 @@ public class Fragment_caregiver_menu extends Fragment {
                 Date date = new Date();
                 Calendar calendar = new GregorianCalendar();
                 calendar.setTime(date);
-
-                if ()
+                
                 calendar.add(calendar.DATE, 1);//加一天
 
                 date = calendar.getTime();
