@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DD8978E"
+    android:screenOrientation="portrait"
     tools:context=".Personal_data">
 
     <ScrollView
@@ -237,6 +238,32 @@
                     android:textSize="24sp" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/layout_background_for_personal_data"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/個人資料_電子信箱"
+                    style="@style/Base.Widget.MaterialComponents.TextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:gravity="center"
+                    android:text="電子信箱:"
+                    android:textSize="24sp" />
+
+                <TextView
+                    android:id="@+id/個人資料"
+                    style="@style/Base.Widget.MaterialComponents.TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textSize="24sp"
+                    app:autoSizeTextType="uniform" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
