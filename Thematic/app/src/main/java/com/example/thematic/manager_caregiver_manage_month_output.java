@@ -87,21 +87,26 @@ public class manager_caregiver_manage_month_output extends AppCompatActivity {
                     public void run() {
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                         con.run();
-                        String chooseName = (String) 個案spn.getSelectedItem();
-                        String choose_date = 日期spn.getSelectedItem()+"";
-                        GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
-                        String ID  = obj.returnAcc();
-                        Log.e("取得ID","");
-                        ArrayList 個案ID = con.GetUserUID_List(ID, chooseDate, "我要UID列表");
-                        Log.e("個案ID數量", 個案ID.size() + "");
-                        ArrayList 個案名稱 = con.GetName_List(個案ID);
-                        obj.setUID(個案ID);
-                        obj.setName(個案名稱);
-                        Log.e("個案名稱數量", 個案名稱.size() + "");
-                        ArrayList input_個案 = 個案名稱;
-                        String[] 個案名單1 = new String[input_個案.size()];
-                        input_個案.toArray(個案名單1);
-                        String check_date = obj.returnScheduleDate();
+                        if(chooseDate.equals("無資料")){
+
+                        }
+                        else {
+                            String chooseName = (String) 個案spn.getSelectedItem();
+                            String choose_date = 日期spn.getSelectedItem() + "";
+                            GlobalVariable_Account obj = (GlobalVariable_Account) getApplicationContext();
+                            String ID = obj.returnAcc();
+                            Log.e("取得ID", "");
+                            ArrayList 個案ID = con.GetUserUID_List(ID, chooseDate, "我要UID列表");
+                            Log.e("個案ID數量", 個案ID.size() + "");
+                            ArrayList 個案名稱 = con.GetName_List(個案ID);
+                            obj.setUID(個案ID);
+                            obj.setName(個案名稱);
+                            Log.e("個案名稱數量", 個案名稱.size() + "");
+                            ArrayList input_個案 = 個案名稱;
+                            String[] 個案名單1 = new String[input_個案.size()];
+                            input_個案.toArray(個案名單1);
+                            String check_date = obj.returnScheduleDate();
+                        }
                     }
                 }).start();
                 //獲得個案List
