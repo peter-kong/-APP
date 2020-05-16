@@ -3,6 +3,8 @@ package com.example.mysql_connect;
 
 import android.text.method.SingleLineTransformationMethod;
 import android.util.Log;
+
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -342,12 +344,10 @@ public class MySQLCon {
                         }
                     }
                 } else if (需求.equals("我要這次工作內容")) {
-                    String check_date = "";
+                    String check_date = new String();
                     check_date = rs.getString("Date"); //想要找的日期
                     Log.e("檢查的日期", check_date);
                     db_date = Integer.parseInt(check_date);
-                    Log.e("db_date,int_date,Integer.parseInt(answer_date)", db_date + "," +
-                            int_date + "," + Integer.parseInt((answer_date)));
                     if (db_date == int_date) {
                             answer_date = check_date;
                             break;
@@ -398,8 +398,7 @@ public class MySQLCon {
                 if(answer_date.equals("0000")){
                     Log.e("上次工作內容找不到","無資料");
                 }
-                else {
-                    Log.e("answer_date after search", answer_date);
+                else { ;
                     rs = st.executeQuery(sql);
                     rs.next();
                     GetUsertimeData(data, rs, answer_date, 帳號, "我要工作內容");
@@ -410,7 +409,6 @@ public class MySQLCon {
                     Log.e("下次工作內容找不到","無資料");
                 }
                 else {
-                    Log.e("answer_date after search", answer_date);
                     rs = st.executeQuery(sql);
                     rs.next();
                     GetUsertimeData(data, rs, answer_date, 帳號, "我要工作內容");
@@ -434,6 +432,8 @@ public class MySQLCon {
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
+                Log.e("Date比較",Date+","+rs.getString("Date"));
+                Log.e("Firsttime比較",firsttime+","+rs.getString("Firsttime"));
                 if(Date.equals(rs.getString("Date")) && firsttime.equals(rs.getString("Firsttime"))){
                     data = rs.getString("request");
                     break;
@@ -489,14 +489,30 @@ public class MySQLCon {
         try {
             //藉由帳號取得對應的UID
             Connection con = DriverManager.getConnection(url, db_user, db_password);
-            String sql = "SELECT * FROM `user` WHERE `UAccount` = " + "\"" + user帳號 + "\"";
-            Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(sql);
-            rs.next();
-            String id = rs.getString("UID");
-            Log.e("尋找ID成功",id);
+            String id = new String();
+            if(需求.equals("我要caregiver本月日期")){
+
+            }
+            else {
+                sql = "SELECT * FROM `user` WHERE `UAccount` = " + "\"" + user帳號 + "\"";
+
+                Statement st = con.createStatement();
+                ResultSet rs = st.executeQuery(sql);
+                rs.next();
+                id = rs.getString("UID");
+                Log.e("尋找ID成功", id);
+            }
+            //使用CID進schedule取得對應的本月日期
+            String sql1 = new String();
+            if(需求.equals("我要caregiver本月日期")){
+                sql1 = "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + user帳號 + "\"";
+            }
+
             //使用UID進schedule取得對應的所有資料
-            String sql1 = "SELECT * FROM `schedule` WHERE `UID` = " + "\"" + id + "\"";
+            else {
+                sql1 = "SELECT * FROM `schedule` WHERE `UID` = " + "\"" + id + "\"";
+            }
+
             Statement st1 = con.createStatement();
             ResultSet rs1 = st1.executeQuery(sql1);
             while (rs1.next()) {
@@ -504,7 +520,23 @@ public class MySQLCon {
                 int CheckDate = Integer.parseInt(DbDate);
                 if(需求.equals("我要本月日期")){
                     if((CheckDate/100) == Integer.parseInt(Date)/100){
-                        data.add(DbDate);
+                        if(data.contains(DbDate+"")){
+
+                        }
+                        else {
+                            data.add(DbDate);
+                        }
+                    }
+                }
+                else if(需求.equals("我要caregiver本月日期")){
+                    if((CheckDate/100) == Integer.parseInt(Date)/100){
+                        if(data.contains(DbDate+"")){
+
+                        }
+                        else{
+                            data.add(DbDate);
+                        }
+
                     }
                 }
                 else {
@@ -560,6 +592,49 @@ public class MySQLCon {
         return data;
     }
 
+    public ArrayList GetUserUID_List(String ID,String Date,String 需求){
+        ArrayList data = new ArrayList();
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            sql = "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + ID + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                String db_date = rs.getString("Date");
+                if(Integer.parseInt(""+db_date) == Integer.parseInt(""+Date)){
+                    String id  = rs.getString("UID");
+                    data.add(id);
+                }
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            Log.e("DB", "獲取UIDx列表失敗");
+            Log.e("DB", e.toString());
+        }
+        return data;
+    }
+
+    public ArrayList GetName_List(ArrayList ID){
+        ArrayList data = new ArrayList();
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            for(int i = 0 ; i < ID.size() ; i ++) {
+                sql = "SELECT * FROM `user` WHERE `UID` = " + "\"" + ID.get(i) + "\"";
+                Statement st = con.createStatement();
+                ResultSet rs = st.executeQuery(sql);
+                rs.next();
+                String Name = rs.getString("UName");
+                data.add(Name);
+            }
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            Log.e("DB", "獲取UIDx列表失敗");
+            Log.e("DB", e.toString());
+        }
+        return data;
+    }
     public String getAccount(String ID, String 需求) {
         String 關聯表名稱 = "", 屬性 = "", data = "";
         if (需求.equals("我要user帳號")) {
@@ -718,6 +793,42 @@ public class MySQLCon {
             Log.e("DB", e.toString());
         }
 
+        return data;
+    }
+
+    public  ArrayList get_schedule_data_by_user(String Date,String ID,String 需求){
+        ArrayList data = new ArrayList();
+        ArrayList firsttime = new ArrayList();
+        int counter = 0;
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            sql = "SELECT * FROM `schedule` WHERE `UID` = " + "\"" + ID + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                String db_date = rs.getString("Date");
+                if(Integer.parseInt(db_date) == Integer.parseInt(Date)){
+                        String Ftime = rs.getString("FirstTime");
+                        String Ltime = rs.getString("LastTime");
+                        String caregiverID = rs.getString("CID");
+                        String 名字 = getData(caregiverID,"我要caregiver名字");
+                        String Request = getrequest(Date,Ftime,ID);
+                        String 完成度 = rs.getString("Finish");
+                        String 備註 = rs.getString("備註");
+                        data.add(Ftime);
+                        data.add(Ltime);
+                        data.add(名字);
+                        data.add(Request);
+                        data.add(完成度);
+                        data.add(備註);
+                }
+            }
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            Log.e("DB", "獲取schedule失敗");
+            Log.e("DB", e.toString());
+        }
         return data;
     }
     public ArrayList getschedule_work(String Date, String firsttime, String 需求, String 帳號) {

@@ -6,14 +6,14 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class GlobalVariable_Account extends Application{
-    private String 帳號,人力配置日期;
-    private ArrayList Name;
-    private ArrayList Uid;
-    private ArrayList Finish;
-    private ArrayList HistoryDate,Scheduletime;      //歷史日期,照服員管理的工作時間
+    private String 帳號,人力配置日期 = new String();
+    private ArrayList Name = new ArrayList();
+    private ArrayList Uid = new ArrayList();
+    private ArrayList Finish = new ArrayList();
+    private ArrayList HistoryDate,Scheduletime = new ArrayList();      //歷史日期,照服員管理的工作時間
     private int Month; //月概況鎖進入的月份
-    private ArrayList 星期數; //月概況spinner紀錄有幾週
-    private String caregiverID,ScheduleDate; //Schedule的caregiverID,Schedule的日期
+    private ArrayList 星期數 = new ArrayList(); //月概況spinner紀錄有幾週
+    private String caregiverID,ScheduleDate = new String(); //Schedule的caregiverID,Schedule的日期
     private boolean t;
     //帳號
     public void setAccount(String input){

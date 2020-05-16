@@ -1,9 +1,13 @@
 package com.example.thematic;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,8 +25,6 @@ public class manager_caregiver_manage_month_selected extends AppCompatActivity {
 
         EditText ID = (EditText)findViewById(R.id.輸入照服員ID);
         EditText Month = (EditText)findViewById(R.id.輸入月份);
-        EditText Day = (EditText)findViewById(R.id.輸入日期);
-
         Button searchBtn = (Button) findViewById(R.id.查詢);
         searchBtn.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -51,44 +53,34 @@ public class manager_caregiver_manage_month_selected extends AppCompatActivity {
                         else {
                             inputMonth = Month.getText().toString();
                         }
-                        if(Day.getText().toString().matches("")){
-                            inputDay = "0";
-                        }
-                        else if(Day.getText().toString().matches(" ")){
-                            inputDay = "0";
-                        }
-                        else {
-                            inputDay = Day.getText().toString();
-                        }
-
                         String Date = new String();
                         if(Integer.parseInt(inputMonth)<10){
-                            if(Integer.parseInt(inputDay)<10){
-                                Date = "0"+inputMonth+"0"+inputDay;
-                            }
-                            else if(Integer.parseInt(inputDay)>=10){
-                                Date = "0"+inputMonth+inputDay;
-                            }
+                                Date = "0"+inputMonth+"00";
                         }
                         else if(Integer.parseInt(inputMonth)>=10){
-                            if(Integer.parseInt(inputDay)<10){
-                                Date = inputMonth+"0"+inputDay;
-                            }
-                            else if(Integer.parseInt(inputDay)>=10){
-                                Date = inputMonth+inputDay;
-                            }
+                            Date = inputMonth+"00";
                         }
-                        ArrayList data = new ArrayList();
+                        ArrayList month_date = new ArrayList();
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                         con.run();
-                        data = con.getschedule(Date,"我要caregiver工作時間",caregiverID);
-                        GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
-                        obj.setScheduletime(data,caregiverID,Date);
-
+                        month_date = con.GetDate(Date,caregiverID,"我要caregiver本月日期");
+                        GlobalVariable_Account obj = (GlobalVariable_Account) getApplicationContext();
+                        obj.setAccount(caregiverID);
+                        obj.setDate(month_date);
+                        obj.setScheduleDate(Date);
                         Intent intent = new Intent();
-                        intent.setClass(manager_caregiver_manage_month_selected.this,
-                                manager_caregiver_manager_output.class);
-                        startActivity(intent);
+                        if(month_date.size() == 0){
+                            month_date.add("無資料");
+                            obj.setDate(month_date);
+                            intent.setClass(manager_caregiver_manage_month_selected.this,
+                                    manager_caregiver_manage_month_output.class);
+                            startActivity(intent);
+                        }
+                        else {
+                            intent.setClass(manager_caregiver_manage_month_selected.this,
+                                    manager_caregiver_manage_month_output.class);
+                            startActivity(intent);
+                        }
                     }
                 }).start();
 
