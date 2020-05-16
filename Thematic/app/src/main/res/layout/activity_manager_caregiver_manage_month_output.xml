@@ -54,7 +54,7 @@
                     android:textStyle="bold" />
 
 
-                <TextView
+                <Spinner
                     android:id="@+id/日期下拉選單"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -186,7 +186,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/服務內容"
+                        android:id="@+id/服務內容顯示"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"

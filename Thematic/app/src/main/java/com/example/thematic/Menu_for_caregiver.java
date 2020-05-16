@@ -26,7 +26,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
         setContentView(R.layout.activity_caregiver_menu);
         getSupportActionBar().hide(); //隱藏標題
 
-        Button NextpageBtn1 = (Button) findViewById(R.id.明日工作報表_care);
+        /*Button NextpageBtn1 = (Button) findViewById(R.id.明日工作報表_care);
         NextpageBtn1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -80,7 +80,7 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         }
                     }, 1000);
 
-*/
+
 
             }
         });
@@ -92,6 +92,6 @@ public class Menu_for_caregiver extends AppCompatActivity {
                     intent.setClass(Menu_for_caregiver.this, caregiver_work_report_search.class);
                     startActivity(intent);
                 }
-            });
+            });*/
         }
     }

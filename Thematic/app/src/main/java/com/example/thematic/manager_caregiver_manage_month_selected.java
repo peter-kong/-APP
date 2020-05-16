@@ -83,9 +83,6 @@ public class manager_caregiver_manage_month_selected extends AppCompatActivity {
                         }
                     }
                 }).start();
-
-
-
             }
         });
     }

@@ -5,11 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DD8978E"
-    tools:context=".Menu_for_manager">
+    tools:context=".caregiver_work_report_maintain">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -18,35 +22,95 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView48"
+                android:id="@+id/工作報表維護"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="主選單"
+                android:text="工作報表維護"
                 android:textSize="30sp" />
 
-            <Button
-                android:id="@+id/明日工作報表_care"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginRight="30dp"
-                android:background="@drawable/menu_for_caregiver_shape_rectangle"
-                android:text="明日工作報表"
-                android:textSize="20sp" />
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp"
+                    android:text="     請填入以下資料:"
+                    android:textSize="24sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginRight="15dp"
+                    android:background="@drawable/layout_background_for_manager"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/輸入月份"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ems="5"
+                        android:gravity="center"
+                        android:hint="請輸入月份"
+                        android:inputType="number"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/月份"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="月"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <EditText
+                        android:id="@+id/輸入日期"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:ems="5"
+                        android:gravity="center"
+                        android:hint="請輸入日期"
+                        android:inputType="number"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/日期"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="日"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/空白區塊2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="        *範圍為包含今天以前五次"
+                android:textSize="18sp" />
 
             <Button
-                android:id="@+id/本日工作報表_care"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginRight="30dp"
-                android:background="@drawable/menu_for_caregiver_shape_rectangle"
-                android:text="本日工作報表"
-                android:textSize="20sp" />
+                android:id="@+id/查詢"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:background="@android:drawable/btn_default"
+                android:gravity="center"
+                android:text="選擇"
+                android:textSize="24sp" />
 
         </LinearLayout>
     </ScrollView>

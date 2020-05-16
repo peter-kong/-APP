@@ -21,13 +21,14 @@ public class manager_caregiver_manage_month_output extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager_caregiver_manage_month_output);
+
         final Spinner 日期spn = (Spinner)findViewById(R.id.日期下拉選單);
         final Spinner 個案spn = (Spinner)findViewById(R.id.個案下拉選單);
         final TextView time_view = (TextView)findViewById(R.id.工作時間);
         final TextView caregiver_view = (TextView)findViewById(R.id.照服員名字);
         final TextView work1_view = (TextView)findViewById(R.id.服務內容顯示);
         final TextView 完成度 = (TextView)findViewById(R.id.完成度);
-        final TextView 備註 = (TextView)findViewById(R.id.備註顯示);
+        final TextView 備註 = (TextView)findViewById(R.id.備註);
 
         //取得前一個畫面得到的DateList
         GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();

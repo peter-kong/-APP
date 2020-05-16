@@ -3,9 +3,13 @@ package com.example.thematic;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -16,6 +20,8 @@ import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -29,7 +35,10 @@ public class caregiver_normal_work_report extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+
         Log.e("Line 39","reminded");
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caregiver_normal_work_report);
         getSupportActionBar().hide(); //隱藏標題
@@ -43,7 +52,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
 
 
         GlobalVariable_Account t = (GlobalVariable_Account)getApplicationContext();
-        String dat = t.returnScheduleDate();
+
         ArrayList name = t.returnName();
         //ArrayList id = t.returnUID();
         ArrayList nameid = null;
@@ -85,7 +94,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
             date = calendar.getTime();
         }
 
-        String strDate= judgetoday.returnScheduleDate();
+        String strDate = sdFormat.format(date);
         final TextView 日期 = (TextView)findViewById(R.id.個案日期);
         日期.setText(strDate);
 
@@ -121,7 +130,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
 
 
                         ArrayList data = con.getcaregiverworkcontent(caregiver帳號,
-                                    obj.returnUID().get(i).toString(),strDate);
+                                obj.returnUID().get(i).toString(),strDate);
                         //照服員名字,開始時間,結束時間
                         String Time = data.get(1).toString() + " - " +data.get(2).toString();
                         final TextView workername = (TextView)findViewById(R.id.workername);
@@ -267,9 +276,11 @@ public class caregiver_normal_work_report extends AppCompatActivity
                             intent.setClass(caregiver_normal_work_report.this, Menu_for_caregiver.class);
                             startActivity(intent);
                         }
+
                     }
                 }).start();
             }
         });
+
     }
 }
