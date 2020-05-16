@@ -17,6 +17,7 @@ public class manager_user_manage_month_selected extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide(); //隱藏標題
         setContentView(R.layout.activity_manager_user_manage_month_selected);
 
         final EditText userID = (EditText) findViewById(R.id.輸入個案ID);

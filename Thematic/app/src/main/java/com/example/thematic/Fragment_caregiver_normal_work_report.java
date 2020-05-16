@@ -13,9 +13,19 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -30,134 +40,239 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
     public Fragment_caregiver_normal_work_report() {
         // Required empty public constructor
     }
-    Button NextpageBtn1;
-    Button NextpageBtn3;
+
+    Spinner 個案名稱;
+    TextView 日期;
+    TextView workername;
+    TextView Timeview;
+    LinearLayout work;
+    Button Send;
+    TextView 備註;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View rootview = inflater.inflate(R.layout.fragment_caregiver_normal_work_report, container, false);
         super.onCreate(savedInstanceState);
-        NextpageBtn1 = (Button) rootview.findViewById(R.id.明日工作報表_care);
-        NextpageBtn3 = (Button) rootview.findViewById(R.id.本日工作報表_care);
-        DB(NextpageBtn1,NextpageBtn3);
-
+        個案名稱 = (Spinner)rootview.findViewById(R.id.個案下拉選單);
+        日期 = (TextView)rootview.findViewById(R.id.個案日期);
+        workername = (TextView)rootview.findViewById(R.id.workername);
+        Timeview = (TextView)rootview.findViewById(R.id.Time);
+        work = (LinearLayout)rootview.findViewById(R.id.工作內容);
+        Send = (Button)rootview.findViewById(R.id.Send);
+        備註 = (TextView)rootview.findViewById(R.id.備註);
+        DB();
         return rootview;
     }
 
-    private  void DB(Button NextpageBtn1,Button NextpageBtn3)
-    {
-        NextpageBtn1.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                GlobalVariable_Account tmp = (GlobalVariable_Account)getActivity().getApplicationContext();
-                Log.e("Line 37","Enter");
-                //Log.e("明日工作報表",tmp.returnUID().get(0).toString());
+    private  void DB() {
+        Log.e("Line 46","remind");
+        Log.e("Line 51","remind");
+        GlobalVariable_Account t = (GlobalVariable_Account)getActivity().getApplicationContext();
+        String dat = t.returnScheduleDate();
+        ArrayList name = t.returnName();
+        ArrayList nameid = null;
 
+
+        ArrayList curuid = new ArrayList();
+        curuid.add("No data");
+
+        String[] namestr = new String[name.size()];
+        name.toArray(namestr);
+
+        for(int j = 0;j < name.size();j++){
+            Log.e("namestr",name.get(j).toString());
+        }
+
+        ArrayAdapter datelist = new ArrayAdapter(getActivity().getApplicationContext(), R.layout.myspinner,namestr);
+        datelist.setDropDownViewResource(R.layout.myspinner);
+        個案名稱.setAdapter(datelist);
+
+        GlobalVariable_Account judgetoday = (GlobalVariable_Account)getActivity().getApplicationContext();
+
+        //日期
+        SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
+        Date date = new Date();
+
+        if(judgetoday.returnTommorrowToday()) {
+            Calendar calendar = new GregorianCalendar();
+            calendar.setTime(date);
+            calendar.add(calendar.DATE, 1);
+            date = calendar.getTime();
+        }
+
+        String strDate= judgetoday.returnScheduleDate();
+        日期.setText(strDate);
+
+        個案名稱.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+
+                //拿到被選擇项的值進行連接DB並顯示資料
+                String chooseDate = (String) 個案名稱.getSelectedItem();
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-
-                        String 照服員帳號 = tmp.returnAcc();
-                        GlobalVariable_Account tmp2 = (GlobalVariable_Account)getActivity().getApplicationContext();
-
-                        SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
-                        Date date = new Date();
-                        Calendar calendar = new GregorianCalendar();
-                        calendar.setTime(date);
-                        calendar.add(calendar.DATE, 1);
-                        date = calendar.getTime();
-                        String strDate = sdFormat.format(date);
-                        Log.e("明日",strDate);
-
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
-                        Log.e("strDateformenu",strDate);
+                        con.run();
+                        GlobalVariable_Account obj = (GlobalVariable_Account)getActivity().getApplicationContext();
+                        String caregiver帳號  = obj.returnAcc();
 
-                        tmp2.setUID(con.getUserUID(照服員帳號,strDate));
-                        tmp2.setName(con.getName(tmp2.returnUID()));
-                        tmp.setTommorrowoToday(true);
-                        Intent intent = new Intent();
-                        intent.setClass(getActivity(), caregiver_next_work_report.class);
-                        startActivity(intent);
-                        tmp2.println();
-                        // Log.e("tmpreturn", tmp.returnUID().get(0).toString());
-                    }
-                }).start();
-
-
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if(tmp.returnUID().size() == 0) {
-                            new AlertDialog.Builder(getContext())
-                                    .setTitle("沒有個資喔!!")
-                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
-
-                                        }
-                                    }).setNegativeButton("cancel", null).create()
-                                    .show();
+                        int i = 0;
+                        ArrayList 所有當前照護員被照護名字 = obj.returnName();
+                        while(!所有當前照護員被照護名字.get(i).equals(chooseDate)){
+                            i++;
                         }
-                    }
-                }, 1000);
-            }
-        });
-        NextpageBtn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                GlobalVariable_Account tmp = (GlobalVariable_Account)getActivity().getApplicationContext();
+                        //Log.e("所有當前照護員被照護UID",obj.returnUID().get(i).toString());
+                        curuid.set(0,obj.returnUID().get(i));
 
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
+                        //Log.e("DB 今日",strDate);
+
+
+                        ArrayList data = con.getcaregiverworkcontent(caregiver帳號,
+                                obj.returnUID().get(i).toString(),strDate);
+                        //照服員名字,開始時間,結束時間
+                        String Time = data.get(1).toString() + " - " +data.get(2).toString();
+
+                        workername.post(new Runnable() {
+                            public void run() {
+                                workername.setText(data.get(0).toString());
+                            }
+                        });
+
+                        Timeview.post(new Runnable() {
+                            public void run() {
+                                Timeview.setText(Time);
+                            }
+                        });
+
+                        //reset the Require
+                        work.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                if(((LinearLayout) work).getChildCount() > 0)
+                                    ((LinearLayout) work).removeAllViews();
+
+                            }
+                        });
+
+                        String [] 工作 = data.get(3).toString().split("、");
+                        //Log.e("工作一", 工作[0]);
 
                         GlobalVariable_Account tmp = (GlobalVariable_Account)getActivity().getApplicationContext();
-                        String 照服員帳號 = tmp.returnAcc();
-                        GlobalVariable_Account tmp2 = (GlobalVariable_Account)getActivity().getApplicationContext();
 
-                        //設時間
-                        SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
-                        Date date = new Date();
-                        String strDate = sdFormat.format(date);
-                        Log.e("本日",strDate);
-                        com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
-                        tmp2.setUID(con.getUserUID(照服員帳號,strDate));
+                        //裝True False
+                        ArrayList 工作名 = new ArrayList();
+                        ArrayList Finish = new ArrayList();
 
-                        tmp2.setName(con.getName(tmp2.returnUID()));
-                        //tmp2.println();
+                        for(int k = 0;k < 工作.length;k++) {
+                            Finish.add("×");
+                            工作名.add(工作[k]);
+                            //Log.e("tags",工作名.get(k).toString());
+                        }
+
+                        //辨識True False
+                        CompoundButton.OnCheckedChangeListener checkBoxOnCheckedChange =
+                                new CompoundButton.OnCheckedChangeListener()
+                                {
+                                    @Override
+                                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
+                                    { //buttonView 為目前觸發此事件的 CheckBox, isChecked 為此 CheckBox 目前的選取狀態
+                                        if(isChecked)//等於 buttonView.isChecked()
+                                        {
+                                            Toast.makeText(getActivity().getApplicationContext(),buttonView.getText()+" 被選取", Toast.LENGTH_LONG).show();
+                                            for(int k = 0;k < 工作名.size();k++) {
+                                                if (工作名.get(k).toString().equals(buttonView.getText())) {
+                                                    Finish.set(k, "√");
+                                                    Log.e(工作名.get(k).toString(),Finish.get(k).toString());
+                                                }
+                                            }
+
+                                        }
+                                        else
+                                        {
+                                            Toast.makeText(getActivity().getApplicationContext(),buttonView.getText()+" 被取消", Toast.LENGTH_LONG).show();
+                                            for(int k = 0;k < 工作名.size();k++) {
+                                                if (工作名.get(k).toString().equals(buttonView.getText())) {
+                                                    Finish.set(k, "False");
+                                                    Log.e(工作名.get(k).toString(),Finish.get(k).toString());
+                                                }
+                                            }
+                                        }
+
+                                        tmp.setFinish(Finish);
+
+                                        tmp.println();
+                                    }
+                                };
 
 
-                        tmp.setTommorrowoToday(false);
+                        for(int k = 0;k < 工作.length;k++){
 
-                        if(tmp.returnUID().size() != 0) {
-                            Intent intent = new Intent();
-                            intent.setClass(getActivity(), caregiver_normal_work_report1.class);
-                            startActivity(intent);
+                            Log.e("Line 122",工作[k]);
+                            CheckBox work1 = new CheckBox(getActivity().getApplicationContext());
+                            work1.setTextSize(30);
+                            work1.setText("             "+工作[k]);
+                            work1.setOnCheckedChangeListener(checkBoxOnCheckedChange);
+
+                            work.post(new Runnable() {
+                                @Override
+                                public void run() {
+                                    work.addView(work1, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                                }
+                            });
+                            Log.e("Work Normal",工作[k]);
                         }
 
                     }
                 }).start();
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                Log.e("nothingSelected","沒有選則內容");
+            }
+        });
 
-                Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
+
+
+        GlobalVariable_Account test = (GlobalVariable_Account)getActivity().getApplicationContext();
+
+        Send.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        if(tmp.returnUID().size() == 0) {
-                            new AlertDialog.Builder(getContext())
-                                    .setTitle("沒有個資喔!!")
-                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
-                                        @Override
-                                        public void onClick(DialogInterface dialog, int which) {
 
-                                        }
-                                    }).setNegativeButton("cancel", null).create()
-                                    .show();
+                        test.println();
+
+                        String meg = 備註.getText().toString();
+
+
+                        //檢查沒有輸入
+                        ArrayList checkpoint = test.returnFinish();
+
+                        int c = 0;
+
+                        if(checkpoint != null)
+                            c = 1;
+
+                        Log.e("meg",meg);
+
+                        if(c == 1) {
+                            com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
+                            con.SendFinishandnotice(curuid.get(0).toString(), test.returnFinish(), meg, strDate);
+                            Log.e("Data: ", curuid.get(0).toString() + test.returnFinish().get(0).toString());
+
+                            Intent intent = new Intent();
+                            intent.setClass(getActivity(), Menu_for_caregiver.class);
+                            startActivity(intent);
                         }
                     }
-                }, 1000);
+                }).start();
             }
         });
     }

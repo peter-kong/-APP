@@ -54,9 +54,11 @@
                 android:id="@+id/時間"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
+                android:background="#ACACD8"
+                android:gravity="center"
                 android:text="@string/時間"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/時間顯示"
@@ -72,9 +74,11 @@
                 android:id="@+id/照服員"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
+                android:background="#ACACD8"
+                android:gravity="center"
                 android:text="@string/照服員"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/照服員名稱"
@@ -90,16 +94,18 @@
                 android:id="@+id/照服內容"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center_vertical"
+                android:background="#ACACD8"
+                android:gravity="center"
                 android:text="@string/照護內容"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/個人資料"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:lineSpacingMultiplier="1.5"
+                android:lineSpacingMultiplier="1.0"
                 android:textSize="30sp" />
 
         </LinearLayout>

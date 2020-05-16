@@ -21,7 +21,6 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide(); //隱藏標題
-        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN); //隱藏狀態
         Button LoginBtn = (Button) findViewById(R.id.main_login);
         LoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +87,8 @@ public class Login extends AppCompatActivity {
                                     .show();
                         }
 
-                    }}, 1000);
+                    }}, 3000);
+
 
             }
         });
@@ -176,6 +176,17 @@ public class Login extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        /*Button test = (Button) findViewById(R.id.Test);
+        test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(Login.this, manager_user_manage_menu.class);
+                startActivity(intent);
+            }
+        });*/
 
 
         /*Button managerBtn = (Button) findViewById(R.id.managertest);

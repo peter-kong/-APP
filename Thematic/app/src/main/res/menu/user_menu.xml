@@ -9,14 +9,10 @@
         android:id="@+id/next_inform_Fragment"
         android:icon="@drawable/notify"
         android:title="下次照服時間" />
-    <item
-        android:id="@+id/recent_inform_Fragment"
-        android:icon="@drawable/search"
-        android:title="上次照服時間" />
 
     <item
         android:id="@+id/history_inform_Fragment"
-        android:icon="@drawable/calendar"
+        android:icon="@drawable/search"
         android:title="歷史照服時間" />
 
 </menu>

@@ -29,7 +29,7 @@
                 android:layout_height="60dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="照服員管理"
+                android:text="照顧服務員管理"
                 android:textSize="30sp" />
 
             <TextView
@@ -56,7 +56,7 @@
                     android:layout_marginRight="5dp"
                     android:ems="10"
                     android:gravity="center"
-                    android:hint="請輸入照服員的ID"
+                    android:hint="例如 : AXXXXXXXXX"
                     android:inputType="textPersonName"
                     android:textSize="18sp" />
             </LinearLayout>

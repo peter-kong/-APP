@@ -3,7 +3,7 @@
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:id="@+id/user_nav"
-app:startDestination="@id/personal_data_Fragment">
+app:startDestination="@id/User_menu">
 
 <keep_state_fragment
     android:id="@+id/history_inform_Fragment"
@@ -17,17 +17,16 @@ app:startDestination="@id/personal_data_Fragment">
     android:label="fragment_user_next_inform_arrange"
     tools:layout="@layout/fragment_user_next_inform_arrange" />
 
-<keep_state_fragment
-    android:id="@+id/recent_inform_Fragment"
-    android:name="com.example.thematic.Fragment_user_recent_inform_arrange"
-    android:label="fragment_user_recent_inform_arrange"
-    tools:layout="@layout/fragment_user_recent_inform_arrange" />
-
-<keep_state_fragment
+    <keep_state_fragment
     android:id="@+id/personal_data_Fragment"
     android:name="com.example.thematic.Fragment_user_personal_data"
     android:label="fragment_user_personal_data"
     tools:layout="@layout/fragment_user_personal_data" />
+    <fragment
+        android:id="@+id/User_menu"
+        android:name="com.example.thematic.Fragment_User_menu"
+        android:label="Fragment_User_menu"
+        tools:layout="@layout/fragment_user_menu"/>
 
 
 </navigation>
