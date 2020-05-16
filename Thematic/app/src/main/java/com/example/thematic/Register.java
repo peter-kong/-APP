@@ -69,8 +69,8 @@ public class Register extends AppCompatActivity {
                         String UEmail = UEmail_view.getText().toString();
                         String UMedHistory = UMedHistory_view.getText().toString();
                         String ULevel = ULevel_view.getText().toString();
-
                         String UBirth = UBirth_view.getText().toString();
+
 
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                         //con.insertRegisterData(UName, UAccount, UPassword, UIDNumber, UAddress, Uphone, UEmail, UMedHistory, ULevel, UBirth);
@@ -110,6 +110,39 @@ public class Register extends AppCompatActivity {
                                     }).setNegativeButton("cancel",null).create()
                                     .show();
 
+                        }else if(check_bits == 2)//性別填錯
+                        {
+                            new AlertDialog.Builder(Register.this)
+                                    .setTitle("性別格式不對")
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                        }
+                                    }).setNegativeButton("cancel",null).create()
+                                    .show();
+                        }else if(check_bits == 3)//身分證字號填錯
+                        {
+                            new AlertDialog.Builder(Register.this)
+                                    .setTitle("身分證字號格式不對")
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                        }
+                                    }).setNegativeButton("cancel",null).create()
+                                    .show();
+                        }else if(check_bits == 4)//手機號碼填錯
+                        {
+                            new AlertDialog.Builder(Register.this)
+                                    .setTitle("手機號碼格式不對")
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                        }
+                                    }).setNegativeButton("cancel",null).create()
+                                    .show();
                         }
 
                     }}, 1000);

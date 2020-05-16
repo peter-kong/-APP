@@ -217,6 +217,18 @@ public class MySQLCon {
                                   String UID, String UAddress, String Uphone,
                                   String UEmail, String UMedHistory, String ULevel,
                                   String UBirth,String UGender){
+        if(UGender.length()>1)//性別填錯
+        {
+            return 2;
+        }
+        else if(UID.length()!=10)//身分字號填錯
+        {
+            return 3;
+        }
+        else if(Uphone.length()!=10)//手機號碼填錯
+        {
+            return 4;
+        }
 
         try {
             Connection con = DriverManager.getConnection(url, db_user, db_password);
