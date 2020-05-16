@@ -46,7 +46,7 @@ public class Login extends AppCompatActivity {
                             check = 3;
                             Intent intent = new Intent();
                             Log.v("Login","manager登入成功");
-                            intent.setClass(Login.this,Manager_tab.class);
+                            intent.setClass(Login.this,Menu_for_manager.class);
                             startActivity(intent);
                         }
                         else if((con.getData(Account,"我要caregiver密碼")).equals(Password)){

@@ -81,7 +81,7 @@ public class Fragment_user_personal_data extends Fragment {
                 String[] str = null;
                 String user帳號 = obj.returnAcc();
                 ArrayList HistoryDate = new ArrayList();
-                HistoryDate = con.GetDate(Date, user帳號);
+                HistoryDate = con.GetDate(Date, user帳號,"");
                 Log.e("HistoryDate",""+HistoryDate.size());
                 GlobalVariable_Account 歷史日期保存 = (GlobalVariable_Account)getActivity().getApplicationContext();
                 歷史日期保存.setDate(HistoryDate);

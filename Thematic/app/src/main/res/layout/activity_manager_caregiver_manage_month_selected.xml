@@ -29,7 +29,7 @@
                 android:layout_height="60dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="週工作報表查詢"
+                android:text="月工作內容查詢"
                 android:textSize="30sp" />
 
             <EditText
@@ -71,21 +71,6 @@
                     android:text="月"
                     android:textSize="36sp" />
 
-                <EditText
-                    android:id="@+id/輸入日期"
-                    android:layout_width="61dp"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:textSize="36sp" />
-
-                <TextView
-                    android:id="@+id/日期"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="日"
-                    android:textSize="36sp" />
             </LinearLayout>
 
             <Button
