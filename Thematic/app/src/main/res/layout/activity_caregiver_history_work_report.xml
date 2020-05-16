@@ -27,7 +27,7 @@
                 android:layout_height="60dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="工作報表"
+                android:text="歷史工作報表"
                 android:textSize="30sp" />
 
             <LinearLayout
@@ -190,7 +190,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="right"
+                        android:gravity="center"
                         android:textSize="36sp" />
 
                     <TextView
@@ -198,7 +198,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="left"
+                        android:gravity="right"
                         android:lineSpacingMultiplier="1.2"
                         android:textSize="36sp" />
                 </LinearLayout>

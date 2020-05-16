@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:background="#779BC2DD"
                 android:gravity="center"
-                android:text="照服員當日工作內容"
+                android:text="日工作內容查詢"
                 android:textSize="30sp" />
 
             <Spinner

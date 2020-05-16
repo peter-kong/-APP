@@ -29,7 +29,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-public class caregiver_normal_work_report1 extends AppCompatActivity
+public class caregiver_normal_work_report extends AppCompatActivity
 {
 
     @Override
@@ -40,7 +40,7 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
 
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caregiver_normal_work_report1);
+        setContentView(R.layout.activity_caregiver_normal_work_report);
         getSupportActionBar().hide(); //隱藏標題
 
         Log.e("Line 46","remind");
@@ -77,7 +77,7 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
             Log.e("namestr",name.get(j).toString());
         }
 
-        ArrayAdapter datelist = new ArrayAdapter(caregiver_normal_work_report1.this, R.layout.myspinner,namestr);
+        ArrayAdapter datelist = new ArrayAdapter(caregiver_normal_work_report.this, R.layout.myspinner,namestr);
         datelist.setDropDownViewResource(R.layout.myspinner);
         個案名稱.setAdapter(datelist);
 
@@ -130,7 +130,7 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
 
 
                         ArrayList data = con.getcaregiverworkcontent(caregiver帳號,
-                                    obj.returnUID().get(i).toString(),strDate);
+                                obj.returnUID().get(i).toString(),strDate);
                         //照服員名字,開始時間,結束時間
                         String Time = data.get(1).toString() + " - " +data.get(2).toString();
                         final TextView workername = (TextView)findViewById(R.id.workername);
@@ -216,7 +216,7 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
                         for(int k = 0;k < 工作.length;k++){
 
                             Log.e("Line 122",工作[k]);
-                            CheckBox work1 = new CheckBox(caregiver_normal_work_report1.this);
+                            CheckBox work1 = new CheckBox(caregiver_normal_work_report.this);
                             work1.setTextSize(30);
                             work1.setText("             "+工作[k]);
                             work1.setOnCheckedChangeListener(checkBoxOnCheckedChange);
@@ -273,7 +273,7 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
                             Log.e("Data: ", curuid.get(0).toString() + test.returnFinish().get(0).toString());
 
                             Intent intent = new Intent();
-                            intent.setClass(caregiver_normal_work_report1.this, Menu_for_caregiver.class);
+                            intent.setClass(caregiver_normal_work_report.this, caregiver_normal_work_report.class);
                             startActivity(intent);
                         }
 

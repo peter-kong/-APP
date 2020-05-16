@@ -14,7 +14,7 @@ public class Recent_Inform_arrange extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_recent_inform_arrange);
+        setContentView(R.layout.activity_recent_inform_arrange);
         getSupportActionBar().hide(); //隱藏標題
         final TextView time_view = (TextView) findViewById(R.id.時間顯示);
         final TextView caregiver_view = (TextView) findViewById(R.id.照服員名稱);
@@ -43,31 +43,31 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                     }
                 }
                 Log.e("獲取結果",data.get(0)+","+data.get(1)+","+data.get(2)+","+data.get(3)+","+data.get(4));
-                    time_view.post(new Runnable() {
-                        public void run() {
-                            time_view.setText("" + data.get(0) + "~" + data.get(1));
-                        }
-                    });
-                    caregiver_view.post(new Runnable() {
-                        public void run() {
-                            caregiver_view.setText("" + data.get(2));
-                        }
-                    });
+                time_view.post(new Runnable() {
+                    public void run() {
+                        time_view.setText("" + data.get(0) + "~" + data.get(1));
+                    }
+                });
+                caregiver_view.post(new Runnable() {
+                    public void run() {
+                        caregiver_view.setText("" + data.get(2));
+                    }
+                });
 
-                    work_view.post(new Runnable() {
-                        public void run() {
-                            String work;
-                            work = "" + data.get(3);
-                            work = work.replace("、", "\n");
-                            work_view.setText(work);
-                        }
-                    });
-                    日期.post(new Runnable() {
-                        public void run() {
-                            日期.setText("照服時間:" + data.get(4));
-                        }
-                    });
-                }
+                work_view.post(new Runnable() {
+                    public void run() {
+                        String work;
+                        work = "" + data.get(3);
+                        work = work.replace("、", "\n");
+                        work_view.setText(work);
+                    }
+                });
+                日期.post(new Runnable() {
+                    public void run() {
+                        日期.setText("照服時間:" + data.get(4));
+                    }
+                });
+            }
         }).start();
     }
 }

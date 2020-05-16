@@ -1,29 +1,56 @@
 package com.example.thematic;
 
-import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
+
+import android.os.Handler;
 import android.text.format.Time;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 
-public class caregiver_work_report_maintain extends AppCompatActivity {
+
+/**
+ * A simple {@link Fragment} subclass.
+ */
+public class Fragment_caregiver_normal_work_report_select extends Fragment {
+
+
+    public Fragment_caregiver_normal_work_report_select() {
+        // Required empty public constructor
+    }
+    TextView 月份;
+    TextView 日期;
+    Button 查詢;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        View rootview = inflater.inflate(R.layout.fragment_caregiver_normal_work_report_select, container, false);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caregiver_work_report_maintain);
+        月份 = (TextView) rootview.findViewById(R.id.輸入月份);
+        日期 = (TextView) rootview.findViewById(R.id.輸入日期);
+        查詢 = (Button) rootview.findViewById(R.id.查詢);
+        DB(查詢);
+        return rootview;
+    }
 
-
-        final TextView 月份 = (TextView) findViewById(R.id.輸入月份);
-        final TextView 日期 = (TextView) findViewById(R.id.輸入日期);
-        final Button 查詢 = (Button) findViewById(R.id.查詢);
-
+    private  void DB(Button 查詢)
+    {
         查詢.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +109,7 @@ public class caregiver_work_report_maintain extends AppCompatActivity {
                             }
                         }
                         ArrayList 前五次日期 = new ArrayList();
-                        GlobalVariable_Account obj = (GlobalVariable_Account) getApplicationContext();
+                        GlobalVariable_Account obj = (GlobalVariable_Account) getActivity().getApplicationContext();
                         String 帳號 = obj.returnAcc();
                         前五次日期 = con.get_recent_date(now, "我要前五次的日期",帳號);
                         int check = 0;
@@ -102,14 +129,14 @@ public class caregiver_work_report_maintain extends AppCompatActivity {
                             obj.setScheduleDate(Date);
                             Log.e("NAME","獲取資料成功"+Date);
                             Intent intent = new Intent();
-                            intent.setClass(caregiver_work_report_maintain.this, caregiver_normal_work_report.class);
+                            intent.setClass(getActivity(), caregiver_normal_work_report.class);
                             startActivity(intent);
                         } else {
                             obj.setUID(new ArrayList());
                             obj.setScheduleDate("無法維護");
                             obj.setName(new ArrayList());
                             Intent intent = new Intent();
-                            intent.setClass(caregiver_work_report_maintain.this, caregiver_normal_work_report.class);
+                            intent.setClass(getActivity(), caregiver_normal_work_report.class);
                             startActivity(intent);
                         }
 

@@ -11,7 +11,7 @@ public class Personal_data extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_personal_data);
+        setContentView(R.layout.activity_personal_data);
         getSupportActionBar().hide(); //隱藏標題
         //設定變數 並在layout中找到相對應的東西
         //Log.e("OK","Hello Line 40");
@@ -50,7 +50,7 @@ public class Personal_data extends AppCompatActivity {
 
                 final String gender_get = con.getData(Account,"gender_get");
                 Log.v("OK",gender_get);
-                
+
                 final String birthday_get = con.getData(Account,"birthday_get");
 
 

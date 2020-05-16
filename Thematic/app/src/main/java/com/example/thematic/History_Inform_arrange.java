@@ -27,7 +27,7 @@ public class History_Inform_arrange extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         getSupportActionBar().hide(); //隱藏標題
 
-        setContentView(R.layout.activity_user_history_inform_arrange);
+        setContentView(R.layout.activity_history_inform_arrange);
         final TextView time_view = (TextView) findViewById(R.id.時間顯示);
         final TextView caregiver_view = (TextView) findViewById(R.id.照服員名稱);
         final TextView work_view = (TextView) findViewById(R.id.個人資料);

@@ -45,7 +45,7 @@
                 android:layout_marginTop="100dp"
                 android:layout_marginRight="30dp"
                 android:background="@drawable/menu_for_caregiver_shape_rectangle"
-                android:text="日排程報表查詢"
+                android:text="日排程資料查詢"
                 android:textSize="20sp" />
 
             <Button

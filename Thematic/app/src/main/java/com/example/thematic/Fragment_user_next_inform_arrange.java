@@ -99,7 +99,7 @@ public class Fragment_user_next_inform_arrange extends Fragment {
                 });
                 日期.post(new Runnable() {
                     public void run() {
-                        日期.setText("下次照服時間:"+data.get(4));
+                        日期.setText(""+data.get(4));
                     }
                 });
 

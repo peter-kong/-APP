@@ -8,21 +8,16 @@
     <fragment
         android:id="@+id/caregiver_menu"
         android:name="com.example.thematic.Fragment_caregiver_menu"
-        android:label="Fragment_caregiver_menu"
+        android:label="fragment_caregiver_menu"
         tools:layout="@layout/fragment_caregiver_menu"/>
-    <keep_state_fragment
-        android:id="@+id/normal_work_report"
-        android:name="com.example.thematic.Fragment_caregiver_normal_work_report"
-        android:label="fragment_caregiver_normal_work_report"
-        tools:layout="@layout/fragment_caregiver_normal_work_report" />
     <keep_state_fragment
         android:id="@+id/history_work_report"
         android:name="com.example.thematic.Fragment_caregiver_history_work_report"
         android:label="fragment_caregiver_history_work_report"
         tools:layout ="@layout/fragment_caregiver_history_work_report" />
     <keep_state_fragment
-        android:id="@+id/next_work_report"
-        android:name="com.example.thematic.Fragment_caregiver_next_work_report"
-        android:label="Fragment_caregiver_next_work_report"
-        tools:layout="@layout/fragment_caregiver_next_work_report"/>
+        android:id="@+id/normal_work_report_select"
+        android:name="com.example.thematic.Fragment_caregiver_normal_work_report_select"
+        android:label="fragment_caregiver_normal_work_report_select"
+        tools:layout="@layout/fragment_caregiver_normal_work_report_select"/>
 </navigation>
