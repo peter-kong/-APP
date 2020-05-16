@@ -36,7 +36,7 @@ public class Fragment_caregiver_normal_work_report_select extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View rootview = inflater.inflate(R.layout.fragment_caregiver_normal_work_report, container, false);
+        View rootview = inflater.inflate(R.layout.fragment_caregiver_normal_work_report_select, container, false);
         super.onCreate(savedInstanceState);
         NextpageBtn1 = (Button) rootview.findViewById(R.id.明日工作報表_care);
         NextpageBtn3 = (Button) rootview.findViewById(R.id.本日工作報表_care);
@@ -76,13 +76,34 @@ public class Fragment_caregiver_normal_work_report_select extends Fragment {
                         tmp2.setUID(con.getUserUID(照服員帳號,strDate));
                         tmp2.setName(con.getName(tmp2.returnUID()));
                         tmp.setTommorrowoToday(true);
-                        Intent intent = new Intent();
-                        intent.setClass(getActivity(), caregiver_next_work_report.class);
-                        startActivity(intent);
+                        if(tmp.returnUID().size() != 0) {
+                            Intent intent = new Intent();
+                            intent.setClass(getActivity(), caregiver_next_work_report.class);
+                            startActivity(intent);
+                        }
                         tmp2.println();
                         // Log.e("tmpreturn", tmp.returnUID().get(0).toString());
                     }
                 }).start();
+
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(tmp.returnUID().size() == 0) {
+                            new AlertDialog.Builder(getContext())
+                                    .setTitle("沒有個資喔!!")
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                        }
+                                    }).setNegativeButton("cancel", null).create()
+                                    .show();
+                        }
+                    }
+                }, 1200);
             }
         });
         NextpageBtn3.setOnClickListener(new View.OnClickListener() {
@@ -115,11 +136,30 @@ public class Fragment_caregiver_normal_work_report_select extends Fragment {
 
                         if(tmp.returnUID().size() != 0) {
                             Intent intent = new Intent();
-                            intent.setClass(getActivity(), caregiver_normal_work_report1.class);
+                            intent.setClass(getActivity(), caregiver_normal_work_report.class);
                             startActivity(intent);
                         }
+
                     }
                 }).start();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(tmp.returnUID().size() == 0) {
+                            new AlertDialog.Builder(getContext())
+                                    .setTitle("沒有個資喔!!")
+                                    .setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                        }
+                                    }).setNegativeButton("cancel", null).create()
+                                    .show();
+                        }
+                    }
+                }, 1200);
             }
         });
     }

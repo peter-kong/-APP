@@ -32,60 +32,83 @@
                 android:text="日工作內容查詢"
                 android:textSize="30sp" />
 
-            <EditText
-                android:id="@+id/輸入照服員ID"
-                android:layout_width="300dp"
-                android:layout_height="51dp"
-                android:layout_marginTop="100dp"
-                android:ems="10"
-                android:hint="請輸入照服員的ID"
-                android:inputType="textPersonName" />
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="80dp"
+                android:text="     請填入以下資料:"
+                android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/layout_background_for_manager"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/輸入照服員ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="輸入照服員ID"
+                    android:inputType="textPersonName"
+                    android:textSize="18sp" />
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/輸入需要時間"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="80dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/layout_background_for_manager"
+                android:gravity="center"
                 android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/空白區塊4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:textSize="36sp" />
 
                 <EditText
                     android:id="@+id/輸入月份"
-                    android:layout_width="59dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:textSize="36sp" />
+                    android:ems="5"
+                    android:gravity="center"
+                    android:hint="請輸入月份"
+                    android:inputType="number"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/月份"
-                    android:layout_width="36dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text="月"
-                    android:textSize="36sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/輸入日期"
-                    android:layout_width="61dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName"
-                    android:textSize="36sp" />
+                    android:layout_marginLeft="12dp"
+                    android:ems="5"
+                    android:gravity="center"
+                    android:hint="請輸入日期"
+                    android:inputType="number"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/日期"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:text="日"
-                    android:textSize="36sp" />
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
             </LinearLayout>
 
             <Button

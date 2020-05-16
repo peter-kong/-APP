@@ -33,7 +33,6 @@ public class Fragment_caregiver_menu extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootview =  inflater.inflate(R.layout.fragment_caregiver_menu, container, false);
-        super.onCreate(savedInstanceState);
         return rootview;
     }
 }

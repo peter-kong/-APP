@@ -25,95 +25,43 @@ public class Fragment_manager_caregiver_manage extends Fragment {
         // Required empty public constructor
     }
 
-    EditText ID;
-    EditText Month;
-    EditText Day;
-    Button searchBtn;
+
+    Button weekBtn;
+    Button dayBtn;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View rootview =  inflater.inflate(R.layout.fragment_manager_caregiver_manage, container, false);
         super.onCreate(savedInstanceState);
-        ID = (EditText)rootview.findViewById(R.id.輸入照服員ID);
-        Month = (EditText)rootview.findViewById(R.id.輸入月份);
-        Day = (EditText)rootview.findViewById(R.id.輸入日期);
-        searchBtn = (Button) rootview.findViewById(R.id.查詢);
-        DB(searchBtn);
+        Button weekBtn = (Button) rootview.findViewById(R.id.週工作報表查詢);
+        Button dayBtn = (Button) rootview.findViewById(R.id.日工作報表查詢);
+        DB(weekBtn,dayBtn);
         return rootview;
     }
 
-    private void DB(Button searchBtn)
+    private void DB(Button weekBtn,Button dayBtn)
     {
-        searchBtn.setOnClickListener(new View.OnClickListener(){
+        weekBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        String caregiverID;
-                        String inputMonth;
-                        String inputDay;
-                        if(ID.getText().toString().matches("")){
-                            caregiverID = "0";
-                        }
-                        else if(ID.getText().toString().matches(" ")){
-                            caregiverID = "0";
-                        }
-                        else {
-                            caregiverID = ID.getText().toString();
-                        }
-                        if(Month.getText().toString().matches("")){
-                            inputMonth = "0";
-                        }
-                        else if(Month.getText().toString().matches(" ")){
-                            inputMonth = "0";
-                        }
-                        else {
-                            inputMonth = Month.getText().toString();
-                        }
-                        if(Day.getText().toString().matches("")){
-                            inputDay = "0";
-                        }
-                        else if(Day.getText().toString().matches(" ")){
-                            inputDay = "0";
-                        }
-                        else {
-                            inputDay = Day.getText().toString();
-                        }
-
-                        String Date = new String();
-                        if(Integer.parseInt(inputMonth)<10){
-                            if(Integer.parseInt(inputDay)<10){
-                                Date = "0"+inputMonth+"0"+inputDay;
-                            }
-                            else if(Integer.parseInt(inputDay)>=10){
-                                Date = "0"+inputMonth+inputDay;
-                            }
-                        }
-                        else if(Integer.parseInt(inputMonth)>=10){
-                            if(Integer.parseInt(inputDay)<10){
-                                Date = inputMonth+"0"+inputDay;
-                            }
-                            else if(Integer.parseInt(inputDay)>=10){
-                                Date = inputMonth+inputDay;
-                            }
-                        }
-                        ArrayList data = new ArrayList();
-                        com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
-                        con.run();
-                        data = con.getschedule(Date,"我要caregiver工作時間",caregiverID);
-                        GlobalVariable_Account obj = (GlobalVariable_Account)getActivity().getApplicationContext();
-                        obj.setScheduletime(data,caregiverID,Date);
-
-                        Intent intent = new Intent();
-                        intent.setClass(getActivity(), manager_caregiver_manager_output.class);
-                        startActivity(intent);
-                    }
-                }).start();
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), manager_caregiver_manage_month_selected.class);
+                startActivity(intent);
             }
         });
+
+        dayBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setClass(getActivity(), manager_caregiver_manage_day_selected.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
 }
 
 

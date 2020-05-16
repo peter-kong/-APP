@@ -1,19 +1,11 @@
 package com.example.thematic;
 
+import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
-
-import android.os.Handler;
-import android.provider.Settings;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -31,60 +23,41 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class Fragment_caregiver_normal_work_report extends Fragment {
-
-
-    public Fragment_caregiver_normal_work_report() {
-        // Required empty public constructor
-    }
-
-    Spinner 個案名稱;
-    TextView 日期;
-    TextView workername;
-    TextView Timeview;
-    LinearLayout work;
-    Button Send;
-    TextView 備註;
-
+public class caregiver_normal_work_report extends AppCompatActivity
+{
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View rootview = inflater.inflate(R.layout.fragment_caregiver_normal_work_report, container, false);
+    protected void onCreate(Bundle savedInstanceState)
+    {
+        Log.e("Line 39","reminded");
         super.onCreate(savedInstanceState);
-        個案名稱 = (Spinner)rootview.findViewById(R.id.個案下拉選單);
-        日期 = (TextView)rootview.findViewById(R.id.個案日期);
-        workername = (TextView)rootview.findViewById(R.id.workername);
-        Timeview = (TextView)rootview.findViewById(R.id.Time);
-        work = (LinearLayout)rootview.findViewById(R.id.工作內容);
-        Send = (Button)rootview.findViewById(R.id.Send);
-        備註 = (TextView)rootview.findViewById(R.id.備註);
+        setContentView(R.layout.activity_caregiver_normal_work_report);
+        getSupportActionBar().hide(); //隱藏標題
 
-        GlobalVariable_Account tmp = (GlobalVariable_Account)getActivity().getApplicationContext();
-
-        if(tmp.returnName().size() == 0)
-            Log.e("FUCK YOU","Line 70");
-
-        for(int i = 0;i < tmp.returnName().size();i++)
-            Log.e("NameCheck",tmp.returnName().get(i).toString());
-
-        DB();
-        return rootview;
-    }
-
-    private  void DB() {
         Log.e("Line 46","remind");
+
+
+        final Spinner 個案名稱 = (Spinner)findViewById(R.id.個案下拉選單);
+
         Log.e("Line 51","remind");
-        GlobalVariable_Account t = (GlobalVariable_Account)getActivity().getApplicationContext();
+
+
+        GlobalVariable_Account t = (GlobalVariable_Account)getApplicationContext();
         String dat = t.returnScheduleDate();
         ArrayList name = t.returnName();
+        //ArrayList id = t.returnUID();
         ArrayList nameid = null;
 
-
+        /*
+        for(int i = 0;i < name.size();i++){
+            nameid.add(name.get(i).toString()+id.get(i).toString());
+            Log.e("nameid", nameid.get(i).toString());
+        }
+        */
+        /*
+        for(int i = 0;i < name.size();i++)
+            Log.e("name:",name.get(i).toString());
+        */
         ArrayList curuid = new ArrayList();
         curuid.add("No data");
 
@@ -95,11 +68,11 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
             Log.e("namestr",name.get(j).toString());
         }
 
-        ArrayAdapter datelist = new ArrayAdapter(getActivity().getApplicationContext(), R.layout.myspinner,namestr);
+        ArrayAdapter datelist = new ArrayAdapter(caregiver_normal_work_report.this, R.layout.myspinner,namestr);
         datelist.setDropDownViewResource(R.layout.myspinner);
         個案名稱.setAdapter(datelist);
 
-        GlobalVariable_Account judgetoday = (GlobalVariable_Account)getActivity().getApplicationContext();
+        GlobalVariable_Account judgetoday = (GlobalVariable_Account)getApplicationContext();
 
         //日期
         SimpleDateFormat sdFormat = new SimpleDateFormat("MMdd");
@@ -113,8 +86,13 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
         }
 
         String strDate= judgetoday.returnScheduleDate();
+        final TextView 日期 = (TextView)findViewById(R.id.個案日期);
         日期.setText(strDate);
 
+
+
+
+        //選取spinner
         個案名稱.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
@@ -127,7 +105,7 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
                     public void run() {
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                         con.run();
-                        GlobalVariable_Account obj = (GlobalVariable_Account)getActivity().getApplicationContext();
+                        GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
                         String caregiver帳號  = obj.returnAcc();
 
                         int i = 0;
@@ -143,9 +121,11 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
 
 
                         ArrayList data = con.getcaregiverworkcontent(caregiver帳號,
-                                obj.returnUID().get(i).toString(),strDate);
+                                    obj.returnUID().get(i).toString(),strDate);
                         //照服員名字,開始時間,結束時間
                         String Time = data.get(1).toString() + " - " +data.get(2).toString();
+                        final TextView workername = (TextView)findViewById(R.id.workername);
+                        final TextView Timeview = (TextView)findViewById(R.id.Time);
 
                         workername.post(new Runnable() {
                             public void run() {
@@ -158,6 +138,10 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
                                 Timeview.setText(Time);
                             }
                         });
+
+
+                        LinearLayout work = (LinearLayout)findViewById(R.id.工作內容);
+
                         //reset the Require
                         work.post(new Runnable() {
                             @Override
@@ -170,7 +154,9 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
 
                         String [] 工作 = data.get(3).toString().split("、");
                         //Log.e("工作一", 工作[0]);
-                        GlobalVariable_Account tmp = (GlobalVariable_Account)getActivity().getApplicationContext();
+
+                        GlobalVariable_Account tmp = (GlobalVariable_Account)getApplicationContext();
+
                         //裝True False
                         ArrayList 工作名 = new ArrayList();
                         ArrayList Finish = new ArrayList();
@@ -181,6 +167,7 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
                             //Log.e("tags",工作名.get(k).toString());
                         }
 
+
                         //辨識True False
                         CompoundButton.OnCheckedChangeListener checkBoxOnCheckedChange =
                                 new CompoundButton.OnCheckedChangeListener()
@@ -190,7 +177,7 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
                                     { //buttonView 為目前觸發此事件的 CheckBox, isChecked 為此 CheckBox 目前的選取狀態
                                         if(isChecked)//等於 buttonView.isChecked()
                                         {
-                                            Toast.makeText(getActivity().getApplicationContext(),buttonView.getText()+" 被選取", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(),buttonView.getText()+" 被選取", Toast.LENGTH_LONG).show();
                                             for(int k = 0;k < 工作名.size();k++) {
                                                 if (工作名.get(k).toString().equals(buttonView.getText())) {
                                                     Finish.set(k, "√");
@@ -201,7 +188,7 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
                                         }
                                         else
                                         {
-                                            Toast.makeText(getActivity().getApplicationContext(),buttonView.getText()+" 被取消", Toast.LENGTH_LONG).show();
+                                            Toast.makeText(getApplicationContext(),buttonView.getText()+" 被取消", Toast.LENGTH_LONG).show();
                                             for(int k = 0;k < 工作名.size();k++) {
                                                 if (工作名.get(k).toString().equals(buttonView.getText())) {
                                                     Finish.set(k, "False");
@@ -220,7 +207,7 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
                         for(int k = 0;k < 工作.length;k++){
 
                             Log.e("Line 122",工作[k]);
-                            CheckBox work1 = new CheckBox(getActivity().getApplicationContext());
+                            CheckBox work1 = new CheckBox(caregiver_normal_work_report.this);
                             work1.setTextSize(30);
                             work1.setText("             "+工作[k]);
                             work1.setOnCheckedChangeListener(checkBoxOnCheckedChange);
@@ -245,8 +232,9 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
 
 
 
-        GlobalVariable_Account test = (GlobalVariable_Account)getActivity().getApplicationContext();
+        GlobalVariable_Account test = (GlobalVariable_Account)getApplicationContext();
 
+        Button Send = (Button)findViewById(R.id.Send);
         Send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -256,6 +244,7 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
 
                         test.println();
 
+                        TextView 備註 = (TextView)findViewById(R.id.備註);
                         String meg = 備註.getText().toString();
 
 
@@ -275,7 +264,7 @@ public class Fragment_caregiver_normal_work_report extends Fragment {
                             Log.e("Data: ", curuid.get(0).toString() + test.returnFinish().get(0).toString());
 
                             Intent intent = new Intent();
-                            intent.setClass(getActivity(), Menu_for_caregiver.class);
+                            intent.setClass(caregiver_normal_work_report.this, Menu_for_caregiver.class);
                             startActivity(intent);
                         }
                     }

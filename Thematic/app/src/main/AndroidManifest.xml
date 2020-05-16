@@ -57,7 +57,7 @@
         <activity android:name=".manager_user_manage_day_selected"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".caregiver_normal_work_report1"
+        <activity android:name=".caregiver_normal_work_report"
             android:screenOrientation="portrait"/>
 
         <activity android:name=".Recent_Inform_arrange"
@@ -76,9 +76,6 @@
 
         <activity android:name=".SocketTest" />
 
-        <activity android:name=".Caregive_and_case"
-            android:screenOrientation="portrait"/>
-
         <activity android:name=".manager_people_use_search_month_read"
             android:screenOrientation="portrait"/>
 
@@ -86,9 +83,6 @@
             android:screenOrientation="portrait"/>
 
         <activity android:name=".Day_Condition"
-            android:screenOrientation="portrait"/>
-
-        <activity android:name=".Service_user_data"
             android:screenOrientation="portrait"/>
 
         <activity android:name=".manager_Work_report"

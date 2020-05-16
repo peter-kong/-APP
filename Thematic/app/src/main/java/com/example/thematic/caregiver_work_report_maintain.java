@@ -102,14 +102,14 @@ public class caregiver_work_report_maintain extends AppCompatActivity {
                             obj.setScheduleDate(Date);
                             Log.e("NAME","獲取資料成功"+Date);
                             Intent intent = new Intent();
-                            intent.setClass(caregiver_work_report_maintain.this, caregiver_normal_work_report1.class);
+                            intent.setClass(caregiver_work_report_maintain.this, caregiver_normal_work_report.class);
                             startActivity(intent);
                         } else {
                             obj.setUID(new ArrayList());
                             obj.setScheduleDate("無法維護");
                             obj.setName(new ArrayList());
                             Intent intent = new Intent();
-                            intent.setClass(caregiver_work_report_maintain.this, caregiver_normal_work_report1.class);
+                            intent.setClass(caregiver_work_report_maintain.this, caregiver_normal_work_report.class);
                             startActivity(intent);
                         }
 
