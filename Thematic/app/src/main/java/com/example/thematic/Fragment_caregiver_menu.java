@@ -54,7 +54,10 @@ public class Fragment_caregiver_menu extends Fragment {
                 Date date = new Date();
                 Calendar calendar = new GregorianCalendar();
                 calendar.setTime(date);
-                calendar.add(calendar.DATE, 1);
+
+                if ()
+                calendar.add(calendar.DATE, 1);//加一天
+
                 date = calendar.getTime();
                 String strDate = sdFormat.format(date);
                 Log.e("明日",strDate);
@@ -62,12 +65,23 @@ public class Fragment_caregiver_menu extends Fragment {
                 com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                 Log.e("strDateformenu",strDate);
 
+                Log.e("照服員帳號",照服員帳號);
+                Log.e("strDate",strDate);
+
                 tmp2.setUID(con.getUserUID(照服員帳號,strDate));
+
+
+
+                //Log.e("tmp2.returnUID()",tmp2.returnUID().get(0).toString());
+
+
                 tmp2.setName(con.getName(tmp2.returnUID()));
                 tmp.setTommorrowoToday(true);
                 tmp2.println();
                 // Log.e("tmpreturn", tmp.returnUID().get(0).toString());
             }
         }).start();
+
+
     }
 }

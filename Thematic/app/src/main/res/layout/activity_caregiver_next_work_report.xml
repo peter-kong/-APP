@@ -30,8 +30,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="49sp"
-                android:layout_marginLeft="70dp"
+                android:layout_height="45sp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -39,6 +38,7 @@
                     android:id="@+id/imageView15"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:layout_marginLeft="70dp"
                     android:layout_marginRight="10dp"
                     android:src="@drawable/calendar" />
 
@@ -57,6 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
+                    android:layout_marginRight="30dp"
                     android:gravity="center"
                     android:text="無資料"
                     android:textSize="30sp" />
@@ -65,9 +66,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="49dp"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="20dp"
+                android:layout_height="45dp"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -75,6 +74,7 @@
                     android:id="@+id/imageView2"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:layout_marginLeft="70dp"
                     android:layout_marginRight="10dp"
                     android:src="@mipmap/user" />
 
