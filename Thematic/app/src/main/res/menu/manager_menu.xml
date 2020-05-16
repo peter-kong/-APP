@@ -14,5 +14,5 @@
     <item
         android:id="@+id/user_search_Fragment"
         android:icon="@drawable/elderly_man"
-        android:title="個案資料查詢" />
+        android:title="個案管理" />
 </menu>

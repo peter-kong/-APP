@@ -4,10 +4,10 @@
         <item
             android:id="@id/normal_work_report_select"
             android:icon="@drawable/report"
-            android:title="今日/明日工作報表"/>
+            android:title="工作報表維護"/>
         <item
             android:id="@+id/history_work_report"
             android:icon="@drawable/report"
-            android:title="歷史工作報表" />
+            android:title="工作報表查詢" />
 
 </menu>
