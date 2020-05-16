@@ -24,7 +24,7 @@ app:startDestination="@id/User_menu">
     tools:layout="@layout/fragment_user_personal_data" />
     <fragment
         android:id="@+id/User_menu"
-        android:name="com.example.thematic.Fragment_User_menu"
+        android:name="com.example.thematic.Fragment_user_menu"
         android:label="Fragment_User_menu"
         tools:layout="@layout/fragment_user_menu"/>
 

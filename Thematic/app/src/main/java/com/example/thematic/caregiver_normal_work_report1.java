@@ -35,10 +35,7 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-
         Log.e("Line 39","reminded");
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caregiver_normal_work_report1);
         getSupportActionBar().hide(); //隱藏標題
@@ -276,11 +273,9 @@ public class caregiver_normal_work_report1 extends AppCompatActivity
                             intent.setClass(caregiver_normal_work_report1.this, Menu_for_caregiver.class);
                             startActivity(intent);
                         }
-
                     }
                 }).start();
             }
         });
-
     }
 }

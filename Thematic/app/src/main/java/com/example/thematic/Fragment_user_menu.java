@@ -17,9 +17,9 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Fragment_User_menu extends Fragment {
+public class Fragment_user_menu extends Fragment {
 
-    public Fragment_User_menu() {
+    public Fragment_user_menu() {
         // Required empty public constructor
     }
 

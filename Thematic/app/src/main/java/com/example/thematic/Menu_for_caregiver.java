@@ -49,7 +49,6 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         date = calendar.getTime();
                         String strDate = sdFormat.format(date);
                         Log.e("明日",strDate);
-
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                         Log.e("strDateformenu",strDate);
 
@@ -60,7 +59,6 @@ public class Menu_for_caregiver extends AppCompatActivity {
                         intent.setClass(Menu_for_caregiver.this, caregiver_work_report_maintain.class);
                         startActivity(intent);
                         tmp2.println();
-                       // Log.e("tmpreturn", tmp.returnUID().get(0).toString());
                     }
                 }).start();
 /*
@@ -86,15 +84,14 @@ public class Menu_for_caregiver extends AppCompatActivity {
 
             }
         });
-
-        Button NextpageBtn3 = (Button) findViewById(R.id.本日工作報表_care);
-        NextpageBtn3.setOnClickListener(new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View v) {
-                                                Intent intent = new Intent();
-                                                intent.setClass(Menu_for_caregiver.this, caregiver_work_report_search.class);
-                                                startActivity(intent);
-                                            }
-                                        });
-            }
+            Button NextpageBtn3 = (Button) findViewById(R.id.本日工作報表_care);
+            NextpageBtn3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent();
+                    intent.setClass(Menu_for_caregiver.this, caregiver_work_report_search.class);
+                    startActivity(intent);
+                }
+            });
+        }
     }

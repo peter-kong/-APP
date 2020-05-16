@@ -2,13 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
         <item
-            android:id="@+id/normal_work_report"
+            android:id="@id/normal_work_report_select"
             android:icon="@drawable/report"
-            android:title="本日工作報表" />
-        <item
-            android:id="@id/next_work_report"
-            android:icon="@drawable/report"
-            android:title="明日工作報表"/>
+            android:title="今日/明日工作報表"/>
         <item
             android:id="@+id/history_work_report"
             android:icon="@drawable/report"
