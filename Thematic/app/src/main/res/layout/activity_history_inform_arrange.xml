@@ -41,7 +41,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/日期4"
+                android:id="@+id/日期"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
@@ -49,7 +49,7 @@
                 android:textSize="30dp" />
 
             <Spinner
-                android:id="@+id/日期下拉選單3"
+                android:id="@+id/日期下拉選單"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
@@ -58,7 +58,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/時間4"
+                android:id="@+id/時間"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
@@ -66,7 +66,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/時間顯示4"
+                android:id="@+id/時間顯示"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -74,7 +74,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/照服員4"
+                android:id="@+id/照服員"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
@@ -82,14 +82,14 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/照服員名稱4"
+                android:id="@+id/照服員名稱"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/照服內容4"
+                android:id="@+id/照服內容"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"

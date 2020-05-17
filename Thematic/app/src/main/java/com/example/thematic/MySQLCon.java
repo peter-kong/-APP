@@ -396,14 +396,17 @@ public class MySQLCon {
                         }
                         data.set(3,rs.getString("LastTime"));
                         String caregiverID = "" + get資料(Date,帳號,rs.getString("FirstTime"),"CID");
+                        Log.e("目前carenumer",caregiverID);
                         if(CID_List.contains(caregiverID)){
                             String request = "" + getrequest(Date, rs.getString("FirstTime"), 帳號);
+                            //Log.e("request",request);
                             data.set(5,data.get(5)+request+"、");
                         }
                         else {
                             data.set(4, data.get(4) + getData(caregiverID, "我要caregiver名字") + "-");
                             data.set(5,data.get(5)+getData(caregiverID, "我要caregiver名字")+"\n");
                             String request = "" + getrequest(Date, rs.getString("FirstTime"), 帳號);
+                            Log.e("Re2",request);
                             data.set(5,data.get(5)+request+"、");
                             CID_List.add(caregiverID);
                         }

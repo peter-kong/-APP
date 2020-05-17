@@ -41,7 +41,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/時間2"
+                android:id="@+id/時間"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
@@ -49,7 +49,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/時間顯示2"
+                android:id="@+id/時間顯示"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -57,7 +57,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/照服員2"
+                android:id="@+id/照服員"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
@@ -65,14 +65,14 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/照服員名稱2"
+                android:id="@+id/照服員名稱"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/照服內容2"
+                android:id="@+id/照服內容"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
@@ -103,6 +103,22 @@
                     android:textSize="24sp" />
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/備註"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="備註"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/備註顯示"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30sp" />
+
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

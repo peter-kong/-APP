@@ -21,6 +21,7 @@ public class Recent_Inform_arrange extends AppCompatActivity {
         final TextView work_view = (TextView) findViewById(R.id.個人資料);
         final TextView 完成度 = (TextView)findViewById(R.id.完成度);
         final TextView 日期 = (TextView)findViewById(R.id.最近照服時間);
+        final TextView 備註 = (TextView)findViewById(R.id.備註顯示);
 
         new Thread(new Runnable() {
             @Override
@@ -38,9 +39,10 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                 ArrayList data = con.getschedule(Date, "我要排程工作內容", UID);
                 if (data.size() == 0) {
                     for (int i = 0; i < 5; i++) {
-                        data.add("無資料");
+                        data.add("");
                     }
                 }
+                //data.add(data.get(0).toString().subSequence(0,));
                 Log.e("獲取結果",data.get(0)+","+data.get(1)+","+data.get(2)+","+data.get(3)+","+data.get(4));
                 time_view.post(new Runnable() {
                     public void run() {
@@ -56,7 +58,7 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                 work_view.post(new Runnable() {
                     public void run() {
                         String work;
-                        work = "" + data.get(5);
+                        work = "" + data.get(4);
                         work = work.replace("-", "\n");
                         work_view.setText(work);
                     }
@@ -65,15 +67,19 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                 完成度.post(new Runnable() {
                     public void run() {
                         String work;
-                        work = "" + data.get(0);
+                        work = "" + data.get(1);
                         work = work.replace("、", "\n");
                         完成度.setText(work);
                     }
                 });
                 日期.post(new Runnable() {
                     public void run() {
-                        日期.setText("照服時間:" + data.get(1));
+                        日期.setText("照服時間:" + Date);
                     }
+                });
+
+                備註.post(new Runnable() {
+                    public void run() {備註.setText(""+data.get(0));}
                 });
             }
         }).start();
