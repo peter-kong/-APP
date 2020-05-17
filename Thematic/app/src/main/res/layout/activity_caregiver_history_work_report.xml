@@ -200,10 +200,10 @@
 
                 <TextView
                     android:id="@+id/服務內容"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
+                    android:layout_width="384dp"
+                    android:layout_height="72dp"
                     android:layout_marginLeft="25dp"
-                    android:gravity="left"
+                    android:gravity="left|center_vertical"
                     android:textSize="24sp"
                     app:autoSizeTextType="uniform" />
 

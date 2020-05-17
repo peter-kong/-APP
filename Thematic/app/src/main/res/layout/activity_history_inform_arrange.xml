@@ -9,30 +9,19 @@
     tools:context=".Next_Inform_arrange">
 
     <ScrollView
-        android:layout_width="414dp"
-        android:layout_height="851dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginStart="42dp"
-            android:layout_marginLeft="42dp"
-            android:layout_marginTop="100dp"
-            android:layout_marginEnd="42dp"
-            android:layout_marginRight="42dp"
-            android:background="#ECE8E8"
+            android:layout_height="wrap_content"
+            android:background="#DADCDF"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#779BC2DD"
+                android:layout_height="60dp"
+                android:background="#80D8978E"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -52,7 +41,7 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/日期"
+                android:id="@+id/日期4"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
@@ -60,7 +49,7 @@
                 android:textSize="30dp" />
 
             <Spinner
-                android:id="@+id/日期下拉選單"
+                android:id="@+id/日期下拉選單3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
@@ -69,7 +58,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/時間"
+                android:id="@+id/時間4"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
@@ -77,7 +66,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/時間顯示"
+                android:id="@+id/時間顯示4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
@@ -85,7 +74,7 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/照服員"
+                android:id="@+id/照服員4"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
@@ -93,29 +82,45 @@
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/照服員名稱"
+                android:id="@+id/照服員名稱4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:textSize="30sp" />
 
             <TextView
-                android:id="@+id/照服內容"
+                android:id="@+id/照服內容4"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:gravity="center_vertical"
                 android:text="@string/照護內容"
                 android:textSize="30sp" />
 
-            <TextView
-                android:id="@+id/個人資料"
+            <LinearLayout
+                android:id="@+id/工作內容"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:lineSpacingMultiplier="1.0"
-                android:textSize="30sp" />
+                android:layout_height="match_parent"
+                android:gravity="right|center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/個人資料"
+                    android:layout_width="match_parent"
+                    android:layout_height="72dp"
+                    android:layout_marginLeft="25dp"
+                    android:gravity="left|center_vertical"
+                    android:textSize="24sp"
+                    app:autoSizeTextType="uniform" />
+
+                <TextView
+                    android:id="@+id/完成度"
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:textSize="24sp" />
+
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
