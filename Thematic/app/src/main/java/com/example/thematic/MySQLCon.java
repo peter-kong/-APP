@@ -554,7 +554,11 @@ public class MySQLCon {
                 else {
                     Log.e("檢查的日期,現在的日期", DbDate + "," + IntDate);
                     if (CheckDate < IntDate) {
-                        data.add(DbDate);
+                        if(data.contains(DbDate)) {
+                        }
+                        else{
+                            data.add(DbDate);
+                        }
                     }
                 }
             }
