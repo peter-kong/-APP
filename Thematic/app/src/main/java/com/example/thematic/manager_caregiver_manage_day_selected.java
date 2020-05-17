@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -80,10 +81,15 @@ public class manager_caregiver_manage_day_selected extends AppCompatActivity {
                         ArrayList data = new ArrayList();
                         com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
                         con.run();
-                        data = con.getschedule(Date,"我要caregiver工作時間",caregiverID);
-                        GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
-                        obj.setScheduletime(data,caregiverID,Date);
 
+                        GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
+                        ArrayList UID = con.GetUserUID_List(caregiverID , Date, "我要caregiver當日的UID");
+                        ArrayList Name = con.GetName_List(UID);
+                        Log.e("數量",UID.size()+"");
+                        obj.setAccount(caregiverID);
+                        obj.setUID(UID);
+                        obj.setName(Name);
+                        obj.setScheduleDate(Date);
                         Intent intent = new Intent();
                         intent.setClass(manager_caregiver_manage_day_selected.this, manager_caregiver_manager_output.class);
                         startActivity(intent);
