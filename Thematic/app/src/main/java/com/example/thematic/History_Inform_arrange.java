@@ -32,6 +32,7 @@ public class History_Inform_arrange extends AppCompatActivity {
         final TextView caregiver_view = (TextView) findViewById(R.id.照服員名稱);
         final TextView work_view = (TextView) findViewById(R.id.個人資料);
         final TextView 日期 = (TextView) findViewById(R.id.歷史照服時間);
+        final TextView 完成度 = (TextView)findViewById(R.id.完成度);
         final Spinner 日期下拉選單 = (Spinner) findViewById(R.id.日期下拉選單);
         //取全域的歷史日期的資料
         GlobalVariable_Account obj1 = (GlobalVariable_Account) getApplicationContext();
@@ -58,7 +59,7 @@ public class History_Inform_arrange extends AppCompatActivity {
                         GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
                         String user帳號  = obj.returnAcc();
                         String UID = con.get_ID(user帳號,"我要userID");
-                        ArrayList data = con.getschedule(chooseDate,"我要歷史工作內容",UID);
+                        ArrayList data = con.getschedule(chooseDate, "我要排程工作內容", UID);
                         if(data.size() == 0) {
                             for (int i = 0; i < 5; i++) {
                                 data.add("無資料");
@@ -66,21 +67,30 @@ public class History_Inform_arrange extends AppCompatActivity {
                         }
                         time_view.post(new Runnable() {
                             public void run() {
-                                time_view.setText(""+data.get(0)+"~"+data.get(1));
+                                time_view.setText(""+data.get(2)+"~"+data.get(3));
                             }
                         });
                         caregiver_view.post(new Runnable() {
                             public void run() {
-                                caregiver_view.setText(""+data.get(2));
+                                caregiver_view.setText(""+data.get(4));
                             }
                         });
 
                         work_view.post(new Runnable() {
                             public void run() {
                                 String work;
-                                work = ""+data.get(3);
-                                work = work.replace("、","\n");
+                                work = ""+data.get(5);
+                                work = work.replace("-","\n");
                                 work_view.setText(work);
+                            }
+                        });
+
+                        完成度.post(new Runnable() {
+                            public void run() {
+                                String work;
+                                work = "" + data.get(1);
+                                work = work.replace("、", "\n");
+                                完成度.setText(work);
                             }
                         });
                         日期.post(new Runnable() {
