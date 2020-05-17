@@ -341,7 +341,8 @@ public class MySQLCon {
                 sql = "SELECT * FROM `schedule_request` WHERE `UID` = " + "\"" + 帳號 + "\"";
             }  else if (需求.equals("我要下次工作內容")){
                 sql = "SELECT * FROM `schedule_request` WHERE `UID` = " + "\"" + 帳號 + "\"";
-            } else
+            }
+            else
             {
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `UID` = " + "\"" + 帳號 + "\"";
             }
@@ -494,6 +495,50 @@ public class MySQLCon {
             Log.e("DB", e.toString());
         }
         return data;
+    }
+
+    public ArrayList getschedule_day(String Date,String 需求, String userID, String CID){
+        ArrayList data = new ArrayList();
+
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            if (需求.equals("我要日工作內容")){
+                sql = "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + CID + "\"";
+            }
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                String db_date = rs.getString("Date");
+                String UID = rs.getString("UID");
+                if(db_date.equals(Date)) {
+                    if (需求.equals("我要日工作內容")) {
+                        if (data.size() == 0) {
+                            for (int i = 0; i < 6; i++) {
+                                data.add("");
+                            }
+                        }
+                        if(UID.equals(userID)) {
+                            data.set(0, data.get(0) + rs.getString("備註")); //備註
+                            data.set(1, data.get(1) + rs.getString("Finish") + "、"); //完成度
+                            if (data.get(2).equals("")) {
+                                data.set(2, rs.getString("FirstTime"));
+                            }
+                            data.set(3, rs.getString("LastTime"));
+                            String caregiverID = "" + rs.getString("CID");
+                            data.set(4, getData(caregiverID, "我要caregiver名字"));
+                            String request = getrequest(Date, rs.getString("FirstTime"), userID);
+                            Log.e("request", request);
+                            data.set(5, data.get(5) + request + "-");
+                        }
+
+                    }
+                }
+            }
+        }
+        catch(SQLException e){
+
+        }
+    return data;
     }
     public String getrequest(String Date,String firsttime,String 帳號){
         String data = new String();
