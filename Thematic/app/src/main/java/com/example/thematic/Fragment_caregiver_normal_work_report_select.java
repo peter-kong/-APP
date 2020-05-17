@@ -113,7 +113,7 @@ public class Fragment_caregiver_normal_work_report_select extends Fragment {
                         String 帳號 = obj.returnAcc();
                         Log.e("now",""+now);
                         int check = 0;
-/*
+
                         前五次日期 = con.get_recent_date(now, "我要前五次的日期",帳號);
 
                         Log.e("123",前五次日期.get(0)+","+前五次日期.get(1)+","+前五次日期.get(2)+","+前五次日期.get(3));
@@ -124,7 +124,7 @@ public class Fragment_caregiver_normal_work_report_select extends Fragment {
                             }
                         }
                         Log.e("前五次日期數量",""+前五次日期.size()+","+check);
-*/
+
                         if (check == 1) {
                             String id = con.get_ID(帳號,"我要caregiverID");
                             ArrayList UID = con.GetUserUID_List(id,Date, "我要caregiver當日的UID");
