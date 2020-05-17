@@ -62,7 +62,7 @@
                     android:id="@+id/帳號"
                     style="@style/Base.Widget.MaterialComponents.TextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:gravity="center"
                     android:text="帳號:"
@@ -75,7 +75,8 @@
                     android:layout_height="wrap_content"
                     android:gravity="right"
                     android:text="無資料"
-                    android:textSize="24sp" />
+                    android:textSize="22sp"
+                    app:autoSizeTextType="uniform" />
 
             </LinearLayout>
 
@@ -90,7 +91,7 @@
                     android:id="@+id/姓名"
                     style="@style/Base.Widget.MaterialComponents.TextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:gravity="center"
                     android:text="姓名:"
@@ -102,7 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:textSize="24sp" />
+                    android:textSize="22sp" />
 
             </LinearLayout>
 
@@ -117,7 +118,7 @@
                     android:id="@+id/性別"
                     style="@style/Base.Widget.MaterialComponents.TextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:gravity="center"
                     android:text="性別:"
@@ -129,7 +130,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:textSize="24sp" />
+                    android:textSize="22sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -143,7 +144,7 @@
                     android:id="@+id/生日"
                     style="@style/Base.Widget.MaterialComponents.TextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:gravity="center"
                     android:text="生日:"
@@ -155,7 +156,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:textSize="24sp" />
+                    android:textSize="22sp" />
 
             </LinearLayout>
 
@@ -170,7 +171,7 @@
                     android:id="@+id/失能等級"
                     style="@style/Base.Widget.MaterialComponents.TextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:gravity="center"
                     android:text="失能等級:"
@@ -182,7 +183,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:textSize="24sp" />
+                    android:textSize="22sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -196,7 +197,7 @@
                     android:id="@+id/連絡電話"
                     style="@style/Base.Widget.MaterialComponents.TextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:gravity="center"
                     android:text="手機:"
@@ -208,7 +209,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:textSize="24sp" />
+                    android:textSize="22sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -222,7 +223,7 @@
                     android:id="@+id/身分證字號"
                     style="@style/Base.Widget.MaterialComponents.TextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:gravity="center"
                     android:text="身分證字號:"
@@ -234,7 +235,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:textSize="24sp" />
+                    android:textSize="22sp" />
             </LinearLayout>
 
 
@@ -249,7 +250,7 @@
                     android:id="@+id/住址"
                     style="@style/Base.Widget.MaterialComponents.TextView"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:gravity="center"
                     android:text="住址:"
@@ -261,7 +262,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     app:autoSizeTextType="uniform" />
 
             </LinearLayout>

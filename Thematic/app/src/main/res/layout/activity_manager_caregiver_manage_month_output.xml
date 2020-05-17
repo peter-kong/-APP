@@ -124,6 +124,16 @@
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ACACD8"
+                android:gravity="center|center_vertical"
+                android:text="時間與照服員"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -173,6 +183,16 @@
                     android:layout_marginLeft="10dp"
                     android:textSize="24sp" />
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ACACD8"
+                android:gravity="center|center_vertical"
+                android:text="服務內容"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:id="@+id/工作內容"

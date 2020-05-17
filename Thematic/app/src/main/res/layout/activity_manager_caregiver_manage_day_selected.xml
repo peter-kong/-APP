@@ -57,7 +57,7 @@
                     android:layout_marginRight="5dp"
                     android:ems="10"
                     android:gravity="center"
-                    android:hint="輸入照服員ID"
+                    android:hint="輸入照服員ID,"
                     android:inputType="textPersonName"
                     android:textSize="18sp" />
             </LinearLayout>
