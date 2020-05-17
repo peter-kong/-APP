@@ -32,13 +32,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="20dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/區間欄"
                     android:layout_width="146dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:layout_marginRight="25dp"
                     android:gravity="center"
                     android:text="區間"
                     android:textSize="25sp" />
@@ -47,7 +48,6 @@
                     android:id="@+id/使用人數總人數"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:gravity="center"
                     android:text="使用人數/總人數"
                     android:textSize="25sp" />
@@ -57,6 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#ECE8E8"
+                android:gravity="center"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -67,17 +68,17 @@
                     <TextView
                         android:id="@+id/區間一"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="08:00~08:30"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間一人數"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -92,16 +93,16 @@
                         android:id="@+id/區間二"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="08:30~09:00"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間二人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -116,16 +117,16 @@
                         android:id="@+id/區間三"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="09:00~09:30"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間三人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -140,16 +141,16 @@
                         android:id="@+id/區間四"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="09:30~10:00"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間四人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -164,16 +165,16 @@
                         android:id="@+id/區間五"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="10:00~10:30"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間五人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -188,16 +189,16 @@
                         android:id="@+id/區間六"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="10:30~11:00"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間六人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -212,16 +213,16 @@
                         android:id="@+id/區間七"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="11:00~11:30"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間七人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -236,16 +237,16 @@
                         android:id="@+id/區間八"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="11:30~12:00"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間八人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -260,16 +261,16 @@
                         android:id="@+id/區間九"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="12:00~12:30"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間九人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -284,16 +285,16 @@
                         android:id="@+id/區間十"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="12:30~13:00"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間十人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -308,16 +309,16 @@
                         android:id="@+id/區間十一"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="13:00~13:30"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間十一人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -332,16 +333,16 @@
                         android:id="@+id/區間十二"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="13:30~14:00"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間十二人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -356,16 +357,16 @@
                         android:id="@+id/區間十三"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="14:00~14:30"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間十三人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -380,16 +381,16 @@
                         android:id="@+id/區間十四"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="14:30~15:00"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間十四人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -404,16 +405,16 @@
                         android:id="@+id/區間十五"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="15:00~15:30"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間十五人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -428,16 +429,16 @@
                         android:id="@+id/區間十六"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="15:30~16:00"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間十六人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -452,16 +453,16 @@
                         android:id="@+id/區間十七"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="16:00~16:30"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間十七人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />
@@ -476,16 +477,16 @@
                         android:id="@+id/區間十八"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="30dp"
                         android:gravity="center"
                         android:text="16:30~17:00"
                         android:textSize="25sp" />
 
                     <TextView
                         android:id="@+id/區間十八人數"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
                         android:gravity="center"
                         android:text="使用人數/總人數"
                         android:textSize="25sp" />

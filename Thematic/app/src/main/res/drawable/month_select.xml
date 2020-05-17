@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- 類型 -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="oval">
+    android:shape="rectangle">
     <!--漸層顏色-->
     <gradient
-        android:startColor="#B74283DB"
+        android:startColor="#B7629EE9"
         android:endColor="#BBB1FD"
         android:gradientRadius="200dp"
         android:type="radial" />
     <!--<solid android:color="#18506C" />-->
+    <!-- 設置圓角 -->
+    <corners android:radius="15dp" />
 
     <!-- 文字與邊框的間距 -->
     <padding
