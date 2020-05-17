@@ -35,7 +35,7 @@
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:text="日期:"
                 android:textSize="30sp" />
 
@@ -53,7 +53,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:text="時間:"
                     android:textSize="30sp" />
 
@@ -68,7 +68,7 @@
                 <TextView
                     android:id="@+id/使用者名稱"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:text="個案名稱:"
                     android:textSize="30sp" />
 
@@ -82,7 +82,7 @@
                 <TextView
                     android:id="@+id/服務內容欄位"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="50dp"
                     android:text="服務內容:"
                     android:textSize="30sp" />
 

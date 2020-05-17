@@ -196,7 +196,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
-                android:hint="如氣喘、骨折等，若皆無責填寫無"
+                android:hint="如氣喘、骨折等，若皆無則填寫無"
                 android:inputType="textPersonName"
                 android:singleLine="false"
                 android:textSize="24sp" />
