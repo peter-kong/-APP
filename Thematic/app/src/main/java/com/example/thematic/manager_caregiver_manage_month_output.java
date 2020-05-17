@@ -21,6 +21,7 @@ public class manager_caregiver_manage_month_output extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_manager_caregiver_manage_month_output);
+        getSupportActionBar().hide(); //隱藏標題
 
         final Spinner 日期spn = (Spinner)findViewById(R.id.日期下拉選單);
         final Spinner 個案spn = (Spinner)findViewById(R.id.個案下拉選單);

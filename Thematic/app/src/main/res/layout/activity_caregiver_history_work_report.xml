@@ -27,7 +27,7 @@
                 android:layout_height="60dp"
                 android:background="#80D8978E"
                 android:gravity="center"
-                android:text="歷史工作報表"
+                android:text="工作報表查詢"
                 android:textSize="30sp" />
 
             <LinearLayout
@@ -40,7 +40,7 @@
                     android:id="@+id/imageView15"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginLeft="70dp"
+                    android:layout_marginLeft="80dp"
                     android:layout_marginRight="10dp"
                     android:src="@drawable/calendar" />
 
@@ -76,7 +76,7 @@
                     android:id="@+id/imageView2"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
-                    android:layout_marginLeft="70dp"
+                    android:layout_marginLeft="80dp"
                     android:layout_marginRight="10dp"
                     android:src="@mipmap/user" />
 
@@ -118,15 +118,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="46dp"
                     android:gravity="center"
-                    android:text="工作內容與時間"
+                    android:text="內容"
                     android:textSize="30sp" />
 
             </LinearLayout>
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ACACD8"
+                android:gravity="center|center_vertical"
+                android:text="時間與照服員"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="70dp"
+                android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -134,6 +142,7 @@
                     android:id="@+id/textView6"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="80dp"
                     android:gravity="center"
                     android:text="時間 : "
                     android:textSize="24sp" />
@@ -152,8 +161,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginLeft="70dp"
+                android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
@@ -161,6 +169,7 @@
                     android:id="@+id/textView22"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:layout_marginLeft="80dp"
                     android:gravity="center"
                     android:text="照服員 : "
                     android:textSize="24sp" />
@@ -172,6 +181,15 @@
                     android:layout_marginLeft="10dp"
                     android:textSize="24sp" />
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ACACD8"
+                android:gravity="center|center_vertical"
+                android:text="服務內容"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:id="@+id/工作內容"
@@ -189,18 +207,20 @@
                         android:id="@+id/服務內容"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
                         android:layout_weight="1"
-                        android:gravity="center"
-                        android:textSize="36sp" />
+                        android:gravity="left"
+                        android:textSize="28sp" />
 
                     <TextView
                         android:id="@+id/完成度"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
                         android:layout_weight="1"
                         android:gravity="right"
                         android:lineSpacingMultiplier="1.2"
-                        android:textSize="36sp" />
+                        android:textSize="28sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -235,7 +255,7 @@
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:gravity="center"
-                android:textSize="36sp" />
+                android:textSize="30sp" />
 
         </LinearLayout>
     </ScrollView>

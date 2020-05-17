@@ -18,6 +18,7 @@ public class caregiver_work_report_maintain extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caregiver_work_report_maintain);
+        getSupportActionBar().hide(); //隱藏標題
 
 
         final TextView 月份 = (TextView) findViewById(R.id.輸入月份);

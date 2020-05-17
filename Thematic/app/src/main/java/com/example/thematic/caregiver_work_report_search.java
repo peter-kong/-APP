@@ -20,6 +20,9 @@ public class caregiver_work_report_search extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caregiver_work_report_search);
+        getSupportActionBar().hide(); //隱藏標題
+
+
 
         final TextView 月份 = (TextView) findViewById(R.id.輸入月份);
         final TextView 日期 = (TextView) findViewById(R.id.輸入日期);

@@ -33,15 +33,29 @@
                 android:text="日工作內容查詢"
                 android:textSize="30sp" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="日期:"
+                android:textSize="30sp" />
+
             <Spinner
                 android:id="@+id/當日時間下拉選單"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="時間:"
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/時間顯示"
@@ -54,7 +68,7 @@
                 <TextView
                     android:id="@+id/使用者名稱"
                     android:layout_width="match_parent"
-                    android:layout_height="43dp"
+                    android:layout_height="wrap_content"
                     android:text="個案名稱:"
                     android:textSize="30sp" />
 
@@ -68,7 +82,7 @@
                 <TextView
                     android:id="@+id/服務內容欄位"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="wrap_content"
                     android:text="服務內容:"
                     android:textSize="30sp" />
 
@@ -83,4 +97,5 @@
 
         </LinearLayout>
     </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

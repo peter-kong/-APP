@@ -88,8 +88,9 @@ public class Fragment_caregiver_history_work_report extends Fragment {
                         }
                         GlobalVariable_Account obj = (GlobalVariable_Account) getActivity().getApplicationContext();
                         String 帳號 = obj.returnAcc();
-                        ArrayList UID = con.getworkreport_UID(Date, "我要caregiver當日的UID",帳號);
-                        ArrayList Name = con.getName(UID);
+                        String id = con.get_ID(帳號,"我要caregiverID");
+                        ArrayList UID = con.GetUserUID_List(id,Date, "我要caregiver當日的UID");
+                        ArrayList Name = con.GetName_List(UID);
                         obj.setUID(UID);
                         obj.setName(Name);
                         obj.setScheduleDate(Date);

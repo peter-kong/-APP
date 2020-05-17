@@ -22,6 +22,8 @@ public class Dynamic_button extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+
         ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
         LinearLayout lineLayout = new LinearLayout(this);
         lineLayout.setOrientation(LinearLayout.VERTICAL);

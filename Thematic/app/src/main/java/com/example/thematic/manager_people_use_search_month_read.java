@@ -116,8 +116,8 @@ public class manager_people_use_search_month_read extends AppCompatActivity {
         //spinner添加月份的週數量選項
         Log.e("117","117");
         final Spinner spnWeek = (Spinner)findViewById(R.id.週);
-        ArrayAdapter adapWeekList = new ArrayAdapter(manager_people_use_search_month_read.this, android.R.layout.simple_spinner_item, week  );
-        adapWeekList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter adapWeekList = new ArrayAdapter(manager_people_use_search_month_read.this, R.layout.myspinner, week  );
+        adapWeekList.setDropDownViewResource(R.layout.myspinner);
         spnWeek.setAdapter(adapWeekList);
 
         spnWeek.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {

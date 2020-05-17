@@ -4,9 +4,9 @@
     android:shape="oval">
     <!--漸層顏色-->
     <gradient
-        android:startColor="#D6A9BEF5"
-        android:endColor="#D64484B4"
-        android:gradientRadius="150dp"
+        android:startColor="#B74283DB"
+        android:endColor="#BBB1FD"
+        android:gradientRadius="200dp"
         android:type="radial" />
     <!--<solid android:color="#18506C" />-->
 

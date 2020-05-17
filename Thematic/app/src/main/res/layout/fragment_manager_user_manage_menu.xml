@@ -35,7 +35,7 @@
                 android:layout_marginRight="30dp"
                 android:background="@drawable/menu_for_caregiver_shape_rectangle"
                 android:text="月排程資料查詢"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/日工作報表查詢"
@@ -46,7 +46,7 @@
                 android:layout_marginRight="30dp"
                 android:background="@drawable/menu_for_caregiver_shape_rectangle"
                 android:text="日排程資料查詢"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
 
             <Button
                 android:id="@+id/個案資料查詢"
@@ -57,7 +57,7 @@
                 android:layout_marginRight="30dp"
                 android:background="@drawable/menu_for_caregiver_shape_rectangle"
                 android:text="個案資料查詢"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

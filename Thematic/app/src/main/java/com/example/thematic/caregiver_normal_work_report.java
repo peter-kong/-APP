@@ -218,7 +218,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
                             Log.e("Line 122",工作[k]);
                             CheckBox work1 = new CheckBox(caregiver_normal_work_report.this);
                             work1.setTextSize(30);
-                            work1.setText("             "+工作[k]);
+                            work1.setText(工作[k]);
                             work1.setOnCheckedChangeListener(checkBoxOnCheckedChange);
 
                             work.post(new Runnable() {

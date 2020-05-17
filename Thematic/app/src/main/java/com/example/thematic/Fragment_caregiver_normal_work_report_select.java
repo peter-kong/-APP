@@ -112,9 +112,10 @@ public class Fragment_caregiver_normal_work_report_select extends Fragment {
                         GlobalVariable_Account obj = (GlobalVariable_Account) getActivity().getApplicationContext();
                         String 帳號 = obj.returnAcc();
                         Log.e("now",""+now);
-
-                        前五次日期 = con.get_recent_date(now, "我要前五次的日期",帳號);
                         int check = 0;
+/*
+                        前五次日期 = con.get_recent_date(now, "我要前五次的日期",帳號);
+
                         Log.e("123",前五次日期.get(0)+","+前五次日期.get(1)+","+前五次日期.get(2)+","+前五次日期.get(3));
                         for (int i = 0; i < 前五次日期.size(); i++) {
                             if (Date.equals("" + 前五次日期.get(i))) {
@@ -123,10 +124,11 @@ public class Fragment_caregiver_normal_work_report_select extends Fragment {
                             }
                         }
                         Log.e("前五次日期數量",""+前五次日期.size()+","+check);
-
+*/
                         if (check == 1) {
-                            ArrayList UID = con.getworkreport_UID(Date, "我要caregiver當日的UID", 帳號);
-                            ArrayList Name = con.getName(UID);
+                            String id = con.get_ID(帳號,"我要caregiverID");
+                            ArrayList UID = con.GetUserUID_List(id,Date, "我要caregiver當日的UID");
+                            ArrayList Name = con.GetName_List(UID);
                             obj.setUID(UID);
                             obj.setName(Name);
                             obj.setScheduleDate(Date);
@@ -135,6 +137,7 @@ public class Fragment_caregiver_normal_work_report_select extends Fragment {
                             intent.setClass(getActivity(), caregiver_normal_work_report.class);
                             startActivity(intent);
                         } else {
+                            Log.e("沒有資料","");
                             obj.setUID(new ArrayList());
                             obj.setScheduleDate("無法維護");
                             obj.setName(new ArrayList());
