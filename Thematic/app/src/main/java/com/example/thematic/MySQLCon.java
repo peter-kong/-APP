@@ -337,6 +337,8 @@ public class MySQLCon {
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `CID` = " + "\"" + 帳號 + "\"";
             } else if(需求.equals("我要排程工作內容")) {
                 sql = "SELECT * FROM `schedule_request` WHERE `UID` = " + "\"" + 帳號 + "\"";
+            } else if (需求.equals("我要歷史工作內容")){
+                sql = "SELECT * FROM `schedule_request` WHERE `UID` = " + "\"" + 帳號 + "\"";
             } else
             {
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `UID` = " + "\"" + 帳號 + "\"";
@@ -382,10 +384,11 @@ public class MySQLCon {
                         }
                     }
                     if (rs.getString("Date").equals(Date)) {
-                        String 備註 = get資料(Date,rs.getString("FirstTime"),帳號,"備註");
+                        String 備註 = ""+get資料(Date,帳號,rs.getString("FirstTime"),"備註");
                         data.set(0,data.get(0)+備註+"\n");
-                        String Finish = get資料(Date,rs.getString("FirstTime"),帳號,"Finish");
-                        data.set(1,data.get(1)+Finish+"\n");
+                        String Finish = ""+get資料(Date,帳號,rs.getString("FirstTime"),"Finish");
+                        Log.e("Finish是:",""+Finish);
+                        data.set(1,data.get(1)+Finish);
                         if(data.get(2).equals("")) {
                             data.set(2,rs.getString("FirstTime"));
                         }
@@ -393,13 +396,13 @@ public class MySQLCon {
                         String caregiverID = "" + get資料(Date,帳號,rs.getString("FirstTime"),"CID");
                         if(CID_List.contains(caregiverID)){
                             String request = "" + getrequest(Date, rs.getString("FirstTime"), 帳號);
-                            data.set(5,data.get(5)+request+"\n");
+                            data.set(5,data.get(5)+request+"、");
                         }
                         else {
                             data.set(4, data.get(4) + getData(caregiverID, "我要caregiver名字") + "-");
                             data.set(5,data.get(5)+getData(caregiverID, "我要caregiver名字")+"\n");
                             String request = "" + getrequest(Date, rs.getString("FirstTime"), 帳號);
-                            data.set(5,data.get(5)+request+"\n");
+                            data.set(5,data.get(5)+request+"、");
                             CID_List.add(caregiverID);
                         }
                         Log.e("OK", "資料讀取完成");
@@ -409,7 +412,7 @@ public class MySQLCon {
                     if (rs.getString("Date").equals(Date)) {
                         data.add(rs.getString("FirstTime"));
                         data.add(rs.getString("LastTime"));
-                        String caregiverID = "" + rs.getString("CID");
+                        String caregiverID = "" + get資料(Date,帳號,rs.getString("FirstTime"),"CID");
                         data.add(getData(caregiverID, "我要caregiver名字"));
                         String request = "" + getrequest(Date, rs.getString("FirstTime"), 帳號);
                         data.add(request);
@@ -466,12 +469,13 @@ public class MySQLCon {
             while(rs.next()){
                 if(rs.getString("Date").equals(Date) && rs.getString("FirstTime").equals(FirstTime)){
                     data = rs.getString(需求);
+                    Log.e("data:",""+data);
                 }
             }
         }
         catch(SQLException e){
             e.printStackTrace();
-            Log.e("DB", "獲取CID失敗");
+            Log.e("DB", "獲取資料失敗");
             Log.e("DB", e.toString());
         }
         return data;
@@ -563,7 +567,7 @@ public class MySQLCon {
 
             //使用UID進schedule取得對應的所有資料
             else {
-                sql1 = "SELECT * FROM `schedule` WHERE `UID` = " + "\"" + id + "\"";
+                sql1 = "SELECT * FROM `schedule_request` WHERE `UID` = " + "\"" + id + "\"";
             }
 
             Statement st1 = con.createStatement();
