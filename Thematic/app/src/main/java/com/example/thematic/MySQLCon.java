@@ -339,6 +339,8 @@ public class MySQLCon {
                 sql = "SELECT * FROM `schedule_request` WHERE `UID` = " + "\"" + 帳號 + "\"";
             } else if (需求.equals("我要歷史工作內容")){
                 sql = "SELECT * FROM `schedule_request` WHERE `UID` = " + "\"" + 帳號 + "\"";
+            }  else if (需求.equals("我要下次工作內容")){
+                sql = "SELECT * FROM `schedule_request` WHERE `UID` = " + "\"" + 帳號 + "\"";
             } else
             {
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `UID` = " + "\"" + 帳號 + "\"";
@@ -447,7 +449,17 @@ public class MySQLCon {
                 else {
                     rs = st.executeQuery(sql);
                     rs.next();
-                    GetUsertimeData(data, rs, answer_date, 帳號, "我要工作內容");
+                    while(rs.next()){
+                        if(answer_date.equals(rs.getString(Date))){
+                            data.add(rs.getString("FirstTime"));
+                            data.add(rs.getString("LastTime"));
+                            String caregiverID = "" + get資料(answer_date,帳號,rs.getString("FirstTime"),"CID");
+                            data.add(caregiverID);
+                            data.add(rs.getString("Request"));
+                            data.add(answer_date);
+                            break;
+                        }
+                    }
                 }
             }
 
