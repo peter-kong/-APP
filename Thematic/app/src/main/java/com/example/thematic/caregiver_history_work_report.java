@@ -62,10 +62,6 @@ public class caregiver_history_work_report extends AppCompatActivity {
                             String userID = "" + UID.get(chooseID_index);
                             String Date = obj1.returnScheduleDate();
                             ArrayList data = con.getschedule(Date, "我要排程工作內容", userID);
-                            Log.e("62", "" + data.size());
-                            Log.e("63", data.get(0) + "," + data.get(1) + "," + data.get(2) + "," + data.get(3) + "," + data.get(4) + "," +
-                                    data.get(5));
-
                             time_view.post(new Runnable() {
                                 public void run() {
                                     time_view.setText("" + data.get(2) + "~" + data.get(3));

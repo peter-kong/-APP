@@ -93,7 +93,7 @@ public class Fragment_user_next_inform_arrange extends Fragment {
                     public void run() {
                         String work;
                         work = ""+data.get(3);
-                        work = work.replace("、","\n");
+                        work = work.replace("-","\n");
                         work_view.setText(work);
                     }
                 });
