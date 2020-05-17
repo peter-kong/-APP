@@ -1047,27 +1047,38 @@ public class MySQLCon {
             while (rs.next()) {
                 String db_date = rs.getString("Date");
                 if(Integer.parseInt(db_date) <= Integer.parseInt(Date)){
-                    data_chase.add(db_date);
+                    if(data_chase.contains(db_date)){
+
+                    }
+                    else{
+                        data_chase.add(db_date);
+                    }
+
                 }
             }
             Log.e("data_chase",""+data_chase.size());
+
+            for(int i = 0 ; i < data_chase.size();i++){
+                Log.e("獲得的日期",data_chase.get(i)+"");
+            }
             for(int i = 0 ; i < data_chase.size() ; i ++){
-                for(int j = 1 ; j < data_chase.size() ; j++){
+                for(int j = 0 ; j < data_chase.size() ; j++){
                     String a = ""+data_chase.get(i);
                     String b = ""+data_chase.get(j);
-                    if(Integer.parseInt(a)> Integer.parseInt(b)){
+                    if(Integer.parseInt(a) < Integer.parseInt(b)){
+                        Log.e("交換",a+","+b);
                         String c = a;
-                        a = b ;
-                        b = c;
+                        data_chase.set(i,b) ;
+                        data_chase.set(j,c);
                     }
                 }
             }
+            for(int i = 0 ; i < data_chase.size();i++){
+                Log.e("獲得的日期",data_chase.get(i)+"");
+            }
 
-            for (int i = 0 ; i < data_chase.size() ; i ++){
+            for (int i = data_chase.size()-5 ; i < data_chase.size() ; i ++){
                 data.add(data_chase.get(i));
-                if(i == 4){
-                    break;
-                }
             }
 
             Log.e("DB_GetRecentDate","獲取資料成功");

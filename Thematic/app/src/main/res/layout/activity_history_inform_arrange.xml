@@ -9,8 +9,9 @@
     tools:context=".Next_Inform_arrange">
 
     <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_width="414dp"
+        android:layout_height="851dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -61,7 +62,9 @@
             <Spinner
                 android:id="@+id/日期下拉選單"
                 android:layout_width="match_parent"
-                android:layout_height="51dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:gravity="center_vertical"
                 android:textSize="30sp" />
 
@@ -111,13 +114,6 @@
                 android:gravity="center"
                 android:lineSpacingMultiplier="1.5"
                 android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/textView23"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="36sp" />
 
         </LinearLayout>
     </ScrollView>
