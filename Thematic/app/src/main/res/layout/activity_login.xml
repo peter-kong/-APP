@@ -62,18 +62,18 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="60dp"
+                android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
                 app:srcCompat="@drawable/mail" />
 
             <EditText
                 android:id="@+id/editText5"
-                android:layout_width="wrap_content"
+                android:layout_width="235dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="60dp"
-                android:ems="15"
+                android:ems="30"
                 android:hint="請輸入您的信箱"
                 android:inputType="textEmailAddress" />
 
@@ -92,18 +92,18 @@
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="60dp"
+                android:layout_width="50dp"
                 android:layout_height="30dp"
                 android:layout_marginLeft="20dp"
                 app:srcCompat="@drawable/lock" />
 
             <EditText
                 android:id="@+id/editText7"
-                android:layout_width="match_parent"
+                android:layout_width="235dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="60dp"
-                android:ems="15"
+                android:ems="30"
                 android:hint="請輸入您的密碼"
                 android:inputType="textPassword" />
         </LinearLayout>

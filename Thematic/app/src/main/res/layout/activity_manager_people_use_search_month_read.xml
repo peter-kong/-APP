@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="43dp"
                 android:text="選擇週數:"
-                android:textSize="30sp" />
+                android:textSize="24sp" />
 
             <Spinner
                 android:id="@+id/週"
@@ -76,6 +76,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="星期一"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -85,6 +86,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="星期二"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -94,6 +96,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="星期三"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -103,6 +106,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="星期四"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -112,6 +116,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="星期五"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                 </TableRow>
@@ -131,6 +136,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="8:00\n~\n8:30"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -183,6 +189,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="8:30\n~\n9:00"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -235,6 +242,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="9:00\n~\n9:30"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -287,6 +295,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="9:30\n~\n10:00"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -339,6 +348,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="10:00~\n10:30"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -391,6 +401,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="10:30~\n11:00"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -443,6 +454,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="11:00~\n11:30"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -495,6 +507,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="11:30~\n12:00"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -547,6 +560,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="12:00~\n12:30"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -599,6 +613,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="12:30~\n13:00"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -651,6 +666,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="13:00~\n13:30"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -703,6 +719,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="13:30~\n14:00"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -755,6 +772,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="14:00~\n14:30"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -807,6 +825,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="14:30~\n15:00"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -859,6 +878,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="15:00~\n15:30"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -911,6 +931,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="15:30~\n16:00"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -963,6 +984,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="16:00~\n16:30"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
@@ -1015,6 +1037,7 @@
                         android:background="@drawable/textview_border_for_schedule"
                         android:gravity="center"
                         android:text="16:30~\n17:00"
+                        android:textColor="#2F6FC7"
                         android:textSize="18sp" />
 
                     <TextView
