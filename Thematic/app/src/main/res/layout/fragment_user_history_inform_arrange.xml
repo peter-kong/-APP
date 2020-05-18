@@ -88,7 +88,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
-                android:text="時間顯示"
+                android:text="無資料"
                 android:textSize="30sp" />
 
             <TextView
@@ -108,7 +108,6 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:gravity="center"
-                android:text="照服員名字"
                 android:textSize="30sp" />
 
             <TextView
