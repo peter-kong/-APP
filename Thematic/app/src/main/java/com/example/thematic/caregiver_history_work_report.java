@@ -61,7 +61,7 @@ public class caregiver_history_work_report extends AppCompatActivity {
                             con.run();
                             String userID = "" + UID.get(chooseID_index);
                             String Date = obj1.returnScheduleDate();
-                            ArrayList data = con.getschedule(Date, "我要排程工作內容", userID);
+                            ArrayList data = con.getschedule_day_people(Date, "我要日工作內容", userID);
                             time_view.post(new Runnable() {
                                 public void run() {
                                     time_view.setText("" + data.get(2) + "~" + data.get(3));
@@ -78,7 +78,7 @@ public class caregiver_history_work_report extends AppCompatActivity {
                                 public void run() {
                                     String work;
                                     work = "" + data.get(5);
-                                    work = work.replace("、", "\n");
+                                    work = work.replace("-", "\n");
                                     服務內容.setText(work);
                                 }
                             });
@@ -100,7 +100,7 @@ public class caregiver_history_work_report extends AppCompatActivity {
 
                             備註.post(new Runnable() {
                                 public void run() {
-                                    備註.setText(("" + data.get(0)));
+                                    備註.setText((("" + data.get(0))).replace("暫無",""));
                                 }
                             });
 
