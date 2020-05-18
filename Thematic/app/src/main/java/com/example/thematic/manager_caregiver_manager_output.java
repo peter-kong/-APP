@@ -103,7 +103,7 @@ public class manager_caregiver_manager_output extends AppCompatActivity {
 
                             備註.post(new Runnable() {
                                 public void run() {
-                                    備註.setText(""+data.get(0));
+                                    備註.setText((""+data.get(0)).replace("暫無",""));
                                 }
                             });
 

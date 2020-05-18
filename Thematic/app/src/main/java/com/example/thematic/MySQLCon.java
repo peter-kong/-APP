@@ -516,7 +516,7 @@ public class MySQLCon {
                 String CID = rs.getString("CID");
                 if(db_date.equals(Date)){
                     if(CID_List.contains(CID)){
-                        data.set(0, data.get(0) + rs.getString("備註")+"-"); //備註
+                        data.set(0, data.get(0) + rs.getString("備註")); //備註
                         data.set(1, data.get(1) + rs.getString("Finish") + "、"); //完成度
                         if (data.get(2).equals("")) {
                             data.set(2, rs.getString("FirstTime"));
@@ -527,7 +527,7 @@ public class MySQLCon {
                         data.set(5, data.get(5) + request + "-");
                     }
                     else{
-                        data.set(0, data.get(0) + rs.getString("備註")+"-"); //備註
+                        data.set(0, data.get(0) + rs.getString("備註")); //備註
                         data.set(1, data.get(1) + rs.getString("Finish") + "、"); //完成度
                         if (data.get(2).equals("")) {
                             data.set(2, rs.getString("FirstTime"));

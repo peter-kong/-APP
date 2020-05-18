@@ -74,12 +74,12 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                 });
                 日期.post(new Runnable() {
                     public void run() {
-                        日期.setText("照服時間:" + Date);
+                        日期.setText("日排程資料查詢:" + Date);
                     }
                 });
 
                 備註.post(new Runnable() {
-                    public void run() {備註.setText((""+data.get(0)).replace("-","\n"));}
+                    public void run() {備註.setText((""+data.get(0)).replace("暫無",""));}
                 });
             }
         }).start();
