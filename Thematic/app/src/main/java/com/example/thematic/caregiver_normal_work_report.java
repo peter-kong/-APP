@@ -39,14 +39,11 @@ public class caregiver_normal_work_report extends AppCompatActivity
         getSupportActionBar().hide(); //隱藏標題
 
         final Spinner 個案名稱 = (Spinner)findViewById(R.id.個案下拉選單);
-
-
         GlobalVariable_Account t = (GlobalVariable_Account)getApplicationContext();
         String dat = t.returnScheduleDate();
         ArrayList name = t.returnName();
-        ArrayList nameid = null;
         ArrayList curuid = new ArrayList();
-
+        curuid.add("");
         String[] namestr = new String[name.size()];
         name.toArray(namestr);
 
@@ -73,7 +70,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
 
         String strDate= judgetoday.returnScheduleDate();
         final TextView 日期 = (TextView)findViewById(R.id.個案日期);
-        日期.setText(strDate);
+        日期.setText(dat);
 
 
         //選取spinner
@@ -100,8 +97,11 @@ public class caregiver_normal_work_report extends AppCompatActivity
                         ArrayList data = con.getcaregiverworkcontent(caregiver帳號,
                                 obj.returnUID().get(choose_index).toString(),strDate);
 
-                        ArrayList work_list = con.獲得填寫工作報表(caregiver帳號,""+obj.returnUID().get(choose_index),strDate);
-                        ArrayList time_list = con.獲得工作時間(caregiver帳號,""+obj.returnUID().get(choose_index),strDate);
+                        ArrayList work_list = con.獲得填寫工作報表(con.get_ID(caregiver帳號,"我要caregiverID"),""+obj.returnUID().get(choose_index),strDate);
+                        ArrayList time_list = con.獲得工作時間(con.get_ID(caregiver帳號,"我要caregiverID"),""+obj.returnUID().get(choose_index),strDate);
+                        Log.e("time)list長度",time_list.size()+"");
+                        obj.setTimeList(time_list);
+
                         //照服員名字,開始時間,結束時間
                         String Time = work_list.get(0)+"~"+work_list.get(1);
 
@@ -132,7 +132,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
 
                             }
                         });
-
+                        Log.e("work_list.size",""+work_list.size());
                         String [] 工作 = new String[work_list.size()-3];
                         int work_count = 0;
                         for(int i = 3 ; i < work_list.size();i++){
@@ -146,21 +146,27 @@ public class caregiver_normal_work_report extends AppCompatActivity
                         //裝True False
                         ArrayList 工作名 = new ArrayList();
                         ArrayList Finish = new ArrayList();
-
+                        Log.e("工作長度",""+工作.length);
                         for(int k = 0;k < 工作.length;k++) {
                             Finish.add("×");
                             工作名.add(工作[k]);
-                            //Log.e("tags",工作名.get(k).toString());
+                            Log.e("tags",工作名.get(k).toString());
                         }
-
-
+                        tmp.setFinish(Finish);
+                        Log.e("Finish長度",Finish.size()+","+工作.length);
+                        工作名.add("");
+                        工作名.add("");
                         //辨識True False
+                        final CheckBox work1 = (CheckBox) findViewById(R.id. work1);
+                        final CheckBox work2 = (CheckBox) findViewById(R.id. work2);
+                        final CheckBox work3 = (CheckBox) findViewById(R.id. work3);
                         CompoundButton.OnCheckedChangeListener checkBoxOnCheckedChange =
                                 new CompoundButton.OnCheckedChangeListener()
                                 {
                                     @Override
                                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked)
                                     { //buttonView 為目前觸發此事件的 CheckBox, isChecked 為此 CheckBox 目前的選取狀態
+                                       Log.e("進入檢查","check");
                                         if(isChecked)//等於 buttonView.isChecked()
                                         {
                                             Toast.makeText(getApplicationContext(),buttonView.getText()+" 被選取", Toast.LENGTH_LONG).show();
@@ -182,7 +188,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
                                                 }
                                             }
                                         }
-
+                                        Log.e("Finish案時長度",Finish.size()+"");
                                         tmp.setFinish(Finish);
 
                                         tmp.println();
@@ -190,21 +196,59 @@ public class caregiver_normal_work_report extends AppCompatActivity
                                 };
 
 
-                        for(int k = 0;k < 工作.length;k++){
 
-                            Log.e("Line 122",工作[k]);
-                            CheckBox work1 = new CheckBox(caregiver_normal_work_report.this);
-                            work1.setTextSize(20);
-                            work1.setText(工作[k]);
-                            work1.setOnCheckedChangeListener(checkBoxOnCheckedChange);
-
-                            work.post(new Runnable() {
-                                @Override
+                        work1.setOnCheckedChangeListener(checkBoxOnCheckedChange);
+                        work2.setOnCheckedChangeListener(checkBoxOnCheckedChange);
+                        work3.setOnCheckedChangeListener(checkBoxOnCheckedChange);
+                        if(工作名.get(0).equals("")){
+                            work1.post(new Runnable() {
                                 public void run() {
-                                    work.addView(work1, RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+                                    work1.setVisibility(View.GONE);
                                 }
                             });
-                            Log.e("Work Normal",工作[k]);
+
+                        }
+                        else{
+                            work1.setText(工作名.get(0)+"");
+                            work1.post(new Runnable() {
+                                public void run() {
+                                    work1.setVisibility(View.VISIBLE);
+                                }
+                            });
+                        }
+                        if(工作名.get(1).equals("")){
+                            work2.post(new Runnable() {
+                                public void run() {
+                                    work2.setVisibility(View.GONE);
+                                }
+                            });
+
+
+                        }
+                        else{
+                            work2.setText(工作名.get(1)+"");
+                            work2.post(new Runnable() {
+                                public void run() {
+                                    work2.setVisibility(View.VISIBLE);
+                                }
+                            });
+
+                        }
+                        if(工作名.get(2).equals("")){
+
+                            work3.post(new Runnable() {
+                                public void run() {
+                                    work3.setVisibility(View.GONE);
+                                }
+                            });
+                        }
+                        else{
+                            work3.setText(工作名.get(2)+"");
+                            work3.post(new Runnable() {
+                                public void run() {
+                                    work3.setVisibility(View.VISIBLE);
+                                }
+                            });
                         }
 
                     }
@@ -227,27 +271,31 @@ public class caregiver_normal_work_report extends AppCompatActivity
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
-
+                        Log.e("進入按鈕","");
                         test.println();
-
+                        Log.e("進入按鈕","");
                         TextView 備註 = (TextView)findViewById(R.id.備註);
                         String meg = 備註.getText().toString();
-
+                        Log.e("進入按鈕","");
 
                         //檢查沒有輸入
                         ArrayList checkpoint = test.returnFinish();
-
+                        Log.e("進入按鈕","");
                         int c = 0;
-
+                        Log.e("進入按鈕","");
                         if(checkpoint != null)
                             c = 1;
-
+                        Log.e("進入按鈕","");
                         Log.e("meg",meg);
-
+                        Log.e("進入按鈕","");
                         if(c == 1) {
                             com.example.mysql_connect.MySQLCon con = new com.example.mysql_connect.MySQLCon();
-                            con.SendFinishandnotice(curuid.get(0).toString(), test.returnFinish(), meg, strDate);
-                            Log.e("Data: ", curuid.get(0).toString() + test.returnFinish().get(0).toString());
+                            GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
+                            String caregiver帳號 = obj.returnAcc();
+                            Log.e("start上傳","");
+                            Log.e("data:",con.get_ID(caregiver帳號,"我要caregiverID")+","+curuid.get(0).toString()+
+                                    ","+test.returnFinish()+","+obj.returnTimeList()+","+strDate+","+meg);
+                            con.上傳工作報表(con.get_ID(caregiver帳號,"我要caregiverID"), curuid.get(0).toString(), test.returnFinish(),obj.returnTimeList(), strDate,meg);
 
                             Intent intent = new Intent();
                             intent.setClass(caregiver_normal_work_report.this, caregiver_normal_work_report.class);

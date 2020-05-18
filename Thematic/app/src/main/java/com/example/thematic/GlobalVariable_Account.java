@@ -14,6 +14,7 @@ public class GlobalVariable_Account extends Application{
     private int Month; //月概況鎖進入的月份
     private ArrayList 星期數 = new ArrayList(); //月概況spinner紀錄有幾週
     private String caregiverID,ScheduleDate = new String(); //Schedule的caregiverID,Schedule的日期
+    private ArrayList timeList = new ArrayList();
     private boolean t;
     //帳號
     public void setAccount(String input){
@@ -80,4 +81,6 @@ public class GlobalVariable_Account extends Application{
 
     public ArrayList returnWeekCount(){return 星期數;}
 
+    public void setTimeList(ArrayList str){timeList = str;}
+    public ArrayList returnTimeList(){return timeList;}
 }
