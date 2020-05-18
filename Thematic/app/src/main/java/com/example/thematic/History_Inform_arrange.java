@@ -80,7 +80,7 @@ public class History_Inform_arrange extends AppCompatActivity {
                             public void run() {
                                 String work;
                                 work = ""+data.get(5);
-                                work = work.replace("-","\n");
+                                work = work.replace("、","\n");
                                 work_view.setText(work);
                             }
                         });
