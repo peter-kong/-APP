@@ -1300,6 +1300,77 @@ public class MySQLCon {
         return data;
     }
 
+    public ArrayList 獲得填寫工作報表(String CID,String UID,String Date){
+        ArrayList data = new ArrayList();
+
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            sql = "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + CID + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                String db_date = rs.getString("Date");
+                int now_date = Integer.parseInt(Date);
+                int check_date = Integer.parseInt(db_date);
+                String db_UID = rs.getString("UID");
+                if(now_date == check_date){
+                    if(db_UID.equals(UID)){
+                        if(data.size() == 0){
+                            for(int i = 0 ; i < 3 ; i ++){
+                                data.add("");
+                            }
+                            data.set(0,rs.getString("FirstTime"));
+                            String caregiverName = getData(CID,"我要caregiver名字");
+                            data.set(2,caregiverName);
+                        }
+                        data.set(1,rs.getString("LastTime"));
+                        String request = getrequest(Date, rs.getString("FirstTime"), UID);
+                        data.add(request);
+                    }
+                }
+            }
+        }
+        catch(SQLException e){
+            Log.e("DB",e.toString());
+        }
+        return data;
+    }
+
+    public ArrayList 獲得工作時間(String CID,String UID,String Date){
+        ArrayList data = new ArrayList();
+
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            sql = "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + CID + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            while(rs.next()){
+                String db_date = rs.getString("Date");
+                String db_UID = rs.getString("UID");
+                int now_date = Integer.parseInt(Date);
+                int check_date = Integer.parseInt(db_date);
+                if(now_date == check_date) {
+                    if (db_UID.equals(UID)) {
+                        if(data.size() == 0){
+                            data.add(Date);
+                        }
+
+                        String FirstTime = rs.getString("FirstTime");
+                        String LastTime = rs.getString("LastTime");
+
+                        data.add(FirstTime);
+                        data.add(LastTime);
+
+                    }
+                }
+            }
+
+        }
+        catch(SQLException e){
+            Log.e("DB",e.toString());
+        }
+        return data;
+    }
 }
 
 

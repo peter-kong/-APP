@@ -31,44 +31,21 @@ import java.util.GregorianCalendar;
 
 public class caregiver_normal_work_report extends AppCompatActivity
 {
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
-
-        Log.e("Line 39","reminded");
-
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caregiver_normal_work_report);
         getSupportActionBar().hide(); //隱藏標題
 
-        Log.e("Line 46","remind");
-
-
         final Spinner 個案名稱 = (Spinner)findViewById(R.id.個案下拉選單);
-
-        Log.e("Line 51","remind");
 
 
         GlobalVariable_Account t = (GlobalVariable_Account)getApplicationContext();
         String dat = t.returnScheduleDate();
         ArrayList name = t.returnName();
-        //ArrayList id = t.returnUID();
         ArrayList nameid = null;
-
-        /*
-        for(int i = 0;i < name.size();i++){
-            nameid.add(name.get(i).toString()+id.get(i).toString());
-            Log.e("nameid", nameid.get(i).toString());
-        }
-        */
-        /*
-        for(int i = 0;i < name.size();i++)
-            Log.e("name:",name.get(i).toString());
-        */
         ArrayList curuid = new ArrayList();
-        curuid.add("No data");
 
         String[] namestr = new String[name.size()];
         name.toArray(namestr);
@@ -99,8 +76,6 @@ public class caregiver_normal_work_report extends AppCompatActivity
         日期.setText(strDate);
 
 
-
-
         //選取spinner
         個案名稱.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -109,6 +84,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
 
                 //拿到被選擇项的值進行連接DB並顯示資料
                 String chooseDate = (String) 個案名稱.getSelectedItem();
+                int choose_index = 個案名稱.getSelectedItemPosition();
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
@@ -117,28 +93,24 @@ public class caregiver_normal_work_report extends AppCompatActivity
                         GlobalVariable_Account obj = (GlobalVariable_Account)getApplicationContext();
                         String caregiver帳號  = obj.returnAcc();
 
-                        int i = 0;
-                        ArrayList 所有當前照護員被照護名字 = obj.returnName();
-                        while(!所有當前照護員被照護名字.get(i).equals(chooseDate)){
-                            i++;
-                        }
-
                         //Log.e("所有當前照護員被照護UID",obj.returnUID().get(i).toString());
-                        curuid.set(0,obj.returnUID().get(i));
-
-                        //Log.e("DB 今日",strDate);
+                        curuid.set(0,obj.returnUID().get(choose_index));
 
 
                         ArrayList data = con.getcaregiverworkcontent(caregiver帳號,
-                                obj.returnUID().get(i).toString(),strDate);
+                                obj.returnUID().get(choose_index).toString(),strDate);
+
+                        ArrayList work_list = con.獲得填寫工作報表(caregiver帳號,""+obj.returnUID().get(choose_index),strDate);
+                        ArrayList time_list = con.獲得工作時間(caregiver帳號,""+obj.returnUID().get(choose_index),strDate);
                         //照服員名字,開始時間,結束時間
-                        String Time = data.get(1).toString() + " - " +data.get(2).toString();
+                        String Time = work_list.get(0)+"~"+work_list.get(1);
+
                         final TextView workername = (TextView)findViewById(R.id.workername);
                         final TextView Timeview = (TextView)findViewById(R.id.Time);
 
                         workername.post(new Runnable() {
                             public void run() {
-                                workername.setText(data.get(0).toString());
+                                workername.setText(""+work_list.get(2));
                             }
                         });
 
@@ -161,7 +133,12 @@ public class caregiver_normal_work_report extends AppCompatActivity
                             }
                         });
 
-                        String [] 工作 = data.get(3).toString().split("、");
+                        String [] 工作 = new String[work_list.size()-3];
+                        int work_count = 0;
+                        for(int i = 3 ; i < work_list.size();i++){
+                            工作[work_count] = work_list.get(i)+"";
+                            work_count++;
+                        }
                         //Log.e("工作一", 工作[0]);
 
                         GlobalVariable_Account tmp = (GlobalVariable_Account)getApplicationContext();
@@ -200,7 +177,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
                                             Toast.makeText(getApplicationContext(),buttonView.getText()+" 被取消", Toast.LENGTH_LONG).show();
                                             for(int k = 0;k < 工作名.size();k++) {
                                                 if (工作名.get(k).toString().equals(buttonView.getText())) {
-                                                    Finish.set(k, "False");
+                                                    Finish.set(k, "×");
                                                     Log.e(工作名.get(k).toString(),Finish.get(k).toString());
                                                 }
                                             }
@@ -217,7 +194,7 @@ public class caregiver_normal_work_report extends AppCompatActivity
 
                             Log.e("Line 122",工作[k]);
                             CheckBox work1 = new CheckBox(caregiver_normal_work_report.this);
-                            work1.setTextSize(30);
+                            work1.setTextSize(20);
                             work1.setText(工作[k]);
                             work1.setOnCheckedChangeListener(checkBoxOnCheckedChange);
 
@@ -283,4 +260,5 @@ public class caregiver_normal_work_report extends AppCompatActivity
         });
 
     }
+
 }
