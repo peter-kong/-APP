@@ -89,8 +89,7 @@ public class manager_user_manage_day_selected extends AppCompatActivity {
                                 Date = input_month + input_day;
                             }
                         }
-
-                        String 帳號 = obj.returnAcc();
+                        obj.setAccount(data);
                         obj.setScheduleDate(Date);
                         Intent intent = new Intent();
                         intent.setClass(manager_user_manage_day_selected.this, Recent_Inform_arrange.class);

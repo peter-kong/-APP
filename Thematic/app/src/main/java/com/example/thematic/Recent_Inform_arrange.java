@@ -35,8 +35,8 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                 String user帳號 = obj.returnAcc();
                 String Date = obj.returnScheduleDate();
                 //取得最近一次的服務內容(包含時間、照服員、服務內容)
-                String UID = con.get_ID(user帳號,"我要userID");
-                ArrayList data = con.getschedule(Date, "我要排程工作內容", UID);
+                String UID = user帳號;
+                ArrayList data = con.getschedule_day_people(Date, "我要日工作內容", UID);
                 if (data.size() == 0) {
                     for (int i = 0; i < 5; i++) {
                         data.add("");
@@ -58,7 +58,7 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                 work_view.post(new Runnable() {
                     public void run() {
                         String work;
-                        work = "" + data.get(4);
+                        work = "" + data.get(5);
                         work = work.replace("-", "\n");
                         work_view.setText(work);
                     }
@@ -79,7 +79,7 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                 });
 
                 備註.post(new Runnable() {
-                    public void run() {備註.setText(""+data.get(0));}
+                    public void run() {備註.setText((""+data.get(0)).replace("-","\n"));}
                 });
             }
         }).start();
