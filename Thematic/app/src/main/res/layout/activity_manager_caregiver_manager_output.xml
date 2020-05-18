@@ -88,7 +88,7 @@
             <TextView
                 android:id="@+id/服務內容欄位"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:text="服務內容:"
                 android:textSize="30sp" />
 
