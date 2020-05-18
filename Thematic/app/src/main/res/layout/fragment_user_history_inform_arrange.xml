@@ -127,7 +127,8 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:lineSpacingMultiplier="1.0"
-                android:textSize="24sp" />
+                android:textSize="22sp"
+                app:autoSizeTextType="uniform" />
 
         </LinearLayout>
     </ScrollView>
