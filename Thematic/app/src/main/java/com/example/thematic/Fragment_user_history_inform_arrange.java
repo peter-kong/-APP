@@ -67,7 +67,7 @@ public class Fragment_user_history_inform_arrange extends Fragment {
                         GlobalVariable_Account obj = (GlobalVariable_Account)getActivity().getApplicationContext();
                         String user帳號  = obj.returnAcc();
                         String UID = con.get_ID(user帳號,"我要userID");
-                        ArrayList data = con.getschedule(chooseDate,"我要歷史工作內容",UID);
+                        ArrayList data = con.getschedule_day_people(chooseDate,"我要歷史工作內容",UID);
                         if(data.size() == 0) {
                             for (int i = 0; i < 5; i++) {
                                 data.add("無資料");
