@@ -38,8 +38,8 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                 String UID = user帳號;
                 ArrayList data = con.getschedule_day_people(Date, "我要日工作內容", UID);
                 if (data.size() == 0) {
-                    for (int i = 0; i < 5; i++) {
-                        data.add("");
+                    for (int i = 0; i < 7; i++) {
+                        data.add("無資料");
                     }
                 }
                 //data.add(data.get(0).toString().subSequence(0,));
