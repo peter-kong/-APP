@@ -74,7 +74,7 @@ public class Fragment_user_next_inform_arrange extends Fragment {
                 ArrayList data = con.getschedule_day_people(date,"我要日工作內容",UID);
                 Log.e("Next_Inform_arrange","End"+data.size());
                 if(data.size() == 0){
-                    for (int i = 0 ; i < 5 ; i ++) {
+                    for (int i = 0 ; i < 7 ; i ++) {
                         data.add("無資料");
                     }
                 }
@@ -100,7 +100,7 @@ public class Fragment_user_next_inform_arrange extends Fragment {
                 });
                 日期.post(new Runnable() {
                     public void run() {
-                        日期.setText(""+date);
+                        日期.setText((""+date).replace("0000",""));
                     }
                 });
 
