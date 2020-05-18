@@ -174,37 +174,37 @@ public class manager_caregiver_manage_month_output extends AppCompatActivity {
 
                             }
                             else {
-                                ArrayList output_data = con.get_schedule_data_by_user(chooseDate, "" + UID.get(choose_index), "我要user當日工作內容");
+                                ArrayList output_data = con.getschedule_day_people(chooseDate, "我要日工作內容","" + UID.get(choose_index));
                                 //Log.e("獲得資料", output_data.get(0) + "," + output_data.get(1) + "," + output_data.get(2) + "," + output_data.get(3) + "," + output_data.get(4) + "," + output_data.get(5));
                                 time_view.post(new Runnable() {
                                     public void run() {
-                                        time_view.setText("" + output_data.get(0) + "~" + output_data.get(1));
+                                        time_view.setText("" + output_data.get(2) + "~" + output_data.get(3));
                                     }
                                 });
                                 caregiver_view.post(new Runnable() {
                                     public void run() {
-                                        caregiver_view.setText("" + output_data.get(2));
+                                        caregiver_view.setText("" + output_data.get(4));
                                     }
                                 });
                                 work1_view.post(new Runnable() {
                                     public void run() {
                                         String work;
-                                        work = "" + output_data.get(3);
-                                        work = work.replace("、", "\n");
+                                        work = "" + output_data.get(5);
+                                        work = work.replace("-", "\n");
                                         work1_view.setText(work);
                                     }
                                 });
                                 完成度.post(new Runnable() {
                                     public void run() {
                                         String work;
-                                        work = "" + output_data.get(4);
+                                        work = "" + output_data.get(1);
                                         work = work.replace("、", "\n");
                                         完成度.setText(work);
                                     }
                                 });
                                 備註.post(new Runnable() {
                                     public void run() {
-                                        備註.setText("" + output_data.get(5));
+                                        備註.setText(("" + output_data.get(0)).replace("暫無",""));
                                     }
                                 });
                             }
