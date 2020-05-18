@@ -67,27 +67,27 @@ public class Fragment_user_history_inform_arrange extends Fragment {
                         GlobalVariable_Account obj = (GlobalVariable_Account)getActivity().getApplicationContext();
                         String user帳號  = obj.returnAcc();
                         String UID = con.get_ID(user帳號,"我要userID");
-                        ArrayList data = con.getschedule(chooseDate,"我要歷史工作內容",UID);
+                        ArrayList data = con.getschedule_day_people(chooseDate,"我要日工作內容",UID);
                         if(data.size() == 0) {
-                            for (int i = 0; i < 5; i++) {
+                            for (int i = 0; i < 7; i++) {
                                 data.add("無資料");
                             }
                         }
                         time_view.post(new Runnable() {
                             public void run() {
-                                time_view.setText(""+data.get(0)+"~"+data.get(1));
+                                time_view.setText(""+data.get(2)+"~"+data.get(3));
                             }
                         });
                         caregiver_view.post(new Runnable() {
                             public void run() {
-                                caregiver_view.setText(""+data.get(2));
+                                caregiver_view.setText(""+data.get(4));
                             }
                         });
 
                         work_view.post(new Runnable() {
                             public void run() {
                                 String work;
-                                work = ""+data.get(3);
+                                work = ""+data.get(5);
                                 work = work.replace("-","\n");
                                 work_view.setText(work);
                             }
