@@ -45,12 +45,30 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/輸入月份"
+                    android:id="@+id/editText6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="5"
                     android:gravity="center"
-                    android:hint="請輸入月份"
+                    android:hint="請輸入年份"
+                    android:inputType="number" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/輸入月份"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="12dp"
+                    android:ems="3"
+                    android:gravity="center"
+                    android:hint="月份"
                     android:inputType="number"
                     android:textSize="18sp" />
 
@@ -68,9 +86,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="12dp"
-                    android:ems="5"
+                    android:ems="3"
                     android:gravity="center"
-                    android:hint="請輸入日期"
+                    android:hint="日期"
                     android:inputType="number"
                     android:textSize="18sp" />
 
