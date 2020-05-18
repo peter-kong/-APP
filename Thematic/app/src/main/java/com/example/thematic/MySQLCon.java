@@ -496,6 +496,43 @@ public class MySQLCon {
         }
         return data;
     }
+
+    public String find_next_date(String Date,String UID){
+        String data = new String();
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            sql = "SELECT * FROM `schedule` WHERE `UID` = " + "\"" + UID + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+            String answer_date = Date;
+            while (rs.next()) {
+                String db_date = rs.getString("Date");
+                if(Integer.parseInt(db_date)>Integer.parseInt(Date)){
+                    if(answer_date.equals(Date)){
+                        answer_date = db_date;
+                        Log.e("answer_date",answer_date);
+                    }
+                    else{
+                        if(Integer.parseInt(answer_date)>Integer.parseInt(db_date)){
+                            answer_date = db_date;
+                            Log.e("answer_date",answer_date);
+                        }
+                    }
+                }
+            }
+            data = answer_date;
+            if(data.equals(Date)){
+                data = "0000";
+            }
+            Log.e("final answer_date",answer_date);
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+            Log.e("DB", "獲取資料失敗");
+            Log.e("DB", e.toString());
+        }
+        return data;
+    }
     public ArrayList getschedule_day_people(String Date,String 需求, String UID){
         ArrayList data = new ArrayList();
         ArrayList CID_List = new ArrayList();

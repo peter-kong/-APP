@@ -70,7 +70,8 @@ public class Fragment_user_next_inform_arrange extends Fragment {
                 //取得下次服務的資料(包含日期、時間、照服員、服務內容)
                 Log.e("Next_Inform_arrange","Start");
                 String UID = con.get_ID(user帳號,"我要userID");
-                ArrayList data = con.getschedule(Date,"我要下次工作內容",UID);
+                String date = con.find_next_date(Date,UID);
+                ArrayList data = con.getschedule_day_people(date,"我要日工作內容",UID);
                 Log.e("Next_Inform_arrange","End"+data.size());
                 if(data.size() == 0){
                     for (int i = 0 ; i < 5 ; i ++) {
@@ -80,26 +81,26 @@ public class Fragment_user_next_inform_arrange extends Fragment {
 
                 time_view.post(new Runnable() {
                     public void run() {
-                        time_view.setText(""+data.get(0)+"~"+data.get(1));
+                        time_view.setText(""+data.get(2)+"~"+data.get(3));
                     }
                 });
                 caregiver_view.post(new Runnable() {
                     public void run() {
-                        caregiver_view.setText(""+data.get(2));
+                        caregiver_view.setText(""+data.get(4));
                     }
                 });
 
                 work_view.post(new Runnable() {
                     public void run() {
                         String work;
-                        work = ""+data.get(3);
+                        work = ""+data.get(5);
                         work = work.replace("-","\n");
                         work_view.setText(work);
                     }
                 });
                 日期.post(new Runnable() {
                     public void run() {
-                        日期.setText(""+data.get(4));
+                        日期.setText(""+date);
                     }
                 });
 
