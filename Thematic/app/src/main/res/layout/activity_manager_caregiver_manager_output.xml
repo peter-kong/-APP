@@ -104,8 +104,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
-                    android:gravity="left"
-                    android:textSize="22sp"
+                    android:gravity="top|left"
+                    android:textSize="18sp"
                     app:autoSizeTextType="uniform" />
 
                 <TextView
@@ -113,7 +113,7 @@
                     android:layout_width="25dp"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:textSize="24sp" />
+                    android:textSize="18sp" />
             </LinearLayout>
 
             <TextView
