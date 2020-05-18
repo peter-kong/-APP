@@ -124,10 +124,9 @@
                 android:id="@+id/個人資料"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:lineSpacingMultiplier="1.0"
-                android:textSize="22sp"
-                app:autoSizeTextType="uniform" />
+                android:gravity="left"
+                android:textSize="15sp"
+                app:autoSizeTextType="none" />
 
         </LinearLayout>
     </ScrollView>
