@@ -81,6 +81,7 @@ public class History_Inform_arrange extends AppCompatActivity {
                                 String work;
                                 work = ""+data.get(5);
                                 work = work.replace("、","\n");
+                                Log.e("work",work);
                                 work_view.setText(work);
                             }
                         });
