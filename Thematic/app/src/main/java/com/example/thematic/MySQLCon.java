@@ -1191,11 +1191,16 @@ public class MySQLCon {
             for(int i = 0 ; i < data_chase.size();i++){
                 Log.e("獲得的日期",data_chase.get(i)+"");
             }
-
-            for (int i = data_chase.size()-5 ; i < data_chase.size() ; i ++){
-                data.add(data_chase.get(i));
+            if(data_chase.size()>=5) {
+                for (int i = data_chase.size() - 5; i < data_chase.size(); i++) {
+                    data.add(data_chase.get(i));
+                }
             }
-
+            else{
+                for (int i = 0; i < data_chase.size(); i++) {
+                    data.add(data_chase.get(i));
+                }
+            }
             Log.e("DB_GetRecentDate","獲取資料成功");
             //Log.e("Date",data.get(0)+","+data.get(1)+","+data.get(2)+","+data.get(3)+","+data.get(4));
         }

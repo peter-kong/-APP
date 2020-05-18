@@ -115,8 +115,6 @@ public class Fragment_caregiver_normal_work_report_select extends Fragment {
                         int check = 0;
 
                         前五次日期 = con.get_recent_date(now, "我要前五次的日期",帳號);
-
-                        Log.e("123",前五次日期.get(0)+","+前五次日期.get(1)+","+前五次日期.get(2)+","+前五次日期.get(3));
                         for (int i = 0; i < 前五次日期.size(); i++) {
                             if (Date.equals("" + 前五次日期.get(i))) {
                                 check = 1;
