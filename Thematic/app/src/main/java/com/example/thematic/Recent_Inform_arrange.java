@@ -74,7 +74,7 @@ public class Recent_Inform_arrange extends AppCompatActivity {
                 });
                 日期.post(new Runnable() {
                     public void run() {
-                        日期.setText("日排程資料查詢:" + Date);
+                        日期.setText(Date);
                     }
                 });
 

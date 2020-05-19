@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#4DD8978E"
     android:screenOrientation="portrait"
-    tools:context=".Next_Inform_arrange">
+    tools:context=".Recent_Inform_arrange">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -32,14 +32,28 @@
                     app:srcCompat="@drawable/time" />
 
                 <TextView
-                    android:id="@+id/最近照服時間"
+                    android:id="@+id/日排程資料查詢"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="日排程資料查詢"
                     android:textSize="30sp" />
             </LinearLayout>
+            <TextView
+                android:id="@+id/日期"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:text="@string/時間"
+                android:textSize="30sp" />
 
+            <TextView
+                android:id="@+id/最近照服時間"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="無資料"
+                android:textSize="30sp" />
             <TextView
                 android:id="@+id/時間"
                 android:layout_width="match_parent"

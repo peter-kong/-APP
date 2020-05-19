@@ -562,18 +562,26 @@ public class MySQLCon {
                         String request = getrequest(Date, rs.getString("FirstTime"), UID);
                         Log.e("request", request);
                         data.set(5, data.get(5) + request + "-");
+                        data.set(0, data.get(0) + rs.getString("備註")); //備註
                     }
                     else{
-                        data.set(0, data.get(0) + rs.getString("備註")); //備註
-                        data.set(1, data.get(1) + rs.getString("Finish") + "、"); //完成度
                         if (data.get(2).equals("")) {
                             data.set(2, rs.getString("FirstTime"));
                         }
                         data.set(3, rs.getString("LastTime"));
-                        data.set(4, getData(CID, "我要caregiver名字"));
+                        if(CID_List.size() == 0) {
+                            data.set(0, data.get(0) + rs.getString("備註")); //備註
+                            data.set(1, data.get(1) +"、"+ rs.getString("Finish") + "、"); //完成度
+                            data.set(4, data.get(4) + getData(CID, "我要caregiver名字"));
+                        }
+                        else{
+                            data.set(4,data.get(4)+"、"+getData(CID,"我要caregiver名字"));
+                            data.set(1, data.get(1) +"、、"+ rs.getString("Finish") + "、"); //完成度
+                        }
                         String request = getrequest(Date, rs.getString("FirstTime"), UID);
                         Log.e("request", request);
-                        data.set(5, data.get(5) + request + "-");
+                        data.set(5, data.get(5) + getData(CID,"我要caregiver名字") + "-"+request + "-");
+
                         CID_List.add(CID);
                     }
                 }
@@ -764,8 +772,8 @@ public class MySQLCon {
                 data1[i]=d;
             }
             for(int i=0;i<data.size();i++){
-                for(int j=0;j<data.size();j++){
-                    if(data1[i]<data1[j]){
+                for(int j=i+1;j<data.size();j++){
+                    if(data1[i]>data1[j]){
                         int c = data1[i];
                         data1[i]=data1[j];
                         data1[j]=c;
@@ -1266,7 +1274,7 @@ public class MySQLCon {
                 Log.e("獲得的日期",data_chase.get(i)+"");
             }
             for(int i = 0 ; i < data_chase.size() ; i ++){
-                for(int j = 1 ; j < data_chase.size() ; j++){
+                for(int j = i+1 ; j < data_chase.size() ; j++){
                     String a = ""+data_chase.get(i);
                     String b = ""+data_chase.get(j);
                     if(Integer.parseInt(a) < Integer.parseInt(b)){
@@ -1409,6 +1417,45 @@ public class MySQLCon {
         }
 
     }
+
+    public ArrayList getschedule_day_caregiver(String Date,String 需求,String UID,String CID){
+        ArrayList data = new ArrayList();
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+            sql = "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + CID + "\"";
+            Statement st = con.createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while(rs.next()){
+                String db_date = rs.getString("Date");
+                String db_UID = rs.getString("UID");
+                if(db_date.equals(Date) && db_UID.equals(UID)){
+                    String 備註 = rs.getString("備註");
+                    String 起始時間 = rs.getString("FirstTime");
+                    String 結束時間 = rs.getString("LastTime");
+                    String 完成度 = rs.getString("Finish");
+                    String 要求 = getrequest(Date,起始時間,UID);
+                    if(data.size() == 0){
+                        for(int i = 0 ; i < 6 ; i ++){
+                            data.add("");
+                        }
+                        data.set(2,起始時間);
+                    }
+                    data.set(0,data.get(0)+備註);
+                    data.set(1,data.get(1)+完成度+"、");
+                    data.set(3,結束時間);
+                    data.set(4,getData(CID,"我要caregiver名字"));
+                    data.set(5,data.get(5)+要求+"-");
+                    Log.e("要求:",要求);
+                }
+            }
+        }
+        catch(SQLException e){
+            Log.e("DB",e.toString());
+        }
+        return data;
+    }
+
 }
 
 

@@ -169,12 +169,13 @@ public class manager_caregiver_manage_month_output extends AppCompatActivity {
                             String choose_data = ""+個案spn.getSelectedItem();
                             Log.e("有資料了", "123");
                             ArrayList UID = obj.returnUID();
+                            String CID = obj.returnAcc();
                             //Log.e("HI", "HI");
                             if(choose_data.equals("無資料")){
 
                             }
                             else {
-                                ArrayList output_data = con.getschedule_day_people(chooseDate, "我要日工作內容","" + UID.get(choose_index));
+                                ArrayList output_data = con.getschedule_day_caregiver(chooseDate, "我要日工作內容","" + UID.get(choose_index),CID);
                                 //Log.e("獲得資料", output_data.get(0) + "," + output_data.get(1) + "," + output_data.get(2) + "," + output_data.get(3) + "," + output_data.get(4) + "," + output_data.get(5));
                                 time_view.post(new Runnable() {
                                     public void run() {

@@ -62,7 +62,7 @@ public class History_Inform_arrange extends AppCompatActivity {
                         String UID = con.get_ID(user帳號,"我要userID");
                         ArrayList data = con.getschedule_day_people(chooseDate, "我要日工作內容", UID);
                         if(data.size() == 0) {
-                            for (int i = 0; i < 5; i++) {
+                            for (int i = 0; i < 7; i++) {
                                 data.add("無資料");
                             }
                         }
