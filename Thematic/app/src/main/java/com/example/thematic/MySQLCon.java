@@ -21,7 +21,7 @@ public class MySQLCon {
 
     //final String[] user_data = getResources().getStringArray(R.array.user_data);
     // 資料庫定義
-    String mysql_ip = "192.168.0.180";
+    //String mysql_ip = "192.168.0.180";
 
     //String mysql_ip = "134.208.41.237";
     //tring mysql_ip = "134.208.41.237";
@@ -30,7 +30,7 @@ public class MySQLCon {
 
 
     //String mysql_ip = "172.20.10.5";
-    //String mysql_ip = "134.208.41.237";
+    String mysql_ip = "134.208.41.237";
     //String mysql_ip = "192.168.1.124";
     //String mysql_ip = "172.20.10.5";
     int mysql_port = 3306; // Port 預設為 3306
@@ -143,7 +143,7 @@ public class MySQLCon {
         } else if (需求.equals("address_get")) {
             關聯表名稱 = "user";
             屬性 = "UAddress";
-        } else if (需求.equals("healthsitu")) {
+        } else if (需求.equals("healthsitu_get")) {
             關聯表名稱 = "user";
             屬性 = "UMedHistory";
         } else if (需求.equals("personid_get")) {
@@ -1267,7 +1267,7 @@ public class MySQLCon {
                 Log.e("獲得的日期",data_chase.get(i)+"");
             }
             for(int i = 0 ; i < data_chase.size() ; i ++){
-                for(int j = 0 ; j < data_chase.size() ; j++){
+                for(int j = 1 ; j < data_chase.size() ; j++){
                     String a = ""+data_chase.get(i);
                     String b = ""+data_chase.get(j);
                     if(Integer.parseInt(a) < Integer.parseInt(b)){
@@ -1339,7 +1339,7 @@ public class MySQLCon {
 
     public ArrayList 獲得工作時間(String CID,String UID,String Date){
         ArrayList data = new ArrayList();
-
+        Log.e("本日日期",Date+"");
         try{
             Connection con = DriverManager.getConnection(url, db_user, db_password);
             sql = "SELECT * FROM `schedule` WHERE `CID` = " + "\"" + CID + "\"";
@@ -1350,12 +1350,13 @@ public class MySQLCon {
                 String db_UID = rs.getString("UID");
                 int now_date = Integer.parseInt(Date);
                 int check_date = Integer.parseInt(db_date);
-                if(now_date == check_date) {
+                Log.e("DB日期",db_date);
+                if(Date.equals(db_date)) {
                     if (db_UID.equals(UID)) {
                         if(data.size() == 0){
                             data.add(Date);
                         }
-
+                        Log.e("發現資料","123");
                         String FirstTime = rs.getString("FirstTime");
                         String LastTime = rs.getString("LastTime");
 
@@ -1365,12 +1366,49 @@ public class MySQLCon {
                     }
                 }
             }
+            Log.e("整理後長度",data.size()+"");
 
         }
         catch(SQLException e){
             Log.e("DB",e.toString());
         }
         return data;
+    }
+
+    public void 上傳工作報表(String CID,String UID, ArrayList Finish,ArrayList time_list,String Date,String 備註){
+        Log.e("進入上傳工作報表","123");
+        try{
+            Connection con = DriverManager.getConnection(url, db_user, db_password);
+
+            int counter = 0;
+            int time_counter = 1;
+            Log.e("開始for","123"+time_list.size()/2 + ","+Finish.size());
+            for(int i = 0 ; i <Finish.size() ; i ++){
+                if(counter == 0){
+                    Statement st = con.createStatement();
+                    Log.e("for內","for");
+                    Log.e("firsttime123",time_list.get(time_counter)+"");
+                    String firsttime = time_list.get(time_counter)+"";
+                    String sql2 = "UPDATE `schedule` SET `備註` = '" + 備註 + "' WHERE `UID` = '" + UID + "' AND  `Date` = '" + Date + "'AND  `FirstTime` =  '"+ firsttime + "'";
+                    Log.e("備註上傳成功",""+sql2);
+                    st.executeUpdate(sql2);
+                    counter = 1;
+                }
+                Statement st = con.createStatement();
+                String finish = Finish.get(i)+"";
+                String firsttime = time_list.get(time_counter)+"";
+                String sql1 = "UPDATE `schedule` SET `Finish` = '" + finish + "' WHERE `UID` = '"+ UID + "' AND  `Date` = '" + Date + "'AND  `FirstTime` =  '"+ firsttime + "'";
+                Log.e("Finish上傳成功","\n"+sql1);
+                st.executeUpdate(sql1);
+                time_counter += 2;
+
+            }
+
+        }
+        catch(SQLException e){
+            Log.e("DB",e.toString());
+        }
+
     }
 }
 
