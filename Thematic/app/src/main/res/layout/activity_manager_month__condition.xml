@@ -53,7 +53,8 @@
             android:ems="5"
             android:gravity="center"
             android:hint="請輸入年份"
-            android:inputType="number" />
+            android:inputType="number"
+            android:text="2020" />
 
         <TextView
             android:id="@+id/textView29"

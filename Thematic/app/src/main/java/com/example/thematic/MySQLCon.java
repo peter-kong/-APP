@@ -189,6 +189,7 @@ public class MySQLCon {
             } else if(關聯表名稱 == "schedule"){
                 sql = "SELECT * FROM `" + 關聯表名稱 + "` WHERE `Date` = " + "\"" + Date + "\"";
             }
+
             Statement st = con.createStatement();
             ResultSet rs = st.executeQuery(sql);
             counter = 0;
