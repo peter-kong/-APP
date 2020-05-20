@@ -577,7 +577,7 @@ public class MySQLCon {
                         }
                         else{
                             data.set(4,data.get(4)+"、"+getData(CID,"我要caregiver名字"));
-                            data.set(1, data.get(1) +"、、"+ rs.getString("Finish") + "、"); //完成度
+                            data.set(1, data.get(1) +"、"+ rs.getString("Finish") + "、"); //完成度
                         }
                         String request = getrequest(Date, rs.getString("FirstTime"), UID);
                         Log.e("request", request);
@@ -1278,7 +1278,7 @@ public class MySQLCon {
                 for(int j = i+1 ; j < data_chase.size() ; j++){
                     String a = ""+data_chase.get(i);
                     String b = ""+data_chase.get(j);
-                    if(Integer.parseInt(a) < Integer.parseInt(b)){
+                    if(Integer.parseInt(a) > Integer.parseInt(b)){
                         Log.e("交換",a+","+b);
                         String c = a;
                         data_chase.set(i,b) ;
