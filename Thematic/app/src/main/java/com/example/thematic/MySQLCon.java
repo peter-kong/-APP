@@ -30,7 +30,7 @@ public class MySQLCon {
 
 
     //String mysql_ip = "172.20.10.5";
-    String mysql_ip = "134.208.41.237";
+    String mysql_ip = "134.208.6.76";
     //String mysql_ip = "192.168.1.124";
     //String mysql_ip = "172.20.10.5";
     int mysql_port = 3306; // Port 預設為 3306
